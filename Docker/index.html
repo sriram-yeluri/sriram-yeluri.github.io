@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Docker - SriramYeluri-Learning</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Docker";
+    var mkdocs_page_input_path = "Docker.md";
+    var mkdocs_page_url = "/Docker/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> SriramYeluri-Learning</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Ansible/">Ansible</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CentOS/">CentOS</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Docker</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#docker-ee-on-rhel-74">Docker EE on RHEL 7.4</a></li>
+    
+
+    <li class="toctree-l2"><a href="#install-docker-ce-on-centos7">Install Docker CE on Centos7</a></li>
+    
+
+    <li class="toctree-l2"><a href="#nexus">Nexus</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#sonatype-nexus-docker-with-persisent-data">Sonatype Nexus Docker with persisent data</a></li>
+        
+            <li><a class="toctree-l3" href="#http192168258081">http://192.168.2.5:8081/</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#jenkins-httpsstoredockercomimagesjenkins">Jenkins : https://store.docker.com/images/jenkins</a></li>
+    
+
+    <li class="toctree-l2"><a href="#jenkins-with-persisent-data">Jenkins with persisent data</a></li>
+    
+
+    <li class="toctree-l2"><a href="#jenkins-operations-center-joc">Jenkins Operations Center - JOC</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#http192168258080">http://192.168.2.5:8080/</a></li>
+        
+            <li><a class="toctree-l3" href="#postgres">Postgres</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../git/">Git</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../kde_configuration/">KDE</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../linux_learning/">Linux</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../networking/">Networking</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../RHEL/">RedHat</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ubuntu/">Ubuntu</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../vim/">VIM</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Virtualbox/">VirtualBox</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../vnc_config/">VNC</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../yum/">YUM</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../about/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">SriramYeluri-Learning</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Docker</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="docker-ee-on-rhel-74">Docker EE on RHEL 7.4</h2>
+<p><img alt="Docker EE Trail " src="../images/Docker/docker-ee-trial.png" />  </p>
+<h2 id="install-docker-ce-on-centos7">Install Docker CE on Centos7</h2>
+<p><a href="https://docs.docker.com/engine/installation/linux/docker-ce/centos/#install-docker-ce">Install Docker CE on Centos7</a></p>
+<p>https://store.docker.com/  </p>
+<pre><code>dockerCE
+yum install -y yum-utils \
+  device-mapper-persistent-data \
+  lvm2
+
+yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+
+yum install docker-ce
+dockerCE
+
+usermod -aG docker &lt;user_id&gt; This is to run docker as non root user
+
+[root@centos7vm ~]# systemctl enable docker
+Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
+
+[root@centos7vm ~]# chkconfig docker on
+Note: Forwarding request to 'systemctl enable docker.service'.
+
+service docker start
+
+docker ps
+
+
+
+</code></pre>
+
+<h2 id="nexus">Nexus</h2>
+<h3 id="sonatype-nexus-docker-with-persisent-data">Sonatype Nexus Docker with persisent data</h3>
+<p>chown -R 200 /home/sriram.yeluri/Data/NEXUS_DATA<br />
+docker run -d -p 8081:8081 --name nexus -v /home/sriram.yeluri/Data/NEXUS_DATA:/nexus-data sonatype/nexus3</p>
+<h3 id="http192168258081">http://192.168.2.5:8081/</h3>
+<h2 id="jenkins-httpsstoredockercomimagesjenkins">Jenkins : https://store.docker.com/images/jenkins</h2>
+<h2 id="jenkins-with-persisent-data">Jenkins with persisent data</h2>
+<p>docker run -p 8080:8080 -p 50000:50000 --name jenkins -v /home/sriram.yeluri/Data/JENKINS_HOME:/var/jenkins_home jenkins</p>
+<p>docker run -p 8080:8080 -p 50000:50000 --name jenkins -v /home/sriram.yeluri/Data/JENKINS_HOME:/var/jenkins_home jenkins/jenkins:lts</p>
+<h2 id="jenkins-operations-center-joc">Jenkins Operations Center - JOC</h2>
+<p>docker run -p 8089:8080 -p 50001:50000 --name cjoc -v /home/sriram.yeluri/Data/JENKINS_OC_HOME:/var/jenkins_home cloudbees/jenkins-operations-center</p>
+<p>Initial seret can be found at : /var/jenkins_home/secrets/initialAdminPassword  </p>
+<h3 id="http192168258080">http://192.168.2.5:8080/</h3>
+<h3 id="postgres">Postgres</h3>
+<p>docker run --name postgres -e POSTGRES_PASSWORD=secret -d postgres -v /home/sriram.yeluri/Data/PG_DATA:/var/lib/postgresql/data</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../git/" class="btn btn-neutral float-right" title="Git">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../CentOS/" class="btn btn-neutral" title="CentOS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../CentOS/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../git/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>
