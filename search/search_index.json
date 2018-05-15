@@ -157,7 +157,7 @@
         }, 
         {
             "location": "/RHEL/", 
-            "text": "RHEL\n\n\n\n\n  \n\n\nHow to subscribe to Redhat using subscription-manager\n\n\nsubscription-manager\n\n\n  \n\n\nsubscription-manager list\n\n\n  \n\n\nsubscription-manager register\n\n\n  \n\n\nsubscription-manager attach\n\n\n  \n\n\nsubscription-manager identity\n\n\n  \n\n\nAdd GUI fromm basic installation\n\n\n~]# yum groupinstall gnome-desktop x11 fonts\n\n~]# yum groupinstall \"Server with GUI\"\n\n~]# systemctl set-default graphical.target\n\n~]# systemctl start graphical.target\n\n\nAdd GUI", 
+            "text": "RHEL\n\n\n\n\n  \n\n\nHow to subscribe to Redhat using subscription-manager\n\n\nsubscription-manager\n\n\n  \n\n\nsubscription-manager list\n\n\n  \n\n\nsubscription-manager register\n\n\n  \n\n\nsubscription-manager attach\n\n\n  \n\n\nsubscription-manager identity\n\n\n  \n\n\nAdd GUI fromm basic installation\n\n\n1\n2\n3\n4\n5\n~\n]\n# yum groupinstall gnome-desktop x11 fonts  \n\n~\n]\n# yum groupinstall \nServer with GUI\n  \n\n~\n]\n# systemctl set-default graphical.target  \n\n~\n]\n# systemctl start graphical.target  \n\n\n[\nAdd GUI \n](\nhttps://access.redhat.com/solutions/5238?tour\n=\n6\n)", 
             "title": "RedHat"
         }, 
         {
@@ -197,7 +197,7 @@
         }, 
         {
             "location": "/RHEL/#add-gui-fromm-basic-installation", 
-            "text": "~]# yum groupinstall gnome-desktop x11 fonts \n~]# yum groupinstall \"Server with GUI\" \n~]# systemctl set-default graphical.target \n~]# systemctl start graphical.target  Add GUI", 
+            "text": "1\n2\n3\n4\n5 ~ ] # yum groupinstall gnome-desktop x11 fonts   \n~ ] # yum groupinstall  Server with GUI    \n~ ] # systemctl set-default graphical.target   \n~ ] # systemctl start graphical.target    [ Add GUI  ]( https://access.redhat.com/solutions/5238?tour = 6 )", 
             "title": "Add GUI fromm basic installation"
         }, 
         {
