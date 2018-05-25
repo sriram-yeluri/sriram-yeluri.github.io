@@ -156,6 +156,16 @@
             "title": "How to configure Static IP address"
         }, 
         {
+            "location": "/nexus/", 
+            "text": "YUM repositories in Nexus\n\n\n\n\n\n\nCreate a repo of type yum (example as shown below)\n\n  \n\n\n\n\n\n\nCreate a repo file in /etc/yum.repos.d/nexus.repo  \n\n\n\n\n\n\n1\n2\n3\n4\n5\n6\n7\n[nexusrepo]\n\n\nname\n=\nNexus Repository\n\n\nbaseurl\n=\nhttp://localhost:8081/repository/yum-google-chrome/\n\n\nenabled\n=\n1\n\n\ngpgcheck\n=\n1\n\n\ngpgkey\n=\nhttps://dl-ssl.google.com/linux/linux_signing_key.pub\n\n\npriority\n=\n1\n\n\n\n\n\n\n\n\n\nyum check-update  ---\n this command will check if there is any update for this package\n\n\n\n\ngoogle-chrome repo fetched from nexus\n\n\n\n\n\n\n\nBrowse yum proxy repository in nexus\n\n\n\n\n\n\n\n\nUpdate existing package using yum update as shown below\n\n\n\n\n\n\n\nBrowse yum proxy to verify if new package is downloaded", 
+            "title": "Nexus"
+        }, 
+        {
+            "location": "/nexus/#yum-repositories-in-nexus", 
+            "text": "Create a repo of type yum (example as shown below)       Create a repo file in /etc/yum.repos.d/nexus.repo      1\n2\n3\n4\n5\n6\n7 [nexusrepo]  name = Nexus Repository  baseurl = http://localhost:8081/repository/yum-google-chrome/  enabled = 1  gpgcheck = 1  gpgkey = https://dl-ssl.google.com/linux/linux_signing_key.pub  priority = 1     yum check-update  ---  this command will check if there is any update for this package   google-chrome repo fetched from nexus    Browse yum proxy repository in nexus     Update existing package using yum update as shown below    Browse yum proxy to verify if new package is downloaded", 
+            "title": "YUM repositories in Nexus"
+        }, 
+        {
             "location": "/RHEL/", 
             "text": "RHEL\n\n\n\n\n  \n\n\nHow to subscribe to Redhat using subscription-manager\n\n\nsubscription-manager\n\n\n  \n\n\nsubscription-manager list\n\n\n  \n\n\nsubscription-manager register\n\n\n  \n\n\nsubscription-manager attach\n\n\n  \n\n\nsubscription-manager identity\n\n\n  \n\n\nAdd GUI fromm basic installation\n\n\n1\n2\n3\n4\n5\n~\n]\n# yum groupinstall gnome-desktop x11 fonts  \n\n~\n]\n# yum groupinstall \nServer with GUI\n  \n\n~\n]\n# systemctl set-default graphical.target  \n\n~\n]\n# systemctl start graphical.target  \n\n\n[\nAdd GUI \n](\nhttps://access.redhat.com/solutions/5238?tour\n=\n6\n)", 
             "title": "RedHat"
@@ -217,12 +227,12 @@
         }, 
         {
             "location": "/vim/", 
-            "text": "VIM reference\n\n\nSearch and replace\n%s/text/replacement/g\n\n\nSearch and replace with confirmation\n%s/text/replacement/gc\n\n\nForward Search : /\nBackward Search : ?\nSearch Next : n\nSearch back : N\nMove to begining of line : 0\nMove to end of line : $\nGo to end of file : G\nGo to beginning of file : gg", 
+            "text": "VIM reference\n\n\nSearch and replace\n\n%s/text/replacement/g  \n\n\nSearch and replace with confirmation\n\n%s/text/replacement/gc  \n\n\nForward Search : /\n\nBackward Search : ?\n\nSearch Next : n\n\nSearch back : N\n\nMove to begining of line : 0\n\nMove to end of line : $\n\nGo to end of file : G\n\nGo to beginning of file : gg", 
             "title": "Vim"
         }, 
         {
             "location": "/vim/#vim-reference", 
-            "text": "Search and replace\n%s/text/replacement/g  Search and replace with confirmation\n%s/text/replacement/gc  Forward Search : /\nBackward Search : ?\nSearch Next : n\nSearch back : N\nMove to begining of line : 0\nMove to end of line : $\nGo to end of file : G\nGo to beginning of file : gg", 
+            "text": "Search and replace \n%s/text/replacement/g    Search and replace with confirmation \n%s/text/replacement/gc    Forward Search : / \nBackward Search : ? \nSearch Next : n \nSearch back : N \nMove to begining of line : 0 \nMove to end of line : $ \nGo to end of file : G \nGo to beginning of file : gg", 
             "title": "VIM reference"
         }, 
         {

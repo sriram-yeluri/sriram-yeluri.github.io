@@ -40,7 +40,7 @@
     
     
       
-        <title>RedHat - SriramYeluri-Learning</title>
+        <title>Nexus - SriramYeluri-Learning</title>
       
     
     
@@ -78,7 +78,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#rhel" tabindex="1" class="md-skip">
+      <a href="#yum-repositories-in-nexus" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -104,7 +104,7 @@
                 SriramYeluri-Learning
               </span>
               <span class="md-header-nav__topic">
-                RedHat
+                Nexus
               </span>
             
           
@@ -269,18 +269,6 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../nexus/" title="Nexus" class="md-nav__link">
-      Nexus
-    </a>
-  </li>
-
-    
-      
-      
-      
-
   
 
 
@@ -288,78 +276,26 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        RedHat
+        Nexus
       </label>
     
-    <a href="./" title="RedHat" class="md-nav__link md-nav__link--active">
-      RedHat
+    <a href="./" title="Nexus" class="md-nav__link md-nav__link--active">
+      Nexus
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-subscribe-to-redhat-using-subscription-manager" title="How to subscribe to Redhat using subscription-manager" class="md-nav__link">
-    How to subscribe to Redhat using subscription-manager
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#subscription-manager" title="subscription-manager" class="md-nav__link">
-    subscription-manager
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscription-manager-list" title="subscription-manager list" class="md-nav__link">
-    subscription-manager list
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscription-manager-register" title="subscription-manager register" class="md-nav__link">
-    subscription-manager register
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscription-manager-attach" title="subscription-manager attach" class="md-nav__link">
-    subscription-manager attach
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscription-manager-identity" title="subscription-manager identity" class="md-nav__link">
-    subscription-manager identity
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-gui-fromm-basic-installation" title="Add GUI fromm basic installation" class="md-nav__link">
-    Add GUI fromm basic installation
+  <a href="#yum-repositories-in-nexus" title="YUM repositories in Nexus" class="md-nav__link">
+    YUM repositories in Nexus
   </a>
   
 </li>
@@ -372,6 +308,18 @@
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../RHEL/" title="RedHat" class="md-nav__link">
+      RedHat
+    </a>
   </li>
 
     
@@ -473,63 +421,13 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-subscribe-to-redhat-using-subscription-manager" title="How to subscribe to Redhat using subscription-manager" class="md-nav__link">
-    How to subscribe to Redhat using subscription-manager
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#subscription-manager" title="subscription-manager" class="md-nav__link">
-    subscription-manager
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscription-manager-list" title="subscription-manager list" class="md-nav__link">
-    subscription-manager list
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscription-manager-register" title="subscription-manager register" class="md-nav__link">
-    subscription-manager register
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscription-manager-attach" title="subscription-manager attach" class="md-nav__link">
-    subscription-manager attach
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#subscription-manager-identity" title="subscription-manager identity" class="md-nav__link">
-    subscription-manager identity
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-gui-fromm-basic-installation" title="Add GUI fromm basic installation" class="md-nav__link">
-    Add GUI fromm basic installation
+  <a href="#yum-repositories-in-nexus" title="YUM repositories in Nexus" class="md-nav__link">
+    YUM repositories in Nexus
   </a>
   
 </li>
@@ -551,32 +449,54 @@
               
                 
                 
-                <h1 id="rhel">RHEL</h1>
-<hr />
-<p><img alt="RHEL release" src="../images/RHEL/rhel-release-7_4.png" />  </p>
-<h2 id="how-to-subscribe-to-redhat-using-subscription-manager">How to subscribe to Redhat using subscription-manager</h2>
-<h3 id="subscription-manager">subscription-manager</h3>
-<p><img alt="subscription-manager" src="../images/RHEL/subscription-manager.png" />  </p>
-<h3 id="subscription-manager-list">subscription-manager list</h3>
-<p><img alt="subscription-manager list" src="../images/RHEL/subscription-manager-list.png" />  </p>
-<h3 id="subscription-manager-register">subscription-manager register</h3>
-<p><img alt="subscription-manager register" src="../images/RHEL/subscription-manager-register.png" />  </p>
-<h3 id="subscription-manager-attach">subscription-manager attach</h3>
-<p><img alt="subscription-manager attach" src="../images/RHEL/subscription-manager-attach.png" />  </p>
-<h3 id="subscription-manager-identity">subscription-manager identity</h3>
-<p><img alt="subscription-manager identity" src="../images/RHEL/subscription-manager-identity.png" />  </p>
-<h2 id="add-gui-fromm-basic-installation">Add GUI fromm basic installation</h2>
+                  <h1>Nexus</h1>
+                
+                <hr />
+<h3 id="yum-repositories-in-nexus">YUM repositories in Nexus</h3>
+<ol>
+<li>
+<p>Create a repo of type yum (example as shown below)
+<img alt="Nexus YUM Configurtion" src="../images/Nexus/nexus-yum1.png" />  </p>
+</li>
+<li>
+<p>Create a repo file in /etc/yum.repos.d/nexus.repo  </p>
+</li>
+</ol>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>~<span class="o">]</span><span class="c1"># yum groupinstall gnome-desktop x11 fonts  </span>
-~<span class="o">]</span><span class="c1"># yum groupinstall &quot;Server with GUI&quot;  </span>
-~<span class="o">]</span><span class="c1"># systemctl set-default graphical.target  </span>
-~<span class="o">]</span><span class="c1"># systemctl start graphical.target  </span>
-<span class="o">[</span>Add GUI <span class="o">](</span>https://access.redhat.com/solutions/5238?tour<span class="o">=</span><span class="m">6</span><span class="o">)</span>
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">[nexusrepo]</span>
+<span class="na">name</span><span class="o">=</span><span class="s">Nexus Repository</span>
+<span class="na">baseurl</span><span class="o">=</span><span class="s">http://localhost:8081/repository/yum-google-chrome/</span>
+<span class="na">enabled</span><span class="o">=</span><span class="s">1</span>
+<span class="na">gpgcheck</span><span class="o">=</span><span class="s">1</span>
+<span class="na">gpgkey</span><span class="o">=</span><span class="s">https://dl-ssl.google.com/linux/linux_signing_key.pub</span>
+<span class="na">priority</span><span class="o">=</span><span class="s">1</span>
 </pre></div>
 </td></tr></table>
+
+<ol>
+<li>yum check-update  ---&gt; this command will check if there is any update for this package</li>
+<li>
+<p>google-chrome repo fetched from nexus
+<img alt="nexus repo" src="../images/Nexus/nexus-yum2.png" /></p>
+</li>
+<li>
+<p>Browse yum proxy repository in nexus<br />
+<img alt="Browse yum proxy" src="../images/Nexus/nexus-yum3.png" /></p>
+</li>
+<li>
+<p>Update existing package using yum update as shown below
+<img alt="yum update" src="../images/Nexus/nexus-yum4.png" /></p>
+</li>
+<li>
+<p>Browse yum proxy to verify if new package is downloaded
+<img alt="yum nexus proxy updated" src="../images/Nexus/nexus-yum5.png" /> </p>
+</li>
+</ol>
                 
                   
                 
@@ -597,7 +517,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../nexus/" title="Nexus" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Networking/" title="Networking" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -606,19 +526,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Nexus
+                Networking
               </span>
             </div>
           </a>
         
         
-          <a href="../ubuntu/" title="Ubuntu" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../RHEL/" title="RedHat" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Ubuntu
+                RedHat
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
