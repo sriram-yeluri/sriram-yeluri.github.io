@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>/Ansible/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -20,7 +20,7 @@
     
     <url>
      <loc>/CentOS/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -28,7 +28,7 @@
     
     <url>
      <loc>/Docker/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -36,7 +36,23 @@
     
     <url>
      <loc>/git/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/golang/</loc>
+     <lastmod>2018-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/Jenkins/</loc>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -44,7 +60,7 @@
     
     <url>
      <loc>/kde_configuration/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -52,7 +68,7 @@
     
     <url>
      <loc>/linux_learning/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -60,7 +76,7 @@
     
     <url>
      <loc>/Networking/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -68,7 +84,7 @@
     
     <url>
      <loc>/nexus/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -76,7 +92,7 @@
     
     <url>
      <loc>/RHEL/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -84,7 +100,7 @@
     
     <url>
      <loc>/ubuntu/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -92,7 +108,7 @@
     
     <url>
      <loc>/vim/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -100,7 +116,7 @@
     
     <url>
      <loc>/Virtualbox/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -108,7 +124,7 @@
     
     <url>
      <loc>/vnc_config/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -116,7 +132,7 @@
     
     <url>
      <loc>/yum/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -124,7 +140,7 @@
     
     <url>
      <loc>/references/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -132,7 +148,7 @@
     
     <url>
      <loc>/about/</loc>
-     <lastmod>2018-05-25</lastmod>
+     <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

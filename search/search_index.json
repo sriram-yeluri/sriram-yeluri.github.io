@@ -87,13 +87,68 @@
         }, 
         {
             "location": "/git/", 
-            "text": "Update git config\n\n\ngit config --global user.email \"yeluris@gmail.com\"\ngit config --global user.name \"Sriram Yeluri\"", 
+            "text": "Update git config\n\n\n1\n2\ngit config --global user.email \nyeluris@gmail.com\n  \ngit config --global user.name \nSriram Yeluri", 
             "title": "Git"
         }, 
         {
             "location": "/git/#update-git-config", 
-            "text": "git config --global user.email \"yeluris@gmail.com\"\ngit config --global user.name \"Sriram Yeluri\"", 
+            "text": "1\n2 git config --global user.email  yeluris@gmail.com   \ngit config --global user.name  Sriram Yeluri", 
             "title": "Update git config"
+        }, 
+        {
+            "location": "/golang/", 
+            "text": "Go is an opensource programming launguage developed by Google.\n\n\nGo is very similar to C programming lauguage.\n\n\nGo provides garbage collection, type safety, dynamic-typing capability.\n\n\nGo provides a rich standard library, called as packages - \ngoPackages\n\n\n\n\nGetting Started\n\n\n\n\nHow to install and set up Go\n\n\nHow to set custom goPATH\n\n\nHow to write Go Code\n\n\n\n\n\n\nGOPATH\n\n\nGOPATH must not be the same path as your Go installation\n\ngopath can be any directory on your system\n\nEdit your \n~/.bash_profile\n and add the line: \nexport GOPATH=$HOME/go\n\nsource your \n~/.bash_profile\n : \nsource ~/.bash_profile\n\n\n\n\n\n\nGOBIN\n\n\nSet the GOBIN path to generate a binary file when go install is run.\n\nexport GOBIN=$HOME/go/bin\n\n\n\n\nWorkspaces\n\n\nWorkspace in go is a directory hierarchy with 3 directories at its root\n\n\n\n\nsrc : contains go source files.    \n\n\npkg : contains go packages.   \n\n\nbin : contains executable binaries.    \n\n\n\n\nReference Links\n\n\ngolang Tutorial\n\n\ngolang wiki page\n\n\nGo Projects", 
+            "title": "Golang"
+        }, 
+        {
+            "location": "/golang/#getting-started", 
+            "text": "How to install and set up Go  How to set custom goPATH  How to write Go Code    GOPATH  GOPATH must not be the same path as your Go installation \ngopath can be any directory on your system \nEdit your  ~/.bash_profile  and add the line:  export GOPATH=$HOME/go \nsource your  ~/.bash_profile  :  source ~/.bash_profile    GOBIN  Set the GOBIN path to generate a binary file when go install is run. export GOBIN=$HOME/go/bin", 
+            "title": "Getting Started"
+        }, 
+        {
+            "location": "/golang/#workspaces", 
+            "text": "Workspace in go is a directory hierarchy with 3 directories at its root   src : contains go source files.      pkg : contains go packages.     bin : contains executable binaries.", 
+            "title": "Workspaces"
+        }, 
+        {
+            "location": "/golang/#reference-links", 
+            "text": "golang Tutorial  golang wiki page", 
+            "title": "Reference Links"
+        }, 
+        {
+            "location": "/golang/#go-projects", 
+            "text": "", 
+            "title": "Go Projects"
+        }, 
+        {
+            "location": "/Jenkins/", 
+            "text": "Jenkins code snippets\n\n\nHow to test NodeJS\n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\nnode(\nlinux\n) {\nstage(\nLinux :: NodeJS :: Default\n ) { \n    sh \nnode --version\n \n}\nstage(\nLinux :: NodeJS :: v8.9.0\n ) {\n    def nodejs = tool name: \nLinux NodeJS v8.9.0\n, type: \njenkins.plugins.nodejs.tools.NodeJSInstallation\n\n    sh \n$ {nodejs}/bin/node --version\n\n}\nstage(\nLinux :: NodeJS :: v8.9.0:: withEnv\n ) {\n    withEnv([\nPATH+NODE=\n${\ntool\n \nLinux NodeJS v8.9.0\n}\n/bin\n]){ \n        sh \nnode --version\n \n        }\n    }\n}\n\n\n\n\n\n\nParallel Pipelines\n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\ndef labels = [\n    \nnode1\n, \n    \nnode2\n \n    ]\ndef builders = [:]\nfor (x in labels) {\n    def label = x \n    // Create a map to pass in to the \nparallel\n step so we can fire all the builds at once\n    builders[label] = {\n      node(label) {\n        // build steps that should happen on all nodes go here\n\n        }\n    }\n}\nparallel builders\n\n\n\n\n\n\nAndroid sdk tools update\n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\n18\nnode(\nandroid\n){\n    stage(\ncheckoutSCM\n){\n        git credentialsId: \nSOLO_BUILDER\n, url: \nhttps://p-bitbucket.nl.eu.abnamro.com:7999/scm/solo/solo-jenkins.git\n\n    }\n    stage(\nValidation\n){\n        echo \nvalidated\n\n    }\n    stage(\nBuildTool Install\n){\n        dir(\nslave-android/provisioning/install\n){\n            sh \nls -ltr\n\n            sh \nchmod +x install-android-sdk-buildtools.sh\n\n            sh \n./install-android-sdk-buildtools.sh 26 0.1\n\n        }\n    }\n    stage(\ncleanUp\n){\n       deleteDir() \n    }\n}\n\n\n\n\n\n\nHow to update android sdk from Jenkins pipeline\n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\ndef ANDROID_HOME=\n/Users/jenkinsci/Library/Android/sdk\n  [New situation will be ANDROID_HOME=\n$HOME\n/SOLO/Android/sdk\n ]\nnode(\nandroid\n){\n    stage(\nList AndriodSdk\n){\n        sh \necho \n${\nANDROID_HOME\n}\n\n        sh \ncd /Users/jenkinsci/Library/Android/sdk/tools/bin/ \n\n            ./sdkmanager --list --proxy=http --proxy_host=xxxxxxxx.com --proxy_port=8080\n\n    }\n    stage(\nUpdate AndriodSdk\n){\n        sh \necho \n${\nANDROID_HOME\n}\n\n        sh \ncd /Users/jenkinsci/Library/Android/sdk/tools/bin/ \n\n            ./sdkmanager --update --proxy=http --proxy_host=xxxxxxxxx.com --proxy_port=8080\n\n    }\n    stage(\nCheck AndroidVersion\n){\n        sh \ncd /Users/jenkinsci/Library/Android/sdk/tools/bin/ \n\n            ./sdkmanager --version\n\n    }\n}", 
+            "title": "Jenkins"
+        }, 
+        {
+            "location": "/Jenkins/#jenkins-code-snippets", 
+            "text": "", 
+            "title": "Jenkins code snippets"
+        }, 
+        {
+            "location": "/Jenkins/#how-to-test-nodejs", 
+            "text": "1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14 node( linux ) {\nstage( Linux :: NodeJS :: Default  ) { \n    sh  node --version  \n}\nstage( Linux :: NodeJS :: v8.9.0  ) {\n    def nodejs = tool name:  Linux NodeJS v8.9.0 , type:  jenkins.plugins.nodejs.tools.NodeJSInstallation \n    sh  $ {nodejs}/bin/node --version \n}\nstage( Linux :: NodeJS :: v8.9.0:: withEnv  ) {\n    withEnv([ PATH+NODE= ${ tool   Linux NodeJS v8.9.0 } /bin ]){ \n        sh  node --version  \n        }\n    }\n}", 
+            "title": "How to test NodeJS"
+        }, 
+        {
+            "location": "/Jenkins/#parallel-pipelines", 
+            "text": "1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16 def labels = [\n     node1 , \n     node2  \n    ]\ndef builders = [:]\nfor (x in labels) {\n    def label = x \n    // Create a map to pass in to the  parallel  step so we can fire all the builds at once\n    builders[label] = {\n      node(label) {\n        // build steps that should happen on all nodes go here\n\n        }\n    }\n}\nparallel builders", 
+            "title": "Parallel Pipelines"
+        }, 
+        {
+            "location": "/Jenkins/#android-sdk-tools-update", 
+            "text": "1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\n18 node( android ){\n    stage( checkoutSCM ){\n        git credentialsId:  SOLO_BUILDER , url:  https://p-bitbucket.nl.eu.abnamro.com:7999/scm/solo/solo-jenkins.git \n    }\n    stage( Validation ){\n        echo  validated \n    }\n    stage( BuildTool Install ){\n        dir( slave-android/provisioning/install ){\n            sh  ls -ltr \n            sh  chmod +x install-android-sdk-buildtools.sh \n            sh  ./install-android-sdk-buildtools.sh 26 0.1 \n        }\n    }\n    stage( cleanUp ){\n       deleteDir() \n    }\n}", 
+            "title": "Android sdk tools update"
+        }, 
+        {
+            "location": "/Jenkins/#how-to-update-android-sdk-from-jenkins-pipeline", 
+            "text": "1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17 def ANDROID_HOME= /Users/jenkinsci/Library/Android/sdk   [New situation will be ANDROID_HOME= $HOME /SOLO/Android/sdk  ]\nnode( android ){\n    stage( List AndriodSdk ){\n        sh  echo  ${ ANDROID_HOME } \n        sh  cd /Users/jenkinsci/Library/Android/sdk/tools/bin/  \n            ./sdkmanager --list --proxy=http --proxy_host=xxxxxxxx.com --proxy_port=8080 \n    }\n    stage( Update AndriodSdk ){\n        sh  echo  ${ ANDROID_HOME } \n        sh  cd /Users/jenkinsci/Library/Android/sdk/tools/bin/  \n            ./sdkmanager --update --proxy=http --proxy_host=xxxxxxxxx.com --proxy_port=8080 \n    }\n    stage( Check AndroidVersion ){\n        sh  cd /Users/jenkinsci/Library/Android/sdk/tools/bin/  \n            ./sdkmanager --version \n    }\n}", 
+            "title": "How to update android sdk from Jenkins pipeline"
         }, 
         {
             "location": "/kde_configuration/", 
@@ -307,7 +362,7 @@
         }, 
         {
             "location": "/references/", 
-            "text": "Note\n\n\nNote details with 2 tab spaces in the beginning.\n\n\n\n\n\n\n With Title\n\n\nNode details for example\n\n\n\n\n\n\nNote details.    \n\n\n\n\n\n\nTitle\n\n\nInformation details for example\n\n\n\n\n\n\nTip\n\n\nhttps://squidfunk.github.io/mkdocs-material/extensions/admonition/\n\nhttps://squidfunk.github.io/mkdocs-material/extensions/codehilite/", 
+            "text": "Note\n\n\nNote details with 2 tab spaces in the beginning.\n\n\n\n\n\n\n With Title\n\n\nNode details for example\n\n\n\n\n\n\nNote details.    \n\n\n\n\n\n\nTitle\n\n\nInformation details for example\n\n\n\n\n\n\nTip\n\n\nhttps://squidfunk.github.io/mkdocs-material/extensions/admonition/\n\nhttps://squidfunk.github.io/mkdocs-material/extensions/codehilite/  \n\n\n\n\n\n\nInfo\n\n\nThis is example for information\n\n\n\n\n\n\nSuccess\n\n\nThis example is displayed successfully\n\n\n\n\n\n\nQuestion\n\n\nThis example is to question ?\n\n\n\n\n\n\nWarning\n\n\nYou are warned with this example ....\n\n\n\n\n\n\nFailure\n\n\nFailed to show this example ...\n\n\n\n\n\n\nDanger\n\n\nVery dangerous if you do not read this example \n\n\n\n\n\n\nBug\n\n\nFinally i found the bug in your code.. lets fix it\n\n\n\n\n\n\nExample\n\n\nWhy don't you give some examples to the users following this page\n\n\n\n\n\n\nQuote\n\n\nI quoted this example \n!!! quote", 
             "title": "Ref"
         }, 
         {
