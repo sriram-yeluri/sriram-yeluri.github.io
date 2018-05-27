@@ -19,14 +19,6 @@
 
     
     <url>
-     <loc>/CentOS/</loc>
-     <lastmod>2018-05-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
      <loc>/Docker/</loc>
      <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
@@ -42,75 +34,85 @@
     
 
     
+        
     <url>
-     <loc>/golang/</loc>
+     <loc>/golang/golang/</loc>
      <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     
 
     
+        
     <url>
-     <loc>/Jenkins/</loc>
+     <loc>/Jenkins/Jenkins-code-snippets/</loc>
      <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     
 
     
+        
     <url>
-     <loc>/kde_configuration/</loc>
+     <loc>/Linux/linux_learning/</loc>
      <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>/Linux/vim/</loc>
+     <lastmod>2018-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Linux/CentOS/</loc>
+     <lastmod>2018-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Linux/RHEL/</loc>
+     <lastmod>2018-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Linux/ubuntu/</loc>
+     <lastmod>2018-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Linux/kde_configuration/</loc>
+     <lastmod>2018-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Linux/Networking/</loc>
+     <lastmod>2018-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Linux/yum/</loc>
+     <lastmod>2018-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
+        
     <url>
-     <loc>/linux_learning/</loc>
+     <loc>/Nexus/nexus-yum/</loc>
      <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-    <url>
-     <loc>/Networking/</loc>
-     <lastmod>2018-05-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>/nexus/</loc>
-     <lastmod>2018-05-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>/RHEL/</loc>
-     <lastmod>2018-05-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>/ubuntu/</loc>
-     <lastmod>2018-05-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>/vim/</loc>
-     <lastmod>2018-05-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
+        
     
 
     
@@ -124,14 +126,6 @@
     
     <url>
      <loc>/vnc_config/</loc>
-     <lastmod>2018-05-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>/yum/</loc>
      <lastmod>2018-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
