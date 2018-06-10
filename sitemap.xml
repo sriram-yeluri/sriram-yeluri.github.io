@@ -41,6 +41,18 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>/golang/sonar-cli/</loc>
+     <lastmod>2018-06-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/golang/jenkins-cli/</loc>
+     <lastmod>2018-06-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
