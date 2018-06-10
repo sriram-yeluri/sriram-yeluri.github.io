@@ -295,6 +295,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-to-get-go-help" title="How to get go Help" class="md-nav__link">
+    How to get go Help
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#go-projects" title="Go Projects" class="md-nav__link">
     Go Projects
   </a>
@@ -604,6 +611,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-to-get-go-help" title="How to get go Help" class="md-nav__link">
+    How to get go Help
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#go-projects" title="Go Projects" class="md-nav__link">
     Go Projects
   </a>
@@ -656,8 +670,10 @@ source your <code>~/.bash_profile</code> : <code>source ~/.bash_profile</code></
 <h3 id="workspaces">Workspaces</h3>
 <p>Workspace in go is a directory hierarchy with 3 directories at its root</p>
 <ul>
-<li>src : contains go source files.    </li>
-<li>pkg : contains go packages.   </li>
+<li>src : The src directory contains source code.The path below src determines the import path or executable name.    </li>
+<li>pkg : contains go installed package objects. Each target operating system and architecture pair has its own subdirectory of pkg<br />
+        format: pkg/GOOS_GOARCH<br />
+        example: pkg/linux_amd64 </li>
 <li>bin : contains executable binaries.    </li>
 </ul>
 <h3 id="reference-links">Reference Links</h3>
@@ -665,6 +681,14 @@ source your <code>~/.bash_profile</code> : <code>source ~/.bash_profile</code></
 <a href="https://en.wikipedia.org/wiki/Go_(programming_language)">golang wiki page</a></p>
 <h3 id="golang-ides">golang IDEs</h3>
 <p><a href="https://github.com/DisposaBoy/GoSublime">goplugin for Sublime Text</a></p>
+<h3 id="how-to-get-go-help">How to get go Help</h3>
+<p>For any help related to go , use <br />
+<code>go help &lt;command&gt;</code><br />
+examples:<br />
+<code>go help build</code> <br />
+<code>go help install</code>  <br />
+<code>go help clean</code><br />
+<code>go help gopath</code>  </p>
 <h3 id="go-projects">Go Projects</h3>
                 
                   

@@ -77,7 +77,7 @@
         }, 
         {
             "location": "/golang/golang/", 
-            "text": "Go is an opensource programming launguage developed by Google.\n\n\nGo is very similar to C programming lauguage.\n\n\nGo provides garbage collection, type safety, dynamic-typing capability.\n\n\nGo provides a rich standard library, called as packages - \ngoPackages\n\n\n\n\nGetting Started\n\n\n\n\nHow to install and set up Go\n\n\nHow to set custom goPATH\n\n\nHow to write Go Code\n\n\n\n\n\n\nGOPATH\n\n\nGOPATH must not be the same path as your Go installation\n\ngopath can be any directory on your system\n\nEdit your \n~/.bash_profile\n and add the line: \nexport GOPATH=$HOME/go\n\nsource your \n~/.bash_profile\n : \nsource ~/.bash_profile\n\n\n\n\n\n\nGOBIN\n\n\nSet the GOBIN path to generate a binary file when go install is run.\n\nexport GOBIN=$HOME/go/bin\n\n\n\n\nWorkspaces\n\n\nWorkspace in go is a directory hierarchy with 3 directories at its root\n\n\n\n\nsrc : contains go source files.    \n\n\npkg : contains go packages.   \n\n\nbin : contains executable binaries.    \n\n\n\n\nReference Links\n\n\ngolang Tutorial\n\n\ngolang wiki page\n\n\ngolang IDEs\n\n\ngoplugin for Sublime Text\n\n\nGo Projects", 
+            "text": "Go is an opensource programming launguage developed by Google.\n\n\nGo is very similar to C programming lauguage.\n\n\nGo provides garbage collection, type safety, dynamic-typing capability.\n\n\nGo provides a rich standard library, called as packages - \ngoPackages\n\n\n\n\nGetting Started\n\n\n\n\nHow to install and set up Go\n\n\nHow to set custom goPATH\n\n\nHow to write Go Code\n\n\n\n\n\n\nGOPATH\n\n\nGOPATH must not be the same path as your Go installation\n\ngopath can be any directory on your system\n\nEdit your \n~/.bash_profile\n and add the line: \nexport GOPATH=$HOME/go\n\nsource your \n~/.bash_profile\n : \nsource ~/.bash_profile\n\n\n\n\n\n\nGOBIN\n\n\nSet the GOBIN path to generate a binary file when go install is run.\n\nexport GOBIN=$HOME/go/bin\n\n\n\n\nWorkspaces\n\n\nWorkspace in go is a directory hierarchy with 3 directories at its root\n\n\n\n\nsrc : The src directory contains source code.The path below src determines the import path or executable name.    \n\n\npkg : contains go installed package objects. Each target operating system and architecture pair has its own subdirectory of pkg\n\n        format: pkg/GOOS_GOARCH\n\n        example: pkg/linux_amd64 \n\n\nbin : contains executable binaries.    \n\n\n\n\nReference Links\n\n\ngolang Tutorial\n\n\ngolang wiki page\n\n\ngolang IDEs\n\n\ngoplugin for Sublime Text\n\n\nHow to get go Help\n\n\nFor any help related to go , use \n\n\ngo help \ncommand\n\nexamples:\n\n\ngo help build\n \n\n\ngo help install\n  \n\n\ngo help clean\n\n\ngo help gopath\n  \n\n\nGo Projects", 
             "title": "golang"
         }, 
         {
@@ -87,7 +87,7 @@
         }, 
         {
             "location": "/golang/golang/#workspaces", 
-            "text": "Workspace in go is a directory hierarchy with 3 directories at its root   src : contains go source files.      pkg : contains go packages.     bin : contains executable binaries.", 
+            "text": "Workspace in go is a directory hierarchy with 3 directories at its root   src : The src directory contains source code.The path below src determines the import path or executable name.      pkg : contains go installed package objects. Each target operating system and architecture pair has its own subdirectory of pkg \n        format: pkg/GOOS_GOARCH \n        example: pkg/linux_amd64   bin : contains executable binaries.", 
             "title": "Workspaces"
         }, 
         {
@@ -99,6 +99,11 @@
             "location": "/golang/golang/#golang-ides", 
             "text": "goplugin for Sublime Text", 
             "title": "golang IDEs"
+        }, 
+        {
+            "location": "/golang/golang/#how-to-get-go-help", 
+            "text": "For any help related to go , use   go help  command \nexamples:  go help build    go help install     go help clean  go help gopath", 
+            "title": "How to get go Help"
         }, 
         {
             "location": "/golang/golang/#go-projects", 
