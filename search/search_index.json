@@ -111,34 +111,34 @@
             "title": "Go Projects"
         }, 
         {
-            "location": "/golang/sonar-cli/", 
-            "text": "Project Sonarqube CLI\n\n\ngit-hub repository\n\n\nsonar-cli", 
+            "location": "/golang/golang-projects/", 
+            "text": "golang projects\n\n\nsonar-cli\n\n\ngit-hub repo : \nsonar-cli\n\n\nsonar-cli project is a cli application for sonarqube interface. This cli uses REST API calls of sonarqube.\nDetais about this cli and its usage are explained in the git-hub repo. \n\n\njenkins-cli\n\n\ngit-hub repo : \njenkins-cli\n\n\njenkins-cli project is a cli application for jenkins interface. This cli uses REST API calls of Jenkins.\nDetais about this cli and its usage are explained in the git-hub repo.", 
+            "title": "goland-projects"
+        }, 
+        {
+            "location": "/golang/golang-projects/#golang-projects", 
+            "text": "", 
+            "title": "golang projects"
+        }, 
+        {
+            "location": "/golang/golang-projects/#sonar-cli", 
+            "text": "", 
             "title": "sonar-cli"
         }, 
         {
-            "location": "/golang/sonar-cli/#project-sonarqube-cli", 
+            "location": "/golang/golang-projects/#git-hub-repo-sonar-cli", 
+            "text": "sonar-cli project is a cli application for sonarqube interface. This cli uses REST API calls of sonarqube.\nDetais about this cli and its usage are explained in the git-hub repo.", 
+            "title": "git-hub repo : sonar-cli"
+        }, 
+        {
+            "location": "/golang/golang-projects/#jenkins-cli", 
             "text": "", 
-            "title": "Project Sonarqube CLI"
-        }, 
-        {
-            "location": "/golang/sonar-cli/#git-hub-repository", 
-            "text": "sonar-cli", 
-            "title": "git-hub repository"
-        }, 
-        {
-            "location": "/golang/jenkins-cli/", 
-            "text": "Project Jenkins CLI\n\n\ngit-hub repository\n\n\njenkins-cli", 
             "title": "jenkins-cli"
         }, 
         {
-            "location": "/golang/jenkins-cli/#project-jenkins-cli", 
-            "text": "", 
-            "title": "Project Jenkins CLI"
-        }, 
-        {
-            "location": "/golang/jenkins-cli/#git-hub-repository", 
-            "text": "jenkins-cli", 
-            "title": "git-hub repository"
+            "location": "/golang/golang-projects/#git-hub-repo-jenkins-cli", 
+            "text": "jenkins-cli project is a cli application for jenkins interface. This cli uses REST API calls of Jenkins.\nDetais about this cli and its usage are explained in the git-hub repo.", 
+            "title": "git-hub repo : jenkins-cli"
         }, 
         {
             "location": "/Jenkins/Jenkins-code-snippets/", 
