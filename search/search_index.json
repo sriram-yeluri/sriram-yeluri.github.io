@@ -422,7 +422,7 @@
         }, 
         {
             "location": "/Virtualbox/", 
-            "text": "VBox Logs\n\n\nFor Vbox if you encounter errors, check vbox logs at \n\n/var/log/vboxadd-install.log\n\n\nvboxmanage list vms\nvboxmanage showvminfo Centos7 --details\n\n\nhttps://blogs.oracle.com/scoter/networking-in-virtualbox-v2\n\n\nManage Vbox\n\n\nTo display list of vms on the vbox:\nvboxmanage list vms\n\n\nipod-not-recognised-in-windows-guest\n\n\n\n\nInstall Extension Pack.\n\n\nInstall Guest Additions in the Windows 7 guest machine.\n\n\nselect USB 2.0 as the controller in Settings\n\n\n\n\nInstall virtualbox Extension pack\n\n\nLink\n\n\n1\n2\n3\n4\n5\n1. wget http://download.virtualbox.org/virtualbox/5.2.4/Oracle_VM_VirtualBox_Extension_Pack-5.2.4-119785.vbox-extpack \n2. sudo vboxmanage extpack Oracle_VM_VirtualBox_Extension_Pack-5.2.4-119785.vbox-extpack\n3. Once installed, you can see at : File -\n Preferences -\n Extensions\n4. To verify if it has been successfully installed, we may list all installed extension packs:\nVBoxManage list extpacks\n\n\n\n\n\n\nVBoxImages:\n\n\nCentos7 Image \n\n centos7/sriram.yeluri\n\n root/login123\n\n\nCloning VMs in VirtualBox\n\n\nCloneVMs\n\n\n/etc/sysconfig/network-scripts/ifcfg-enp0s3\n/etc/udev/rules.d/*-persistent-net.rules\n\n\nRun VM in background\n\n\nGet the VM name by the command # vboxmanage list vms  \n\n\n1\n2\n3\nvboxmanage list vms\nVBoxManage startvm \n${\nVM_NAME\n}\n --type headless\nvboxmanage startvm centos7vm2 --type headless", 
+            "text": "VBox Logs\n\n\nFor Vbox if you encounter errors, check vbox logs at \n\n/var/log/vboxadd-install.log\n\n\nvboxmanage list vms\nvboxmanage showvminfo Centos7 --details\n\n\nhttps://blogs.oracle.com/scoter/networking-in-virtualbox-v2\n\n\nManage Vbox\n\n\nTo display list of vms on the vbox:\nvboxmanage list vms\n\n\nipod-not-recognised-in-windows-guest\n\n\n\n\nInstall Extension Pack.\n\n\nInstall Guest Additions in the Windows 7 guest machine.\n\n\nselect USB 2.0 as the controller in Settings\n\n\n\n\nInstall virtualbox Extension pack\n\n\nLink\n\n\n1\n2\n3\n4\n5\n1. wget http://download.virtualbox.org/virtualbox/5.2.4/Oracle_VM_VirtualBox_Extension_Pack-5.2.4-119785.vbox-extpack \n2. sudo vboxmanage extpack Oracle_VM_VirtualBox_Extension_Pack-5.2.4-119785.vbox-extpack\n3. Once installed, you can see at : File -\n Preferences -\n Extensions\n4. To verify if it has been successfully installed, we may list all installed extension packs:\nVBoxManage list extpacks\n\n\n\n\n\n\nCloning VMs in VirtualBox\n\n\nCloneVMs\n\n\n/etc/sysconfig/network-scripts/ifcfg-enp0s3\n/etc/udev/rules.d/*-persistent-net.rules\n\n\nRun VM in background\n\n\nGet the VM name by the command # vboxmanage list vms  \n\n\n1\n2\n3\nvboxmanage list vms\nVBoxManage startvm \n${\nVM_NAME\n}\n --type headless\nvboxmanage startvm centos7vm2 --type headless", 
             "title": "VirtualBox"
         }, 
         {
@@ -444,11 +444,6 @@
             "location": "/Virtualbox/#install-virtualbox-extension-pack", 
             "text": "Link  1\n2\n3\n4\n5 1. wget http://download.virtualbox.org/virtualbox/5.2.4/Oracle_VM_VirtualBox_Extension_Pack-5.2.4-119785.vbox-extpack \n2. sudo vboxmanage extpack Oracle_VM_VirtualBox_Extension_Pack-5.2.4-119785.vbox-extpack\n3. Once installed, you can see at : File -  Preferences -  Extensions\n4. To verify if it has been successfully installed, we may list all installed extension packs:\nVBoxManage list extpacks", 
             "title": "Install virtualbox Extension pack"
-        }, 
-        {
-            "location": "/Virtualbox/#vboximages", 
-            "text": "Centos7 Image   centos7/sriram.yeluri  root/login123", 
-            "title": "VBoxImages:"
         }, 
         {
             "location": "/Virtualbox/#cloning-vms-in-virtualbox", 
