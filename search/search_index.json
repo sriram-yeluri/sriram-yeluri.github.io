@@ -16,52 +16,102 @@
             "title": "Ansible"
         }, 
         {
-            "location": "/Docker/", 
+            "location": "/AWS/aws/", 
+            "text": "Amazon Web Services", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/AWS/aws/#amazon-web-services", 
+            "text": "", 
+            "title": "Amazon Web Services"
+        }, 
+        {
+            "location": "/AWS/cft/", 
+            "text": "CloudFormation Template\n\n\n\n\nA template is a JSON- or YAML-formatted text file that describes your AWS infrastructure. \n\n\nA template is a declaration of the AWS resources that make up a stack. \n\n\n\n\nTemplate Anatomy\n  \n\n\nReferences\n  \n\n\nCloudFormation support for Visual Studio Code", 
+            "title": "CFT"
+        }, 
+        {
+            "location": "/AWS/cft/#cloudformation-template", 
+            "text": "A template is a JSON- or YAML-formatted text file that describes your AWS infrastructure.   A template is a declaration of the AWS resources that make up a stack.    Template Anatomy     References     CloudFormation support for Visual Studio Code", 
+            "title": "CloudFormation Template"
+        }, 
+        {
+            "location": "/AWS/s3/", 
+            "text": "Simple Storage Service", 
+            "title": "S3"
+        }, 
+        {
+            "location": "/AWS/s3/#simple-storage-service", 
+            "text": "", 
+            "title": "Simple Storage Service"
+        }, 
+        {
+            "location": "/Bitbucket/bitbucket/", 
+            "text": "Atlassian Bitbucket", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/Bitbucket/bitbucket/#atlassian-bitbucket", 
+            "text": "", 
+            "title": "Atlassian Bitbucket"
+        }, 
+        {
+            "location": "/Fortify/fortify/", 
+            "text": "Fortify", 
+            "title": "Fortify"
+        }, 
+        {
+            "location": "/Fortify/fortify/#fortify", 
+            "text": "", 
+            "title": "Fortify"
+        }, 
+        {
+            "location": "/Docker/Docker/", 
             "text": "DOCKER\n\n\n\n\nDocker EE on RHEL 7.4\n\n\n  \n\n\nInstall Docker CE on Centos7\n\n\nInstall Docker CE on Centos7\n\n\nhttps://store.docker.com/  \n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\ndockerCE\n\n# yum install -y yum-utils \\\n\n  device-mapper-persistent-data \n\\\n\n  lvm2\n\n\n# yum-config-manager \\\n\n    --add-repo \n\\\n\n    https://download.docker.com/linux/centos/docker-ce.repo\n\n\n# yum install docker-ce\n\ndockerCE\n\n\n# usermod -aG docker \nuser_id\n This is to run docker as non root user\n\n\n\n[\nroot@centos7vm ~\n]\n# systemctl enable docker\n\nCreated symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.\n\n\n[\nroot@centos7vm ~\n]\n# chkconfig docker on\n\nNote: Forwarding request to \nsystemctl enable docker.service\n.\n\n\n# service docker start\n\n\n\n# docker ps\n\n\n\n\n\n\n\nNexus\n\n\nSonatype Nexus Docker with persisent data\n\n\n1\n2\n# chown -R 200 /home/sriram.yeluri/Data/NEXUS_DATA  \n\n\n# docker run -d -p 8081:8081 --name nexus -v /home/sriram.yeluri/Data/NEXUS_DATA:/nexus-data sonatype/nexus3\n\n\n\n\n\n\n\n\n\nexample\n\n\nhttp://192.168.2.5:8081/\n\n\n\n\nJenkins : https://store.docker.com/images/jenkins\n\n\nJenkins\n\n\nJenkins with persisent data\n\n\n1\n2\n3\n# docker run -p 8080:8080 -p 50000:50000 --name jenkins -v /home/sriram.yeluri/Data/JENKINS_HOME:/var/jenkins_home jenkins\n\n\n\n# docker run -p 8080:8080 -p 50000:50000 --name jenkins -v /home/sriram.yeluri/Data/JENKINS_HOME:/var/jenkins_home jenkins/jenkins:lts\n\n\n\n\n\n\n\nJenkins Operations Center - JOC\n\n\n1\n# docker run -p 8089:8080 -p 50001:50000 --name cjoc -v /home/sriram.yeluri/Data/JENKINS_OC_HOME:/var/jenkins_home cloudbees/jenkins-operations-center\n\n\n\n\n\n\n\nInitial seret can be found at : /var/jenkins_home/secrets/initialAdminPassword  \n\n\n\n\nexample\n\n\nhttp://192.168.2.5:8080/  \n\n\n\n\nPostgres\n\n\n1\n# docker run --name postgres -e POSTGRES_PASSWORD=secret -d postgres -v /home/sriram.yeluri/Data/PG_DATA:/var/lib/postgresql/data", 
             "title": "Docker"
         }, 
         {
-            "location": "/Docker/#docker", 
+            "location": "/Docker/Docker/#docker", 
             "text": "", 
             "title": "DOCKER"
         }, 
         {
-            "location": "/Docker/#docker-ee-on-rhel-74", 
+            "location": "/Docker/Docker/#docker-ee-on-rhel-74", 
             "text": "", 
             "title": "Docker EE on RHEL 7.4"
         }, 
         {
-            "location": "/Docker/#install-docker-ce-on-centos7", 
+            "location": "/Docker/Docker/#install-docker-ce-on-centos7", 
             "text": "Install Docker CE on Centos7  https://store.docker.com/     1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23 dockerCE # yum install -y yum-utils \\ \n  device-mapper-persistent-data  \\ \n  lvm2 # yum-config-manager \\ \n    --add-repo  \\ \n    https://download.docker.com/linux/centos/docker-ce.repo # yum install docker-ce \ndockerCE # usermod -aG docker  user_id  This is to run docker as non root user  [ root@centos7vm ~ ] # systemctl enable docker \nCreated symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service. [ root@centos7vm ~ ] # chkconfig docker on \nNote: Forwarding request to  systemctl enable docker.service . # service docker start  # docker ps", 
             "title": "Install Docker CE on Centos7"
         }, 
         {
-            "location": "/Docker/#nexus", 
+            "location": "/Docker/Docker/#nexus", 
             "text": "", 
             "title": "Nexus"
         }, 
         {
-            "location": "/Docker/#sonatype-nexus-docker-with-persisent-data", 
+            "location": "/Docker/Docker/#sonatype-nexus-docker-with-persisent-data", 
             "text": "1\n2 # chown -R 200 /home/sriram.yeluri/Data/NEXUS_DATA    # docker run -d -p 8081:8081 --name nexus -v /home/sriram.yeluri/Data/NEXUS_DATA:/nexus-data sonatype/nexus3     example  http://192.168.2.5:8081/   Jenkins : https://store.docker.com/images/jenkins", 
             "title": "Sonatype Nexus Docker with persisent data"
         }, 
         {
-            "location": "/Docker/#jenkins", 
+            "location": "/Docker/Docker/#jenkins", 
             "text": "", 
             "title": "Jenkins"
         }, 
         {
-            "location": "/Docker/#jenkins-with-persisent-data", 
+            "location": "/Docker/Docker/#jenkins-with-persisent-data", 
             "text": "1\n2\n3 # docker run -p 8080:8080 -p 50000:50000 --name jenkins -v /home/sriram.yeluri/Data/JENKINS_HOME:/var/jenkins_home jenkins  # docker run -p 8080:8080 -p 50000:50000 --name jenkins -v /home/sriram.yeluri/Data/JENKINS_HOME:/var/jenkins_home jenkins/jenkins:lts", 
             "title": "Jenkins with persisent data"
         }, 
         {
-            "location": "/Docker/#jenkins-operations-center-joc", 
+            "location": "/Docker/Docker/#jenkins-operations-center-joc", 
             "text": "1 # docker run -p 8089:8080 -p 50001:50000 --name cjoc -v /home/sriram.yeluri/Data/JENKINS_OC_HOME:/var/jenkins_home cloudbees/jenkins-operations-center    Initial seret can be found at : /var/jenkins_home/secrets/initialAdminPassword     example  http://192.168.2.5:8080/", 
             "title": "Jenkins Operations Center - JOC"
         }, 
         {
-            "location": "/Docker/#postgres", 
+            "location": "/Docker/Docker/#postgres", 
             "text": "1 # docker run --name postgres -e POSTGRES_PASSWORD=secret -d postgres -v /home/sriram.yeluri/Data/PG_DATA:/var/lib/postgresql/data", 
             "title": "Postgres"
         }, 
@@ -113,7 +163,7 @@
         {
             "location": "/golang/golang-projects/", 
             "text": "golang projects\n\n\nsonar-cli\n\n\ngit-hub repo : \nsonar-cli\n\n\nsonar-cli project is a cli application for sonarqube interface. This cli uses REST API calls of sonarqube.\nDetais about this cli and its usage are explained in the git-hub repo. \n\n\njenkins-cli\n\n\ngit-hub repo : \njenkins-cli\n\n\njenkins-cli project is a cli application for jenkins interface. This cli uses REST API calls of Jenkins.\nDetais about this cli and its usage are explained in the git-hub repo.", 
-            "title": "goland-projects"
+            "title": "golang-projects"
         }, 
         {
             "location": "/golang/golang-projects/#golang-projects", 
@@ -142,7 +192,7 @@
         }, 
         {
             "location": "/Jenkins/Jenkins-code-snippets/", 
-            "text": "How to test NodeJS\n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\nnode(\nlinux\n) {\nstage(\nLinux :: NodeJS :: Default\n ) { \n    sh \nnode --version\n \n}\nstage(\nLinux :: NodeJS :: v8.9.0\n ) {\n    def nodejs = tool name: \nLinux NodeJS v8.9.0\n, type: \njenkins.plugins.nodejs.tools.NodeJSInstallation\n\n    sh \n$ {nodejs}/bin/node --version\n\n}\nstage(\nLinux :: NodeJS :: v8.9.0:: withEnv\n ) {\n    withEnv([\nPATH+NODE=\n${\ntool\n \nLinux NodeJS v8.9.0\n}\n/bin\n]){ \n        sh \nnode --version\n \n        }\n    }\n}\n\n\n\n\n\n\nParallel Pipelines\n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\ndef labels = [\n    \nnode1\n, \n    \nnode2\n \n    ]\ndef builders = [:]\nfor (x in labels) {\n    def label = x \n    // Create a map to pass in to the \nparallel\n step so we can fire all the builds at once\n    builders[label] = {\n      node(label) {\n        // build steps that should happen on all nodes go here\n\n        }\n    }\n}\nparallel builders\n\n\n\n\n\n\nAndroid sdk tools update\n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\n18\nnode(\nandroid\n){\n    stage(\ncheckoutSCM\n){\n        git credentialsId: \nSOLO_BUILDER\n, url: \nhttps://p-bitbucket.nl.eu.abnamro.com:7999/scm/solo/solo-jenkins.git\n\n    }\n    stage(\nValidation\n){\n        echo \nvalidated\n\n    }\n    stage(\nBuildTool Install\n){\n        dir(\nslave-android/provisioning/install\n){\n            sh \nls -ltr\n\n            sh \nchmod +x install-android-sdk-buildtools.sh\n\n            sh \n./install-android-sdk-buildtools.sh 26 0.1\n\n        }\n    }\n    stage(\ncleanUp\n){\n       deleteDir() \n    }\n}\n\n\n\n\n\n\nHow to update android sdk from Jenkins pipeline\n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\ndef ANDROID_HOME=\n/Users/jenkinsci/Library/Android/sdk\n  [New situation will be ANDROID_HOME=\n$HOME\n/SOLO/Android/sdk\n ]\nnode(\nandroid\n){\n    stage(\nList AndriodSdk\n){\n        sh \necho \n${\nANDROID_HOME\n}\n\n        sh \ncd /Users/jenkinsci/Library/Android/sdk/tools/bin/ \n\n            ./sdkmanager --list --proxy=http --proxy_host=xxxxxxxx.com --proxy_port=8080\n\n    }\n    stage(\nUpdate AndriodSdk\n){\n        sh \necho \n${\nANDROID_HOME\n}\n\n        sh \ncd /Users/jenkinsci/Library/Android/sdk/tools/bin/ \n\n            ./sdkmanager --update --proxy=http --proxy_host=xxxxxxxxx.com --proxy_port=8080\n\n    }\n    stage(\nCheck AndroidVersion\n){\n        sh \ncd /Users/jenkinsci/Library/Android/sdk/tools/bin/ \n\n            ./sdkmanager --version\n\n    }\n}", 
+            "text": "How to test NodeJS\n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\nnode(\nlinux\n) {\nstage(\nLinux :: NodeJS :: Default\n ) { \n    sh \nnode --version\n \n}\nstage(\nLinux :: NodeJS :: v8.9.0\n ) {\n    def nodejs = tool name: \nLinux NodeJS v8.9.0\n, type: \njenkins.plugins.nodejs.tools.NodeJSInstallation\n\n    sh \n$ {nodejs}/bin/node --version\n\n}\nstage(\nLinux :: NodeJS :: v8.9.0:: withEnv\n ) {\n    withEnv([\nPATH+NODE=\n${\ntool\n \nLinux NodeJS v8.9.0\n}\n/bin\n]){ \n        sh \nnode --version\n \n        }\n    }\n}\n\n\n\n\n\n\nParallel Pipelines\n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\ndef labels = [\n    \nnode1\n, \n    \nnode2\n \n    ]\ndef builders = [:]\nfor (x in labels) {\n    def label = x \n    // Create a map to pass in to the \nparallel\n step so we can fire all the builds at once\n    builders[label] = {\n      node(label) {\n        // build steps that should happen on all nodes go here\n\n        }\n    }\n}\nparallel builders\n\n\n\n\n\n\nAndroid sdk tools update\n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\n18\nnode(\nandroid\n){\n    stage(\ncheckoutSCM\n){\n        git credentialsId: \nCREDENTIAL_ID\n, url: \nrepo-url\n\n    }\n    stage(\nValidation\n){\n        echo \nvalidated\n\n    }\n    stage(\nBuildTool Install\n){\n        dir(\nslave-android/provisioning/install\n){\n            sh \nls -ltr\n\n            sh \nchmod +x install-android-sdk-buildtools.sh\n\n            sh \n./install-android-sdk-buildtools.sh 26 0.1\n\n        }\n    }\n    stage(\ncleanUp\n){\n       deleteDir() \n    }\n}\n\n\n\n\n\n\nHow to update android sdk from Jenkins pipeline\n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\ndef ANDROID_HOME=\n/Users/jenkinsci/Library/Android/sdk\n  [New situation will be ANDROID_HOME=\n$HOME\n/SOLO/Android/sdk\n ]\nnode(\nandroid\n){\n    stage(\nList AndriodSdk\n){\n        sh \necho \n${\nANDROID_HOME\n}\n\n        sh \ncd /Users/jenkinsci/Library/Android/sdk/tools/bin/ \n\n            ./sdkmanager --list --proxy=http --proxy_host=xxxxxxxx.com --proxy_port=8080\n\n    }\n    stage(\nUpdate AndriodSdk\n){\n        sh \necho \n${\nANDROID_HOME\n}\n\n        sh \ncd /Users/jenkinsci/Library/Android/sdk/tools/bin/ \n\n            ./sdkmanager --update --proxy=http --proxy_host=xxxxxxxxx.com --proxy_port=8080\n\n    }\n    stage(\nCheck AndroidVersion\n){\n        sh \ncd /Users/jenkinsci/Library/Android/sdk/tools/bin/ \n\n            ./sdkmanager --version\n\n    }\n}", 
             "title": "Jenkins-code-snippets"
         }, 
         {
@@ -157,7 +207,7 @@
         }, 
         {
             "location": "/Jenkins/Jenkins-code-snippets/#android-sdk-tools-update", 
-            "text": "1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\n18 node( android ){\n    stage( checkoutSCM ){\n        git credentialsId:  SOLO_BUILDER , url:  https://p-bitbucket.nl.eu.abnamro.com:7999/scm/solo/solo-jenkins.git \n    }\n    stage( Validation ){\n        echo  validated \n    }\n    stage( BuildTool Install ){\n        dir( slave-android/provisioning/install ){\n            sh  ls -ltr \n            sh  chmod +x install-android-sdk-buildtools.sh \n            sh  ./install-android-sdk-buildtools.sh 26 0.1 \n        }\n    }\n    stage( cleanUp ){\n       deleteDir() \n    }\n}", 
+            "text": "1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\n18 node( android ){\n    stage( checkoutSCM ){\n        git credentialsId:  CREDENTIAL_ID , url:  repo-url \n    }\n    stage( Validation ){\n        echo  validated \n    }\n    stage( BuildTool Install ){\n        dir( slave-android/provisioning/install ){\n            sh  ls -ltr \n            sh  chmod +x install-android-sdk-buildtools.sh \n            sh  ./install-android-sdk-buildtools.sh 26 0.1 \n        }\n    }\n    stage( cleanUp ){\n       deleteDir() \n    }\n}", 
             "title": "Android sdk tools update"
         }, 
         {
@@ -167,12 +217,12 @@
         }, 
         {
             "location": "/Linux/linux_learning/", 
-            "text": "List of Topics\n\n\n\n\nLinux File System\n\n\nFiles and Permissions\n\n\nLinux Basic Commands\n\n\nSudo access and root\n\n\nUser and Group Management\n\n\nService Management\n\n\nCurl and Wget\n\n\nSSH : seecure access\n\n\nSSH : Transferring with scp and sftp\n\n\nBash Scripting", 
+            "text": "List of Topics\n\n\n\n\nLinux File System\n\n\nFiles and Permissions\n\n\nLinux Basic Commands\n\n\nSudo access and root\n\n\nUser and Group Management\n\n\nService Management\n\n\nCurl and Wget\n\n\nSSH : secure access\n\n\nSSH : Transferring with scp and sftp\n\n\nBash Scripting", 
             "title": "Overview"
         }, 
         {
             "location": "/Linux/linux_learning/#list-of-topics", 
-            "text": "Linux File System  Files and Permissions  Linux Basic Commands  Sudo access and root  User and Group Management  Service Management  Curl and Wget  SSH : seecure access  SSH : Transferring with scp and sftp  Bash Scripting", 
+            "text": "Linux File System  Files and Permissions  Linux Basic Commands  Sudo access and root  User and Group Management  Service Management  Curl and Wget  SSH : secure access  SSH : Transferring with scp and sftp  Bash Scripting", 
             "title": "List of Topics"
         }, 
         {
@@ -316,6 +366,16 @@
             "title": "How to configure Static IP address"
         }, 
         {
+            "location": "/Linux/Scripting/bash/", 
+            "text": "Shell scripting in bash\n\n\nbash wikibook", 
+            "title": "bash"
+        }, 
+        {
+            "location": "/Linux/Scripting/bash/#shell-scripting-in-bash", 
+            "text": "bash wikibook", 
+            "title": "Shell scripting in bash"
+        }, 
+        {
             "location": "/Linux/yum/", 
             "text": "YUM broken\n\n\n1\n2\n3\n4\n5\n6\n###\n \nYUM\n \nnot\n \nworking\n \non\n \nCentos\n \nand\n \ngave\n \nbelow\n \nerror\n \n:\n\n\ncould\n \nnot\n \nretrieve\n \nmirrorlist\n \nhttp\n://\nmirrorlist\n.\ncentos\n.\norg\n/?\nrelease\n=\n7\narch\n=\nx86_64\nrepo\n=\nextras\ninfra\n=\nstock\n \nerror\n \nwas\n\n\n14\n:\n \ncurl\n#\n6\n \n-\n \nCould not resolve host: mirrorlist.centos.org; Unknown error\n\n\n\n###\n \nTo\n \nFix\n \nabove\n \nissue\n \n:\n \ngo\n \nto\n \n/\netc\n/\nresolve\n.\nconf\n \nand\n \nadd\n/\nupdate\n \nnameserver\n\n\nnameserver\n \n8\n.\n8\n.\n8\n.\n8\n\n\n\n\n\n\n\nHow to rebuild the yum database\n\n\n1\n2\n3\n4\n# yum clean all\n\n\n# rm -f /var/lib/rpm/__db*\n\n\n# rpm --rebuilddb\n\n\n# yum update", 
             "title": "yum"
@@ -339,6 +399,26 @@
             "location": "/Nexus/nexus-yum/#yum-repositories-in-nexus", 
             "text": "Create a repo of type yum (example as shown below)       Create a repo file in /etc/yum.repos.d/nexus.repo      1\n2\n3\n4\n5\n6\n7 [nexusrepo]  name = Nexus Repository  baseurl = http://localhost:8081/repository/yum-google-chrome/  enabled = 1  gpgcheck = 1  gpgkey = https://dl-ssl.google.com/linux/linux_signing_key.pub  priority = 1     yum check-update  ---  this command will check if there is any update for this package   google-chrome repo fetched from nexus    Browse yum proxy repository in nexus     Update existing package using yum update as shown below    Browse yum proxy to verify if new package is downloaded", 
             "title": "YUM repositories in Nexus"
+        }, 
+        {
+            "location": "/OpenLDAP/openldap/", 
+            "text": "OpenLDAP\n\n\nOpenLDAP", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/OpenLDAP/openldap/#openldap", 
+            "text": "OpenLDAP", 
+            "title": "OpenLDAP"
+        }, 
+        {
+            "location": "/SonarQube/sonarqube/", 
+            "text": "SonarSource SonarQube - Continuous Code Quality\n\n\nSonarQube", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/SonarQube/sonarqube/#sonarsource-sonarqube-continuous-code-quality", 
+            "text": "SonarQube", 
+            "title": "SonarSource SonarQube - Continuous Code Quality"
         }, 
         {
             "location": "/Virtualbox/", 
@@ -397,8 +477,8 @@
         }, 
         {
             "location": "/references/", 
-            "text": "Note\n\n\nNote details with 2 tab spaces in the beginning.\n\n\n\n\n\n\n With Title\n\n\nNode details for example\n\n\n\n\n\n\nNote details.    \n\n\n\n\n\n\nTitle\n\n\nInformation details for example\n\n\n\n\n\n\nTip\n\n\nhttps://squidfunk.github.io/mkdocs-material/extensions/admonition/\n\nhttps://squidfunk.github.io/mkdocs-material/extensions/codehilite/  \n\n\n\n\n\n\nInfo\n\n\nThis is example for information\n\n\n\n\n\n\nSuccess\n\n\nThis example is displayed successfully\n\n\n\n\n\n\nQuestion\n\n\nThis example is to question ?\n\n\n\n\n\n\nWarning\n\n\nYou are warned with this example ....\n\n\n\n\n\n\nFailure\n\n\nFailed to show this example ...\n\n\n\n\n\n\nDanger\n\n\nVery dangerous if you do not read this example \n\n\n\n\n\n\nBug\n\n\nFinally i found the bug in your code.. lets fix it\n\n\n\n\n\n\nExample\n\n\nWhy don't you give some examples to the users following this page\n\n\n\n\n\n\nQuote\n\n\nI quoted this example \n!!! quote", 
-            "title": "Ref"
+            "text": "Markdown\n   \n\n\n\n\nNote\n\n\nNote details with 2 tab spaces in the beginning.\n\n\n\n\n\n\n With Title\n\n\nNode details for example\n\n\n\n\n\n\nNote details.    \n\n\n\n\n\n\nTitle\n\n\nInformation details for example\n\n\n\n\n\n\nTip\n\n\nhttps://squidfunk.github.io/mkdocs-material/extensions/admonition/\n\nhttps://squidfunk.github.io/mkdocs-material/extensions/codehilite/  \n\n\n\n\n\n\nInfo\n\n\nThis is example for information\n\n\n\n\n\n\nSuccess\n\n\nThis example is displayed successfully\n\n\n\n\n\n\nQuestion\n\n\nThis example is to question ?\n\n\n\n\n\n\nWarning\n\n\nYou are warned with this example ....\n\n\n\n\n\n\nFailure\n\n\nFailed to show this example ...\n\n\n\n\n\n\nDanger\n\n\nVery dangerous if you do not read this example \n\n\n\n\n\n\nBug\n\n\nFinally i found the bug in your code.. lets fix it\n\n\n\n\n\n\nExample\n\n\nWhy don't you give some examples to the users following this page\n\n\n\n\n\n\nQuote\n\n\nI quoted this example \n!!! quote", 
+            "title": "References"
         }, 
         {
             "location": "/about/", 
