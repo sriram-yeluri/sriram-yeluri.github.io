@@ -426,6 +426,11 @@
             "title": "How to configure Static IP address"
         }, 
         {
+            "location": "/Linux/ssh/", 
+            "text": "", 
+            "title": "SSH"
+        }, 
+        {
             "location": "/Linux/Scripting/bash/", 
             "text": "Shell scripting in bash\n\n\nbash wikibook", 
             "title": "bash"

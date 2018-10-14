@@ -154,6 +154,12 @@
     </url>
         
     <url>
+     <loc>/Linux/ssh/</loc>
+     <lastmod>2018-10-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc></loc>
      <lastmod></lastmod>
      <changefreq>daily</changefreq>
