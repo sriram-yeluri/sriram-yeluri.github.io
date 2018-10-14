@@ -116,14 +116,74 @@
             "title": "Postgres"
         }, 
         {
+            "location": "/Docker/dockerfile/", 
+            "text": "page under construction  .....\n\n\n\n\nDockerfile is a simple text file to create a docker image.  \n\n\nDefault file name is \"Dockerfile\"  \n\n\n\n\nBasic Dockerfile syntax\n\n\n1\n2\n3\n4\n5\nENV\nFROM\nMAINTAINER\nRUN\nCMD\n\n\n\n\n\n\nReferences\n\n\nDetailed Explanation of Dockerfile\n\n\nVideo References:\n\n\nhttps://www.youtube.com/watch?v=LQjaJINkQXY", 
+            "title": "Dockerfile"
+        }, 
+        {
+            "location": "/Docker/dockerfile/#page-under-construction", 
+            "text": "Dockerfile is a simple text file to create a docker image.    Default file name is \"Dockerfile\"", 
+            "title": "page under construction  ....."
+        }, 
+        {
+            "location": "/Docker/dockerfile/#basic-dockerfile-syntax", 
+            "text": "1\n2\n3\n4\n5 ENV\nFROM\nMAINTAINER\nRUN\nCMD", 
+            "title": "Basic Dockerfile syntax"
+        }, 
+        {
+            "location": "/Docker/dockerfile/#references", 
+            "text": "Detailed Explanation of Dockerfile", 
+            "title": "References"
+        }, 
+        {
+            "location": "/Docker/dockerfile/#video-references", 
+            "text": "https://www.youtube.com/watch?v=LQjaJINkQXY", 
+            "title": "Video References:"
+        }, 
+        {
             "location": "/git/", 
-            "text": "Update git config\n\n\n1\n2\ngit config --global user.email \nyeluris@gmail.com\n  \ngit config --global user.name \nSriram Yeluri", 
+            "text": "Distributed Version Control System : GIT\n\n\nGit config\n\n\n1\n2\n3\n$ git config --global user.email \nyeluris@gmail.com\n \n$ git config --global user.name \nSriram Yeluri\n  \n$ git config --list  \n\n\n\n\n\n\nBasic Git commands\n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n$ git init \n(\ninitialize a \nlocal\n repository\n)\n  \n$ git add --all \n(\nor\n)\n  \n$ git add \n[\nfilename\n]\n \n(\nor\n)\n \n$ git add . \n[\nall changed files \nfor\n commit\n]\n  \n$ git status \n(\nshow the status of working tree\n)\n  \n$ git commit -m \ncommit message\n  \n$ git push  \n(\npush to remote repository\n)\n  \n$ git pull \n(\nfetch changes from remote repository\n)\n  \n$ git clone \n[\ngit repo url\n]\n  \n$ git fetch \n(\nfetch branches, tags from remote repository\n)\n\n\n\n\n\n\n\nRemove files from staging area\n\n\n1\n2\n$ git reset file_name  \n(\nor\n)\n  \n$ git reset  \n(\nto remove all files from staging area\n)\n  \n\n\n\n\n\n\n\n\nGit Tagging\n\n\nGit tagging is used to mark a important history like a release v1.0 \n\n\nBy default git push will not commit the tags to remote server, instead we have to explicitly mention the remote   \n\n\n\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n$ git add -a v1.0 -m \nReason for tagging\n\n$ git push origin v1.0\n\nIf there are multiple tags, \nthen\n use --tags flag  \n$ git push origin --tags \n(\nto push all tags\n)\n  \n\nTo list out all the available tags\n$ git tag \n$ git tag -l \n(\nor\n)\n --list  \n(\noptional\n)\n\n\n\n\n\n\n\nInformation about Remote Repository\n\n\n1\n2\n$ git remote -v  \n$ git branch -a  \n(\ndisplays all branches that are present remotely and locally\n)\n\n\n\n\n\n\n\nGit branching\n\n\n1\n2\n$ git branch branch_name  \n$ git checkout branch_name  \n\n\n\n\n\n\nReferences\n\n\ngit-scm\n\n\npro git book\n  \n\n\nVideo References\n\n\nGit Tutorial for Beginners: Command-Line Fundamentals", 
             "title": "Git"
         }, 
         {
-            "location": "/git/#update-git-config", 
-            "text": "1\n2 git config --global user.email  yeluris@gmail.com   \ngit config --global user.name  Sriram Yeluri", 
-            "title": "Update git config"
+            "location": "/git/#distributed-version-control-system-git", 
+            "text": "", 
+            "title": "Distributed Version Control System : GIT"
+        }, 
+        {
+            "location": "/git/#git-config", 
+            "text": "1\n2\n3 $ git config --global user.email  yeluris@gmail.com  \n$ git config --global user.name  Sriram Yeluri   \n$ git config --list", 
+            "title": "Git config"
+        }, 
+        {
+            "location": "/git/#basic-git-commands", 
+            "text": "1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10 $ git init  ( initialize a  local  repository )   \n$ git add --all  ( or )   \n$ git add  [ filename ]   ( or )  \n$ git add .  [ all changed files  for  commit ]   \n$ git status  ( show the status of working tree )   \n$ git commit -m  commit message   \n$ git push   ( push to remote repository )   \n$ git pull  ( fetch changes from remote repository )   \n$ git clone  [ git repo url ]   \n$ git fetch  ( fetch branches, tags from remote repository )", 
+            "title": "Basic Git commands"
+        }, 
+        {
+            "location": "/git/#remove-files-from-staging-area", 
+            "text": "1\n2 $ git reset file_name   ( or )   \n$ git reset   ( to remove all files from staging area )       Git Tagging  Git tagging is used to mark a important history like a release v1.0   By default git push will not commit the tags to remote server, instead we have to explicitly mention the remote      1\n2\n3\n4\n5\n6\n7\n8\n9 $ git add -a v1.0 -m  Reason for tagging \n$ git push origin v1.0\n\nIf there are multiple tags,  then  use --tags flag  \n$ git push origin --tags  ( to push all tags )   \n\nTo list out all the available tags\n$ git tag \n$ git tag -l  ( or )  --list   ( optional )", 
+            "title": "Remove files from staging area"
+        }, 
+        {
+            "location": "/git/#information-about-remote-repository", 
+            "text": "1\n2 $ git remote -v  \n$ git branch -a   ( displays all branches that are present remotely and locally )", 
+            "title": "Information about Remote Repository"
+        }, 
+        {
+            "location": "/git/#git-branching", 
+            "text": "1\n2 $ git branch branch_name  \n$ git checkout branch_name", 
+            "title": "Git branching"
+        }, 
+        {
+            "location": "/git/#references", 
+            "text": "git-scm  pro git book", 
+            "title": "References"
+        }, 
+        {
+            "location": "/git/#video-references", 
+            "text": "Git Tutorial for Beginners: Command-Line Fundamentals", 
+            "title": "Video References"
         }, 
         {
             "location": "/golang/golang/", 
