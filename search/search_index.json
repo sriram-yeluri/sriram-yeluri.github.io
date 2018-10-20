@@ -287,12 +287,12 @@
         }, 
         {
             "location": "/Linux/vim/", 
-            "text": "VIM reference\n\n\nSearch and replace\n\n%s/text/replacement/g  \n\n\nSearch and replace with confirmation\n\n%s/text/replacement/gc  \n\n\nForward Search : /\n\nBackward Search : ?\n\nSearch Next : n\n\nSearch back : N\n\nMove to begining of line : 0\n\nMove to end of line : $\n\nGo to end of file : G\n\nGo to beginning of file : gg", 
+            "text": "VIM reference\n\n\nSearch and replace\n\n%s/text/replacement/g  \n\n\nSearch and replace with confirmation\n\n%s/text/replacement/gc  \n\n\nForward Search : /\n\nBackward Search : ?\n\nSearch Next : n\n\nSearch back : N\n\nMove to begining of line : 0\n\nMove to end of line : $\n\nGo to end of file : G  (shift + g)\n\nGo to beginning of file : gg", 
             "title": "Vim"
         }, 
         {
             "location": "/Linux/vim/#vim-reference", 
-            "text": "Search and replace \n%s/text/replacement/g    Search and replace with confirmation \n%s/text/replacement/gc    Forward Search : / \nBackward Search : ? \nSearch Next : n \nSearch back : N \nMove to begining of line : 0 \nMove to end of line : $ \nGo to end of file : G \nGo to beginning of file : gg", 
+            "text": "Search and replace \n%s/text/replacement/g    Search and replace with confirmation \n%s/text/replacement/gc    Forward Search : / \nBackward Search : ? \nSearch Next : n \nSearch back : N \nMove to begining of line : 0 \nMove to end of line : $ \nGo to end of file : G  (shift + g) \nGo to beginning of file : gg", 
             "title": "VIM reference"
         }, 
         {
@@ -362,7 +362,7 @@
         }, 
         {
             "location": "/Linux/ubuntu/", 
-            "text": "Ubuntu\n\n\n\n\nHow to take screenshot ?\n\n\nHold shift + prtScr , mouse turns to a cross. Select the area to screenshot.\nImage will be saved to pictures folder by default.To copy to Clipboard, use: Ctrl + Shift + PrtScn.", 
+            "text": "Ubuntu\n\n\n\n\nHow to take a screenshot ?\n\n\n\n\nTip\n\n\nHold shift + prtScr , mouse turns to a cross. Select the area to screenshot.\nImage will be saved to pictures folder by default.To copy to Clipboard, use: Ctrl + Shift + PrtScn.", 
             "title": "Ubuntu"
         }, 
         {
@@ -371,9 +371,9 @@
             "title": "Ubuntu"
         }, 
         {
-            "location": "/Linux/ubuntu/#how-to-take-screenshot", 
-            "text": "Hold shift + prtScr , mouse turns to a cross. Select the area to screenshot.\nImage will be saved to pictures folder by default.To copy to Clipboard, use: Ctrl + Shift + PrtScn.", 
-            "title": "How to take screenshot ?"
+            "location": "/Linux/ubuntu/#how-to-take-a-screenshot", 
+            "text": "Tip  Hold shift + prtScr , mouse turns to a cross. Select the area to screenshot.\nImage will be saved to pictures folder by default.To copy to Clipboard, use: Ctrl + Shift + PrtScn.", 
+            "title": "How to take a screenshot ?"
         }, 
         {
             "location": "/Linux/kde_configuration/", 
@@ -427,8 +427,18 @@
         }, 
         {
             "location": "/Linux/ssh/", 
-            "text": "", 
+            "text": "How SSH communication is established\n\n\n\n\n\n\nThe client sends a request to the server for a secure session. The server responds by sending its X.509 digital certificate to the client. \n\n\n\n\n\n\nThe client receives the server's X.509 digital certificate. \n\n\n\n\n\n\nThe client authenticates the server, using a list of known certificate authorities. \n\n\n\n\n\n\nThe client generates a random symmetric key and encrypts it using server's public key.\n\n\n\n\n\n\nThe server decrypts the message with private key and extracts the symmetric key sent by client.\n\n\n\n\n\n\nThe client and server now both know the symmetric key and can use the SSL encryption process to encrypt and decrypt the information contained in the client request and the server response.   \n\n\n\n\n\n\nHow to generate SSH keypair\n\n\n1\n2\n3\n4\n5\nssh-keygen -t rsa -b 2048 -C \nyour_email@example.com\n \n\nssh keygen will create 2 files in .ssh default path which are id_rsa and id_rsa.pub  \nid_rsa file will have private key  \nid_rsa.pub will have the public key", 
             "title": "SSH"
+        }, 
+        {
+            "location": "/Linux/ssh/#how-ssh-communication-is-established", 
+            "text": "The client sends a request to the server for a secure session. The server responds by sending its X.509 digital certificate to the client.     The client receives the server's X.509 digital certificate.     The client authenticates the server, using a list of known certificate authorities.     The client generates a random symmetric key and encrypts it using server's public key.    The server decrypts the message with private key and extracts the symmetric key sent by client.    The client and server now both know the symmetric key and can use the SSL encryption process to encrypt and decrypt the information contained in the client request and the server response.", 
+            "title": "How SSH communication is established"
+        }, 
+        {
+            "location": "/Linux/ssh/#how-to-generate-ssh-keypair", 
+            "text": "1\n2\n3\n4\n5 ssh-keygen -t rsa -b 2048 -C  your_email@example.com  \n\nssh keygen will create 2 files in .ssh default path which are id_rsa and id_rsa.pub  \nid_rsa file will have private key  \nid_rsa.pub will have the public key", 
+            "title": "How to generate SSH keypair"
         }, 
         {
             "location": "/Linux/Scripting/bash/", 
@@ -537,7 +547,7 @@
         }, 
         {
             "location": "/references/", 
-            "text": "Markdown\n   \n\n\n\n\nNote\n\n\nNote details with 2 tab spaces in the beginning.\n\n\n\n\n\n\n With Title\n\n\nNode details for example\n\n\n\n\n\n\nNote details.    \n\n\n\n\n\n\nTitle\n\n\nInformation details for example\n\n\n\n\n\n\nTip\n\n\nhttps://squidfunk.github.io/mkdocs-material/extensions/admonition/\n\nhttps://squidfunk.github.io/mkdocs-material/extensions/codehilite/  \n\n\n\n\n\n\nInfo\n\n\nThis is example for information\n\n\n\n\n\n\nSuccess\n\n\nThis example is displayed successfully\n\n\n\n\n\n\nQuestion\n\n\nThis example is to question ?\n\n\n\n\n\n\nWarning\n\n\nYou are warned with this example ....\n\n\n\n\n\n\nFailure\n\n\nFailed to show this example ...\n\n\n\n\n\n\nDanger\n\n\nVery dangerous if you do not read this example \n\n\n\n\n\n\nBug\n\n\nFinally i found the bug in your code.. lets fix it\n\n\n\n\n\n\nExample\n\n\nWhy don't you give some examples to the users following this page\n\n\n\n\n\n\nQuote\n\n\nI quoted this example \n!!! quote", 
+            "text": "Markdown Syntax\n   \n\n\n\n\nNote\n\n\nNote details with 2 tab spaces in the beginning.\n\n\n\n\n\n\n With Title\n\n\nNode details for example\n\n\n\n\n\n\nNote details.    \n\n\n\n\n\n\nTitle\n\n\nInformation details for example\n\n\n\n\n\n\nTip\n\n\nhttps://squidfunk.github.io/mkdocs-material/extensions/admonition/\n\nhttps://squidfunk.github.io/mkdocs-material/extensions/codehilite/  \n\n\n\n\n\n\nInfo\n\n\nThis is example for information\n\n\n\n\n\n\nSuccess\n\n\nThis example is displayed successfully\n\n\n\n\n\n\nQuestion\n\n\nThis example is to question ?\n\n\n\n\n\n\nWarning\n\n\nYou are warned with this example ....\n\n\n\n\n\n\nFailure\n\n\nFailed to show this example ...\n\n\n\n\n\n\nDanger\n\n\nVery dangerous if you do not read this example \n\n\n\n\n\n\nBug\n\n\nFinally i found the bug in your code.. lets fix it\n\n\n\n\n\n\nExample\n\n\nWhy don't you give some examples to the users following this page\n\n\n\n\n\n\nQuote\n\n\nI quoted this example \n!!! quote", 
             "title": "References"
         }, 
         {

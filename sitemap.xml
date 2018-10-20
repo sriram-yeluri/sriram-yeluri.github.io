@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>/Ansible/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -21,19 +21,19 @@
         
     <url>
      <loc>/AWS/aws/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/AWS/cft/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/AWS/s3/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -43,7 +43,7 @@
         
     <url>
      <loc>/Bitbucket/bitbucket/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -53,7 +53,7 @@
         
     <url>
      <loc>/Fortify/fortify/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -63,13 +63,13 @@
         
     <url>
      <loc>/Docker/Docker/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Docker/dockerfile/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -78,7 +78,7 @@
     
     <url>
      <loc>/git/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -87,13 +87,13 @@
         
     <url>
      <loc>/golang/golang/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/golang/golang-projects/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -103,7 +103,7 @@
         
     <url>
      <loc>/Jenkins/Jenkins-code-snippets/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -113,49 +113,49 @@
         
     <url>
      <loc>/Linux/linux_learning/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Linux/vim/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Linux/CentOS/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Linux/RHEL/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Linux/ubuntu/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Linux/kde_configuration/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Linux/Networking/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Linux/ssh/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -167,7 +167,7 @@
         
     <url>
      <loc>/Linux/yum/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -177,7 +177,7 @@
         
     <url>
      <loc>/Nexus/nexus-yum/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -187,7 +187,7 @@
         
     <url>
      <loc>/OpenLDAP/openldap/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -197,7 +197,7 @@
         
     <url>
      <loc>/SonarQube/sonarqube/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -206,7 +206,7 @@
     
     <url>
      <loc>/Virtualbox/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -214,7 +214,7 @@
     
     <url>
      <loc>/vnc_config/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -222,7 +222,7 @@
     
     <url>
      <loc>/references/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -230,7 +230,7 @@
     
     <url>
      <loc>/about/</loc>
-     <lastmod>2018-10-14</lastmod>
+     <lastmod>2018-10-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
