@@ -397,18 +397,18 @@
         }, 
         {
             "location": "/Linux/Networking/", 
-            "text": "To display all network interfaces\n\n\nifconfig -a\n\n\nTo start an interface\n\n\nifup eth0\n\n\nTo display all pci devices\n\n\nlspci\n\n\nnmcli : command line tool for network management\n\n\nList out all network interfaces and status\n\n\n1\n# nmcli -p \n\n\n\n\n\n\n\nHow to configure Static IP address\n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39\n40\n41\n42\n43\n44\n# vi /etc/sysconfig/network-scripts/ifcfg-eth0\n\n\n\n## Typical Configuration \n\n\nDEVICE\n=\neth0\n\n\nONBOOT\n=\nyes\n\nNETBOOT\n=\nyes\n\nUUID\n=\n41171a6f-bce1-44de-8a6e-cf5e782f8bd6\n\n\nIPV6INIT\n=\nyes\n\nBOOTPROTO\n=\ndhcp\n\nHWADDR\n=\n00:08:a2:0a:ba:b8\n\n\nTYPE\n=\nEthernet\n\nNAME\n=\neth0\n\n\n\n\n### Updated Configuration\n\n\nHWADDR\n=\n00\n:08:A2:0A:BA:B8\n\nTYPE\n=\nEthernet\n\nBOOTPROTO\n=\nnone\n\n# Server IP #\n\n\nIPADDR\n=\n192\n.168.2.203\n\n# Subnet #\n\n\nPREFIX\n=\n24\n\n\n# Set default gateway IP #\n\n\nGATEWAY\n=\n192\n.168.2.254\n\n# Set dns servers #\n\n\nDNS1\n=\n192\n.168.2.254\n\nDNS2\n=\n8\n.8.8.8\n\nDNS3\n=\n8\n.8.4.4\n\nDEFROUTE\n=\nyes\n\nIPV4_FAILURE_FATAL\n=\nno\n\n# Disable ipv6 #\n\n\nIPV6INIT\n=\nno\n\nNAME\n=\neth0\n\n# This is system specific and can be created using \nuuidgen eth0\n command #\n\n\nUUID\n=\n41171a6f-bce1-44de-8a6e-cf5e782f8bd6\n\nDEVICE\n=\neth0\n\nONBOOT\n=\nyes\n\n\n# systemctl restart network\n\n\nVerify new IP settings: ip a s eth0\n\nVerify new routing settings: ip r\nVerify DNS servers settings: \n# cat /etc/resolv.conf", 
+            "text": "configure a network interface\n\n\n1\n2\n3\n4\n5\n# ifconfig -a\n\ndisplay all interfaces which are currently available, even \nif\n down\n\n\n# ifconfig -s\n\ndisplays a short list  \n\n\n\n\n\n\nTo start/stop an interface\n\n\n1\n2\nifup eth0  \nifdown eth0\n\n\n\n\n\n\nTo display all pci devices\n\n\nlspci\n\n\nnmcli : command line tool for network management\n\n\n1\n2\n# nmcli -p \n\nList out all network interfaces and status\n\n\n\n\n\n\nHow to configure Static IP address\n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n# vi /etc/sysconfig/network-scripts/ifcfg-eth0\n\n\n\n## Typical Configuration \n\n\nDEVICE\n=\neth0\n\n\nONBOOT\n=\nyes\n\nNETBOOT\n=\nyes\n\nUUID\n=\n41171a6f-bce1-44de-8a6e-cf5e782f8bd6\n\n\nIPV6INIT\n=\nyes\n\nBOOTPROTO\n=\ndhcp\n\nHWADDR\n=\n00:08:a2:0a:ba:b8\n\n\nTYPE\n=\nEthernet\n\nNAME\n=\neth0\n\n\n\n\n### Updated Configuration\n\n\nHWADDR\n=\n00\n:08:A2:0A:BA:B8\n\nTYPE\n=\nEthernet\n\nBOOTPROTO\n=\nnone\n\n# Server IP #\n\n\nIPADDR\n=\n192\n.168.2.203\n\n# Subnet #\n\n\nPREFIX\n=\n24\n\n\n# Set default gateway IP #\n\n\nGATEWAY\n=\n192\n.168.2.254\n\n# Set dns servers #\n\n\nDNS1\n=\n192\n.168.2.254\n\nDNS2\n=\n8\n.8.8.8\n\nDNS3\n=\n8\n.8.4.4\n\nDEFROUTE\n=\nyes\n\nIPV4_FAILURE_FATAL\n=\nno\n\n# Disable ipv6 #\n\n\nIPV6INIT\n=\nno\n\nNAME\n=\neth0\n\n# This is system specific and can be created using \nuuidgen eth0\n command #\n\n\nUUID\n=\n41171a6f-bce1-44de-8a6e-cf5e782f8bd6\n\nDEVICE\n=\neth0\n\nONBOOT\n=\nyes\n\n\n\n\n\n\nRestart network interface\n\n\n1\nsystemctl restart network\n\n\n\n\n\n\n1\n2\n3\n4\n5\n6\n7\n8\nVerify new IP settings: \nip a s eth0\n\nVerify new routing settings: \nip r\n\nVerify DNS servers settings: \ncat /etc/resolv.conf", 
             "title": "Networking"
         }, 
         {
-            "location": "/Linux/Networking/#to-display-all-network-interfaces", 
-            "text": "ifconfig -a", 
-            "title": "To display all network interfaces"
+            "location": "/Linux/Networking/#configure-a-network-interface", 
+            "text": "1\n2\n3\n4\n5 # ifconfig -a \ndisplay all interfaces which are currently available, even  if  down # ifconfig -s \ndisplays a short list", 
+            "title": "configure a network interface"
         }, 
         {
-            "location": "/Linux/Networking/#to-start-an-interface", 
-            "text": "ifup eth0", 
-            "title": "To start an interface"
+            "location": "/Linux/Networking/#to-startstop-an-interface", 
+            "text": "1\n2 ifup eth0  \nifdown eth0", 
+            "title": "To start/stop an interface"
         }, 
         {
             "location": "/Linux/Networking/#to-display-all-pci-devices", 
@@ -417,13 +417,18 @@
         }, 
         {
             "location": "/Linux/Networking/#nmcli-command-line-tool-for-network-management", 
-            "text": "List out all network interfaces and status  1 # nmcli -p", 
+            "text": "1\n2 # nmcli -p  \nList out all network interfaces and status", 
             "title": "nmcli : command line tool for network management"
         }, 
         {
             "location": "/Linux/Networking/#how-to-configure-static-ip-address", 
-            "text": "1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39\n40\n41\n42\n43\n44 # vi /etc/sysconfig/network-scripts/ifcfg-eth0  ## Typical Configuration   DEVICE = eth0  ONBOOT = yes NETBOOT = yes UUID = 41171a6f-bce1-44de-8a6e-cf5e782f8bd6  IPV6INIT = yes BOOTPROTO = dhcp HWADDR = 00:08:a2:0a:ba:b8  TYPE = Ethernet NAME = eth0  ### Updated Configuration  HWADDR = 00 :08:A2:0A:BA:B8 TYPE = Ethernet BOOTPROTO = none # Server IP #  IPADDR = 192 .168.2.203 # Subnet #  PREFIX = 24  # Set default gateway IP #  GATEWAY = 192 .168.2.254 # Set dns servers #  DNS1 = 192 .168.2.254 DNS2 = 8 .8.8.8 DNS3 = 8 .8.4.4 DEFROUTE = yes IPV4_FAILURE_FATAL = no # Disable ipv6 #  IPV6INIT = no NAME = eth0 # This is system specific and can be created using  uuidgen eth0  command #  UUID = 41171a6f-bce1-44de-8a6e-cf5e782f8bd6 DEVICE = eth0 ONBOOT = yes # systemctl restart network \n\nVerify new IP settings: ip a s eth0\n\nVerify new routing settings: ip r\nVerify DNS servers settings:  # cat /etc/resolv.conf", 
+            "text": "1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37 # vi /etc/sysconfig/network-scripts/ifcfg-eth0  ## Typical Configuration   DEVICE = eth0  ONBOOT = yes NETBOOT = yes UUID = 41171a6f-bce1-44de-8a6e-cf5e782f8bd6  IPV6INIT = yes BOOTPROTO = dhcp HWADDR = 00:08:a2:0a:ba:b8  TYPE = Ethernet NAME = eth0  ### Updated Configuration  HWADDR = 00 :08:A2:0A:BA:B8 TYPE = Ethernet BOOTPROTO = none # Server IP #  IPADDR = 192 .168.2.203 # Subnet #  PREFIX = 24  # Set default gateway IP #  GATEWAY = 192 .168.2.254 # Set dns servers #  DNS1 = 192 .168.2.254 DNS2 = 8 .8.8.8 DNS3 = 8 .8.4.4 DEFROUTE = yes IPV4_FAILURE_FATAL = no # Disable ipv6 #  IPV6INIT = no NAME = eth0 # This is system specific and can be created using  uuidgen eth0  command #  UUID = 41171a6f-bce1-44de-8a6e-cf5e782f8bd6 DEVICE = eth0 ONBOOT = yes", 
             "title": "How to configure Static IP address"
+        }, 
+        {
+            "location": "/Linux/Networking/#restart-network-interface", 
+            "text": "1 systemctl restart network   1\n2\n3\n4\n5\n6\n7\n8 Verify new IP settings: \nip a s eth0\n\nVerify new routing settings: \nip r\n\nVerify DNS servers settings: \ncat /etc/resolv.conf", 
+            "title": "Restart network interface"
         }, 
         {
             "location": "/Linux/Security/ssh/", 
@@ -442,8 +447,28 @@
         }, 
         {
             "location": "/Linux/Security/ssl_certificates/", 
+            "text": "How to obtain a SSL certificate\n\n\n\n\nCreate a Java Keystore\n\n\nCreate a CSR (certificate signing request)\n\n\nSend the CSR to Certificate Authority\n\n\nSSL certificate will be issued by CA\n\n\nImport the certificate to the keystore\n\n\nImport Intermediate certificate of CA to keystore\n\n\nCreate a trust chain of certificates\n\n\n\n\nHow to create a self signed certificate\n\n\nCA Certificates keystore path\n\n\n1\n2\n/etc/ssl/certs/java/cacerts  \nDefault password : changeit\n\n\n\n\n\n\nReference:\n\n\nGUI tool to manage keystores and certificates\n\n\nKeystore Explorer", 
+            "title": "SSL Certificates"
+        }, 
+        {
+            "location": "/Linux/Security/ssl_certificates/#how-to-obtain-a-ssl-certificate", 
+            "text": "Create a Java Keystore  Create a CSR (certificate signing request)  Send the CSR to Certificate Authority  SSL certificate will be issued by CA  Import the certificate to the keystore  Import Intermediate certificate of CA to keystore  Create a trust chain of certificates", 
+            "title": "How to obtain a SSL certificate"
+        }, 
+        {
+            "location": "/Linux/Security/ssl_certificates/#how-to-create-a-self-signed-certificate", 
             "text": "", 
-            "title": "Certificates"
+            "title": "How to create a self signed certificate"
+        }, 
+        {
+            "location": "/Linux/Security/ssl_certificates/#ca-certificates-keystore-path", 
+            "text": "1\n2 /etc/ssl/certs/java/cacerts  \nDefault password : changeit", 
+            "title": "CA Certificates keystore path"
+        }, 
+        {
+            "location": "/Linux/Security/ssl_certificates/#reference", 
+            "text": "GUI tool to manage keystores and certificates  Keystore Explorer", 
+            "title": "Reference:"
         }, 
         {
             "location": "/Linux/Scripting/bash/", 

@@ -78,7 +78,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#to-display-all-network-interfaces" tabindex="1" class="md-skip">
+      <a href="#configure-a-network-interface" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -591,15 +591,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#to-display-all-network-interfaces" title="To display all network interfaces" class="md-nav__link">
-    To display all network interfaces
+  <a href="#configure-a-network-interface" title="configure a network interface" class="md-nav__link">
+    configure a network interface
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#to-start-an-interface" title="To start an interface" class="md-nav__link">
-    To start an interface
+  <a href="#to-startstop-an-interface" title="To start/stop an interface" class="md-nav__link">
+    To start/stop an interface
   </a>
   
 </li>
@@ -621,6 +621,13 @@
         <li class="md-nav__item">
   <a href="#how-to-configure-static-ip-address" title="How to configure Static IP address" class="md-nav__link">
     How to configure Static IP address
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restart-network-interface" title="Restart network interface" class="md-nav__link">
+    Restart network interface
   </a>
   
 </li>
@@ -673,8 +680,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../Security/ssl_certificates/" title="Certificates" class="md-nav__link">
-      Certificates
+    <a href="../Security/ssl_certificates/" title="SSL Certificates" class="md-nav__link">
+      SSL Certificates
     </a>
   </li>
 
@@ -912,15 +919,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#to-display-all-network-interfaces" title="To display all network interfaces" class="md-nav__link">
-    To display all network interfaces
+  <a href="#configure-a-network-interface" title="configure a network interface" class="md-nav__link">
+    configure a network interface
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#to-start-an-interface" title="To start an interface" class="md-nav__link">
-    To start an interface
+  <a href="#to-startstop-an-interface" title="To start/stop an interface" class="md-nav__link">
+    To start/stop an interface
   </a>
   
 </li>
@@ -946,6 +953,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#restart-network-interface" title="Restart network interface" class="md-nav__link">
+    Restart network interface
+  </a>
+  
+</li>
+      
       
       
       
@@ -966,15 +980,32 @@
                   <h1>Networking</h1>
                 
                 <hr />
-<h3 id="to-display-all-network-interfaces">To display all network interfaces</h3>
-<p>ifconfig -a</p>
-<h3 id="to-start-an-interface">To start an interface</h3>
-<p>ifup eth0</p>
+<h3 id="configure-a-network-interface">configure a network interface</h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># ifconfig -a</span>
+display all interfaces which are currently available, even <span class="k">if</span> down
+
+<span class="c1"># ifconfig -s</span>
+displays a short list  
+</pre></div>
+</td></tr></table>
+
+<h3 id="to-startstop-an-interface">To start/stop an interface</h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ifup eth0  
+ifdown eth0
+</pre></div>
+</td></tr></table>
+
 <h3 id="to-display-all-pci-devices">To display all pci devices</h3>
 <p>lspci</p>
 <h3 id="nmcli-command-line-tool-for-network-management">nmcli : command line tool for network management</h3>
-<p>List out all network interfaces and status</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># nmcli -p </span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># nmcli -p </span>
+List out all network interfaces and status
 </pre></div>
 </td></tr></table>
 
@@ -1015,14 +1046,7 @@
 34
 35
 36
-37
-38
-39
-40
-41
-42
-43
-44</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># vi /etc/sysconfig/network-scripts/ifcfg-eth0</span>
+37</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># vi /etc/sysconfig/network-scripts/ifcfg-eth0</span>
 
 <span class="c1">## Typical Configuration </span>
 <span class="nv">DEVICE</span><span class="o">=</span><span class="s2">&quot;eth0&quot;</span>
@@ -1059,13 +1083,29 @@
 <span class="nv">UUID</span><span class="o">=</span>41171a6f-bce1-44de-8a6e-cf5e782f8bd6
 <span class="nv">DEVICE</span><span class="o">=</span>eth0
 <span class="nv">ONBOOT</span><span class="o">=</span>yes
+</pre></div>
+</td></tr></table>
 
-<span class="c1"># systemctl restart network</span>
+<h3 id="restart-network-interface">Restart network interface</h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>systemctl restart network
+</pre></div>
+</td></tr></table>
 
-Verify new IP settings: ip a s eth0
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Verify new IP settings: 
+ip a s eth0
 
-Verify new routing settings: ip r
-Verify DNS servers settings: <span class="c1"># cat /etc/resolv.conf</span>
+Verify new routing settings: 
+ip r
+
+Verify DNS servers settings: 
+cat /etc/resolv.conf
 </pre></div>
 </td></tr></table>
                 
