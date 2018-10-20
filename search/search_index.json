@@ -472,13 +472,18 @@
         }, 
         {
             "location": "/Linux/Scripting/bash/", 
-            "text": "Shell scripting in bash\n\n\nbash wikibook", 
+            "text": "Shell scripting in bash\n\n\nbash wikibook\n  \n\n\nString vs Numeric comparision\n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\nFor string comparision use, \n\n==\n  \n!\n=\n  \n\nlt\n;\n  \n\nFor numeric comparision use,\n-gt\n-lt\n-eq\n-ne\n\n\n\n\n\n\nConditional Expressions", 
             "title": "bash"
         }, 
         {
             "location": "/Linux/Scripting/bash/#shell-scripting-in-bash", 
             "text": "bash wikibook", 
             "title": "Shell scripting in bash"
+        }, 
+        {
+            "location": "/Linux/Scripting/bash/#string-vs-numeric-comparision", 
+            "text": "1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10 For string comparision use,  ==   \n! =    lt ;   \n\nFor numeric comparision use,\n-gt\n-lt\n-eq\n-ne   Conditional Expressions", 
+            "title": "String vs Numeric comparision"
         }, 
         {
             "location": "/Linux/yum/", 
