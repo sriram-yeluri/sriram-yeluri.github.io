@@ -47,13 +47,18 @@
         }, 
         {
             "location": "/Bitbucket/bitbucket/", 
-            "text": "Atlassian Bitbucket", 
+            "text": "Atlassian Bitbucket Datacenter\n\n\nReferences:\n\n\n(Bitbucket Enterprise)[https://bitbucket.org/product/enterprise]", 
             "title": "Introduction"
         }, 
         {
-            "location": "/Bitbucket/bitbucket/#atlassian-bitbucket", 
+            "location": "/Bitbucket/bitbucket/#atlassian-bitbucket-datacenter", 
             "text": "", 
-            "title": "Atlassian Bitbucket"
+            "title": "Atlassian Bitbucket Datacenter"
+        }, 
+        {
+            "location": "/Bitbucket/bitbucket/#references", 
+            "text": "(Bitbucket Enterprise)[https://bitbucket.org/product/enterprise]", 
+            "title": "References:"
         }, 
         {
             "location": "/Fortify/fortify/", 
@@ -142,7 +147,7 @@
         }, 
         {
             "location": "/git/", 
-            "text": "Distributed Version Control System : GIT\n\n\nGit config\n\n\n1\n2\n3\n$ git config --global user.email \nyeluris@gmail.com\n \n$ git config --global user.name \nSriram Yeluri\n  \n$ git config --list  \n\n\n\n\n\n\nBasic Git commands\n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n$ git init \n(\ninitialize a \nlocal\n repository\n)\n  \n$ git add --all \n(\nor\n)\n  \n$ git add \n[\nfilename\n]\n \n(\nor\n)\n \n$ git add . \n[\nall changed files \nfor\n commit\n]\n  \n$ git status \n(\nshow the status of working tree\n)\n  \n$ git commit -m \ncommit message\n  \n$ git push  \n(\npush to remote repository\n)\n  \n$ git pull \n(\nfetch changes from remote repository\n)\n  \n$ git clone \n[\ngit repo url\n]\n  \n$ git fetch \n(\nfetch branches, tags from remote repository\n)\n\n\n\n\n\n\n\nRemove files from staging area\n\n\n1\n2\n$ git reset file_name  \n(\nor\n)\n  \n$ git reset  \n(\nto remove all files from staging area\n)\n  \n\n\n\n\n\n\n\n\nGit Tagging\n\n\nGit tagging is used to mark a important history like a release v1.0 \n\n\nBy default git push will not commit the tags to remote server, instead we have to explicitly mention the remote   \n\n\n\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n$ git add -a v1.0 -m \nReason for tagging\n\n$ git push origin v1.0\n\nIf there are multiple tags, \nthen\n use --tags flag  \n$ git push origin --tags \n(\nto push all tags\n)\n  \n\nTo list out all the available tags\n$ git tag \n$ git tag -l \n(\nor\n)\n --list  \n(\noptional\n)\n\n\n\n\n\n\n\nInformation about Remote Repository\n\n\n1\n2\n$ git remote -v  \n$ git branch -a  \n(\ndisplays all branches that are present remotely and locally\n)\n\n\n\n\n\n\n\nGit branching\n\n\n1\n2\n$ git branch branch_name  \n$ git checkout branch_name  \n\n\n\n\n\n\nReferences\n\n\ngit-scm\n\n\npro git book\n  \n\n\nVideo References\n\n\nGit Tutorial for Beginners: Command-Line Fundamentals", 
+            "text": "Distributed Version Control System : GIT\n\n\nGit config\n\n\n1\n2\n3\n$ git config --global user.email \nyeluris@gmail.com\n \n$ git config --global user.name \nSriram Yeluri\n  \n$ git config --list  \n\n\n\n\n\n\nBasic Git commands\n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n$ git init \n(\ninitialize a \nlocal\n repository\n)\n  \n$ git add --all \n(\nor\n)\n  \n$ git add \n[\nfilename\n]\n \n(\nor\n)\n \n$ git add . \n[\nall changed files \nfor\n commit\n]\n  \n$ git status \n(\nshow the status of working tree\n)\n  \n$ git commit -m \ncommit message\n  \n$ git push  \n(\npush to remote repository\n)\n  \n$ git pull \n(\nfetch changes from remote repository\n)\n  \n$ git clone \n[\ngit repo url\n]\n  \n$ git fetch \n(\nfetch branches, tags from remote repository\n)\n\n\n\n\n\n\n\nRemove files from staging area\n\n\n1\n2\n$ git reset file_name  \n(\nor\n)\n  \n$ git reset  \n(\nto remove all files from staging area\n)\n  \n\n\n\n\n\n\n\n\nGit Tagging\n\n\nGit tagging is used to mark a important history like a release v1.0 \n\n\nBy default git push will not commit the tags to remote server, instead we have to explicitly mention the remote   \n\n\n\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n$ git add -a v1.0 -m \nReason for tagging\n\n$ git push origin v1.0\n\nIf there are multiple tags, \nthen\n use --tags flag  \n$ git push origin --tags \n(\nto push all tags\n)\n  \n\nTo list out all the available tags\n$ git tag \n$ git tag -l \n(\nor\n)\n --list  \n(\noptional\n)\n\n\n\n\n\n\n\nInformation about Remote Repository\n\n\n1\n2\n$ git remote -v  \n$ git branch -a  \n(\ndisplays all branches that are present remotely and locally\n)\n\n\n\n\n\n\n\nGit branching\n\n\n1\n2\n$ git branch branch_name  \n$ git checkout branch_name  \n\n\n\n\n\n\nReferences\n\n\ngit-scm\n\n\npro git book\n\n\nGit basic commands by Atlassian\n\n\nVideo References\n\n\nGit Tutorial for Beginners: Command-Line Fundamentals", 
             "title": "Git"
         }, 
         {
@@ -177,7 +182,7 @@
         }, 
         {
             "location": "/git/#references", 
-            "text": "git-scm  pro git book", 
+            "text": "git-scm  pro git book  Git basic commands by Atlassian", 
             "title": "References"
         }, 
         {
@@ -297,13 +302,8 @@
         }, 
         {
             "location": "/Linux/CentOS/", 
-            "text": "CENTOS :\n\n\n\n\nYour system does not seem to be set up to build kernel modules.\n\n\n1\n2\n3\n4\n# yum clean all\n\n\n# yum install gcc-c++\n\n\n# yum install kernel-devel\n\n\n# yum install kernel-headers\n\n\n\n\n\n\n\nHow to setup network after RHEL/CentOS 7 minimal installation\n\n\nHow To\n\n\nAfter installing RHEL/CentOS 7 minimal, You may not able to connect network in that machine. This will happen because Ethernet interfaces are not enabled by default.\n\n\n1\n2\n3\n4\n5\n6\n7\n8\n# nmcli d (List the available interfaces)\n\n\n# nmtui \n\n\n1\n. open Network manager, and choose Edit connection\n\n2\n. choose you network interfaces and click \u201cEdit\u201d\n\n3\n. Choose \u201cAutomatic\u201d in IPv4 CONFIGURATION and check Automatically connect check box and press OK and quit from Network manager.\n\n4\n. Restart network service\n\n\n# service network restart", 
+            "text": "Your system does not seem to be set up to build kernel modules.\n\n\n1\n2\n3\n4\n# yum clean all\n\n\n# yum install gcc-c++\n\n\n# yum install kernel-devel\n\n\n# yum install kernel-headers\n\n\n\n\n\n\n\nHow to setup network after RHEL/CentOS 7 minimal installation\n\n\nHow To\n\n\nAfter installing RHEL/CentOS 7 minimal, You may not able to connect network in that machine. This will happen because Ethernet interfaces are not enabled by default.\n\n\n1\n2\n3\n4\n5\n6\n7\n8\n# nmcli d (List the available interfaces)\n\n\n# nmtui \n\n\n1\n. open Network manager, and choose Edit connection\n\n2\n. choose you network interfaces and click \u201cEdit\u201d\n\n3\n. Choose \u201cAutomatic\u201d in IPv4 CONFIGURATION and check Automatically connect check box and press OK and quit from Network manager.\n\n4\n. Restart network service\n\n\n# service network restart", 
             "title": "Centos"
-        }, 
-        {
-            "location": "/Linux/CentOS/#centos", 
-            "text": "", 
-            "title": "CENTOS :"
         }, 
         {
             "location": "/Linux/CentOS/#your-system-does-not-seem-to-be-set-up-to-build-kernel-modules", 
@@ -426,19 +426,24 @@
             "title": "How to configure Static IP address"
         }, 
         {
-            "location": "/Linux/ssh/", 
-            "text": "How SSH communication is established\n\n\n\n\n\n\nThe client sends a request to the server for a secure session. The server responds by sending its X.509 digital certificate to the client. \n\n\n\n\n\n\nThe client receives the server's X.509 digital certificate. \n\n\n\n\n\n\nThe client authenticates the server, using a list of known certificate authorities. \n\n\n\n\n\n\nThe client generates a random symmetric key and encrypts it using server's public key.\n\n\n\n\n\n\nThe server decrypts the message with private key and extracts the symmetric key sent by client.\n\n\n\n\n\n\nThe client and server now both know the symmetric key and can use the SSL encryption process to encrypt and decrypt the information contained in the client request and the server response.   \n\n\n\n\n\n\nHow to generate SSH keypair\n\n\n1\n2\n3\n4\n5\nssh-keygen -t rsa -b 2048 -C \nyour_email@example.com\n \n\nssh keygen will create 2 files in .ssh default path which are id_rsa and id_rsa.pub  \nid_rsa file will have private key  \nid_rsa.pub will have the public key", 
+            "location": "/Linux/Security/ssh/", 
+            "text": "How SSH communication is established\n\n\n\n\n\n\nThe client sends a request to the server for a secure session. The server responds by sending its X.509 digital certificate to the client. \n\n\n\n\n\n\nThe client receives the server's X.509 digital certificate. \n\n\n\n\n\n\nThe client authenticates the server, using a list of known certificate authorities. \n\n\n\n\n\n\nThe client generates a random symmetric key and encrypts it using server's public key.\n\n\n\n\n\n\nThe server decrypts the message with private key and extracts the symmetric key sent by client.\n\n\n\n\n\n\nThe client and server now both know the symmetric key and can use the SSL encryption process to encrypt and decrypt the information contained in the client request and the server response.   \n\n\n\n\n\n\nHow to generate SSH keypair\n\n\n1\n2\n3\n4\n5\nssh-keygen -t rsa -b \n2048\n -C \nyour_email@example.com\n \n\nssh keygen will create \n2\n files in .ssh default path which are id_rsa and id_rsa.pub  \nid_rsa file will have private key  \nid_rsa.pub will have the public key", 
             "title": "SSH"
         }, 
         {
-            "location": "/Linux/ssh/#how-ssh-communication-is-established", 
+            "location": "/Linux/Security/ssh/#how-ssh-communication-is-established", 
             "text": "The client sends a request to the server for a secure session. The server responds by sending its X.509 digital certificate to the client.     The client receives the server's X.509 digital certificate.     The client authenticates the server, using a list of known certificate authorities.     The client generates a random symmetric key and encrypts it using server's public key.    The server decrypts the message with private key and extracts the symmetric key sent by client.    The client and server now both know the symmetric key and can use the SSL encryption process to encrypt and decrypt the information contained in the client request and the server response.", 
             "title": "How SSH communication is established"
         }, 
         {
-            "location": "/Linux/ssh/#how-to-generate-ssh-keypair", 
-            "text": "1\n2\n3\n4\n5 ssh-keygen -t rsa -b 2048 -C  your_email@example.com  \n\nssh keygen will create 2 files in .ssh default path which are id_rsa and id_rsa.pub  \nid_rsa file will have private key  \nid_rsa.pub will have the public key", 
+            "location": "/Linux/Security/ssh/#how-to-generate-ssh-keypair", 
+            "text": "1\n2\n3\n4\n5 ssh-keygen -t rsa -b  2048  -C  your_email@example.com  \n\nssh keygen will create  2  files in .ssh default path which are id_rsa and id_rsa.pub  \nid_rsa file will have private key  \nid_rsa.pub will have the public key", 
             "title": "How to generate SSH keypair"
+        }, 
+        {
+            "location": "/Linux/Security/ssl_certificates/", 
+            "text": "", 
+            "title": "Certificates"
         }, 
         {
             "location": "/Linux/Scripting/bash/", 
