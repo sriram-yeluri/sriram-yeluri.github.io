@@ -1,238 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
     <url>
-     <loc>/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/Ansible/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/Ansible/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
     <url>
-     <loc>/AWS/aws/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/AWS/aws/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/AWS/cft/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/AWS/cft/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/AWS/s3/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/AWS/s3/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>/Bitbucket/bitbucket/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/Bitbucket/bitbucket/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>/Fortify/fortify/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/Fortify/fortify/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>/Docker/Docker/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/Docker/Docker/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/Docker/dockerfile/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/Docker/dockerfile/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
     <url>
-     <loc>/git/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/git/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
     <url>
-     <loc>/golang/golang/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/golang/golang/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/golang/golang-projects/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/golang/golang-projects/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>/Jenkins/Jenkins-code-snippets/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/Jenkins/Jenkins-code-snippets/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>/Linux/linux_learning/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/Linux/linux_learning/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/Linux/vim/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/Linux/vim/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/Linux/CentOS/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/Linux/CentOS/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/Linux/RHEL/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/Linux/RHEL/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/Linux/ubuntu/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/Linux/ubuntu/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/Linux/kde_configuration/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/Linux/kde_configuration/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/Linux/Networking/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/Linux/Networking/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc></loc>
-     <lastmod></lastmod>
+     <loc>https://sriram-yeluri.github.io/Linux/yum/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc></loc>
-     <lastmod></lastmod>
+     <loc>https://sriram-yeluri.github.io/Linux/Security/ssh/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/Linux/yum/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/Linux/Security/ssl_certificates/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>/Nexus/nexus-yum/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/Linux/Scripting/bash/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>/OpenLDAP/openldap/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/Nexus/nexus-yum/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>/SonarQube/sonarqube/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/OpenLDAP/openldap/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
     <url>
-     <loc>/Virtualbox/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/SonarQube/sonarqube/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/vnc_config/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/Virtualbox/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/references/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/vnc_config/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/about/</loc>
-     <lastmod>2018-10-20</lastmod>
+     <loc>https://sriram-yeluri.github.io/references/</loc>
+     <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
+    <url>
+     <loc>https://sriram-yeluri.github.io/about/</loc>
+     <lastmod>2018-10-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
 </urlset>
