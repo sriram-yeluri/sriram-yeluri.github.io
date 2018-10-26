@@ -6,17 +6,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://sriram-yeluri.github.io/AWS/aws/</loc>
-     <lastmod>2018-10-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/AWS/cft/</loc>
-     <lastmod>2018-10-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/AWS/s3/</loc>
+     <loc>https://sriram-yeluri.github.io/CI/ContinuousIntegration/</loc>
      <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -47,11 +37,6 @@
     </url>
     <url>
      <loc>https://sriram-yeluri.github.io/CM/Ansible/</loc>
-     <lastmod>2018-10-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/Networking/</loc>
      <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -91,12 +76,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://sriram-yeluri.github.io/Programming/golang/golang/</loc>
-     <lastmod>2018-10-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/Programming/golang/golang-projects/</loc>
+     <loc>https://sriram-yeluri.github.io/Networking/</loc>
      <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -107,6 +87,16 @@
     </url>
     <url>
      <loc>https://sriram-yeluri.github.io/Security/ssl_certificates/</loc>
+     <lastmod>2018-10-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://sriram-yeluri.github.io/Programming/golang/golang/</loc>
+     <lastmod>2018-10-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://sriram-yeluri.github.io/Programming/golang/golang-projects/</loc>
      <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -137,6 +127,21 @@
     </url>
     <url>
      <loc>https://sriram-yeluri.github.io/Virtualization/Docker/dockerfile/</loc>
+     <lastmod>2018-10-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://sriram-yeluri.github.io/AWS/aws/</loc>
+     <lastmod>2018-10-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://sriram-yeluri.github.io/AWS/cft/</loc>
+     <lastmod>2018-10-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://sriram-yeluri.github.io/AWS/s3/</loc>
      <lastmod>2018-10-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
