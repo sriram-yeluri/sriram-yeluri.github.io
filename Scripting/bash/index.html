@@ -305,6 +305,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../CI/Jenkins/Jenkins/" title="Jenkins-Docker" class="md-nav__link">
+      Jenkins-Docker
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -817,6 +829,13 @@
     String vs Numeric comparision
   </a>
   
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loops" title="Loops" class="md-nav__link">
+    Loops
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
@@ -1137,6 +1156,13 @@
     String vs Numeric comparision
   </a>
   
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loops" title="Loops" class="md-nav__link">
+    Loops
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
@@ -1195,10 +1221,48 @@ For numeric comparision use,
 </pre></div>
 </td></tr></table>
 
+<h2 id="loops">Loops</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="k">for</span> variable in <span class="o">{</span>list<span class="o">}</span>
+<span class="k">do</span>
+    &lt;commands&gt;
+<span class="k">done</span>
+
+
+<span class="c1">#!/bin/bash</span>
+<span class="k">for</span> i in <span class="o">{</span><span class="m">1</span>..10<span class="o">}</span>
+<span class="k">do</span>
+    <span class="nb">echo</span> <span class="nv">$i</span>
+<span class="k">done</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">while</span> <span class="o">[[</span>condition<span class="o">]]</span>  
+<span class="k">do</span>
+    &lt;commands&gt;
+<span class="k">done</span>
+</pre></div>
+</td></tr></table>
+
 <h3 id="references">References</h3>
 <p><a href="https://www.gnu.org/software/bash/manual/bashref.html">gnu.org Bash Reference Manual</a>
 <a href="https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html">Conditional Expressions</a>
-<a href="https://en.wikibooks.org/wiki/Bash_Shell_Scripting">bash wikibook</a>  </p>
+<a href="https://en.wikibooks.org/wiki/Bash_Shell_Scripting">bash wikibook</a><br />
+<a href="https://bash.cyberciti.biz/guide/Main_Page">Linux Shell Scripting Tutorial</a></p>
                 
                   
                 
