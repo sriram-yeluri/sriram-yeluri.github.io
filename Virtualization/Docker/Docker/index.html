@@ -1045,6 +1045,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#enabling-docker-remote-api-on-ubuntu" title="Enabling Docker Remote API on Ubuntu" class="md-nav__link">
+    Enabling Docker Remote API on Ubuntu
+  </a>
+  
+</li>
+      
       
       
       
@@ -1262,6 +1269,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#enabling-docker-remote-api-on-ubuntu" title="Enabling Docker Remote API on Ubuntu" class="md-nav__link">
+    Enabling Docker Remote API on Ubuntu
+  </a>
+  
+</li>
+      
       
       
       
@@ -1374,6 +1388,30 @@ Note: Forwarding request to <span class="s1">&#39;systemctl enable docker.servic
 </td></tr></table>
 
 <hr />
+<h2 id="enabling-docker-remote-api-on-ubuntu">Enabling Docker Remote API on Ubuntu</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo vi /lib/systemd/system/docker.service
+
+Modify the line that starts with ExecStart
+<span class="nv">ExecStart</span><span class="o">=</span>/usr/bin/docker daemon -H fd:// -H tcp://0.0.0.0:4243
+
+systemctl daemon-reload
+sudo service docker restart
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Testing:
+sriram@optimus-prime:~$ curl http://localhost:4243/version
+<span class="o">{</span><span class="s2">&quot;Platform&quot;</span>:<span class="o">{</span><span class="s2">&quot;Name&quot;</span>:<span class="s2">&quot;&quot;</span><span class="o">}</span>,<span class="s2">&quot;Components&quot;</span>:<span class="o">[{</span><span class="s2">&quot;Name&quot;</span>:<span class="s2">&quot;Engine&quot;</span>,<span class="s2">&quot;Version&quot;</span>:<span class="s2">&quot;18.03.1-ce&quot;</span>,<span class="s2">&quot;Details&quot;</span>:<span class="o">{</span><span class="s2">&quot;ApiVersion&quot;</span>:<span class="s2">&quot;1.37&quot;</span>,<span class="s2">&quot;Arch&quot;</span>:<span class="s2">&quot;amd64&quot;</span>,<span class="s2">&quot;BuildTime&quot;</span>:<span class="s2">&quot;2018-04-26T07:15:45.000000000+00:00&quot;</span>,<span class="s2">&quot;Experimental&quot;</span>:<span class="s2">&quot;false&quot;</span>,<span class="s2">&quot;GitCommit&quot;</span>:<span class="s2">&quot;9ee9f40&quot;</span>,<span class="s2">&quot;GoVersion&quot;</span>:<span class="s2">&quot;go1.9.5&quot;</span>,<span class="s2">&quot;KernelVersion&quot;</span>:<span class="s2">&quot;4.15.0-38-generic&quot;</span>,<span class="s2">&quot;MinAPIVersion&quot;</span>:<span class="s2">&quot;1.12&quot;</span>,<span class="s2">&quot;Os&quot;</span>:<span class="s2">&quot;linux&quot;</span><span class="o">}}]</span>,<span class="s2">&quot;Version&quot;</span>:<span class="s2">&quot;18.03.1-ce&quot;</span>,<span class="s2">&quot;ApiVersion&quot;</span>:<span class="s2">&quot;1.37&quot;</span>,<span class="s2">&quot;MinAPIVersion&quot;</span>:<span class="s2">&quot;1.12&quot;</span>,<span class="s2">&quot;GitCommit&quot;</span>:<span class="s2">&quot;9ee9f40&quot;</span>,<span class="s2">&quot;GoVersion&quot;</span>:<span class="s2">&quot;go1.9.5&quot;</span>,<span class="s2">&quot;Os&quot;</span>:<span class="s2">&quot;linux&quot;</span>,<span class="s2">&quot;Arch&quot;</span>:<span class="s2">&quot;amd64&quot;</span>,<span class="s2">&quot;KernelVersion&quot;</span>:<span class="s2">&quot;4.15.0-38-generic&quot;</span>,<span class="s2">&quot;BuildTime&quot;</span>:<span class="s2">&quot;2018-04-26T07:15:45.000000000+00:00&quot;</span><span class="o">}</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 
