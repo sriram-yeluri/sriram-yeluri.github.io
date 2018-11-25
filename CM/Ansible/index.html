@@ -518,9 +518,38 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Ansible
+      </label>
+    
     <a href="./" title="Ansible" class="md-nav__link md-nav__link--active">
       Ansible
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -1111,6 +1140,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1125,6 +1170,23 @@
                 
                 
                 <h1 id="ansible">Ansible</h1>
+<ul>
+<li>Automation tool for configuration management</li>
+<li>Tool for automated deployments</li>
+<li>Agent less</li>
+<li>Yaml syntax playbooks</li>
+</ul>
+<p>Installation of Ansible on Centos is straight forward, as shown below</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>yum update -y <span class="o">&amp;&amp;</span> <span class="se">\</span>
+yum install ansible -y
+</pre></div>
+</td></tr></table>
+
+<p>Inorder to leaverage the container technology, i have created a simple docker image from centos and installed ansible. So we can spin a container and use this as a control machine to run ansible playbooks.<br />
+<a href="https://hub.docker.com/r/yeluris/ansibleimage/">Centos Docker Image with Ansible</a>  </p>
+<h3 id="references">References</h3>
+<p><a href="https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html">Installation Guide</a></p>
                 
                   
                 
