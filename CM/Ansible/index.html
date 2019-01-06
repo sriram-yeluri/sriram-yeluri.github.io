@@ -537,9 +537,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-image-as-ansible-control-machine" title="Docker image as ansible control machine" class="md-nav__link">
+    Docker image as ansible control machine
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#references" title="References" class="md-nav__link">
     References
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1156,9 +1176,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-image-as-ansible-control-machine" title="Docker image as ansible control machine" class="md-nav__link">
+    Docker image as ansible control machine
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#references" title="References" class="md-nav__link">
     References
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1195,7 +1235,13 @@ yum install ansible -y
 </pre></div>
 </td></tr></table>
 
-<p>Inorder to leaverage the container technology, i have created a simple docker image from centos and installed ansible. So we can spin a container and use this as a control machine to run ansible playbooks.<br />
+<h2 id="configuration">Configuration</h2>
+<ul>
+<li>Default location for ansible inventory : /etc/ansible/hosts</li>
+<li>Inventory can also be located else where and used with -i flag by providing the path in command line.</li>
+</ul>
+<h2 id="docker-image-as-ansible-control-machine">Docker image as ansible control machine</h2>
+<p>Inorder to leaverage the container technology, i have created a simple docker image from centos and installed ansible. So we can spin up a container and use this as a control machine to run ansible playbooks.<br />
 <a href="https://hub.docker.com/r/yeluris/ansibleimage/">Centos Docker Image with Ansible</a>  </p>
 <h3 id="references">References</h3>
 <p><a href="https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html">Installation Guide</a></p>

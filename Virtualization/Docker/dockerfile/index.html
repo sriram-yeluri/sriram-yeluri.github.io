@@ -106,7 +106,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#page-under-construction" tabindex="1" class="md-skip">
+      <a href="#dockerfile" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -1014,15 +1014,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#basic-dockerfile-syntax" title="Basic Dockerfile syntax" class="md-nav__link">
-    Basic Dockerfile syntax
+  <a href="#example-dockerfile" title="Example dockerfile" class="md-nav__link">
+    Example dockerfile
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-showing-how-to-build-a-docker-image" title="Example showing how to build a docker image" class="md-nav__link">
-    Example showing how to build a docker image
+  <a href="#how-to-build-a-docker-image" title="How to build a docker image" class="md-nav__link">
+    How to build a docker image
   </a>
   
 </li>
@@ -1037,6 +1037,34 @@
         <li class="md-nav__item">
   <a href="#how-to-connect-to-a-running-container" title="How to connect to a running container" class="md-nav__link">
     How to connect to a running container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-persistance-and-volume-sharing-between-running-containers" title="Data persistance and volume sharing between running containers" class="md-nav__link">
+    Data persistance and volume sharing between running containers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-networking" title="Docker Networking" class="md-nav__link">
+    Docker Networking
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizing-docker-images" title="optimizing docker images" class="md-nav__link">
+    optimizing docker images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-docker-commands" title="Useful docker commands" class="md-nav__link">
+    Useful docker commands
   </a>
   
     <nav class="md-nav">
@@ -1199,15 +1227,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#basic-dockerfile-syntax" title="Basic Dockerfile syntax" class="md-nav__link">
-    Basic Dockerfile syntax
+  <a href="#example-dockerfile" title="Example dockerfile" class="md-nav__link">
+    Example dockerfile
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-showing-how-to-build-a-docker-image" title="Example showing how to build a docker image" class="md-nav__link">
-    Example showing how to build a docker image
+  <a href="#how-to-build-a-docker-image" title="How to build a docker image" class="md-nav__link">
+    How to build a docker image
   </a>
   
 </li>
@@ -1222,6 +1250,34 @@
         <li class="md-nav__item">
   <a href="#how-to-connect-to-a-running-container" title="How to connect to a running container" class="md-nav__link">
     How to connect to a running container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-persistance-and-volume-sharing-between-running-containers" title="Data persistance and volume sharing between running containers" class="md-nav__link">
+    Data persistance and volume sharing between running containers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-networking" title="Docker Networking" class="md-nav__link">
+    Docker Networking
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizing-docker-images" title="optimizing docker images" class="md-nav__link">
+    optimizing docker images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-docker-commands" title="Useful docker commands" class="md-nav__link">
+    Useful docker commands
   </a>
   
     <nav class="md-nav">
@@ -1265,27 +1321,33 @@
                   <a href="https://github.com/sriram-yeluri/sriram-yeluri.github.io/edit/master/docs/Virtualization/Docker/dockerfile.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="page-under-construction">page under construction</h1>
+                <h1 id="dockerfile">Dockerfile</h1>
 <ul>
 <li>Dockerfile is a simple text file to create a docker image.  </li>
 <li>Default file name is "Dockerfile"  </li>
 </ul>
-<h2 id="basic-dockerfile-syntax">Basic Dockerfile syntax</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ENV
-FROM
-LABEL MAINTAINER
-RUN
-VOLUME
-EXPOSE
-ENTRYPOINT
-CMD
+<h2 id="example-dockerfile">Example dockerfile</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">ENV</span>
+<span class="k">FROM</span>
+LABEL <span class="nv">maintainer</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+      <span class="nv">version</span><span class="o">=</span><span class="s2">&quot;&quot;</span>  
+<span class="k">WORKDIR</span>
+<span class="k">RUN</span>
+<span class="k">VOLUME</span>
+<span class="k">EXPOSE</span><span class="s"> </span>
+<span class="k">ENTRYPOINT</span><span class="s"> --&gt; Executes custom scripts while starting a docker container</span>
+           --&gt; Do not add layer to docker image
+<span class="k">CMD</span>
 </pre></div>
 </td></tr></table>
 
@@ -1293,18 +1355,67 @@ CMD
 <p class="admonition-title">Note</p>
 <p>There can only be one CMD instruction in a Dockerfile. If you list more than one CMD, then only the last CMD will take effect.</p>
 </div>
-<h2 id="example-showing-how-to-build-a-docker-image">Example showing how to build a docker image</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>docker build -t ansible:v1.0 .
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">#Example dockerfile</span>
+COPY docker-entrypoint.sh /
+<span class="k">RUN</span> chmod +x /docker-entrypoint.sh
+<span class="k">ENTRYPOINT</span><span class="s"> [&quot;/docker-entrypoint.sh&quot;]</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="how-to-build-a-docker-image">How to build a docker image</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">#docker image build -t &lt;image_name&gt;:&lt;version_tag&gt; .</span>
+docker image build -t ansible:v1.0 .
 </pre></div>
 </td></tr></table>
 
 <h2 id="how-to-run-the-container">How to run the container</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>docker run -d -t --name ansible ansible:v1.0 bin/bash
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>docker container run -d -t --name ansible ansible:v1.0 bin/bash
 </pre></div>
 </td></tr></table>
 
 <h2 id="how-to-connect-to-a-running-container">How to connect to a running container</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>docker <span class="nb">exec</span> -it &lt;container_id&gt; bash
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ docker container <span class="nb">exec</span> -it &lt;container_id&gt; bash
+<span class="c1">#(or) to run shell command directly on a running container, then</span>
+$ docker container <span class="nb">exec</span> &lt;container_name/id&gt; cat /appl/readme.txt
+</pre></div>
+</td></tr></table>
+
+<h2 id="data-persistance-and-volume-sharing-between-running-containers">Data persistance and volume sharing between running containers</h2>
+<p>In docker, sharing of volumes can be done in 2 ways</p>
+<ul>
+<li>Add VOLUME in docerfile , example VOLUME [/appl]</li>
+<li>[or] Add -v <volume_path> as a flag while running the container to expose the path, example below</li>
+</ul>
+<div class="admonition note">
+<p>If volume is exposed in either of the above methods, then both the src and dst containers should run on same physical host</p>
+</div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>docker container run --rm -itd --name &lt;container_name&gt; -v <span class="nv">$PWD</span>:/appl -v /appl/data
+</pre></div>
+</td></tr></table>
+
+<p>Inorder to access data from other containers, use volumes-from flag while running the container</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>docker container run --rm -itd --name &lt;dest-container&gt; --volumes-from &lt;src_container_name_from_which_data_is_accessed&gt;
+</pre></div>
+</td></tr></table>
+
+<h2 id="docker-networking">Docker Networking</h2>
+<p>To run a docker container and join to a custom bridge network, use --net flag</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>docker container run --rm --itd --name &lt;container_name&gt; --net &lt;network_name&gt;
+</pre></div>
+</td></tr></table>
+
+<h2 id="optimizing-docker-images">optimizing docker images</h2>
+<p>.dockerignore</p>
+<h2 id="useful-docker-commands">Useful docker commands</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">#To stop all running containers in one go, below command can be used</span>
+docker container stop <span class="k">$(</span>docker container ls -a -q<span class="k">)</span>
 </pre></div>
 </td></tr></table>
 
