@@ -537,8 +537,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration" title="Configuration" class="md-nav__link">
-    Configuration
+  <a href="#setting-up-inventory" title="Setting up Inventory" class="md-nav__link">
+    Setting up Inventory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settingup-ansible-configuration-file" title="Settingup Ansible Configuration file" class="md-nav__link">
+    Settingup Ansible Configuration file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ansible-tasks" title="Ansible Tasks" class="md-nav__link">
+    Ansible Tasks
   </a>
   
 </li>
@@ -1188,8 +1202,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration" title="Configuration" class="md-nav__link">
-    Configuration
+  <a href="#setting-up-inventory" title="Setting up Inventory" class="md-nav__link">
+    Setting up Inventory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settingup-ansible-configuration-file" title="Settingup Ansible Configuration file" class="md-nav__link">
+    Settingup Ansible Configuration file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ansible-tasks" title="Ansible Tasks" class="md-nav__link">
+    Ansible Tasks
   </a>
   
 </li>
@@ -1247,16 +1275,76 @@ yum install ansible -y
 </pre></div>
 </td></tr></table>
 
-<h2 id="configuration">Configuration</h2>
+<h2 id="setting-up-inventory">Setting up Inventory</h2>
 <ul>
+<li>Inventory file lists hostnames and groups in INI-like format</li>
+<li>Inventory file can be static or Dynamic</li>
+<li>Inventory file can specify IP addresses, hostnames and groups</li>
+<li>Inventory file can include specific parameters like non standard ports, aliases</li>
 <li>Default location for ansible inventory : /etc/ansible/hosts</li>
-<li>Inventory can also be located else where and used with -i flag by providing the path in command line.</li>
+<li>Inventory can also be located else where and used with -i flag by providing the path in command line</li>
+<li>Important to have local group as ansible communicates back to host instance</li>
 </ul>
+<p>Example :</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">[webservers]</span>
+<span class="na">web1 ansible_host</span><span class="o">=</span><span class="s">www.mywebserver.com:5309</span>
+
+<span class="k">[loadbalencers]</span>
+<span class="na">lb ansible_host</span><span class="o">=</span><span class="s">192.168.10.2</span>
+
+<span class="k">[local]</span>
+<span class="na">control ansible_connection</span><span class="o">=</span><span class="s">local --&gt; this is required to tell ansible not to ssh to local host</span>
+</pre></div>
+</td></tr></table>
+
+<p>Inventory Commands:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ansible --list-hosts all
+</pre></div>
+</td></tr></table>
+
+<h2 id="settingup-ansible-configuration-file">Settingup Ansible Configuration file</h2>
+<p>Ansible will search for configuration file in below order</p>
+<ol>
+<li>ANSIBLE_CONFIG (environment variable if set)</li>
+<li>ansible.cfg (in current directory)</li>
+<li>~/.ansible.cfg (in home directory)</li>
+<li>/etc/ansible/ansible.cfg</li>
+</ol>
+<p>Create ansible.cfg file in project folder, to control ansible environment settings</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># ansible.cfg
+
+[defaults]
+inventory = ./inventory-file
+remote_user = user_id_of_host_servers
+private_key_file = ~/.ssh/ssh_key_file_of_host_servers.pem
+host_key_checking = FALSE --&gt; do not check host key finger print while ssh when connecting for first time
+</pre></div>
+</td></tr></table>
+
+<h2 id="ansible-tasks">Ansible Tasks</h2>
+<p>Ansible tasks allows us to run adhoc commands against our inventory file.
+In simple terms , Task is a call to ansible module.</p>
+<p>syntax: ansible options host-pattern<br />
+Ex: ansible -m ping all ---&gt; ansible-command module_flag module_name inventory</p>
 <h2 id="docker-image-as-ansible-control-machine">Docker image as ansible control machine</h2>
 <p>Inorder to leaverage the container technology, i have created a simple docker image from centos and installed ansible. So we can spin up a container and use this as a control machine to run ansible playbooks.<br />
 <a href="https://hub.docker.com/r/yeluris/ansibleimage/">Centos Docker Image with Ansible</a>  </p>
 <h3 id="references">References</h3>
-<p><a href="https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html">Installation Guide</a></p>
+<p><a href="https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html">Installation Guide</a><br />
+<a href="https://docs.ansible.com/ansible/latest/reference_appendices/config.html#ansible-configuration-settings">Configuration File</a></p>
                 
                   
                 
