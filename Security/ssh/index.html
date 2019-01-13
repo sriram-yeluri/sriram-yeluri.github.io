@@ -723,6 +723,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#install-public-key-to-host-machine" title="Install public key to host machine" class="md-nav__link">
+    Install public key to host machine
+  </a>
+  
+</li>
+      
       
       
       
@@ -1174,6 +1181,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#install-public-key-to-host-machine" title="Install public key to host machine" class="md-nav__link">
+    Install public key to host machine
+  </a>
+  
+</li>
+      
       
       
       
@@ -1227,7 +1241,13 @@ id_rsa.pub will have the public key
 </pre></div>
 </td></tr></table>
 
-<p><img alt="ssh-kleygen" src="../../images/Linux/ssh-keygen.png" /></p>
+<p><img alt="ssh-keygen" src="../../images/Linux/ssh-keygen.png" /></p>
+<h2 id="install-public-key-to-host-machine">Install public key to host machine</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ssh-copy-id user@host
+<span class="c1"># This will add public key from ~/.ssh/id_rsa.pub on your system to /home/USER/authorized_keys on target HOST</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 
