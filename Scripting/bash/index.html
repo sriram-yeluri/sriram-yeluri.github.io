@@ -860,6 +860,13 @@
     Loops
   </a>
   
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-test-operators" title="File Test Operators" class="md-nav__link">
+    File Test Operators
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
@@ -1199,6 +1206,13 @@
     Loops
   </a>
   
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-test-operators" title="File Test Operators" class="md-nav__link">
+    File Test Operators
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
@@ -1284,12 +1298,28 @@ For numeric comparision use,
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">while</span> <span class="o">[[</span>condition<span class="o">]]</span>  
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">while</span> <span class="o">[[</span>condition<span class="o">]]</span>  
 <span class="k">do</span>
     &lt;commands&gt;
+<span class="k">done</span>
+
+<span class="c1">#!/bin/bash</span>
+<span class="nv">num</span><span class="o">=</span><span class="m">1</span>
+<span class="k">while</span> <span class="o">[</span> <span class="nv">$num</span> -le <span class="m">5</span> <span class="o">]</span>
+<span class="k">do</span>
+   <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$num</span><span class="s2">&quot;</span>
+   <span class="nv">num</span><span class="o">=</span><span class="k">$((</span>num+1<span class="k">))</span>
 <span class="k">done</span>
 </pre></div>
 </td></tr></table>
@@ -1329,6 +1359,121 @@ For numeric comparision use,
 <tr>
 <td>$$</td>
 <td>returns PID of current shell</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p>$<em> and $@ both will act the same unless they are enclosed in double quotes, "".
+"$</em>" special parameter takes the entire list as one argument with spaces between and the "$@" special parameter takes the entire list and separates it into separate arguments.</p>
+</div>
+<h2 id="file-test-operators">File Test Operators</h2>
+<table>
+<thead>
+<tr>
+<th>operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-a file</td>
+<td>True if file exists.</td>
+</tr>
+<tr>
+<td>-b file</td>
+<td>True if file exists and is a block special file.</td>
+</tr>
+<tr>
+<td>-c file</td>
+<td>True if file exists and is a character special file.</td>
+</tr>
+<tr>
+<td>-d file</td>
+<td>True if file exists and is a directory.</td>
+</tr>
+<tr>
+<td>-e file</td>
+<td>True if file exists.</td>
+</tr>
+<tr>
+<td>-f file</td>
+<td>True if file exists and is a regular file.</td>
+</tr>
+<tr>
+<td>-g file</td>
+<td>True if file exists and is set-group-id.</td>
+</tr>
+<tr>
+<td>-h file</td>
+<td>True if file exists and is a symbolic link.</td>
+</tr>
+<tr>
+<td>-k file</td>
+<td>True if file exists and its ``sticky'' bit is set.</td>
+</tr>
+<tr>
+<td>-p file</td>
+<td>True if file exists and is a named pipe (FIFO).</td>
+</tr>
+<tr>
+<td>-r file</td>
+<td>True if file exists and is readable.</td>
+</tr>
+<tr>
+<td>-s file</td>
+<td>True if file exists and has a size greater than zero.</td>
+</tr>
+<tr>
+<td>-t fd</td>
+<td>True if file descriptor fd is open and refers to a terminal.</td>
+</tr>
+<tr>
+<td>-u file</td>
+<td>True if file exists and its set-user-id bit is set.</td>
+</tr>
+<tr>
+<td>-w file</td>
+<td>True if file exists and is writable.</td>
+</tr>
+<tr>
+<td>-x file</td>
+<td>True if file exists and is executable.</td>
+</tr>
+<tr>
+<td>-G file</td>
+<td>True if file exists and is owned by the effective group id.</td>
+</tr>
+<tr>
+<td>-L file</td>
+<td>True if file exists and is a symbolic link.</td>
+</tr>
+<tr>
+<td>-N file</td>
+<td>True if file exists and has been modified since it was last read.</td>
+</tr>
+<tr>
+<td>-O file</td>
+<td>True if file exists and is owned by the effective user id.</td>
+</tr>
+<tr>
+<td>-S file</td>
+<td>True if file exists and is a socket.</td>
+</tr>
+<tr>
+<td>-v varname</td>
+<td>True if the shell variable varname is set (has been assigned a value).</td>
+</tr>
+<tr>
+<td>-z string</td>
+<td>True if the length of string is zero.</td>
+</tr>
+<tr>
+<td>-n string</td>
+<td>True if the length of string is non-zero.</td>
+</tr>
+<tr>
+<td>str</td>
+<td>Check if str is not empty; if empty, then returns false.</td>
 </tr>
 </tbody>
 </table>
