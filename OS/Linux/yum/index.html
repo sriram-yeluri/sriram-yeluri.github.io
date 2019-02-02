@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.5">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.451f80e5.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
@@ -67,6 +67,7 @@
       
     
     <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
     
       <link rel="stylesheet" href="../../../css/extra.css">
     
@@ -690,6 +691,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../fileSystem/" title="FileSystem" class="md-nav__link">
+      FileSystem
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1216,12 +1229,12 @@
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">###</span> <span class="nt">YUM</span> <span class="nt">not</span> <span class="nt">working</span> <span class="nt">on</span> <span class="nt">Centos</span> <span class="nt">and</span> <span class="nt">gave</span> <span class="nt">below</span> <span class="nt">error</span> <span class="o">:</span>
-<span class="nt">could</span> <span class="nt">not</span> <span class="nt">retrieve</span> <span class="nt">mirrorlist</span> <span class="nt">http</span><span class="o">://</span><span class="nt">mirrorlist</span><span class="p">.</span><span class="nc">centos</span><span class="p">.</span><span class="nc">org</span><span class="o">/?</span><span class="nt">release</span><span class="o">=</span><span class="nt">7</span><span class="o">&amp;</span><span class="nt">arch</span><span class="o">=</span><span class="nt">x86_64</span><span class="o">&amp;</span><span class="nt">repo</span><span class="o">=</span><span class="nt">extras</span><span class="o">&amp;</span><span class="nt">infra</span><span class="o">=</span><span class="nt">stock</span> <span class="nt">error</span> <span class="nt">was</span>
-<span class="nt">14</span><span class="o">:</span> <span class="nt">curl</span><span class="p">#</span><span class="nn">6</span> <span class="nt">-</span> <span class="s2">&quot;Could not resolve host: mirrorlist.centos.org; Unknown error&quot;</span>
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">### YUM not working on Centos and gave below error </span>
+could not retrieve mirrorlist http://mirrorlist.centos.org/?release<span class="o">=</span><span class="m">7</span><span class="p">&amp;</span><span class="nv">arch</span><span class="o">=</span>x86_64<span class="p">&amp;</span><span class="nv">repo</span><span class="o">=</span>extras<span class="p">&amp;</span><span class="nv">infra</span><span class="o">=</span>stock error was
+<span class="m">14</span>: curl#6 - <span class="s2">&quot;Could not resolve host: mirrorlist.centos.org; Unknown error&quot;</span>
 
-<span class="err">###</span> <span class="nt">To</span> <span class="nt">Fix</span> <span class="nt">above</span> <span class="nt">issue</span> <span class="o">:</span> <span class="nt">go</span> <span class="nt">to</span> <span class="o">/</span><span class="nt">etc</span><span class="o">/</span><span class="nt">resolve</span><span class="p">.</span><span class="nc">conf</span> <span class="nt">and</span> <span class="nt">add</span><span class="o">/</span><span class="nt">update</span> <span class="nt">nameserver</span>
-<span class="nt">nameserver</span> <span class="nt">8</span><span class="p">.</span><span class="nc">8</span><span class="p">.</span><span class="nc">8</span><span class="p">.</span><span class="nc">8</span>
+<span class="c1">### To Fix above issue : go to /etc/resolve.conf and add/update nameserver</span>
+nameserver <span class="m">8</span>.8.8.8
 </pre></div>
 </td></tr></table>
 
@@ -1270,13 +1283,13 @@
           </a>
         
         
-          <a href="../../../Networking/" title="Networking" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../fileSystem/" title="FileSystem" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Networking
+                FileSystem
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1315,7 +1328,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.583bbe55.js"></script>
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
