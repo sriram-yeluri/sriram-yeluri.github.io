@@ -62,8 +62,8 @@
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Ubuntu+Mono">
-        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
@@ -1367,7 +1367,7 @@ List out all network interfaces and status
 36
 37</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># vi /etc/sysconfig/network-scripts/ifcfg-eth0</span>
 
-<span class="c1">## Typical Configuration </span>
+<span class="c1">## Typical Configuration</span>
 <span class="nv">DEVICE</span><span class="o">=</span><span class="s2">&quot;eth0&quot;</span>
 <span class="nv">ONBOOT</span><span class="o">=</span>yes
 <span class="nv">NETBOOT</span><span class="o">=</span>yes
@@ -1379,10 +1379,10 @@ List out all network interfaces and status
 <span class="nv">NAME</span><span class="o">=</span><span class="s2">&quot;eth0&quot;</span>
 
 
-<span class="c1">### Updated Configuration</span>
+<span class="c1">## Configuration for Static IP</span>
 <span class="nv">HWADDR</span><span class="o">=</span><span class="m">00</span>:08:A2:0A:BA:B8
 <span class="nv">TYPE</span><span class="o">=</span>Ethernet
-<span class="nv">BOOTPROTO</span><span class="o">=</span>none
+<span class="nv">BOOTPROTO</span><span class="o">=</span>static
 <span class="c1"># Server IP #</span>
 <span class="nv">IPADDR</span><span class="o">=</span><span class="m">192</span>.168.2.203
 <span class="c1"># Subnet #</span>
