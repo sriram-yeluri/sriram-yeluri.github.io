@@ -1,9 +1,10 @@
-body {
-    padding-top: 15px;
+body {    
+    background-color: lightgray;
 }
 
-h2 {
-    color:purple;
+h2 {    
+    color:#0c4542;
+    font-size: 1.0em; 
 }
 
 h3 {

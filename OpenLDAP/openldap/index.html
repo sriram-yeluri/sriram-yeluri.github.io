@@ -62,8 +62,8 @@
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Ubuntu+Mono">
-        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
@@ -1346,20 +1346,20 @@
 6
 7
 8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="m">1</span>. Stop OpenLDAP service by stopping slapd daemon
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Stop OpenLDAP service by stopping slapd daemon
 
-<span class="m">2</span>. Go to /appl/openldap/var/openldap-data-sccm and delete all the files
+Go to /appl/openldap/var/openldap-data-sccm and delete all the files
 
-<span class="m">3</span>. Execute the slapadd <span class="nb">command</span> ./slapadd -q -l /appl/openldap/backup/backupfile.ldif
+Execute the slapadd <span class="nb">command</span> ./slapadd -q -l /appl/openldap/backup/backupfile.ldif
 
-<span class="m">4</span>. chmod -R <span class="m">700</span> /appl/openldap/var/openldap-data
+chmod -R <span class="m">700</span> /appl/openldap/var/openldap-data
 
-<span class="m">5</span>. Start OpenLDAP service by starting slapd daemon
+Start OpenLDAP service by starting slapd daemon
 </pre></div>
 </td></tr></table>
 
 <h3 id="references">References</h3>
-<p>http://www.zytrax.com/books/ldap/ch6/slapd-config.html</p>
+<p><a href="http://www.zytrax.com/books/ldap/ch6/slapd-config.html">OpenLDAP using OLC-online configuration</a></p>
                 
                   
                 
