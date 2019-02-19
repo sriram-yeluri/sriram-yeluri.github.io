@@ -1349,7 +1349,6 @@
 <p><img alt="Docker EE Trail " src="../../../images/Docker/docker-ee-trial.png" />  </p>
 <h2 id="install-docker-ce-on-centos7">Install Docker CE on Centos7</h2>
 <p><a href="https://docs.docker.com/engine/installation/linux/docker-ce/centos/#install-docker-ce">Install Docker CE on Centos7</a></p>
-<p>https://store.docker.com/  </p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -1372,19 +1371,23 @@
 20
 21
 22
-23</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>dockerCE
-<span class="c1"># yum install -y yum-utils \</span>
+23
+24
+25</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Installing dockerCE</span>
+yum install -y yum-utils <span class="se">\</span>
   device-mapper-persistent-data <span class="se">\</span>
   lvm2
 
-<span class="c1"># yum-config-manager \</span>
+yum-config-manager <span class="se">\</span>
     --add-repo <span class="se">\</span>
     https://download.docker.com/linux/centos/docker-ce.repo
 
-<span class="c1"># yum install docker-ce</span>
-dockerCE
+yum install docker-ce
 
-<span class="c1"># usermod -aG docker &lt;user_id&gt; This is to run docker as non root user</span>
+<span class="c1"># Installing dockerCE</span>
+
+<span class="c1"># to run docker as non root user</span>
+usermod -aG docker &lt;user_id&gt;
 
 <span class="o">[</span>root@centos7vm ~<span class="o">]</span><span class="c1"># systemctl enable docker</span>
 Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
@@ -1392,17 +1395,19 @@ Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service 
 <span class="o">[</span>root@centos7vm ~<span class="o">]</span><span class="c1"># chkconfig docker on</span>
 Note: Forwarding request to <span class="s1">&#39;systemctl enable docker.service&#39;</span>.
 
-<span class="c1"># service docker start</span>
+service docker start
 
-<span class="c1"># docker ps</span>
+docker ps
 </pre></div>
 </td></tr></table>
 
 <h2 id="nexus">Nexus</h2>
 <h3 id="sonatype-nexus-docker-with-persisent-data">Sonatype Nexus Docker with persisent data</h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="hll"><span class="c1"># chown -R 200 /home/sriram.yeluri/Data/NEXUS_DATA  </span>
-</span><span class="c1"># docker run -d -p 8081:8081 --name nexus -v /home/sriram.yeluri/Data/NEXUS_DATA:/nexus-data sonatype/nexus3</span>
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="hll">chown -R <span class="m">200</span> /home/sriram.yeluri/Data/NEXUS_DATA  
+</span>
+docker run -d -p <span class="m">8081</span>:8081 --name nexus -v /home/sriram.yeluri/Data/NEXUS_DATA:/nexus-data sonatype/nexus3
 </pre></div>
 </td></tr></table>
 
@@ -1410,29 +1415,33 @@ Note: Forwarding request to <span class="s1">&#39;systemctl enable docker.servic
 <p class="admonition-title">example</p>
 <p>http://192.168.2.5:8081/</p>
 </div>
-<p>Jenkins : https://store.docker.com/images/jenkins</p>
 <h2 id="jenkins">Jenkins</h2>
 <h3 id="jenkins-with-persisent-data">Jenkins with persisent data</h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># docker run -p 8080:8080 -p 50000:50000 --name jenkins -v /home/sriram.yeluri/Data/JENKINS_HOME:/var/jenkins_home jenkins</span>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>docker run -p <span class="m">8080</span>:8080 -p <span class="m">50000</span>:50000 --name jenkins -v /home/sriram.yeluri/Data/JENKINS_HOME:/var/jenkins_home jenkins
 
-<span class="c1"># docker run -p 8080:8080 -p 50000:50000 --name jenkins -v /home/sriram.yeluri/Data/JENKINS_HOME:/var/jenkins_home jenkins/jenkins:lts</span>
+docker run -p <span class="m">8080</span>:8080 -p <span class="m">50000</span>:50000 --name jenkins -v /home/sriram.yeluri/Data/JENKINS_HOME:/var/jenkins_home jenkins/jenkins:lts
 </pre></div>
 </td></tr></table>
 
 <h3 id="jenkins-operations-center-joc">Jenkins Operations Center - JOC</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># docker run -p 8089:8080 -p 50001:50000 --name cjoc -v /home/sriram.yeluri/Data/JENKINS_OC_HOME:/var/jenkins_home cloudbees/jenkins-operations-center</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>docker run -p <span class="m">8089</span>:8080 -p <span class="m">50001</span>:50000 --name cjoc -v /home/sriram.yeluri/Data/JENKINS_OC_HOME:/var/jenkins_home cloudbees/jenkins-operations-center
+
+<span class="c1">#Initial secret can be found at below path</span>
+/var/jenkins_home/secrets/initialAdminPassword
 </pre></div>
 </td></tr></table>
 
-<p>Initial seret can be found at : /var/jenkins_home/secrets/initialAdminPassword  </p>
 <div class="admonition note">
 <p class="admonition-title">example</p>
 <p>http://192.168.2.5:8080/  </p>
 </div>
 <h2 id="postgres">Postgres</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># docker run --name postgres -e POSTGRES_PASSWORD=secret -d postgres -v /home/sriram.yeluri/Data/PG_DATA:/var/lib/postgresql/data</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>docker run --name postgres -e <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>secret -d postgres -v /home/sriram.yeluri/Data/PG_DATA:/var/lib/postgresql/data
 </pre></div>
 </td></tr></table>
 
@@ -1446,7 +1455,7 @@ Note: Forwarding request to <span class="s1">&#39;systemctl enable docker.servic
 6
 7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo vi /lib/systemd/system/docker.service
 
-Modify the line that starts with ExecStart
+<span class="c1"># Modify the line that starts with ExecStart</span>
 <span class="nv">ExecStart</span><span class="o">=</span>/usr/bin/docker daemon -H fd:// -H tcp://0.0.0.0:4243
 
 systemctl daemon-reload

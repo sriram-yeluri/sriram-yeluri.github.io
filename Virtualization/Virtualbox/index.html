@@ -989,13 +989,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#manage-vbox" title="Manage Vbox" class="md-nav__link">
-    Manage Vbox
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#ipod-not-recognised-in-windows-guest" title="ipod-not-recognised-in-windows-guest" class="md-nav__link">
     ipod-not-recognised-in-windows-guest
   </a>
@@ -1007,25 +1000,19 @@
     Install virtualbox Extension pack
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cloning-vms-in-virtualbox" title="Cloning VMs in VirtualBox" class="md-nav__link">
     Cloning VMs in VirtualBox
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#run-vm-in-background" title="Run VM in background" class="md-nav__link">
     Run VM in background
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1236,13 +1223,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#manage-vbox" title="Manage Vbox" class="md-nav__link">
-    Manage Vbox
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#ipod-not-recognised-in-windows-guest" title="ipod-not-recognised-in-windows-guest" class="md-nav__link">
     ipod-not-recognised-in-windows-guest
   </a>
@@ -1254,25 +1234,19 @@
     Install virtualbox Extension pack
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cloning-vms-in-virtualbox" title="Cloning VMs in VirtualBox" class="md-nav__link">
     Cloning VMs in VirtualBox
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#run-vm-in-background" title="Run VM in background" class="md-nav__link">
     Run VM in background
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1303,15 +1277,24 @@
                 
                 
                 <h1 id="virtualbox">Virtualbox</h1>
-<h3 id="vbox-logs">VBox Logs</h3>
-<p>For Vbox if you encounter errors, check vbox logs at </p>
-<p><code>/var/log/vboxadd-install.log</code></p>
-<p>vboxmanage list vms
-vboxmanage showvminfo Centos7 --details</p>
-<p>https://blogs.oracle.com/scoter/networking-in-virtualbox-v2</p>
-<h2 id="manage-vbox">Manage Vbox</h2>
-<p>To display list of vms on the vbox:
-vboxmanage list vms</p>
+<h2 id="vbox-logs">VBox Logs</h2>
+<p>For Vbox if you encounter errors, check vbox logs</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># log location</span>
+/var/log/vboxadd-install.log
+
+<span class="c1">#Command to display list of vms on the vbox</span>
+vboxmanage list vms
+
+vboxmanage showvminfo Centos7 --details
+</pre></div>
+</td></tr></table>
+
 <h2 id="ipod-not-recognised-in-windows-guest">ipod-not-recognised-in-windows-guest</h2>
 <ul>
 <li>Install Extension Pack.</li>
@@ -1319,34 +1302,42 @@ vboxmanage list vms</p>
 <li>select USB 2.0 as the controller in Settings</li>
 </ul>
 <h2 id="install-virtualbox-extension-pack">Install virtualbox Extension pack</h2>
-<p><a href="https://unix.stackexchange.com/questions/289685/how-to-install-virtualbox-extension-pack/290462">Link</a></p>
+<p><a href="https://unix.stackexchange.com/questions/289685/how-to-install-virtualbox-extension-pack/290462">how-to-install-virtualbox-extension-pack</a></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>1. wget http://download.virtualbox.org/virtualbox/5.2.4/Oracle_VM_VirtualBox_Extension_Pack-5.2.4-119785.vbox-extpack 
-2. sudo vboxmanage extpack Oracle_VM_VirtualBox_Extension_Pack-5.2.4-119785.vbox-extpack
-3. Once installed, you can see at : File -&gt; Preferences -&gt; Extensions
-4. To verify if it has been successfully installed, we may list all installed extension packs:
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>wget http://download.virtualbox.org/virtualbox/5.2.4/Oracle_VM_VirtualBox_Extension_Pack-5.2.4-119785.vbox-extpack 
+sudo vboxmanage extpack Oracle_VM_VirtualBox_Extension_Pack-5.2.4-119785.vbox-extpack
+Once installed, you can see at : File -&gt; Preferences -&gt; Extensions
+To verify <span class="k">if</span> it has been successfully installed, list all installed extension packs:
 VBoxManage list extpacks
 </pre></div>
 </td></tr></table>
 
-<h3 id="cloning-vms-in-virtualbox">Cloning VMs in VirtualBox</h3>
-<p><a href="https://askubuntu.com/questions/82322/how-do-i-fix-broken-networking-in-cloned-virtual-machines">CloneVMs</a></p>
-<p>/etc/sysconfig/network-scripts/ifcfg-enp0s3
-/etc/udev/rules.d/*-persistent-net.rules</p>
-<h3 id="run-vm-in-background">Run VM in background</h3>
-<p>Get the VM name by the command # vboxmanage list vms  </p>
+<h2 id="cloning-vms-in-virtualbox">Cloning VMs in VirtualBox</h2>
+<p><a href="https://askubuntu.com/questions/82322/how-do-i-fix-broken-networking-in-cloned-virtual-machines">how-do-i-fix-broken-networking-in-cloned-virtual-machines</a></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>/etc/sysconfig/network-scripts/ifcfg-enp0s3
+/etc/udev/rules.d/*-persistent-net.rules
+</pre></div>
+</td></tr></table>
+
+<h2 id="run-vm-in-background">Run VM in background</h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>vboxmanage list vms
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">#Get the VM name by listing VMs</span>
+vboxmanage list vms
+
 VBoxManage startvm <span class="si">${</span><span class="nv">VM_NAME</span><span class="si">}</span> --type headless
-vboxmanage startvm centos7vm2 --type headless
+example : vboxmanage startvm centos7vm2 --type headless
 </pre></div>
 </td></tr></table>
 
 <h2 id="networking">Networking</h2>
+<p><a href="https://blogs.oracle.com/scoter/networking-in-virtualbox-v2">vbox Networking concepts</a></p>
 <p><img alt="" src="../../images/vbox/vbox_nw_1.png" />
 <img alt="" src="../../images/vbox/vbox_nw_2.png" />
 <img alt="" src="../../images/vbox/vbox_vm_nw_1.png" />
