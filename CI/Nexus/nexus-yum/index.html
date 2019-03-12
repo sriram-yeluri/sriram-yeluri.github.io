@@ -433,6 +433,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-to-download-the-latest-available-artifact-from-nexus" title="How to download the latest available artifact from nexus" class="md-nav__link">
+    How to download the latest available artifact from nexus
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -696,6 +716,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../OS/Linux/sysAdmin/" title="SysAdmin" class="md-nav__link">
+      SysAdmin
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -757,6 +789,18 @@
   <li class="md-nav__item">
     <a href="../../../Security/ssl_certificates/" title="SSL Certificates" class="md-nav__link">
       SSL Certificates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Security/hardening/" title="Hardening" class="md-nav__link">
+      Hardening
     </a>
   </li>
 
@@ -1132,18 +1176,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../vnc_config/" title="VNC" class="md-nav__link">
-      VNC
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
     <a href="../../../references/" title="References" class="md-nav__link">
       References
     </a>
@@ -1189,6 +1221,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-to-download-the-latest-available-artifact-from-nexus" title="How to download the latest available artifact from nexus" class="md-nav__link">
+    How to download the latest available artifact from nexus
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1211,9 +1263,13 @@
                 <h1 id="nexus">Nexus</h1>
 <h2 id="yum-repositories-in-nexus">YUM repositories in Nexus</h2>
 <ol>
-<li>Create a repo of type yum (example as shown below)
-<img alt="Nexus YUM Configurtion" src="../../../images/Nexus/nexus-yum1.png" /></li>
-<li>Create a repo file in /etc/yum.repos.d/nexus.repo  </li>
+<li>
+<p>Create a repo of type yum (example as shown below)
+<img alt="Nexus YUM Configurtion" src="../../../images/Nexus/nexus-yum1.png" /></p>
+</li>
+<li>
+<p>Create a repo file in /etc/yum.repos.d/nexus.repo  </p>
+</li>
 </ol>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -1232,7 +1288,9 @@
 </td></tr></table>
 
 <ol>
-<li>yum check-update  ---&gt; this command will check if there is any update for this package</li>
+<li>
+<p>yum check-update  ---&gt; this command will check if there is any update for this package</p>
+</li>
 <li>
 <p>google-chrome repo fetched from nexus
 <img alt="nexus repo" src="../../../images/Nexus/nexus-yum2.png" /></p>
@@ -1247,9 +1305,15 @@
 </li>
 <li>
 <p>Browse yum proxy to verify if new package is downloaded
-<img alt="yum nexus proxy updated" src="../../../images/Nexus/nexus-yum5.png" /> </p>
+<img alt="yum nexus proxy updated" src="../../../images/Nexus/nexus-yum5.png" /></p>
 </li>
 </ol>
+<hr />
+<h2 id="how-to-download-the-latest-available-artifact-from-nexus">How to download the latest available artifact from nexus</h2>
+<p>There is a metadata file that maintains a latest version of the artifact that you store in Nexus and by using something like the below URL you will be able to download the latest available artifact from nexus</p>
+<p><code>https://localhost:8443/nexus/service/local/artifact/maven/redirect?r=ABC-releases&amp;g=&lt;group_ID&gt;&amp;a=&lt;artifact&gt;&amp;v=LATEST</code></p>
+<p><a href="https://oss.sonatype.org/nexus-restlet1x-plugin/default/docs/path__artifact_maven_redirect.html">API : /artifact/maven/redirect</a></p>
+<h3 id="references">References</h3>
                 
                   
                 
