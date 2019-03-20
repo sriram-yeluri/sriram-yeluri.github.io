@@ -1,11 +1,12 @@
-.codehilite pre {
-    color: black;
-    background: red;    
-  }
-.codehilite .hll { background-color: yellow }
+.hll { background-color: yellow }
 .codehilite .ch { color: #000080 } /* Comment.Hashbang */
-.codehilite .c1 { color: green } /* Comment.Single */
+.codehilite .c1 { color:green } /* Comment.Single */
 
-.codehilite div {
-    background: red;
-  }
+.codehilitetable { 
+  background-color: rgb(193, 200, 236);
+}
+
+.linenodiv {
+  color: white;
+  background: blue;
+}
