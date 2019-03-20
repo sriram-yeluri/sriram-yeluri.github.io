@@ -1287,7 +1287,7 @@
  7
  8
  9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>For string comparision use, 
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>For string comparision use,
 <span class="o">==</span>  
 !<span class="o">=</span>  
 <span class="p">&amp;</span>lt<span class="p">;</span>  
@@ -1311,15 +1311,13 @@ For numeric comparision use,
  8
  9
 10
-11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="k">for</span> variable in <span class="o">{</span>list<span class="o">}</span>
 <span class="k">do</span>
     &lt;commands&gt;
 <span class="k">done</span>
 
-
-<span class="c1">#!/bin/bash</span>
+<span class="c1"># Example</span>
 <span class="k">for</span> i in <span class="o">{</span><span class="m">1</span>..10<span class="o">}</span>
 <span class="k">do</span>
     <span class="nb">echo</span> <span class="nv">$i</span>
@@ -1338,12 +1336,14 @@ For numeric comparision use,
  9
 10
 11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">while</span> <span class="o">[[</span>condition<span class="o">]]</span>  
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="k">while</span> <span class="o">[[</span>condition<span class="o">]]</span>  
 <span class="k">do</span>
     &lt;commands&gt;
 <span class="k">done</span>
 
-<span class="c1">#!/bin/bash</span>
+<span class="c1"># Example</span>
 <span class="nv">num</span><span class="o">=</span><span class="m">1</span>
 <span class="k">while</span> <span class="o">[</span> <span class="nv">$num</span> -le <span class="m">5</span> <span class="o">]</span>
 <span class="k">do</span>
