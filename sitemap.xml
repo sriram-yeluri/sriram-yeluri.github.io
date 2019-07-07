@@ -1,193 +1,295 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-     <loc>https://sriram-yeluri.github.io/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/CI/Jenkins/Jenkins-code-snippets/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/CI/Jenkins/Jenkins-docker/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/CI/Jenkins/configuration/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/CI/Bitbucket/bitbucket/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/CI/Nexus/nexus-yum/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/CI/Fortify/fortify/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/CI/SonarQube/sonarqube/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/CM/Ansible/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/OS/Linux/linux_learning/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/OS/Linux/vim/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/OS/Linux/CentOS/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/OS/Linux/RHEL/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/OS/Linux/ubuntu/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/OS/Linux/kde_configuration/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/OS/Linux/yum/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/OS/Linux/fileSystem/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/OS/Linux/sysAdmin/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/Networking/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/Security/ssh/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/Security/ssl_certificates/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/Security/hardening/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/Programming/golang/golang/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/Programming/golang/golang-projects/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/Programming/golang/golang-http/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/Scripting/bash/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/Scripting/scripts/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/SCM/git/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/OpenLDAP/openldap/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/Virtualization/Virtualbox/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/Virtualization/Docker/Docker/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/Virtualization/Docker/dockerfile/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/Virtualization/Docker/DockerNetworking/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/AWS/aws/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/AWS/cft/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/AWS/s3/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/references/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://sriram-yeluri.github.io/about/</loc>
-     <lastmod>2019-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>//localhost:1313/docs/provisioning/</loc>
+    <lastmod>2019-07-07T15:06:56+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/cicd/</loc>
+    <lastmod>2019-06-22T08:42:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/aws/</loc>
+    <lastmod>2019-06-29T22:49:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/about/</loc>
+    <lastmod>2019-07-05T06:50:18+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/provisioning/ansible/</loc>
+    <lastmod>2019-07-07T15:06:56+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/scripting/bash/</loc>
+    <lastmod>2019-07-01T22:53:34+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/cicd/bitbucket/</loc>
+    <lastmod>2019-07-07T15:47:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/cicd/bitbucket/bitbucket/</loc>
+    <lastmod>2019-07-07T15:47:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/aws/cft/</loc>
+    <lastmod>2019-06-29T22:49:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/linux/centos/</loc>
+    <lastmod>2019-07-07T21:45:46+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/virtualization/docker/docker/</loc>
+    <lastmod>2019-06-29T22:49:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/virtualization/docker/dockernetworking/</loc>
+    <lastmod>2019-06-29T22:49:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/virtualization/docker/dockerfile/</loc>
+    <lastmod>2019-06-29T22:49:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/</loc>
+    <lastmod>2019-06-20T23:04:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/cicd/fortify/</loc>
+    <lastmod>2019-07-07T15:47:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/cicd/fortify/fortify/</loc>
+    <lastmod>2019-07-07T15:47:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/git/git/</loc>
+    <lastmod>2019-06-23T22:57:11+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/cicd/jenkins/jenkins-code-snippets/</loc>
+    <lastmod>2019-07-07T15:47:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/cicd/jenkins/</loc>
+    <lastmod>2019-07-07T15:47:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/cicd/jenkins/configuration/</loc>
+    <lastmod>2019-07-07T15:47:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/cicd/jenkins/jenkins-docker/</loc>
+    <lastmod>2019-06-22T08:42:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/linux/kde_configuration/</loc>
+    <lastmod>2019-07-01T22:53:34+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/k8s/kind/</loc>
+    <lastmod>2019-07-01T22:53:34+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/</loc>
+    <lastmod>2019-07-07T15:06:56+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/k8s/</loc>
+    <lastmod>2019-06-29T22:49:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/ldap/</loc>
+    <lastmod>2019-06-23T22:57:11+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/linux/</loc>
+    <lastmod>2019-06-22T08:42:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/linux/filesystem/</loc>
+    <lastmod>2019-07-01T22:53:34+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/security/hardening/</loc>
+    <lastmod>2019-06-29T22:49:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/linux/networking/</loc>
+    <lastmod>2019-07-01T22:53:34+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/cicd/nexus/</loc>
+    <lastmod>2019-07-07T15:47:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/cicd/nexus/nexus/</loc>
+    <lastmod>2019-07-07T15:57:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/cicd/nexus/nexus-yum/</loc>
+    <lastmod>2019-07-07T15:57:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/ldap/openldap/</loc>
+    <lastmod>2019-06-23T22:57:11+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/programming/</loc>
+    <lastmod>2019-06-22T08:42:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/linux/rhel/</loc>
+    <lastmod>2019-06-23T22:57:11+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/git/</loc>
+    <lastmod>2019-06-22T08:42:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/security/ssh/</loc>
+    <lastmod>2019-06-29T22:49:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/security/ssl_certificates/</loc>
+    <lastmod>2019-06-29T22:49:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/scripting/scripts/</loc>
+    <lastmod>2019-07-01T22:53:34+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/scripting/</loc>
+    <lastmod>2019-06-22T08:42:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/security/</loc>
+    <lastmod>2019-06-22T08:42:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/cicd/sonarqube/</loc>
+    <lastmod>2019-07-07T15:47:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/cicd/sonarqube/sonarqube/</loc>
+    <lastmod>2019-07-07T15:47:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/tutorials/topics/startlearning/</loc>
+    <lastmod>2019-07-07T15:57:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/linux/sysadmin/</loc>
+    <lastmod>2019-07-01T22:53:34+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/linux/</loc>
+    <lastmod>2019-07-07T21:45:46+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/tutorials/</loc>
+    <lastmod>2019-07-07T15:06:56+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/linux/ubuntu/</loc>
+    <lastmod>2019-06-22T08:42:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/linux/vim/</loc>
+    <lastmod>2019-07-01T22:53:34+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/virtualization/virtualbox/</loc>
+    <lastmod>2019-06-29T22:49:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/virtualization/</loc>
+    <lastmod>2019-06-22T08:42:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/linux/yum/</loc>
+    <lastmod>2019-07-01T22:53:34+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/programming/golang/golang/</loc>
+    <lastmod>2019-06-23T22:57:11+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/programming/golang/golang-http/</loc>
+    <lastmod>2019-06-20T23:04:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/programming/golang/golang-projects/</loc>
+    <lastmod>2019-06-23T22:57:11+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/k8s/kubectl/</loc>
+    <lastmod>2019-06-29T22:49:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/k8s/minikube/</loc>
+    <lastmod>2019-06-29T22:49:26+02:00</lastmod>
+  </url>
+  
 </urlset>
