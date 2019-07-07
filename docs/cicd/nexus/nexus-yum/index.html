@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+	<head>
+	
+
+<meta charset="utf-8">
+<title>Nexus-yum - SY Knowledge Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="Yum repositories with Nexus">
+<meta property="og:description" content="Yum repositories with Nexus">
+<meta name="twitter:description" content="Yum repositories with Nexus">
+<meta property="og:url" content="//localhost:1313/docs/cicd/nexus/nexus-yum/">
+<meta property="og:title" content="Nexus-yum">
+<meta name="twitter:title" content="Nexus-yum">
+<meta name="twitter:image" content="https://kubernetes.io/images/favicon.png" />
+
+<meta name="twitter:image:alt" content="SY Knowledge Hub">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-4.3.1.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+	</head>
+	<body>
+		<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/" class="logo"></a>
+
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/docs/" class="active">Documentation</a></li>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+             <li>
+                <a href="#">
+                     <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                </ul>
+            </li>
+         
+            <li>
+                <a href="#">
+                     <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                </ul>
+            </li>
+        </ul>   
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite"></h5>
+            <a href="https://github.com/sriram-yeluri" class="button" data-auto-burger-exclude></a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite"></h5>
+            <div class="social">                
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+		
+		
+		<section id="hero" class="light-text no-sub">
+			
+
+
+
+
+
+
+
+<h1>CICD</h1>
+<h5></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/docs/provisioning/">PROVISIONING</a></li>
+		
+		
+		<li><a href="/docs/cicd/" class="YAH">CICD</a></li>
+		
+		
+		<li><a href="/docs/aws/">AWS</a></li>
+		
+		
+		<li><a href="/docs/k8s/">KUBERNETES</a></li>
+		
+		
+		<li><a href="/docs/ldap/">LDAP</a></li>
+		
+		
+		<li><a href="/docs/linux/">LINUX</a></li>
+		
+		
+		<li><a href="/docs/programming/">PROGRAMMING</a></li>
+		
+		
+		<li><a href="/docs/git/">SCM</a></li>
+		
+		
+		<li><a href="/docs/scripting/">SCRIPTING</a></li>
+		
+		
+		<li><a href="/docs/security/">SECURITY</a></li>
+		
+		
+		<li><a href="/docs/virtualization/">VIRTUALIZATION</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="Search" aria-label="Search">
+	</form>
+</div>
+
+		</section>
+		
+		
+
+		<section id="encyclopedia">
+			
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="CICD" href="/docs/cicd/"></a>
+
+	
+	
+	
+	
+		
+			
+<div class="item" data-title="Bitbucket">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Bitbucket" href="/docs/cicd/bitbucket/bitbucket/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Fortify">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Fortify" href="/docs/cicd/fortify/fortify/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Jenkins">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Jenkins" href="/docs/cicd/jenkins/jenkins-code-snippets/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Jenkins Configuration" href="/docs/cicd/jenkins/configuration/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Jenkins-Docker" href="/docs/cicd/jenkins/jenkins-docker/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Nexus">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Nexus" href="/docs/cicd/nexus/nexus/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Nexus-yum" href="/docs/cicd/nexus/nexus-yum/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="SonarQube">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="SonarQube" href="/docs/cicd/sonarqube/sonarqube/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+			<div id="docsContent">
+        
+
+
+
+<h1>Nexus-yum</h1>
+
+
+
+<p>Managing Yum packages with Nexus Repository Manager</p>
+
+
+
+
+
+
+
+
+
+<ul id="markdown-toc">
+
+
+
+
+
+
+
+
+
+
+<li><a href="#yum-repositories-in-nexus">YUM repositories in Nexus</a></li>
+
+
+
+
+<li><a href="#how-to-download-the-latest-available-artifact-from-nexus">How to download the latest available artifact from nexus</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+<h2 id="yum-repositories-in-nexus">YUM repositories in Nexus</h2>
+
+<ul>
+<li><p>Create a repo of type yum (example as shown below)
+<img src="/images/Nexus/nexus-yum1.png" alt="Nexus YUM Configurtion" /></p></li>
+
+<li><p>Create a repo file in /etc/yum.repos.d/nexus.repo</p></li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>nexusrepo<span style="color:#666">]</span>
+<span style="color:#b8860b">name</span><span style="color:#666">=</span>Nexus Repository
+<span style="color:#b8860b">baseurl</span><span style="color:#666">=</span>http://localhost:8081/repository/yum-google-chrome/
+<span style="color:#b8860b">enabled</span><span style="color:#666">=</span><span style="color:#666">1</span>
+<span style="color:#b8860b">gpgcheck</span><span style="color:#666">=</span><span style="color:#666">1</span>
+<span style="color:#b8860b">gpgkey</span><span style="color:#666">=</span>https://dl-ssl.google.com/linux/linux_signing_key.pub
+<span style="color:#b8860b">priority</span><span style="color:#666">=</span><span style="color:#666">1</span></code></pre></div>
+<ul>
+<li><p>yum check-update  &mdash;&gt; this command will check if there is any update for this package</p></li>
+
+<li><p>google-chrome repo fetched from nexus
+<img src="/images/Nexus/nexus-yum2.png" alt="nexus repo" /></p></li>
+
+<li><p>Browse yum proxy repository in nexus<br />
+<img src="/images/Nexus/nexus-yum3.png" alt="Browse yum proxy" /></p></li>
+
+<li><p>Update existing package using yum update as shown below
+<img src="/images/Nexus/nexus-yum4.png" alt="yum update" /></p></li>
+
+<li><p>Browse yum proxy to verify if new package is downloaded
+<img src="/images/Nexus/nexus-yum5.png" alt="yum nexus proxy updated" /></p></li>
+</ul>
+
+<h2 id="how-to-download-the-latest-available-artifact-from-nexus">How to download the latest available artifact from nexus</h2>
+
+<p>There is a metadata file that maintains a latest version of the artifact that you store in Nexus and by using something like the below URL you will be able to download the latest available artifact from nexus</p>
+
+<p><code>https://localhost:8443/nexus/service/local/artifact/maven/redirect?r=ABC-releases&amp;g=&lt;group_ID&gt;&amp;a=&lt;artifact&gt;&amp;v=LATEST</code></p>
+
+<p><a href="https://oss.sonatype.org/nexus-restlet1x-plugin/default/docs/path__artifact_maven_redirect.html" target="_blank">API : /artifact/maven/redirect</a></p>
+
+<h3 id="references">References</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+  <h2></h2>
+  <p class="feedback--prompt"> </p>
+  <button class="button feedback--yes"></button>
+  <button class="button feedback--no"></button>
+  <p class="feedback--response feedback--response__hidden">
+    
+    <a target="_blank" rel="noopener"
+      href="#">
+      Stack Overflow</a>.
+    
+    <a class="feedback--link" target="_blank" rel="noopener"
+      href="#">
+      </a>
+    
+    <a class="feedback--link" target="_blank" rel="noopener"
+      href="#">
+      </a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+
+        <div id="pre-footer"> 
+  <hr />
+
+</div>
+
+			</div>
+		</section>
+		<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </nav>
+        <div id="miceType" class="center">
+            Sriram Yeluri &copy; 2019
+        </div>
+    </main>
+</footer>
+
+		<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+    <script language="application/javascript">
+      
+      (function addHeadingLinks(){
+        var article = document.getElementById('docsContent');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = heading.innerHTML;
+            a.href = '#'+heading.id;
+            a.classList.add('inpage_heading');
+            heading.innerHTML = '';
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
+	<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
+</html>

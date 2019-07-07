@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+	<head>
+	
+
+<meta charset="utf-8">
+<title>Jenkins-Docker - SY Knowledge Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="Docker Slave for Jenkins">
+<meta property="og:description" content="Docker Slave for Jenkins">
+<meta name="twitter:description" content="Docker Slave for Jenkins">
+<meta property="og:url" content="//localhost:1313/docs/cicd/jenkins/jenkins-docker/">
+<meta property="og:title" content="Jenkins-Docker">
+<meta name="twitter:title" content="Jenkins-Docker">
+<meta name="twitter:image" content="https://kubernetes.io/images/favicon.png" />
+
+<meta name="twitter:image:alt" content="SY Knowledge Hub">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-4.3.1.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+	</head>
+	<body>
+		<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/" class="logo"></a>
+
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/docs/" class="active">Documentation</a></li>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+             <li>
+                <a href="#">
+                     <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                </ul>
+            </li>
+         
+            <li>
+                <a href="#">
+                     <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                </ul>
+            </li>
+        </ul>   
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite"></h5>
+            <a href="https://github.com/sriram-yeluri" class="button" data-auto-burger-exclude></a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite"></h5>
+            <div class="social">                
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+		
+		
+		<section id="hero" class="light-text no-sub">
+			
+
+
+
+
+
+
+
+<h1>CICD</h1>
+<h5></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/docs/provisioning/">PROVISIONING</a></li>
+		
+		
+		<li><a href="/docs/cicd/" class="YAH">CICD</a></li>
+		
+		
+		<li><a href="/docs/aws/">AWS</a></li>
+		
+		
+		<li><a href="/docs/k8s/">KUBERNETES</a></li>
+		
+		
+		<li><a href="/docs/ldap/">LDAP</a></li>
+		
+		
+		<li><a href="/docs/linux/">LINUX</a></li>
+		
+		
+		<li><a href="/docs/programming/">PROGRAMMING</a></li>
+		
+		
+		<li><a href="/docs/git/">SCM</a></li>
+		
+		
+		<li><a href="/docs/scripting/">SCRIPTING</a></li>
+		
+		
+		<li><a href="/docs/security/">SECURITY</a></li>
+		
+		
+		<li><a href="/docs/virtualization/">VIRTUALIZATION</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="Search" aria-label="Search">
+	</form>
+</div>
+
+		</section>
+		
+		
+
+		<section id="encyclopedia">
+			
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="CICD" href="/docs/cicd/"></a>
+
+	
+	
+	
+	
+		
+			
+<div class="item" data-title="Bitbucket">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Bitbucket" href="/docs/cicd/bitbucket/bitbucket/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Fortify">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Fortify" href="/docs/cicd/fortify/fortify/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Jenkins">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Jenkins" href="/docs/cicd/jenkins/jenkins-code-snippets/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Jenkins Configuration" href="/docs/cicd/jenkins/configuration/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Jenkins-Docker" href="/docs/cicd/jenkins/jenkins-docker/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Nexus">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Nexus" href="/docs/cicd/nexus/nexus/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Nexus-yum" href="/docs/cicd/nexus/nexus-yum/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="SonarQube">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="SonarQube" href="/docs/cicd/sonarqube/sonarqube/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+			<div id="docsContent">
+        
+
+
+
+<h1>Jenkins-Docker</h1>
+
+
+
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#running-jenkins-from-war-file">Running Jenkins from war file</a></li>
+<li><a href="#adding-jenkins-node-method-1">Adding Jenkins Node (Method-1)</a></li>
+<li><a href="#configure-docker-slaves-for-jenkins-method-2">Configure Docker Slaves for Jenkins (Method-2)</a>
+<ul>
+<li><a href="#to-do">TO-DO</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+
+
+<p>My use case is to run jenkins pipelines on docker build slaves. To achieve this we have to install Docker plugin.
+Docker plugin will integrate Jenkins with Docker. This docker plugin depends on Docker API plugin, so intall both the plugins. Restart is required for jenkins after installing these plugins.</p>
+
+<p>Manage Jenkins -&gt; Manage Plugins -&gt; Docker plugin , Docker slave plugin and Docker API plugin</p>
+
+<p>Once docker plugins are installed, restart jenkins master.</p>
+
+<p>Jenkins depends on specific version of Java, in my case i have OpenJDK 10.0.2 installed in my system and
+jenkins needs java 1.8, hence i downloaded JDK 1.8 and running jenkins with that version of java.</p>
+
+<h2 id="running-jenkins-from-war-file">Running Jenkins from war file</h2>
+
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#a2f">export</span> <span style="color:#b8860b">JAVA_HOME</span><span style="color:#666">=</span>/home/sriram/Downloads/jdk-8u191-linux-x64/jdk1.8.0_191
+<span style="color:#b8860b">$JAVA_HOME</span>/bin/java -jar jenkins.war &amp;</code></pre></div>
+
+<p>Once jenkins is fully up and running , we can see .jenkins folder inside user home directory
+/home/sriram/.jenkins/</p>
+
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sriram@optimus-prime:~/.jenkins$ <span style="color:#a2f">pwd</span>
+/home/sriram/.jenkins
+sriram@optimus-prime:~/.jenkins$ ll
+total <span style="color:#666">104</span>
+drwxr-xr-x <span style="color:#666">12</span> sriram sriram  <span style="color:#666">4096</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:56 ./
+drwxr-xr-x <span style="color:#666">44</span> sriram sriram  <span style="color:#666">4096</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:51 ../
+-rw-r--r--  <span style="color:#666">1</span> sriram sriram  <span style="color:#666">1644</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:56 config.xml
+-rw-r--r--  <span style="color:#666">1</span> sriram sriram   <span style="color:#666">156</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:56 hudson.model.UpdateCenter.xml
+-rw-r--r--  <span style="color:#666">1</span> sriram sriram   <span style="color:#666">370</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:51 hudson.plugins.git.GitTool.xml
+-rw-------  <span style="color:#666">1</span> sriram sriram  <span style="color:#666">1712</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:49 identity.key.enc
+-rw-r--r--  <span style="color:#666">1</span> sriram sriram    <span style="color:#666">94</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:49 jenkins.CLI.xml
+-rw-r--r--  <span style="color:#666">1</span> sriram sriram     <span style="color:#666">7</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:53 jenkins.install.InstallUtil.lastExecVersion
+-rw-r--r--  <span style="color:#666">1</span> sriram sriram     <span style="color:#666">7</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:53 jenkins.install.UpgradeWizard.state
+-rw-r--r--  <span style="color:#666">1</span> sriram sriram   <span style="color:#666">179</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:53 jenkins.model.JenkinsLocationConfiguration.xml
+-rw-r--r--  <span style="color:#666">1</span> sriram sriram   <span style="color:#666">171</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:49 jenkins.telemetry.Correlator.xml
+drwxr-xr-x  <span style="color:#666">2</span> sriram sriram  <span style="color:#666">4096</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:49 jobs/
+drwxr-xr-x  <span style="color:#666">3</span> sriram sriram  <span style="color:#666">4096</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:49 logs/
+-rw-r--r--  <span style="color:#666">1</span> sriram sriram   <span style="color:#666">907</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:56 nodeMonitors.xml
+drwxr-xr-x  <span style="color:#666">2</span> sriram sriram  <span style="color:#666">4096</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:49 nodes/
+drwxr-xr-x <span style="color:#666">75</span> sriram sriram <span style="color:#666">12288</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:51 plugins/
+-rw-r--r--  <span style="color:#666">1</span> sriram sriram   <span style="color:#666">129</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:55 queue.xml.bak
+-rw-r--r--  <span style="color:#666">1</span> sriram sriram    <span style="color:#666">64</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:49 secret.key
+-rw-r--r--  <span style="color:#666">1</span> sriram sriram     <span style="color:#666">0</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:49 secret.key.not-so-secret
+drwx------  <span style="color:#666">4</span> sriram sriram  <span style="color:#666">4096</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:53 secrets/
+drwxr-xr-x  <span style="color:#666">2</span> sriram sriram  <span style="color:#666">4096</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:50 updates/
+drwxr-xr-x  <span style="color:#666">2</span> sriram sriram  <span style="color:#666">4096</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:49 userContent/
+drwxr-xr-x  <span style="color:#666">3</span> sriram sriram  <span style="color:#666">4096</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:53 users/
+drwxr-xr-x <span style="color:#666">11</span> sriram sriram  <span style="color:#666">4096</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:49 war/
+drwxr-xr-x  <span style="color:#666">2</span> sriram sriram  <span style="color:#666">4096</span> nov <span style="color:#666">10</span> <span style="color:#666">12</span>:51 workflow-libs/
+sriram@optimus-prime:~/.jenkins$</code></pre></div>
+
+<h2 id="adding-jenkins-node-method-1">Adding Jenkins Node (Method-1)</h2>
+
+<p>This approach is a static method of using docker container as a build slave.</p>
+
+<ul>
+<li>create a node in jenkins with Launch method = Launch agent via Java Web Start</li>
+<li>Using the node name and secret key, spin up a container.</li>
+<li>This runing container will act as a build node for jenkins.</li>
+</ul>
+
+<p>I have used jenkins docker slave image from cloudbees.
+<a href="https://hub.docker.com/r/jenkinsci/jnlp-slave/" target="_blank">jenkinsci/jnlp-slave</a></p>
+
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">syntax:
+docker run jenkins/jnlp-slave -url http://jenkins-server:port &lt;secret&gt; &lt;agent name&gt;
+
+example:
+docker run jenkins/jnlp-slave -url http://192.168.2.8:8080 8302b7d76d0828b629bdd1460d587268af64616fe464d69f34c9119f5670f1f3 docker-agent-1</code></pre></div>
+
+<p><img src="/images/Jenkins/docker-slave-1.png" alt="" />
+<img src="/images/Jenkins/docker-slave-2.png" alt="" />
+<img src="/images/Jenkins/docker-slave-3.png" alt="" /></p>
+
+<h2 id="configure-docker-slaves-for-jenkins-method-2">Configure Docker Slaves for Jenkins (Method-2)</h2>
+
+<p>Go to Manage Jenkins -&gt; Configure System -&gt; you will now see Cloud option with a drop down to select Docker.</p>
+
+<h3 id="to-do">TO-DO</h3>
+
+<p>Add screenshots from Jenkins Configuration</p>
+
+
+
+
+        
+        
+  <h2></h2>
+  <p class="feedback--prompt"> </p>
+  <button class="button feedback--yes"></button>
+  <button class="button feedback--no"></button>
+  <p class="feedback--response feedback--response__hidden">
+    
+    <a target="_blank" rel="noopener"
+      href="#">
+      Stack Overflow</a>.
+    
+    <a class="feedback--link" target="_blank" rel="noopener"
+      href="#">
+      </a>
+    
+    <a class="feedback--link" target="_blank" rel="noopener"
+      href="#">
+      </a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+
+        <div id="pre-footer"> 
+  <hr />
+
+</div>
+
+			</div>
+		</section>
+		<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </nav>
+        <div id="miceType" class="center">
+            Sriram Yeluri &copy; 2019
+        </div>
+    </main>
+</footer>
+
+		<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+    <script language="application/javascript">
+      
+      (function addHeadingLinks(){
+        var article = document.getElementById('docsContent');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = heading.innerHTML;
+            a.href = '#'+heading.id;
+            a.classList.add('inpage_heading');
+            heading.innerHTML = '';
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
+	<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
+</html>
