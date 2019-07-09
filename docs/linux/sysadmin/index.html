@@ -376,18 +376,14 @@
 
 <h3 id="questions">Questions</h3>
 
-<p>Where could you configure the order in which filesystems are checked at boot time?
-/etc/fstab</p>
-
-<p>In a situation in which you wished to drop to a minimal rescue environment in which only you remained logged in and the system was not available over the network, what command would you run?
-systemctl isolate rescue.target</p>
-
-<p>Which rescue parameter would you pass to the kernel from the grub2 menu if your system was failing to boot because a filesystem check was failing?
-systemd.unit=emergency.target</p>
-
-<p>You are a member of a team of admins who are responsible for a critical system. This system has two different web servers installed: The first (Nginx) is used to serve content, the other (httpd) is installed only to satisfy dependencies and should never be started as it causes a conflict. What command could you run to ensure that &lsquo;httpd&rsquo; is never accidentally started or enabled by another admin?
-systemctl mask httpd</p>
-
+<p>Where could you configure the order in which filesystems are checked at boot time?</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">/etc/fstab</code></pre></div>
+<p>In a situation in which you wished to drop to a minimal rescue environment in which only you remained logged in and the system was not available over the network, what command would you run?</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">systemctl isolate rescue.target</code></pre></div>
+<p>Which rescue parameter would you pass to the kernel from the grub2 menu if your system was failing to boot because a filesystem check was failing?</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">systemd.unit<span style="color:#666">=</span>emergency.target</code></pre></div>
+<p>You are a member of a team of admins who are responsible for a critical system. This system has two different web servers installed: The first (Nginx) is used to serve content, the other (httpd) is installed only to satisfy dependencies and should never be started as it causes a conflict. What command could you run to ensure that &lsquo;httpd&rsquo; is never accidentally started or enabled by another admin?</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">systemctl mask httpd</code></pre></div>
 <h3 id="references">References</h3>
 
 
