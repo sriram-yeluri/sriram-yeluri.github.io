@@ -143,8 +143,6 @@
 
 
 
-
-
 <div id="vendorStrip" class="light-text">
 	<ul>
 		
@@ -152,19 +150,16 @@
 		<li><a href="/docs/provisioning/" class="YAH">PROVISIONING</a></li>
 		
 		
-		<li><a href="/docs/cicd/">CICD</a></li>
-		
-		
 		<li><a href="/docs/aws/">AWS</a></li>
+		
+		
+		<li><a href="/docs/cicd/">CICD</a></li>
 		
 		
 		<li><a href="/docs/k8s/">KUBERNETES</a></li>
 		
 		
 		<li><a href="/docs/ldap/">LDAP</a></li>
-		
-		
-		<li><a href="/docs/linux/">LINUX</a></li>
 		
 		
 		<li><a href="/docs/programming/">PROGRAMMING</a></li>
@@ -320,6 +315,11 @@
 
 
 
+<li><a href="#using-valut-in-ansible">Using valut in Ansible</a></li>
+
+
+
+
 <li><a href="#docker-ansible-control-machine">Docker ansible control machine</a></li>
 
 
@@ -396,6 +396,9 @@ In simple terms , Task is a call to ansible module.</p>
 <p>syntax: ansible options host-pattern<br />
 Ex: ansible -m ping all &mdash;&gt; ansible-command module_flag module_name inventory</p>
 
+<h2 id="using-valut-in-ansible">Using valut in Ansible</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Ansible" data-lang="Ansible">ansible-playbook -i hosts site.yml --ask-vault-pass
+ansible-playbook -i hosts site.yml --vault-password-file vault-pass</code></pre></div>
 <h2 id="docker-ansible-control-machine">Docker ansible control machine</h2>
 
 <p>Inorder to leaverage the container technology, i have created a simple docker image from centos and installed ansible. So we can spin up a container and use this as a control machine to run ansible playbooks.<br />

@@ -143,8 +143,6 @@
 
 
 
-
-
 <div id="vendorStrip" class="light-text">
 	<ul>
 		
@@ -152,19 +150,16 @@
 		<li><a href="/docs/provisioning/">PROVISIONING</a></li>
 		
 		
-		<li><a href="/docs/cicd/">CICD</a></li>
-		
-		
 		<li><a href="/docs/aws/">AWS</a></li>
+		
+		
+		<li><a href="/docs/cicd/">CICD</a></li>
 		
 		
 		<li><a href="/docs/k8s/" class="YAH">KUBERNETES</a></li>
 		
 		
 		<li><a href="/docs/ldap/">LDAP</a></li>
-		
-		
-		<li><a href="/docs/linux/">LINUX</a></li>
 		
 		
 		<li><a href="/docs/programming/">PROGRAMMING</a></li>
@@ -306,6 +301,21 @@
 
 
 
+<li><a href="#cluster-info">cluster-info</a></li>
+
+
+
+
+<li><a href="#get-nodes">get nodes</a></li>
+
+
+
+
+<li><a href="#creating-namespace-to-isolate-the-pods-in-cluster">Creating namespace to isolate the pods in cluster</a></li>
+
+
+
+
 <li><a href="#references">References</a></li>
 
 
@@ -329,7 +339,31 @@
 </ul>
 
 
-<p>some text to be added</p>
+<h2 id="cluster-info">cluster-info</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sriram@sriram-Inspiron-5567:~/k8s$ kubectl cluster-info
+Kubernetes master is running at https://192.168.99.100:8443
+KubeDNS is running at https://192.168.99.100:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use <span style="color:#b44">&#39;kubectl cluster-info dump&#39;</span>.</code></pre></div>
+<h2 id="get-nodes">get nodes</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sriram@sriram-Inspiron-5567:~/k8s$ kubectl get nodes
+NAME       STATUS   ROLES    AGE   VERSION
+minikube   Ready    master   11m   v1.15.0
+
+<span style="color:#080;font-style:italic"># list nodes with more information</span>
+sriram@sriram-Inspiron-5567:~/k8s$ kubectl get nodes -o<span style="color:#666">=</span>wide
+NAME       STATUS   ROLES    AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE              KERNEL-VERSION   CONTAINER-RUNTIME
+minikube   Ready    master   13m   v1.15.0   <span style="color:#666">10</span>.0.2.15     &lt;none&gt;        Buildroot <span style="color:#666">2018</span>.05.3   <span style="color:#666">4</span>.15.0           docker://18.9.6</code></pre></div>
+<h2 id="creating-namespace-to-isolate-the-pods-in-cluster">Creating namespace to isolate the pods in cluster</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl create namespace dev</code></pre></div>
+<p>Create deployment:
+kubectl run nexus &ndash;image=sonatype/nexus3:3.2.1 &ndash;port 8081</p>
+
+<p>Expose service :<br />
+kubectl expose deployment nexus &ndash;type=NodePort</p>
+
+<p>Access the service:
+Minikube service nexus</p>
 
 <h2 id="references">References</h2>
 
