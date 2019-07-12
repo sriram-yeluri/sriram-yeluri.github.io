@@ -133,8 +133,6 @@
 
 
 
-
-
 <h1>SCM</h1>
 <h5></h5>
 
@@ -152,19 +150,16 @@
 		<li><a href="/docs/provisioning/">PROVISIONING</a></li>
 		
 		
-		<li><a href="/docs/cicd/">CICD</a></li>
-		
-		
 		<li><a href="/docs/aws/">AWS</a></li>
+		
+		
+		<li><a href="/docs/cicd/">CICD</a></li>
 		
 		
 		<li><a href="/docs/k8s/">KUBERNETES</a></li>
 		
 		
 		<li><a href="/docs/ldap/">LDAP</a></li>
-		
-		
-		<li><a href="/docs/linux/">LINUX</a></li>
 		
 		
 		<li><a href="/docs/programming/">PROGRAMMING</a></li>
@@ -228,13 +223,11 @@
          
              
                  
+                          
+                          
+                 
              
          
-             
-                 
-                          
-                          
-                 
              
          
              
@@ -330,6 +323,26 @@
 
 
 
+<li><a href="#discard-all-local-changes">Discard all local changes</a></li>
+
+
+
+
+<li><a href="#commit-history">Commit History</a></li>
+
+
+
+
+<li><a href="#revert-commits">Revert commits</a></li>
+
+
+
+
+<li><a href="#compile-git-from-source">Compile Git from Source</a></li>
+
+
+
+
 
 
 
@@ -383,12 +396,37 @@
  git tag
  git tag -l <span style="color:#666">(</span>or<span style="color:#666">)</span> --list  <span style="color:#666">(</span>optional<span style="color:#666">)</span></code></pre></div>
 <h2 id="information-about-remote-repository">Information about Remote Repository</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"> git remote -v  
- <span style="color:#080;font-style:italic"># To display all branches that are present remotely and locally</span>
- git branch -a</code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"> git remote -v  </code></pre></div>
 <h2 id="git-branching">Git branching</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"> git branch branch_name  
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#080;font-style:italic"># To display all branches that are present remotely and locally</span>
+ git branch -a
+<span style="color:#080;font-style:italic"># To create a new branch</span>
+ git branch branch_name  
  git checkout branch_name  </code></pre></div>
+<h2 id="discard-all-local-changes">Discard all local changes</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#080;font-style:italic"># discard all local changes/commits and pull from upstream</span>
+
+git reset --hard origin/master
+git pull origin master</code></pre></div>
+<h2 id="commit-history">Commit History</h2>
+
+<p><code>git log</code></p>
+
+<h2 id="revert-commits">Revert commits</h2>
+
+<p><code>git revert &lt;commit-id&gt;</code></p>
+
+<h2 id="compile-git-from-source">Compile Git from Source</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.22.0.tar.gz
+tar -xvf git-2.22.0.tar.gz
+<span style="color:#a2f">cd</span> git-2.22.0
+make configure
+./configure --prefix<span style="color:#666">=</span>/appl/Git/2.22.0 --with-curl --with-expat
+make all
+make install
+
+<span style="color:#a2f">cd</span> /appl
+tar -cvf git-2.22.0.tar Git/2.22.0</code></pre></div>
 <h3 id="references">References</h3>
 
 <p><a href="https://git-scm.com/" target="_blank">git-scm</a><br />

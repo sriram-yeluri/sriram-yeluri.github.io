@@ -135,8 +135,6 @@
 
 
 
-
-
 <h1>Scripting</h1>
 <h5></h5>
 
@@ -152,19 +150,16 @@
 		<li><a href="/docs/provisioning/">PROVISIONING</a></li>
 		
 		
-		<li><a href="/docs/cicd/">CICD</a></li>
-		
-		
 		<li><a href="/docs/aws/">AWS</a></li>
+		
+		
+		<li><a href="/docs/cicd/">CICD</a></li>
 		
 		
 		<li><a href="/docs/k8s/">KUBERNETES</a></li>
 		
 		
 		<li><a href="/docs/ldap/">LDAP</a></li>
-		
-		
-		<li><a href="/docs/linux/">LINUX</a></li>
 		
 		
 		<li><a href="/docs/programming/">PROGRAMMING</a></li>
@@ -232,13 +227,11 @@
          
              
                  
+                          
+                          
+                 
              
          
-             
-                 
-                          
-                          
-                 
              
          
              
@@ -309,17 +302,22 @@
 
 
 
+<li><a href="#file-test-operators">File Test Operators</a></li>
+
+
+
+
+<li><a href="#standard-streams">Standard Streams</a></li>
+
+
+
+
 <li><a href="#string-vs-numeric-comparision">String vs Numeric comparision</a></li>
 
 
 
 
 <li><a href="#loops">Loops</a></li>
-
-
-
-
-<li><a href="#file-test-operators">File Test Operators</a></li>
 
 
 
@@ -342,41 +340,6 @@
 </ul>
 
 
-<h2 id="string-vs-numeric-comparision">String vs Numeric comparision</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">For string comparision use,
-<span style="color:#666">==</span>  
-!<span style="color:#666">=</span>  
-&amp;lt;  
-
-For numeric comparision use,
--gt
--lt
--eq
--ne</code></pre></div>
-<h2 id="loops">Loops</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080">#!/bin/bash
-</span><span style="color:#080"></span><span style="color:#a2f;font-weight:bold">for</span> variable in <span style="color:#666">{</span>list<span style="color:#666">}</span>
-<span style="color:#a2f;font-weight:bold">do</span>
-    &lt;commands&gt;
-<span style="color:#a2f;font-weight:bold">done</span>
-
-<span style="color:#080;font-style:italic"># Example</span>
-<span style="color:#a2f;font-weight:bold">for</span> i in <span style="color:#666">{</span><span style="color:#666">1</span>..10<span style="color:#666">}</span>
-<span style="color:#a2f;font-weight:bold">do</span>
-    <span style="color:#a2f">echo</span> <span style="color:#b8860b">$i</span>
-<span style="color:#a2f;font-weight:bold">done</span></code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080">#!/bin/bash
-</span><span style="color:#080"></span><span style="color:#a2f;font-weight:bold">while</span> <span style="color:#666">[[</span>condition<span style="color:#666">]]</span>  
-<span style="color:#a2f;font-weight:bold">do</span>
-    &lt;commands&gt;
-<span style="color:#a2f;font-weight:bold">done</span>
-
-<span style="color:#080;font-style:italic"># Example</span>
-<span style="color:#b8860b">num</span><span style="color:#666">=</span><span style="color:#666">1</span>
-<span style="color:#a2f;font-weight:bold">while</span> <span style="color:#666">[</span> <span style="color:#b8860b">$num</span> -le <span style="color:#666">5</span> <span style="color:#666">]</span>
-<span style="color:#a2f;font-weight:bold">do</span>
-   <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;</span><span style="color:#b8860b">$num</span><span style="color:#b44">&#34;</span>
-   <span style="color:#b8860b">num</span><span style="color:#666">=</span><span style="color:#a2f;font-weight:bold">$((</span>num+1<span style="color:#a2f;font-weight:bold">))</span>
-<span style="color:#a2f;font-weight:bold">done</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -571,6 +534,69 @@ For numeric comparision use,
 </tbody>
 </table>
 
+<h2 id="standard-streams">Standard Streams</h2>
+
+<table>
+<thead>
+<tr>
+<th>value</th>
+<th>Stream</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>0</td>
+<td>/dev/stdin</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>/dev/stdout</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>/dev/stderr</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="string-vs-numeric-comparision">String vs Numeric comparision</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">For string comparision use,
+<span style="color:#666">==</span>  
+!<span style="color:#666">=</span>  
+&amp;lt;  
+
+For numeric comparision use,
+-gt
+-lt
+-eq
+-ne</code></pre></div>
+<h2 id="loops">Loops</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080">#!/bin/bash
+</span><span style="color:#080"></span><span style="color:#a2f;font-weight:bold">for</span> variable in <span style="color:#666">{</span>list<span style="color:#666">}</span>
+<span style="color:#a2f;font-weight:bold">do</span>
+    &lt;commands&gt;
+<span style="color:#a2f;font-weight:bold">done</span>
+
+<span style="color:#080;font-style:italic"># Example</span>
+<span style="color:#a2f;font-weight:bold">for</span> i in <span style="color:#666">{</span><span style="color:#666">1</span>..10<span style="color:#666">}</span>
+<span style="color:#a2f;font-weight:bold">do</span>
+    <span style="color:#a2f">echo</span> <span style="color:#b8860b">$i</span>
+<span style="color:#a2f;font-weight:bold">done</span></code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080">#!/bin/bash
+</span><span style="color:#080"></span><span style="color:#a2f;font-weight:bold">while</span> <span style="color:#666">[[</span>condition<span style="color:#666">]]</span>  
+<span style="color:#a2f;font-weight:bold">do</span>
+    &lt;commands&gt;
+<span style="color:#a2f;font-weight:bold">done</span>
+
+<span style="color:#080;font-style:italic"># Example</span>
+<span style="color:#b8860b">num</span><span style="color:#666">=</span><span style="color:#666">1</span>
+<span style="color:#a2f;font-weight:bold">while</span> <span style="color:#666">[</span> <span style="color:#b8860b">$num</span> -le <span style="color:#666">5</span> <span style="color:#666">]</span>
+<span style="color:#a2f;font-weight:bold">do</span>
+   <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;</span><span style="color:#b8860b">$num</span><span style="color:#b44">&#34;</span>
+   <span style="color:#b8860b">num</span><span style="color:#666">=</span><span style="color:#a2f;font-weight:bold">$((</span>num+1<span style="color:#a2f;font-weight:bold">))</span>
+<span style="color:#a2f;font-weight:bold">done</span></code></pre></div>
 <h3 id="references">References</h3>
 
 <p><a href="https://www.gnu.org/software/bash/manual/bashref.html" target="_blank">gnu.org Bash Reference Manual</a><br />
