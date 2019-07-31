@@ -19,12 +19,12 @@
   
   <url>
     <loc>//localhost:1313/docs/provisioning/ansible/</loc>
-    <lastmod>2019-07-07T15:06:56+02:00</lastmod>
+    <lastmod>2019-07-12T06:32:56+02:00</lastmod>
   </url>
   
   <url>
     <loc>//localhost:1313/docs/scripting/bash/</loc>
-    <lastmod>2019-07-01T22:53:34+02:00</lastmod>
+    <lastmod>2019-07-12T06:32:56+02:00</lastmod>
   </url>
   
   <url>
@@ -44,7 +44,7 @@
   
   <url>
     <loc>//localhost:1313/docs/cicd/</loc>
-    <lastmod>2019-06-22T08:42:44+02:00</lastmod>
+    <lastmod>2019-07-12T06:32:56+02:00</lastmod>
   </url>
   
   <url>
@@ -84,7 +84,7 @@
   
   <url>
     <loc>//localhost:1313/docs/git/git/</loc>
-    <lastmod>2019-06-23T22:57:11+02:00</lastmod>
+    <lastmod>2019-07-12T06:32:56+02:00</lastmod>
   </url>
   
   <url>
@@ -199,7 +199,7 @@
   
   <url>
     <loc>//localhost:1313/docs/scripting/scripts/</loc>
-    <lastmod>2019-07-01T22:53:34+02:00</lastmod>
+    <lastmod>2019-07-12T06:32:56+02:00</lastmod>
   </url>
   
   <url>
@@ -219,7 +219,7 @@
   
   <url>
     <loc>//localhost:1313/docs/cicd/sonarqube/sonarqube/</loc>
-    <lastmod>2019-07-07T15:47:52+02:00</lastmod>
+    <lastmod>2019-07-12T06:32:56+02:00</lastmod>
   </url>
   
   <url>
@@ -284,12 +284,12 @@
   
   <url>
     <loc>//localhost:1313/docs/k8s/kubectl/</loc>
-    <lastmod>2019-06-29T22:49:26+02:00</lastmod>
+    <lastmod>2019-07-12T06:32:56+02:00</lastmod>
   </url>
   
   <url>
     <loc>//localhost:1313/docs/k8s/minikube/</loc>
-    <lastmod>2019-06-29T22:49:26+02:00</lastmod>
+    <lastmod>2019-07-12T06:32:56+02:00</lastmod>
   </url>
   
 </urlset>
