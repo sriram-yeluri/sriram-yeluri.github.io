@@ -143,8 +143,6 @@
 
 
 
-
-
 <div id="vendorStrip" class="light-text">
 	<ul>
 		
@@ -162,9 +160,6 @@
 		
 		
 		<li><a href="/docs/ldap/">LDAP</a></li>
-		
-		
-		<li><a href="/docs/linux/">LINUX</a></li>
 		
 		
 		<li><a href="/docs/programming/">PROGRAMMING</a></li>
@@ -328,6 +323,11 @@
 
 
 
+<li><a href="#configmaps">ConfigMaps</a></li>
+
+
+
+
 <li><a href="#references">References</a></li>
 
 
@@ -376,6 +376,23 @@ kubectl expose deployment nexus &ndash;type=NodePort</p>
 
 <p>Access the service:
 Minikube service nexus</p>
+
+<h2 id="configmaps">ConfigMaps</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Kubectl create configmap <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span> &lt;config-name&gt; --from-literal<span style="color:#666">=</span>&lt;key&gt;<span style="color:#666">=</span>&lt;value&gt;
+
+<span style="color:#666">(</span>or<span style="color:#666">)</span>
+Kubectl create configmap <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span> &lt;config-name&gt; --from-file<span style="color:#666">=</span>&lt;path_to_file&gt;</code></pre></div>
+<p>Example :</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Kubectl create configmap <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>app-color-config –from-literal<span style="color:#666">=</span><span style="color:#b8860b">APP_COLOR</span><span style="color:#666">=</span>blue <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--from-literal<span style="color:#666">=</span><span style="color:#b8860b">APP_MOD</span><span style="color:#666">=</span>prod
+
+Kubectl create configmap <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>app-config  --from-file<span style="color:#666">=</span>app-config.properties</code></pre></div>
+<p>View Configmaps :<br />
+Kubectl get configmaps</p>
 
 <h2 id="references">References</h2>
 
