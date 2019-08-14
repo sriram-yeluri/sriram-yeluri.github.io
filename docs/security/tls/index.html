@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+	<head>
+	
+
+<meta charset="utf-8">
+<title>TLS - SY Knowledge Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="Transport Layer Security">
+<meta property="og:description" content="Transport Layer Security">
+<meta name="twitter:description" content="Transport Layer Security">
+<meta property="og:url" content="//localhost:1313/docs/security/tls/">
+<meta property="og:title" content="TLS">
+<meta name="twitter:title" content="TLS">
+<meta name="twitter:image" content="https://kubernetes.io/images/favicon.png" />
+
+<meta name="twitter:image:alt" content="SY Knowledge Hub">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-4.3.1.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+	</head>
+	<body>
+		<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/" class="logo"></a>
+
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/docs/" class="active">Documentation</a></li>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+             <li>
+                <a href="#">
+                     <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                </ul>
+            </li>
+         
+            <li>
+                <a href="#">
+                     <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                </ul>
+            </li>
+        </ul>   
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite"></h5>
+            <a href="https://github.com/sriram-yeluri" class="button" data-auto-burger-exclude></a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite"></h5>
+            <div class="social">                
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+		
+		
+		<section id="hero" class="light-text no-sub">
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Security</h1>
+<h5></h5>
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/docs/provisioning/">PROVISIONING</a></li>
+		
+		
+		<li><a href="/docs/aws/">AWS</a></li>
+		
+		
+		<li><a href="/docs/cicd/">CICD</a></li>
+		
+		
+		<li><a href="/docs/k8s/">KUBERNETES</a></li>
+		
+		
+		<li><a href="/docs/ldap/">LDAP</a></li>
+		
+		
+		<li><a href="/docs/programming/">PROGRAMMING</a></li>
+		
+		
+		<li><a href="/docs/git/">SCM</a></li>
+		
+		
+		<li><a href="/docs/scripting/">SCRIPTING</a></li>
+		
+		
+		<li><a href="/docs/security/" class="YAH">SECURITY</a></li>
+		
+		
+		<li><a href="/docs/virtualization/">VIRTUALIZATION</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="Search" aria-label="Search">
+	</form>
+</div>
+
+		</section>
+		
+		
+
+		<section id="encyclopedia">
+			
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="Security" href="/docs/security/"></a>
+
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Linux Hardening" href="/docs/security/hardening/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="SSH" href="/docs/security/ssh/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="SSL-Certificates" href="/docs/security/ssl_certificates/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="TLS" href="/docs/security/tls/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+			<div id="docsContent">
+        
+
+
+
+<h1>TLS</h1>
+
+
+
+<p>TLS - Transport Layer Security<br />
+TLS is a protocol for encrypting internet traffic and to verify the identity of server.</p>
+
+
+
+
+
+
+
+
+
+<ul id="markdown-toc">
+
+
+
+
+
+
+
+
+
+
+<li><a href="#how-to-extract-remote-certificates">How to extract remote Certificates</a></li>
+
+
+
+
+<li><a href="#show-server-certificate-chain">Show Server Certificate chain</a></li>
+
+
+
+
+<li><a href="#tls-handshake-explained">TLS Handshake explained</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+<h2 id="how-to-extract-remote-certificates">How to extract remote Certificates</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#a2f">echo</span> | openssl s_client -connect www.google.com:443 <span style="color:#666">2</span>&gt;&amp;<span style="color:#666">1</span> | sed --quiet <span style="color:#b44">&#39;/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p&#39;</span> &gt; google.crt</code></pre></div>
+<p>How to verify the TLS connection status ?</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sriram@sriram-Inspiron-5567:~$ openssl s_client -connect google.com:443 -servername google.com -cipher ALL -brief
+CONNECTION ESTABLISHED
+Protocol version: TLSv1.3
+Ciphersuite: TLS_AES_256_GCM_SHA384
+Peer certificate: <span style="color:#b8860b">C</span> <span style="color:#666">=</span> US, <span style="color:#b8860b">ST</span> <span style="color:#666">=</span> California, <span style="color:#b8860b">L</span> <span style="color:#666">=</span> Mountain View, <span style="color:#b8860b">O</span> <span style="color:#666">=</span> Google LLC, <span style="color:#b8860b">CN</span> <span style="color:#666">=</span> *.google.com
+Hash used: SHA256
+Signature type: ECDSA
+Verification: OK
+Server Temp Key: X25519, <span style="color:#666">253</span> bits</code></pre></div>
+<h2 id="show-server-certificate-chain">Show Server Certificate chain</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">openssl s_client -connect google.com:443 -servername google.com -cipher ALL -showcerts</code></pre></div>
+<h2 id="tls-handshake-explained">TLS Handshake explained</h2>
+
+<p>Below example explains how the TLS Handshake happens between a client and server.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sriram@sriram-Inspiron-5567:~$ curl abnamro.com -L -v
+* Rebuilt URL to: abnamro.com/
+*   Trying <span style="color:#666">88</span>.221.24.80...
+* TCP_NODELAY <span style="color:#a2f">set</span>
+* Connected to abnamro.com <span style="color:#666">(</span><span style="color:#666">88</span>.221.24.80<span style="color:#666">)</span> port <span style="color:#666">80</span> <span style="color:#666">(</span><span style="color:#080;font-style:italic">#0)</span>
+&gt; GET / HTTP/1.1
+&gt; Host: abnamro.com
+&gt; User-Agent: curl/7.58.0
+&gt; Accept: */*
+&lt; HTTP/1.1 <span style="color:#666">301</span> Moved Permanently
+&lt; Server: AkamaiGHost
+&lt; Content-Length: <span style="color:#666">0</span>
+&lt; Location: https://www.abnamro.com/
+&lt; Expires: Fri, <span style="color:#666">09</span> Aug <span style="color:#666">2019</span> <span style="color:#666">04</span>:24:52 GMT
+&lt; Cache-Control: max-age<span style="color:#666">=</span><span style="color:#666">0</span>, no-cache, no-store
+&lt; Pragma: no-cache
+&lt; Date: Fri, <span style="color:#666">09</span> Aug <span style="color:#666">2019</span> <span style="color:#666">04</span>:24:52 GMT
+&lt; Connection: keep-alive
+* Connection <span style="color:#080;font-style:italic">#0 to host abnamro.com left intact</span>
+* Issue another request to this URL: <span style="color:#b44">&#39;https://www.abnamro.com/&#39;</span>
+*   Trying <span style="color:#666">88</span>.221.24.96...
+* TCP_NODELAY <span style="color:#a2f">set</span>
+* Connected to www.abnamro.com <span style="color:#666">(</span><span style="color:#666">88</span>.221.24.96<span style="color:#666">)</span> port <span style="color:#666">443</span> <span style="color:#666">(</span><span style="color:#080;font-style:italic">#1)</span>
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully <span style="color:#a2f">set</span> certificate verify locations:
+*   CAfile: /etc/ssl/certs/ca-certificates.crt
+  CApath: /etc/ssl/certs
+* <span style="color:#666">(</span><span style="color:#666">304</span><span style="color:#666">)</span> <span style="color:#666">(</span>OUT<span style="color:#666">)</span>, TLS handshake, Client hello <span style="color:#666">(</span><span style="color:#666">1</span><span style="color:#666">)</span>:
+* <span style="color:#666">(</span><span style="color:#666">304</span><span style="color:#666">)</span> <span style="color:#666">(</span>IN<span style="color:#666">)</span>, TLS handshake, Server hello <span style="color:#666">(</span><span style="color:#666">2</span><span style="color:#666">)</span>:
+* TLSv1.2 <span style="color:#666">(</span>IN<span style="color:#666">)</span>, TLS handshake, Certificate <span style="color:#666">(</span><span style="color:#666">11</span><span style="color:#666">)</span>:
+* TLSv1.2 <span style="color:#666">(</span>IN<span style="color:#666">)</span>, TLS handshake, Server key exchange <span style="color:#666">(</span><span style="color:#666">12</span><span style="color:#666">)</span>:
+* TLSv1.2 <span style="color:#666">(</span>IN<span style="color:#666">)</span>, TLS handshake, Server finished <span style="color:#666">(</span><span style="color:#666">14</span><span style="color:#666">)</span>:
+* TLSv1.2 <span style="color:#666">(</span>OUT<span style="color:#666">)</span>, TLS handshake, Client key exchange <span style="color:#666">(</span><span style="color:#666">16</span><span style="color:#666">)</span>:
+* TLSv1.2 <span style="color:#666">(</span>OUT<span style="color:#666">)</span>, TLS change cipher, Client hello <span style="color:#666">(</span><span style="color:#666">1</span><span style="color:#666">)</span>:
+* TLSv1.2 <span style="color:#666">(</span>OUT<span style="color:#666">)</span>, TLS handshake, Finished <span style="color:#666">(</span><span style="color:#666">20</span><span style="color:#666">)</span>:
+* TLSv1.2 <span style="color:#666">(</span>IN<span style="color:#666">)</span>, TLS handshake, Finished <span style="color:#666">(</span><span style="color:#666">20</span><span style="color:#666">)</span>:
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES256-GCM-SHA384
+* ALPN, server accepted to use h2
+* Server certificate:
+*  subject: <span style="color:#b8860b">jurisdictionC</span><span style="color:#666">=</span>NL; <span style="color:#b8860b">jurisdictionST</span><span style="color:#666">=</span>NH; <span style="color:#b8860b">jurisdictionL</span><span style="color:#666">=</span>Amsterdam; <span style="color:#b8860b">businessCategory</span><span style="color:#666">=</span>Private Organization; <span style="color:#b8860b">serialNumber</span><span style="color:#666">=</span><span style="color:#666">34334259</span>; <span style="color:#b8860b">C</span><span style="color:#666">=</span>NL; <span style="color:#b8860b">ST</span><span style="color:#666">=</span>NH; <span style="color:#b8860b">L</span><span style="color:#666">=</span>Amsterdam; <span style="color:#b8860b">O</span><span style="color:#666">=</span>ABN AMRO Bank N.V.; <span style="color:#b8860b">OU</span><span style="color:#666">=</span>Internet Banking; <span style="color:#b8860b">CN</span><span style="color:#666">=</span>www.abnamro.com
+*  start date: Sep <span style="color:#666">24</span> <span style="color:#666">13</span>:22:58 <span style="color:#666">2018</span> GMT
+*  expire date: Sep <span style="color:#666">24</span> <span style="color:#666">13</span>:31:00 <span style="color:#666">2020</span> GMT
+*  subjectAltName: host <span style="color:#b44">&#34;www.abnamro.com&#34;</span> matched cert<span style="">&#39;</span>s <span style="color:#b44">&#34;www.abnamro.com&#34;</span>
+*  issuer: <span style="color:#b8860b">C</span><span style="color:#666">=</span>BM; <span style="color:#b8860b">O</span><span style="color:#666">=</span>QuoVadis Limited; <span style="color:#b8860b">CN</span><span style="color:#666">=</span>QuoVadis EV SSL ICA G1
+*  SSL certificate verify ok.
+* Using HTTP2, server supports multi-use
+* Connection state changed <span style="color:#666">(</span>HTTP/2 confirmed<span style="color:#666">)</span>
+* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: <span style="color:#b8860b">len</span><span style="color:#666">=</span><span style="color:#666">0</span>
+* Using Stream ID: <span style="color:#666">1</span> <span style="color:#666">(</span>easy handle 0x5602954b8580<span style="color:#666">)</span>
+&gt; GET / HTTP/2
+&gt; Host: www.abnamro.com
+&gt; User-Agent: curl/7.58.0
+&gt; Accept: */*</code></pre></div>
+<h3 id="references">References</h3>
+
+<p><a href="https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html" target="_blank">https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html</a><br />
+<a href="https://www.ssllabs.com/ssltest/index.html" target="_blank">https://www.ssllabs.com/ssltest/index.html</a><br />
+<a href="https://testssl.sh/" target="_blank">https://testssl.sh/</a><br />
+<a href="http://openssl.cs.utah.edu/docs/apps/s_client.html" target="_blank">http://openssl.cs.utah.edu/docs/apps/s_client.html</a><br />
+<a href="https://www.cloudflare.com/learning/ssl/what-is-an-ssl-certificate/" target="_blank">https://www.cloudflare.com/learning/ssl/what-is-an-ssl-certificate/</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+  <h2></h2>
+  <p class="feedback--prompt"> </p>
+  <button class="button feedback--yes"></button>
+  <button class="button feedback--no"></button>
+  <p class="feedback--response feedback--response__hidden">
+    
+    <a target="_blank" rel="noopener"
+      href="#">
+      Stack Overflow</a>.
+    
+    <a class="feedback--link" target="_blank" rel="noopener"
+      href="#">
+      </a>
+    
+    <a class="feedback--link" target="_blank" rel="noopener"
+      href="#">
+      </a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+
+        <div id="pre-footer"> 
+  <hr />
+
+</div>
+
+			</div>
+		</section>
+		<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </nav>
+        <div id="miceType" class="center">
+            Sriram Yeluri &copy; 2019
+        </div>
+    </main>
+</footer>
+
+		<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+    <script language="application/javascript">
+      
+      (function addHeadingLinks(){
+        var article = document.getElementById('docsContent');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = heading.innerHTML;
+            a.href = '#'+heading.id;
+            a.classList.add('inpage_heading');
+            heading.innerHTML = '';
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
+	<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
+</html>

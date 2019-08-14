@@ -24,7 +24,7 @@
   
   <url>
     <loc>//localhost:1313/docs/k8s/architecture/</loc>
-    <lastmod>2019-08-01T23:03:33+02:00</lastmod>
+    <lastmod>2019-08-05T06:15:28+02:00</lastmod>
   </url>
   
   <url>
@@ -235,6 +235,10 @@
   <url>
     <loc>//localhost:1313/docs/linux/sysadmin/</loc>
     <lastmod>2019-07-07T22:28:43+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/security/tls/</loc>
   </url>
   
   <url>
