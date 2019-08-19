@@ -199,15 +199,6 @@ padding-bottom:2%;
     margin-bottom:5%;
 }
 
-.meetups {
-    background:url('/images/community/kubernetes-community-final.jpg');
-    background-size: 100% auto;
-    float:left;
-    background-position: center;
-    width:100%;
-    padding:5%;
-    padding-bottom:7%;
-}
 
 .meetupcol {
     z-index:99;
@@ -347,16 +338,6 @@ padding-bottom:2%;
 
 }
 
-
-.contributor {
-    float:left;
-    width:100%;
-    background:url('/images/community/kubernetes-community-contributor.jpg');
-    background-size: 100% auto;
-    float:left;
-    background-position: center;
-
-}
 
 .contributortext {
   color:white;
@@ -780,20 +761,6 @@ float:left;
     text-align:center;
     margin-top:3%;
     margin-left:5%;
-}
-
-
-
-
-
-.contributor {
-    float:left;
-    width:100%;
-    background:url('/images/community/kubernetes-community-contributor.jpg');
-    background-size: 100% auto;
-    float:left;
-    background-position: center;
-
 }
 
 .contributortext {
