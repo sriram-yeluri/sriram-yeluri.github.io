@@ -131,8 +131,6 @@
 
 
 
-
-
 <h1>Programming</h1>
 <h5></h5>
 
@@ -162,9 +160,6 @@
 		
 		
 		<li><a href="/docs/ldap/">LDAP</a></li>
-		
-		
-		<li><a href="/docs/linux/">LINUX</a></li>
 		
 		
 		<li><a href="/docs/programming/" class="YAH">PROGRAMMING</a></li>
@@ -224,13 +219,11 @@
          
              
                  
+                          
+                          
+                 
              
          
-             
-                 
-                          
-                          
-                 
              
          
              
@@ -254,14 +247,7 @@
 		
 			
 
-<a class="item" data-title="golang programming" href="/docs/programming/golang/golang/"></a>
-
-		
-	
-		
-			
-
-<a class="item" data-title="golang-http" href="/docs/programming/golang/golang-http/"></a>
+<a class="item" data-title="golang" href="/docs/programming/golang/golang/"></a>
 
 		
 	
@@ -296,7 +282,7 @@
     
 
 
-<h1>golang programming</h1>
+<h1>golang</h1>
 
 
 
@@ -326,12 +312,22 @@
 
 
 
+<li><a href="#environment-variables">Environment variables</a></li>
+
+
+
+
 <li><a href="#workspaces">Workspaces</a></li>
 
 
 
 
-<li><a href="#golang-ides">golang IDEs</a></li>
+<li><a href="#ide-for-golang">IDE for golang</a></li>
+
+
+
+
+<li><a href="#getting-help-with-go-commands">Getting help with go commands</a></li>
 
 
 
@@ -374,6 +370,10 @@
 Edit your <span style="color:#b44">`</span>~/.bash_profile<span style="color:#b44">`</span> and add the line: <span style="color:#b44">`</span><span style="color:#a2f">export</span> <span style="color:#b8860b">GOPATH</span><span style="color:#666">=</span><span style="color:#b8860b">$HOME</span>/go<span style="color:#b44">`</span>  
 <span style="color:#a2f">source</span> your bash_profile <span style="color:#b44">`</span><span style="color:#a2f">source</span> ~/.bash_profile<span style="color:#b44">`</span></code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># Set the GOBIN path to generate a binary file when go install is executed.</span>
  <span style="color:#b44">`</span><span style="color:#a2f">export</span> <span style="color:#b8860b">GOBIN</span><span style="color:#666">=</span><span style="color:#b8860b">$HOME</span>/go/bin<span style="color:#b44">`</span></code></pre></div>
+<h2 id="environment-variables">Environment variables</h2>
+
+<p>Command to check environment variables <code>go env</code></p>
+
 <h2 id="workspaces">Workspaces</h2>
 
 <p>Workspace in go is a directory hierarchy with 3 directories at its root</p>
@@ -386,27 +386,36 @@ Edit your <span style="color:#b44">`</span>~/.bash_profile<span style="color:#b4
 <li>bin : contains executable binaries.</li>
 </ul>
 
-<h2 id="golang-ides">golang IDEs</h2>
+<h2 id="ide-for-golang">IDE for golang</h2>
 
 <p><a href="https://github.com/Microsoft/vscode-go" target="_blank">Visual Studio Code with Go language support from Microsoft</a><br />
 <a href="https://github.com/DisposaBoy/GoSublime" target="_blank">goplugin for Sublime Text</a></p>
 
-<h3 id="how-to-get-go-help">How to get go Help</h3>
+<h2 id="getting-help-with-go-commands">Getting help with go commands</h2>
 
-<p>For any help related to go , use<br />
-<code>go help &lt;command&gt;</code><br />
-examples:<br />
-    <code>go help build</code><br />
-    <code>go help install</code><br />
-    <code>go help clean</code><br />
-    <code>go help gopath</code></p>
+<p>go provides extensive command line help by simply using help option as argument,
+For any help related to go , use</p>
+
+<p><code>go help &lt;command&gt;</code></p>
+
+<p>examples:</p>
+
+<p><code>go help build</code></p>
+
+<p><code>go help install</code></p>
+
+<p><code>go help clean</code></p>
+
+<p><code>go help gopath</code></p>
 
 <h2 id="how-to-build-go-executables-for-different-architectures">How to build go executables for different architectures</h2>
 
-<p>The go build command allows us to create executables for all golang supported architectures. To build executable for different architectures GOOS and GOARC arguments need to be set accordingly. To get a complete list of all supported platforms and architectures, use the command : go tool dist list</p>
+<p>The go build command allows us to create executables for all golang supported architectures. To build executables for different architectures <code>GOOS</code> and <code>GOARC</code> arguments need to be set accordingly.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">env GOOS=target<span style="color:#666">-</span>OS GOARCH=target<span style="color:#666">-</span>architecture <span style="color:#a2f;font-weight:bold">go</span> build &lt;<span style="color:#a2f;font-weight:bold">package</span><span style="color:#666">-</span><span style="color:#a2f;font-weight:bold">import</span><span style="color:#666">-</span>path&gt;
 
-sriram<span style="">@</span>optimus<span style="color:#666">-</span>prime:<span style="">~$</span> env GOOS=windows GOARCH=amd64 <span style="color:#a2f;font-weight:bold">go</span> build &lt;path_to_go_src&gt;</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sriram@optimus-prime:~$ go tool dist list
+sriram<span style="">@</span>optimus<span style="color:#666">-</span>prime:<span style="">~$</span> env GOOS=windows GOARCH=amd64 <span style="color:#a2f;font-weight:bold">go</span> build &lt;path_to_go_src&gt;</code></pre></div>
+<p>To get a complete list of all supported platforms and architectures, use the command : <code>go tool dist list</code></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sriram@optimus-prime:~$ go tool dist list
 android/386
 android/amd64
 android/arm
