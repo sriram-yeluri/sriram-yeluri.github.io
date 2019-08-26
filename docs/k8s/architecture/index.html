@@ -143,8 +143,6 @@
 
 
 
-
-
 <div id="vendorStrip" class="light-text">
 	<ul>
 		
@@ -162,9 +160,6 @@
 		
 		
 		<li><a href="/docs/ldap/">LDAP</a></li>
-		
-		
-		<li><a href="/docs/linux/">LINUX</a></li>
 		
 		
 		<li><a href="/docs/programming/">PROGRAMMING</a></li>
@@ -255,7 +250,28 @@
 		
 			
 
+<a class="item" data-title="Deployments" href="/docs/k8s/deployments/"></a>
+
+		
+	
+		
+			
+
 <a class="item" data-title="Kind" href="/docs/k8s/kind/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="POD" href="/docs/k8s/pod/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Troubleshooting" href="/docs/k8s/troubleshooting/"></a>
 
 		
 	
@@ -292,7 +308,7 @@
 
 
 
-<p>k8s cluster components</p>
+<p>kubernetes cluster components</p>
 
 
 
@@ -309,6 +325,21 @@
 
 
 
+
+
+
+
+<li><a href="#master">Master</a></li>
+
+
+
+
+<li><a href="#node">Node</a></li>
+
+
+
+
+<li><a href="#etcd">etcd</a></li>
 
 
 
@@ -333,8 +364,39 @@
 
 <p><img src="/images/k8s/k8s-components.png" alt="arc" /></p>
 
+<h2 id="master">Master</h2>
+
 <ul>
-<li>The master is responsible for exposing the API, scheduling the deployments and managing the cluster.</li>
+<li>Masters is responsible for
+
+<ul>
+<li>Managing the cluster.</li>
+<li>Scheduling the deployments.</li>
+<li>Exposing the kubernetes API.</li>
+<li>Kubernetes master automatically handles scheduling the pods across the Nodes in the cluster.</li>
+<li>The Master&rsquo;s automatic scheduling takes into account the available resources on each Node.</li>
+</ul></li>
+</ul>
+
+<h2 id="node">Node</h2>
+
+<ul>
+<li>A Node is a worker machine in Kubernetes and may be either a virtual or a physical machine, depending on the cluster.</li>
+<li>Each Node is managed by the Master.</li>
+<li>A Node can have multiple pods.</li>
+<li>Nodes are used to host the running applications.</li>
+<li>The nodes communicate with the master using the Kubernetes API.</li>
+</ul>
+
+<p>Every Kubernetes Node runs at least:</p>
+
+<p><code>Kubelet</code>, a process responsible for communication between the Kubernetes Master and the Node; it manages the Pods and the containers running on a machine.</p>
+
+<p>A container runtime (like Docker) responsible for pulling the container image from a registry, unpacking the container, and running the application.</p>
+
+<h2 id="etcd">etcd</h2>
+
+<ul>
 <li>etcd is an opensource, distributed key-value database which acts as a single source of truth for all components of the cluster.</li>
 </ul>
 

@@ -4,7 +4,7 @@
 	
 
 <meta charset="utf-8">
-<title>KDE - SY Knowledge Hub</title>
+<title>Troubleshooting - SY Knowledge Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 
@@ -29,9 +29,9 @@
 <meta name="description" content="">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
-<meta property="og:url" content="//localhost:1313/docs/linux/kde_configuration/">
-<meta property="og:title" content="KDE">
-<meta name="twitter:title" content="KDE">
+<meta property="og:url" content="//localhost:1313/docs/k8s/troubleshooting/">
+<meta property="og:title" content="Troubleshooting">
+<meta name="twitter:title" content="Troubleshooting">
 <meta name="twitter:image" content="https://github.com/sriram-yeluri/images/raw/master/favicon.png"/>
 
 <meta name="twitter:image:alt" content="SY Knowledge Hub">
@@ -127,6 +127,9 @@
 
 
 
+<h1>Kubernetes</h1>
+<h5></h5>
+
 
 
 
@@ -153,7 +156,7 @@
 		<li><a href="/docs/cicd/">CICD</a></li>
 		
 		
-		<li><a href="/docs/k8s/">KUBERNETES</a></li>
+		<li><a href="/docs/k8s/" class="YAH">KUBERNETES</a></li>
 		
 		
 		<li><a href="/docs/ldap/">LDAP</a></li>
@@ -208,33 +211,21 @@
          
              
                  
-             
-         
-             
-                 
-             
-         
-             
-                 
-             
-         
-             
-                 
-             
-         
-             
-                 
-             
-         
-             
-                 
-             
-         
-             
-                 
                           
                           
                  
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
              
          
              
@@ -243,7 +234,7 @@
          
          
         
-        <a class="item" data-title="Topics" href="/docs/linux/"></a>
+        <a class="item" data-title="Kubernetes" href="/docs/k8s/"></a>
 
 	
 	
@@ -252,63 +243,49 @@
 		
 			
 
-<a class="item" data-title="Centos" href="/docs/linux/centos/"></a>
+<a class="item" data-title="Architecture" href="/docs/k8s/architecture/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="KDE" href="/docs/linux/kde_configuration/"></a>
+<a class="item" data-title="Deployments" href="/docs/k8s/deployments/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Linux Filesystem" href="/docs/linux/filesystem/"></a>
+<a class="item" data-title="Kind" href="/docs/k8s/kind/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Networking" href="/docs/linux/networking/"></a>
+<a class="item" data-title="POD" href="/docs/k8s/pod/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="RHEL" href="/docs/linux/rhel/"></a>
+<a class="item" data-title="Troubleshooting" href="/docs/k8s/troubleshooting/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="System Admin" href="/docs/linux/sysadmin/"></a>
+<a class="item" data-title="kubectl" href="/docs/k8s/kubectl/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Ubuntu" href="/docs/linux/ubuntu/"></a>
-
-		
-	
-		
-			
-
-<a class="item" data-title="VIM" href="/docs/linux/vim/"></a>
-
-		
-	
-		
-			
-
-<a class="item" data-title="Yum" href="/docs/linux/yum/"></a>
+<a class="item" data-title="minikube" href="/docs/k8s/minikube/"></a>
 
 		
 	
@@ -327,11 +304,11 @@
 
 
 
-<h1>KDE</h1>
+<h1>Troubleshooting</h1>
 
 
 
-<p>KDE Help</p>
+<p>Troubleshooting</p>
 
 
 
@@ -370,17 +347,36 @@
 </ul>
 
 
-<h3 id="kde-configuration">KDE Configuration</h3>
+<p><code>kubectl get</code> - list resources</p>
 
-<h3 id="how-to-manage-kde-applications-launcher">How to manage KDE applications launcher</h3>
+<p><code>kubectl describe</code> - show detailed information about a resource</p>
 
-<p><img src="/images/kde_kickoff.png" alt="kick off" /><br />
-<img src="/images/kdeMenuNewItem.png" alt="Select launcher and make new item" /><br />
-<img src="/images/kdeMenuNewItemName.png" alt="" /><br />
-<img src="/images/kdeMenuNewItemSelectIcon.png" alt="" />
-<img src="/images/kdeMenuNewItemSaving.png" alt="" />
-<img src="/images/kdeMenuNewItemInserted.png" alt="" /></p>
+<p><code>kubectl logs</code> - print the logs from a container in a pod</p>
 
+<p><code>kubectl exec</code> - execute a command on a container in a pod</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ <span style="color:#a2f">export</span> <span style="color:#b8860b">POD_NAME</span><span style="color:#666">=</span><span style="color:#a2f;font-weight:bold">$(</span>kubectl get pods -o go-template --template <span style="color:#b44">&#39;{{range .items}}{{.metadata.name}}{{&#34;\n&#34;}}{{end}}&#39;</span><span style="color:#a2f;font-weight:bold">)</span>
+
+$ <span style="color:#a2f">echo</span> <span style="color:#b8860b">$POD_NAME</span>
+kubernetes-bootcamp-5b48cfdcbd-5ddlw
+
+$ kubectl <span style="color:#a2f">exec</span> <span style="color:#b8860b">$POD_NAME</span> env
+
+<span style="color:#b8860b">PATH</span><span style="color:#666">=</span>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+<span style="color:#b8860b">HOSTNAME</span><span style="color:#666">=</span>kubernetes-bootcamp-5b48cfdcbd-5ddlw
+<span style="color:#b8860b">KUBERNETES_SERVICE_HOST</span><span style="color:#666">=</span><span style="color:#666">10</span>.96.0.1
+<span style="color:#b8860b">KUBERNETES_SERVICE_PORT</span><span style="color:#666">=</span><span style="color:#666">443</span>
+<span style="color:#b8860b">KUBERNETES_SERVICE_PORT_HTTPS</span><span style="color:#666">=</span><span style="color:#666">443</span>
+<span style="color:#b8860b">KUBERNETES_PORT</span><span style="color:#666">=</span>tcp://10.96.0.1:443
+<span style="color:#b8860b">KUBERNETES_PORT_443_TCP</span><span style="color:#666">=</span>tcp://10.96.0.1:443
+<span style="color:#b8860b">KUBERNETES_PORT_443_TCP_PROTO</span><span style="color:#666">=</span>tcp
+<span style="color:#b8860b">KUBERNETES_PORT_443_TCP_PORT</span><span style="color:#666">=</span><span style="color:#666">443</span>
+<span style="color:#b8860b">KUBERNETES_PORT_443_TCP_ADDR</span><span style="color:#666">=</span><span style="color:#666">10</span>.96.0.1
+<span style="color:#b8860b">NPM_CONFIG_LOGLEVEL</span><span style="color:#666">=</span>info
+<span style="color:#b8860b">NODE_VERSION</span><span style="color:#666">=</span><span style="color:#666">6</span>.3.1
+<span style="color:#b8860b">HOME</span><span style="color:#666">=</span>/root</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># Start a bash session in the Pod’s container:</span>
+ <span style="color:#080;font-style:italic">## name of the container can be omitted if we only have a single container in the Pod</span>
+
+kubectl <span style="color:#a2f">exec</span> -ti <span style="color:#b8860b">$POD_NAME</span> bash</code></pre></div>
 
 
 

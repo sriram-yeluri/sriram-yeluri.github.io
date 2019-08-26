@@ -143,8 +143,6 @@
 
 
 
-
-
 <div id="vendorStrip" class="light-text">
 	<ul>
 		
@@ -162,9 +160,6 @@
 		
 		
 		<li><a href="/docs/ldap/">LDAP</a></li>
-		
-		
-		<li><a href="/docs/linux/">LINUX</a></li>
 		
 		
 		<li><a href="/docs/programming/">PROGRAMMING</a></li>
@@ -255,7 +250,28 @@
 		
 			
 
+<a class="item" data-title="Deployments" href="/docs/k8s/deployments/"></a>
+
+		
+	
+		
+			
+
 <a class="item" data-title="Kind" href="/docs/k8s/kind/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="POD" href="/docs/k8s/pod/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Troubleshooting" href="/docs/k8s/troubleshooting/"></a>
 
 		
 	
@@ -292,7 +308,7 @@
 
 
 
-<p><code>kubectl</code> is the command line interface to manage the kubernetes cluster</p>
+<p><code>kubectl</code> is the command line interface which uses kubernetes API to interact with the cluster</p>
 
 
 
@@ -309,6 +325,11 @@
 
 
 
+
+
+
+
+<li><a href="#kubectl-version">kubectl version</a></li>
 
 
 
@@ -333,11 +354,6 @@
 
 
 
-<li><a href="#references">References</a></li>
-
-
-
-
 
 
 
@@ -356,19 +372,34 @@
 </ul>
 
 
-<h2 id="cluster-info">cluster-info</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sriram@sriram-Inspiron-5567:~/k8s$ kubectl cluster-info
-Kubernetes master is running at https://192.168.99.100:8443
-KubeDNS is running at https://192.168.99.100:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+<h2 id="kubectl-version">kubectl version</h2>
 
+<p>Once kubectl is configured we can see both the version of the client and as well as the server.
+The client version is the kubectl version; the server version is the Kubernetes version installed on the master. You can also see details about the build.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl version
+
+Client Version: version.Info<span style="color:#666">{</span>Major:<span style="color:#b44">&#34;1&#34;</span>, Minor:<span style="color:#b44">&#34;15&#34;</span>, GitVersion:<span style="color:#b44">&#34;v1.15.2&#34;</span>, GitCommit:<span style="color:#b44">&#34;f6278300bebbb750328ac16ee6dd3aa7d3549568&#34;</span>, GitTreeState:<span style="color:#b44">&#34;clean&#34;</span>, BuildDate:<span style="color:#b44">&#34;2019-08-05T09:23:26Z&#34;</span>, GoVersion:<span style="color:#b44">&#34;go1.12.5&#34;</span>, Compiler:<span style="color:#b44">&#34;gc&#34;</span>, Platform:<span style="color:#b44">&#34;linux/amd64&#34;</span><span style="color:#666">}</span>
+
+Server Version: version.Info<span style="color:#666">{</span>Major:<span style="color:#b44">&#34;1&#34;</span>, Minor:<span style="color:#b44">&#34;15&#34;</span>, GitVersion:<span style="color:#b44">&#34;v1.15.0&#34;</span>, GitCommit:<span style="color:#b44">&#34;e8462b5b5dc2584fdcd18e6bcfe9f1e4d970a529&#34;</span>, GitTreeState:<span style="color:#b44">&#34;clean&#34;</span>, BuildDate:<span style="color:#b44">&#34;2019-06-19T16:32:14Z&#34;</span>, GoVersion:<span style="color:#b44">&#34;go1.12.5&#34;</span>, Compiler:<span style="color:#b44">&#34;gc&#34;</span>, Platform:<span style="color:#b44">&#34;linux/amd64&#34;</span><span style="color:#666">}</span></code></pre></div>
+<h2 id="cluster-info">cluster-info</h2>
+
+<p><code>$ kubectl cluster-info</code></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl cluster-info
+Kubernetes master is running at https://172.17.0.45:8443
+KubeDNS is running at https://172.17.0.45:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 To further debug and diagnose cluster problems, use <span style="color:#b44">&#39;kubectl cluster-info dump&#39;</span>.</code></pre></div>
 <h2 id="get-nodes">get nodes</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sriram@sriram-Inspiron-5567:~/k8s$ kubectl get nodes
+
+<p>To view the nodes in the cluster, run the kubectl get nodes command:</p>
+
+<p>This command shows all nodes that can be used to host our applications.<br />
+Now we have only one node, and we can see that its status is ready (it is ready to accept applications for deployment).</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl get nodes
 NAME       STATUS   ROLES    AGE   VERSION
 minikube   Ready    master   11m   v1.15.0
 
 <span style="color:#080;font-style:italic"># list nodes with more information</span>
-sriram@sriram-Inspiron-5567:~/k8s$ kubectl get nodes -o<span style="color:#666">=</span>wide
+$ kubectl get nodes -o<span style="color:#666">=</span>wide
 NAME       STATUS   ROLES    AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE              KERNEL-VERSION   CONTAINER-RUNTIME
 minikube   Ready    master   13m   v1.15.0   <span style="color:#666">10</span>.0.2.15     &lt;none&gt;        Buildroot <span style="color:#666">2018</span>.05.3   <span style="color:#666">4</span>.15.0           docker://18.9.6</code></pre></div>
 <h2 id="creating-namespace-to-isolate-the-pods-in-cluster">Creating namespace to isolate the pods in cluster</h2>
@@ -399,7 +430,9 @@ Kubectl create configmap <span style="color:#b62;font-weight:bold">\
 <p>View Configmaps :<br />
 Kubectl get configmaps</p>
 
-<h2 id="references">References</h2>
+<h3 id="references">References</h3>
+
+<p><a href="https://github.com/katacoda-scenarios/kubernetes-bootcamp-scenarios" target="_blank">kubernetes-bootcamp-scenarios</a></p>
 
 
 
