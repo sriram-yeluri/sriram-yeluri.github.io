@@ -58,6 +58,10 @@
   </url>
   
   <url>
+    <loc>//localhost:1313/docs/k8s/deployments/</loc>
+  </url>
+  
+  <url>
     <loc>//localhost:1313/docs/virtualization/docker/docker/</loc>
     <lastmod>2019-06-29T22:49:26+02:00</lastmod>
   </url>
@@ -178,6 +182,10 @@
   </url>
   
   <url>
+    <loc>//localhost:1313/docs/k8s/pod/</loc>
+  </url>
+  
+  <url>
     <loc>//localhost:1313/docs/programming/</loc>
     <lastmod>2019-06-22T08:42:44+02:00</lastmod>
   </url>
@@ -199,7 +207,7 @@
   
   <url>
     <loc>//localhost:1313/docs/security/ssl_certificates/</loc>
-    <lastmod>2019-06-29T22:49:26+02:00</lastmod>
+    <lastmod>2019-08-24T23:38:31+02:00</lastmod>
   </url>
   
   <url>
@@ -245,6 +253,10 @@
   <url>
     <loc>//localhost:1313/docs/linux/</loc>
     <lastmod>2019-07-07T21:45:46+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/k8s/troubleshooting/</loc>
   </url>
   
   <url>

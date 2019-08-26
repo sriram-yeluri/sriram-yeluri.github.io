@@ -4,7 +4,7 @@
 	
 
 <meta charset="utf-8">
-<title>KDE - SY Knowledge Hub</title>
+<title>Deployments - SY Knowledge Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 
@@ -29,9 +29,9 @@
 <meta name="description" content="">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
-<meta property="og:url" content="//localhost:1313/docs/linux/kde_configuration/">
-<meta property="og:title" content="KDE">
-<meta name="twitter:title" content="KDE">
+<meta property="og:url" content="//localhost:1313/docs/k8s/deployments/">
+<meta property="og:title" content="Deployments">
+<meta name="twitter:title" content="Deployments">
 <meta name="twitter:image" content="https://github.com/sriram-yeluri/images/raw/master/favicon.png"/>
 
 <meta name="twitter:image:alt" content="SY Knowledge Hub">
@@ -127,6 +127,9 @@
 
 
 
+<h1>Kubernetes</h1>
+<h5></h5>
+
 
 
 
@@ -153,7 +156,7 @@
 		<li><a href="/docs/cicd/">CICD</a></li>
 		
 		
-		<li><a href="/docs/k8s/">KUBERNETES</a></li>
+		<li><a href="/docs/k8s/" class="YAH">KUBERNETES</a></li>
 		
 		
 		<li><a href="/docs/ldap/">LDAP</a></li>
@@ -208,33 +211,21 @@
          
              
                  
-             
-         
-             
-                 
-             
-         
-             
-                 
-             
-         
-             
-                 
-             
-         
-             
-                 
-             
-         
-             
-                 
-             
-         
-             
-                 
                           
                           
                  
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
              
          
              
@@ -243,7 +234,7 @@
          
          
         
-        <a class="item" data-title="Topics" href="/docs/linux/"></a>
+        <a class="item" data-title="Kubernetes" href="/docs/k8s/"></a>
 
 	
 	
@@ -252,63 +243,49 @@
 		
 			
 
-<a class="item" data-title="Centos" href="/docs/linux/centos/"></a>
+<a class="item" data-title="Architecture" href="/docs/k8s/architecture/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="KDE" href="/docs/linux/kde_configuration/"></a>
+<a class="item" data-title="Deployments" href="/docs/k8s/deployments/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Linux Filesystem" href="/docs/linux/filesystem/"></a>
+<a class="item" data-title="Kind" href="/docs/k8s/kind/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Networking" href="/docs/linux/networking/"></a>
+<a class="item" data-title="POD" href="/docs/k8s/pod/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="RHEL" href="/docs/linux/rhel/"></a>
+<a class="item" data-title="Troubleshooting" href="/docs/k8s/troubleshooting/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="System Admin" href="/docs/linux/sysadmin/"></a>
+<a class="item" data-title="kubectl" href="/docs/k8s/kubectl/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Ubuntu" href="/docs/linux/ubuntu/"></a>
-
-		
-	
-		
-			
-
-<a class="item" data-title="VIM" href="/docs/linux/vim/"></a>
-
-		
-	
-		
-			
-
-<a class="item" data-title="Yum" href="/docs/linux/yum/"></a>
+<a class="item" data-title="minikube" href="/docs/k8s/minikube/"></a>
 
 		
 	
@@ -327,11 +304,11 @@
 
 
 
-<h1>KDE</h1>
+<h1>Deployments</h1>
 
 
 
-<p>KDE Help</p>
+<p>Deployments in Kubernetes</p>
 
 
 
@@ -348,6 +325,16 @@
 
 
 
+
+
+
+
+<li><a href="#deployment">Deployment</a></li>
+
+
+
+
+<li><a href="#cleanup">Cleanup</a></li>
 
 
 
@@ -370,17 +357,120 @@
 </ul>
 
 
-<h3 id="kde-configuration">KDE Configuration</h3>
+<p>The Deployment instructs Kubernetes how to create and update instances of your application.</p>
 
-<h3 id="how-to-manage-kde-applications-launcher">How to manage KDE applications launcher</h3>
+<p>The Kubernetes master schedules mentioned application instances onto individual Nodes in the cluster.</p>
 
-<p><img src="/images/kde_kickoff.png" alt="kick off" /><br />
-<img src="/images/kdeMenuNewItem.png" alt="Select launcher and make new item" /><br />
-<img src="/images/kdeMenuNewItemName.png" alt="" /><br />
-<img src="/images/kdeMenuNewItemSelectIcon.png" alt="" />
-<img src="/images/kdeMenuNewItemSaving.png" alt="" />
-<img src="/images/kdeMenuNewItemInserted.png" alt="" /></p>
+<p>Once the application instances are created, a Kubernetes Deployment Controller continuously monitors those instances.</p>
 
+<h2 id="deployment">Deployment</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl create deployment hello-node --image<span style="color:#666">=</span>gcr.io/hello-minikube-zero-install/hello-node
+
+deployment.apps/hello-node created
+
+$ kubectl get deployments
+
+NAME         READY   UP-TO-DATE   AVAILABLE   AGE
+
+hello-node   <span style="color:#666">1</span>/1     <span style="color:#666">1</span>            <span style="color:#666">1</span>           19s
+
+$ kubectl get pods
+
+NAME                          READY   STATUS    RESTARTS   AGE
+
+hello-node-55b49fb9f8-bkmnb   <span style="color:#666">1</span>/1     Running   <span style="color:#666">0</span>          43s
+
+
+
+$ kubectl get events
+
+LAST SEEN   TYPE     REASON                    OBJECT                             MESSAGE
+
+94s         Normal   Scheduled                 pod/hello-node-55b49fb9f8-bkmnb    Successfully assigned default/hello-node-55b49fb9f8-bkmnb to minikube
+
+92s         Normal   Pulling                   pod/hello-node-55b49fb9f8-bkmnb    Pulling image <span style="color:#b44">&#34;gcr.io/hello-minikube-zero-install/hello-node&#34;</span>
+
+91s         Normal   Pulled                    pod/hello-node-55b49fb9f8-bkmnb    Successfully pulled image <span style="color:#b44">&#34;gcr.io/hello-minikube-zero-install/hello-node&#34;</span>
+
+90s         Normal   Created                   pod/hello-node-55b49fb9f8-bkmnb    Created container hello-node
+
+90s         Normal   Started                   pod/hello-node-55b49fb9f8-bkmnb    Started container hello-node
+
+94s         Normal   SuccessfulCreate          replicaset/hello-node-55b49fb9f8   Created pod: hello-node-55b49fb9f8-bkmnb
+
+94s         Normal   ScalingReplicaSet         deployment/hello-node              Scaled up replica <span style="color:#a2f">set</span> hello-node-55b49fb9f8 to <span style="color:#666">1</span>
+
+4m34s       Normal   NodeHasSufficientMemory   node/minikube                      Node minikube status is now: NodeHasSufficientMemory
+
+4m34s       Normal   NodeHasNoDiskPressure     node/minikube                      Node minikube status is now: NodeHasNoDiskPressure
+
+4m34s       Normal   NodeHasSufficientPID      node/minikube                      Node minikube status is now: NodeHasSufficientPID
+
+4m11s       Normal   RegisteredNode            node/minikube                      Node minikube event: Registered Node minikube in Controller
+
+4m6s        Normal   Starting                  node/minikube                      Starting kube-proxy.
+
+
+
+$ kubectl config view
+
+apiVersion: v1
+
+clusters:
+
+- cluster:
+
+    certificate-authority: /root/.minikube/ca.crt
+
+    server: https://172.17.0.27:8443
+
+  name: minikube
+
+contexts:
+
+- context:
+
+    cluster: minikube
+
+    user: minikube
+
+  name: minikube
+
+current-context: minikube
+
+kind: Config
+
+preferences: <span style="color:#666">{}</span>
+
+users:
+
+- name: minikube
+
+  user:
+
+    client-certificate: /root/.minikube/client.crt
+
+    client-key: /root/.minikube/client.key</code></pre></div>
+<h2 id="cleanup">Cleanup</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl get deployments
+
+NAME         READY   UP-TO-DATE   AVAILABLE   AGE
+
+hello-node   <span style="color:#666">1</span>/1     <span style="color:#666">1</span>            <span style="color:#666">1</span>           4m16s
+
+
+$ kubectl delete deployment hello-node
+
+deployment.extensions <span style="color:#b44">&#34;hello-node&#34;</span> deleted
+
+
+$ kubectl get deployments
+
+No resources found.
+
+$ kubectl get pods
+
+No resources found.</code></pre></div>
 
 
 

@@ -4,7 +4,7 @@
 	
 
 <meta charset="utf-8">
-<title>KDE - SY Knowledge Hub</title>
+<title>POD - SY Knowledge Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 
@@ -29,9 +29,9 @@
 <meta name="description" content="">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
-<meta property="og:url" content="//localhost:1313/docs/linux/kde_configuration/">
-<meta property="og:title" content="KDE">
-<meta name="twitter:title" content="KDE">
+<meta property="og:url" content="//localhost:1313/docs/k8s/pod/">
+<meta property="og:title" content="POD">
+<meta name="twitter:title" content="POD">
 <meta name="twitter:image" content="https://github.com/sriram-yeluri/images/raw/master/favicon.png"/>
 
 <meta name="twitter:image:alt" content="SY Knowledge Hub">
@@ -127,6 +127,9 @@
 
 
 
+<h1>Kubernetes</h1>
+<h5></h5>
+
 
 
 
@@ -153,7 +156,7 @@
 		<li><a href="/docs/cicd/">CICD</a></li>
 		
 		
-		<li><a href="/docs/k8s/">KUBERNETES</a></li>
+		<li><a href="/docs/k8s/" class="YAH">KUBERNETES</a></li>
 		
 		
 		<li><a href="/docs/ldap/">LDAP</a></li>
@@ -208,33 +211,21 @@
          
              
                  
-             
-         
-             
-                 
-             
-         
-             
-                 
-             
-         
-             
-                 
-             
-         
-             
-                 
-             
-         
-             
-                 
-             
-         
-             
-                 
                           
                           
                  
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
              
          
              
@@ -243,7 +234,7 @@
          
          
         
-        <a class="item" data-title="Topics" href="/docs/linux/"></a>
+        <a class="item" data-title="Kubernetes" href="/docs/k8s/"></a>
 
 	
 	
@@ -252,63 +243,49 @@
 		
 			
 
-<a class="item" data-title="Centos" href="/docs/linux/centos/"></a>
+<a class="item" data-title="Architecture" href="/docs/k8s/architecture/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="KDE" href="/docs/linux/kde_configuration/"></a>
+<a class="item" data-title="Deployments" href="/docs/k8s/deployments/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Linux Filesystem" href="/docs/linux/filesystem/"></a>
+<a class="item" data-title="Kind" href="/docs/k8s/kind/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Networking" href="/docs/linux/networking/"></a>
+<a class="item" data-title="POD" href="/docs/k8s/pod/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="RHEL" href="/docs/linux/rhel/"></a>
+<a class="item" data-title="Troubleshooting" href="/docs/k8s/troubleshooting/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="System Admin" href="/docs/linux/sysadmin/"></a>
+<a class="item" data-title="kubectl" href="/docs/k8s/kubectl/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Ubuntu" href="/docs/linux/ubuntu/"></a>
-
-		
-	
-		
-			
-
-<a class="item" data-title="VIM" href="/docs/linux/vim/"></a>
-
-		
-	
-		
-			
-
-<a class="item" data-title="Yum" href="/docs/linux/yum/"></a>
+<a class="item" data-title="minikube" href="/docs/k8s/minikube/"></a>
 
 		
 	
@@ -327,11 +304,11 @@
 
 
 
-<h1>KDE</h1>
+<h1>POD</h1>
 
 
 
-<p>KDE Help</p>
+<p>PODs</p>
 
 
 
@@ -370,17 +347,97 @@
 </ul>
 
 
-<h3 id="kde-configuration">KDE Configuration</h3>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl describe pods
 
-<h3 id="how-to-manage-kde-applications-launcher">How to manage KDE applications launcher</h3>
+Name:           kubernetes-bootcamp-5b48cfdcbd-5ddlwNamespace:      defaultPriority:       <span style="color:#666">0</span>
 
-<p><img src="/images/kde_kickoff.png" alt="kick off" /><br />
-<img src="/images/kdeMenuNewItem.png" alt="Select launcher and make new item" /><br />
-<img src="/images/kdeMenuNewItemName.png" alt="" /><br />
-<img src="/images/kdeMenuNewItemSelectIcon.png" alt="" />
-<img src="/images/kdeMenuNewItemSaving.png" alt="" />
-<img src="/images/kdeMenuNewItemInserted.png" alt="" /></p>
+Node:           minikube/172.17.0.90
 
+Start Time:     Mon, <span style="color:#666">26</span> Aug <span style="color:#666">2019</span> <span style="color:#666">11</span>:54:05 +0000
+
+Labels:         pod-template-hash<span style="color:#666">=</span>5b48cfdcbd
+
+                <span style="color:#b8860b">run</span><span style="color:#666">=</span>kubernetes-bootcamp
+
+Annotations:    &lt;none&gt;
+
+Status:         Running
+
+IP:             <span style="color:#666">172</span>.18.0.5
+
+Controlled By:  ReplicaSet/kubernetes-bootcamp-5b48cfdcbd
+
+Containers:
+
+  kubernetes-bootcamp:
+
+    Container ID:   docker://016f25827984c14dc74e5cbaafe43b0fb77b20b8838b5818d1e9a90376b8ad5d
+
+    Image:          gcr.io/google-samples/kubernetes-bootcamp:v1
+
+    Image ID:       docker-pullable://jocatalin/kubernetes-bootcamp@sha256:0d6b8ee63bb57c5f5b6156f446b3bc3b3c143d233037f3a2f00e279c8fcc64af
+
+    Port:           <span style="color:#666">8080</span>/TCP
+
+    Host Port:      <span style="color:#666">0</span>/TCP
+
+    State:          Running
+
+      Started:      Mon, <span style="color:#666">26</span> Aug <span style="color:#666">2019</span> <span style="color:#666">11</span>:54:06 +0000
+
+    Ready:          True
+
+    Restart Count:  <span style="color:#666">0</span>
+
+    Environment:    &lt;none&gt;
+
+    Mounts:
+
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-5wbkl <span style="color:#666">(</span>ro<span style="color:#666">)</span>
+
+Conditions:
+
+  Type              Status
+
+  Initialized       True
+
+  Ready             True
+
+  ContainersReady   True
+
+  PodScheduled      True
+
+Volumes:
+
+  default-token-5wbkl:
+
+    Type:        Secret <span style="color:#666">(</span>a volume populated by a Secret<span style="color:#666">)</span>
+
+    SecretName:  default-token-5wbkl
+
+    Optional:    <span style="color:#a2f">false</span>
+
+QoS Class:       BestEffort
+
+Node-Selectors:  &lt;none&gt;
+
+Tolerations:     node.kubernetes.io/not-ready:NoExecute <span style="color:#a2f;font-weight:bold">for</span> 300s
+
+                 node.kubernetes.io/unreachable:NoExecute <span style="color:#a2f;font-weight:bold">for</span> 300s
+
+Events:
+
+  Type    Reason     Age    From               Message
+
+  ----    ------     ----   ----               -------
+
+  Normal  Scheduled  6m58s  default-scheduler  Successfully assigned default/kubernetes-bootcamp-5b48cfdcbd-5ddlw to minikube
+
+  Normal  Pulled     6m57s  kubelet, minikube  Container image <span style="color:#b44">&#34;gcr.io/google-samples/kubernetes-bootcamp:v1&#34;</span> already present on machine
+
+  Normal  Created    6m57s  kubelet, minikube  Created container kubernetes-bootcamp
+
+  Normal  Started    6m57s  kubelet, minikube  Started container kubernetes-bootcamp</code></pre></div>
 
 
 
