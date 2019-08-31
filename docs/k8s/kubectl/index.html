@@ -143,6 +143,8 @@
 
 
 
+
+
 <div id="vendorStrip" class="light-text">
 	<ul>
 		
@@ -160,6 +162,9 @@
 		
 		
 		<li><a href="/docs/ldap/">LDAP</a></li>
+		
+		
+		<li><a href="/docs/linux/">LINUX</a></li>
 		
 		
 		<li><a href="/docs/programming/">PROGRAMMING</a></li>
@@ -265,6 +270,13 @@
 			
 
 <a class="item" data-title="POD" href="/docs/k8s/pod/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="SECRETS" href="/docs/k8s/secrets/"></a>
 
 		
 	
@@ -404,24 +416,15 @@ NAME       STATUS   ROLES    AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAG
 minikube   Ready    master   13m   v1.15.0   <span style="color:#666">10</span>.0.2.15     &lt;none&gt;        Buildroot <span style="color:#666">2018</span>.05.3   <span style="color:#666">4</span>.15.0           docker://18.9.6</code></pre></div>
 <h2 id="creating-namespace-to-isolate-the-pods-in-cluster">Creating namespace to isolate the pods in cluster</h2>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl create namespace dev</code></pre></div>
-<p>Create deployment:
-kubectl run nexus &ndash;image=sonatype/nexus3:3.2.1 &ndash;port 8081</p>
-
-<p>Expose service :<br />
-kubectl expose deployment nexus &ndash;type=NodePort</p>
-
-<p>Access the service:
-Minikube service nexus</p>
-
 <h2 id="configmaps">ConfigMaps</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Kubectl create configmap <span style="color:#b62;font-weight:bold">\
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">Kubectl create configmap <span style="color:#b62;font-weight:bold">\
 </span><span style="color:#b62;font-weight:bold"></span> &lt;config-name&gt; --from-literal<span style="color:#666">=</span>&lt;key&gt;<span style="color:#666">=</span>&lt;value&gt;
 
 <span style="color:#666">(</span>or<span style="color:#666">)</span>
 Kubectl create configmap <span style="color:#b62;font-weight:bold">\
 </span><span style="color:#b62;font-weight:bold"></span> &lt;config-name&gt; --from-file<span style="color:#666">=</span>&lt;path_to_file&gt;</code></pre></div>
 <p>Example :</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Kubectl create configmap <span style="color:#b62;font-weight:bold">\
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">Kubectl create configmap <span style="color:#b62;font-weight:bold">\
 </span><span style="color:#b62;font-weight:bold"></span>app-color-config –from-literal<span style="color:#666">=</span><span style="color:#b8860b">APP_COLOR</span><span style="color:#666">=</span>blue <span style="color:#b62;font-weight:bold">\
 </span><span style="color:#b62;font-weight:bold"></span>--from-literal<span style="color:#666">=</span><span style="color:#b8860b">APP_MOD</span><span style="color:#666">=</span>prod
 

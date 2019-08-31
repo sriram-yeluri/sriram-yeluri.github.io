@@ -143,6 +143,8 @@
 
 
 
+
+
 <div id="vendorStrip" class="light-text">
 	<ul>
 		
@@ -160,6 +162,9 @@
 		
 		
 		<li><a href="/docs/ldap/">LDAP</a></li>
+		
+		
+		<li><a href="/docs/linux/">LINUX</a></li>
 		
 		
 		<li><a href="/docs/programming/">PROGRAMMING</a></li>
@@ -271,6 +276,13 @@
 		
 			
 
+<a class="item" data-title="SECRETS" href="/docs/k8s/secrets/"></a>
+
+		
+	
+		
+			
+
 <a class="item" data-title="Troubleshooting" href="/docs/k8s/troubleshooting/"></a>
 
 		
@@ -348,7 +360,27 @@
 
 
 
+<li><a href="#kube-api-server">kube api-server</a></li>
+
+
+
+
+<li><a href="#kube-scheduler">Kube scheduler</a></li>
+
+
+
+
+<li><a href="#controller-manager">Controller manager</a></li>
+
+
+
+
 <li><a href="#etcd">etcd</a></li>
+
+
+
+
+<li><a href="#daemon-set">Daemon Set</a></li>
 
 
 
@@ -403,10 +435,35 @@
 
 <p>A container runtime (like Docker) responsible for pulling the container image from a registry, unpacking the container, and running the application.</p>
 
+<h2 id="kube-api-server">kube api-server</h2>
+
+<p>todo</p>
+
+<h2 id="kube-scheduler">Kube scheduler</h2>
+
+<p>todo</p>
+
+<h2 id="controller-manager">Controller manager</h2>
+
+<p>todo</p>
+
 <h2 id="etcd">etcd</h2>
 
 <ul>
 <li>etcd is an opensource, distributed key-value database which acts as a single source of truth for all components of the cluster.</li>
+</ul>
+
+<h2 id="daemon-set">Daemon Set</h2>
+
+<p>Daemon set will ensure one copy/instance of pod is present on all the nodes.</p>
+
+<p>UseCases:</p>
+
+<ul>
+<li>kube-proxy</li>
+<li>Log Viewer</li>
+<li>Monitoring Agent</li>
+<li>Networking Solution (Weave-net)</li>
 </ul>
 
 

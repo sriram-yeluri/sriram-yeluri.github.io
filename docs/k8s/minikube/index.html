@@ -143,6 +143,8 @@
 
 
 
+
+
 <div id="vendorStrip" class="light-text">
 	<ul>
 		
@@ -160,6 +162,9 @@
 		
 		
 		<li><a href="/docs/ldap/">LDAP</a></li>
+		
+		
+		<li><a href="/docs/linux/">LINUX</a></li>
 		
 		
 		<li><a href="/docs/programming/">PROGRAMMING</a></li>
@@ -265,6 +270,13 @@
 			
 
 <a class="item" data-title="POD" href="/docs/k8s/pod/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="SECRETS" href="/docs/k8s/secrets/"></a>
 
 		
 	
@@ -401,13 +413,13 @@
 ⌛  Verifying: apiserver proxy etcd scheduler controller dns
 🏄  Done! kubectl is now configured to use <span style="color:#b44">&#34;minikube&#34;</span></code></pre></div>
 <h2 id="status">status</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sriram@sriram-Inspiron-5567:~/k8s$ minikube status
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ minikube status
 host: Running
 kubelet: Running
 apiserver: Running
 kubectl: Correctly Configured: pointing to minikube-vm at <span style="color:#666">192</span>.168.99.100</code></pre></div>
 <h2 id="minikube-service-list">minikube service list</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sriram@sriram-Inspiron-5567:~/k8s$ minikube service list
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ minikube service list
 
 |-------------|------------|--------------|
 |  NAMESPACE  |    NAME    |     URL      |
@@ -416,11 +428,11 @@ kubectl: Correctly Configured: pointing to minikube-vm at <span style="color:#66
 | kube-system | kube-dns   | No node port |
 |-------------|------------|--------------|</code></pre></div>
 <h2 id="minikube-stop">minikube stop</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sriram@sriram-Inspiron-5567:~/k8s$ minikube stop
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ minikube stop
 ✋  Stopping <span style="color:#b44">&#34;minikube&#34;</span> in virtualbox ...
 🛑  <span style="color:#b44">&#34;minikube&#34;</span> stopped.
 
-sriram@sriram-Inspiron-5567:~/k8s$ minikube status
+$ minikube status
 host: Stopped
 kubelet:
 apiserver:
@@ -436,7 +448,7 @@ kubectl:</code></pre></div>
 ⌛  Verifying: apiserver proxy etcd scheduler controller dns
 🏄  Done! kubectl is now configured to use <span style="color:#b44">&#34;minikube&#34;</span></code></pre></div>
 <h2 id="enable-metrics-service-and-listing-all-apiservices">Enable metrics service and listing all apiservices</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sriram@sriram-Inspiron-5567:~/k8s$ minikube addons <span style="color:#a2f">enable</span> metrics-server
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ minikube addons <span style="color:#a2f">enable</span> metrics-server
 ✅  metrics-server was successfully enabled
 
 sriram@sriram-Inspiron-5567:~/k8s$ kubectl get apiservices
