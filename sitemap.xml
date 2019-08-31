@@ -24,7 +24,7 @@
   
   <url>
     <loc>//localhost:1313/docs/k8s/architecture/</loc>
-    <lastmod>2019-08-05T06:15:28+02:00</lastmod>
+    <lastmod>2019-08-26T22:41:50+02:00</lastmod>
   </url>
   
   <url>
@@ -59,6 +59,7 @@
   
   <url>
     <loc>//localhost:1313/docs/k8s/deployments/</loc>
+    <lastmod>2019-08-26T22:41:50+02:00</lastmod>
   </url>
   
   <url>
@@ -143,6 +144,11 @@
   
   <url>
     <loc>//localhost:1313/docs/linux/</loc>
+    <lastmod>2019-07-07T21:45:46+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/linux/</loc>
     <lastmod>2019-06-22T08:42:44+02:00</lastmod>
   </url>
   
@@ -183,6 +189,7 @@
   
   <url>
     <loc>//localhost:1313/docs/k8s/pod/</loc>
+    <lastmod>2019-08-26T22:41:50+02:00</lastmod>
   </url>
   
   <url>
@@ -198,6 +205,10 @@
   <url>
     <loc>//localhost:1313/docs/git/</loc>
     <lastmod>2019-06-22T08:42:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/k8s/secrets/</loc>
   </url>
   
   <url>
@@ -251,12 +262,8 @@
   </url>
   
   <url>
-    <loc>//localhost:1313/docs/linux/</loc>
-    <lastmod>2019-07-07T21:45:46+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>//localhost:1313/docs/k8s/troubleshooting/</loc>
+    <lastmod>2019-08-26T22:41:50+02:00</lastmod>
   </url>
   
   <url>
@@ -301,7 +308,7 @@
   
   <url>
     <loc>//localhost:1313/docs/k8s/kubectl/</loc>
-    <lastmod>2019-08-14T22:29:12+02:00</lastmod>
+    <lastmod>2019-08-26T22:41:50+02:00</lastmod>
   </url>
   
   <url>
