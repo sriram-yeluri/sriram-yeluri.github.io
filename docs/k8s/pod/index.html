@@ -4,7 +4,7 @@
 	
 
 <meta charset="utf-8">
-<title>POD - SY Knowledge Hub</title>
+<title>Pod - SY Knowledge Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 
@@ -30,8 +30,8 @@
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:url" content="//localhost:1313/docs/k8s/pod/">
-<meta property="og:title" content="POD">
-<meta name="twitter:title" content="POD">
+<meta property="og:title" content="Pod">
+<meta name="twitter:title" content="Pod">
 <meta name="twitter:image" content="https://github.com/sriram-yeluri/images/raw/master/favicon.png"/>
 
 <meta name="twitter:image:alt" content="SY Knowledge Hub">
@@ -262,6 +262,13 @@
 		
 			
 
+<a class="item" data-title="Installing Kubernetes" href="/docs/k8s/installingk8s/"></a>
+
+		
+	
+		
+			
+
 <a class="item" data-title="Kind" href="/docs/k8s/kind/"></a>
 
 		
@@ -269,14 +276,21 @@
 		
 			
 
-<a class="item" data-title="POD" href="/docs/k8s/pod/"></a>
+<a class="item" data-title="Minikube" href="/docs/k8s/minikube/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="SECRETS" href="/docs/k8s/secrets/"></a>
+<a class="item" data-title="Pod" href="/docs/k8s/pod/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Secrets" href="/docs/k8s/secrets/"></a>
 
 		
 	
@@ -291,13 +305,6 @@
 			
 
 <a class="item" data-title="kubectl" href="/docs/k8s/kubectl/"></a>
-
-		
-	
-		
-			
-
-<a class="item" data-title="minikube" href="/docs/k8s/minikube/"></a>
 
 		
 	
@@ -316,11 +323,11 @@
 
 
 
-<h1>POD</h1>
+<h1>Pod</h1>
 
 
 
-<p>PODs</p>
+<p>Kubernetes PODS</p>
 
 
 
@@ -387,30 +394,18 @@ Controlled By:  ReplicaSet/kubernetes-bootcamp-5b48cfdcbd
 Containers:
 
   kubernetes-bootcamp:
-
     Container ID:   docker://016f25827984c14dc74e5cbaafe43b0fb77b20b8838b5818d1e9a90376b8ad5d
-
     Image:          gcr.io/google-samples/kubernetes-bootcamp:v1
-
     Image ID:       docker-pullable://jocatalin/kubernetes-bootcamp@sha256:0d6b8ee63bb57c5f5b6156f446b3bc3b3c143d233037f3a2f00e279c8fcc64af
-
     Port:           <span style="color:#666">8080</span>/TCP
-
     Host Port:      <span style="color:#666">0</span>/TCP
-
     State:          Running
-
       Started:      Mon, <span style="color:#666">26</span> Aug <span style="color:#666">2019</span> <span style="color:#666">11</span>:54:06 +0000
-
     Ready:          True
-
     Restart Count:  <span style="color:#666">0</span>
-
     Environment:    &lt;none&gt;
-
     Mounts:
       /var/run/secrets/kubernetes.io/serviceaccount from default-token-5wbkl <span style="color:#666">(</span>ro<span style="color:#666">)</span>
-
 Conditions:
   Type              Status
   Initialized       True
@@ -455,7 +450,7 @@ $ kubectl delete pod label-demo</p>
 <h2 id="static-pod">Static POD</h2>
 
 <p>PODS that are created by kubelet without any communication from kube-apiserver are called static pods.<br />
-If master node fails, kublet on worker node can manage deploying/deleting the pods. This can be achieved by placing the pod definition files directly in the manifests path of the node (/etc/kubernetes/manifests). Kublet monitors this path regularly and creates a POD and also ensures the POD stays alive.</p>
+If master node fails, kublet on worker node can manage deploying/deleting the pods. This can be achieved by placing the pod definition files directly in the manifests path on the node (/etc/kubernetes/manifests). Kublet monitors this path regularly and creates a POD and also ensures the POD stays alive.</p>
 
 
 
