@@ -26,9 +26,12 @@
 
 
 
-<meta name="description" content="References https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/ https://github.com/kubernetes/kubeadm/issues/610">
-<meta property="og:description" content="References https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/ https://github.com/kubernetes/kubeadm/issues/610">
-<meta name="twitter:description" content="References https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/ https://github.com/kubernetes/kubeadm/issues/610">
+<meta name="description" content="References Install Kubeadm
+ERROR Swap">
+<meta property="og:description" content="References Install Kubeadm
+ERROR Swap">
+<meta name="twitter:description" content="References Install Kubeadm
+ERROR Swap">
 <meta property="og:url" content="//localhost:1313/docs/k8s/installingk8s/">
 <meta property="og:title" content="Installing Kubernetes">
 <meta name="twitter:title" content="Installing Kubernetes">
@@ -365,7 +368,27 @@
 
 
 
+<li><a href="#kubelet-service">kubelet service</a></li>
+
+
+
+
+<li><a href="#etc-kubernetes">etc/kubernetes</a></li>
+
+
+
+
+<li><a href="#docker-images-for-kubernetes-cluster">Docker images for kubernetes cluster</a></li>
+
+
+
+
 <li><a href="#kubeadm-reset">kubeadm reset</a></li>
+
+
+
+
+<li><a href="#troubleshooting">Troubleshooting</a></li>
 
 
 
@@ -413,6 +436,8 @@ curl -sSL <span style="color:#b44">&#34;https://raw.githubusercontent.com/kubern
 mkdir -p /etc/systemd/system/kubelet.service.d
 
 curl -sSL <span style="color:#b44">&#34;https://raw.githubusercontent.com/kubernetes/kubernetes/</span><span style="color:#b68;font-weight:bold">${</span><span style="color:#b8860b">RELEASE</span><span style="color:#b68;font-weight:bold">}</span><span style="color:#b44">/build/debs/10-kubeadm.conf&#34;</span> &gt; /etc/systemd/system/kubelet.service.d/10-kubeadm.conf</code></pre></div>
+<p>At this stage, kubelet service will fail to start as the initialization did not happen and <code>/var/lib/kubelet/config.yaml</code> is not yet created.</p>
+
 <h2 id="kubeadm-init">kubeadm init</h2>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># swapoff -a</span>
 <span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># kubeadm init</span>
@@ -431,15 +456,15 @@ curl -sSL <span style="color:#b44">&#34;https://raw.githubusercontent.com/kubern
 <span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;apiserver-kubelet-client&#34;</span> certificate and key
 <span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;apiserver&#34;</span> certificate and key
 <span style="color:#666">[</span>certs<span style="color:#666">]</span> apiserver serving cert is signed <span style="color:#a2f;font-weight:bold">for</span> DNS names <span style="color:#666">[</span><span style="color:#666">10</span>.0.2.15 kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local<span style="color:#666">]</span> and IPs <span style="color:#666">[</span><span style="color:#666">10</span>.96.0.1 <span style="color:#666">10</span>.0.2.15<span style="color:#666">]</span>
-<span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;front-proxy-ca&#34;</span> certificate and key
-<span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;front-proxy-client&#34;</span> certificate and key
 <span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;etcd/ca&#34;</span> certificate and key
 <span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;etcd/server&#34;</span> certificate and key
 <span style="color:#666">[</span>certs<span style="color:#666">]</span> etcd/server serving cert is signed <span style="color:#a2f;font-weight:bold">for</span> DNS names <span style="color:#666">[</span><span style="color:#666">10</span>.0.2.15 localhost<span style="color:#666">]</span> and IPs <span style="color:#666">[</span><span style="color:#666">10</span>.0.2.15 <span style="color:#666">127</span>.0.0.1 ::1<span style="color:#666">]</span>
-<span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;etcd/peer&#34;</span> certificate and key
-<span style="color:#666">[</span>certs<span style="color:#666">]</span> etcd/peer serving cert is signed <span style="color:#a2f;font-weight:bold">for</span> DNS names <span style="color:#666">[</span><span style="color:#666">10</span>.0.2.15 localhost<span style="color:#666">]</span> and IPs <span style="color:#666">[</span><span style="color:#666">10</span>.0.2.15 <span style="color:#666">127</span>.0.0.1 ::1<span style="color:#666">]</span>
 <span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;etcd/healthcheck-client&#34;</span> certificate and key
 <span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;apiserver-etcd-client&#34;</span> certificate and key
+<span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;etcd/peer&#34;</span> certificate and key
+<span style="color:#666">[</span>certs<span style="color:#666">]</span> etcd/peer serving cert is signed <span style="color:#a2f;font-weight:bold">for</span> DNS names <span style="color:#666">[</span><span style="color:#666">10</span>.0.2.15 localhost<span style="color:#666">]</span> and IPs <span style="color:#666">[</span><span style="color:#666">10</span>.0.2.15 <span style="color:#666">127</span>.0.0.1 ::1<span style="color:#666">]</span>
+<span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;front-proxy-ca&#34;</span> certificate and key
+<span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;front-proxy-client&#34;</span> certificate and key
 <span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;sa&#34;</span> key and public key
 <span style="color:#666">[</span>kubeconfig<span style="color:#666">]</span> Using kubeconfig folder <span style="color:#b44">&#34;/etc/kubernetes&#34;</span>
 <span style="color:#666">[</span>kubeconfig<span style="color:#666">]</span> Writing <span style="color:#b44">&#34;admin.conf&#34;</span> kubeconfig file
@@ -452,13 +477,13 @@ curl -sSL <span style="color:#b44">&#34;https://raw.githubusercontent.com/kubern
 <span style="color:#666">[</span>control-plane<span style="color:#666">]</span> Creating static Pod manifest <span style="color:#a2f;font-weight:bold">for</span> <span style="color:#b44">&#34;kube-scheduler&#34;</span>
 <span style="color:#666">[</span>etcd<span style="color:#666">]</span> Creating static Pod manifest <span style="color:#a2f;font-weight:bold">for</span> <span style="color:#a2f">local</span> etcd in <span style="color:#b44">&#34;/etc/kubernetes/manifests&#34;</span>
 <span style="color:#666">[</span>wait-control-plane<span style="color:#666">]</span> Waiting <span style="color:#a2f;font-weight:bold">for</span> the kubelet to boot up the control plane as static Pods from directory <span style="color:#b44">&#34;/etc/kubernetes/manifests&#34;</span>. This can take up to 4m0s
-<span style="color:#666">[</span>apiclient<span style="color:#666">]</span> All control plane components are healthy after <span style="color:#666">18</span>.507261 seconds
+<span style="color:#666">[</span>apiclient<span style="color:#666">]</span> All control plane components are healthy after <span style="color:#666">20</span>.014010 seconds
 <span style="color:#666">[</span>upload-config<span style="color:#666">]</span> Storing the configuration used in ConfigMap <span style="color:#b44">&#34;kubeadm-config&#34;</span> in the <span style="color:#b44">&#34;kube-system&#34;</span> Namespace
 <span style="color:#666">[</span>kubelet<span style="color:#666">]</span> Creating a ConfigMap <span style="color:#b44">&#34;kubelet-config-1.15&#34;</span> in namespace kube-system with the configuration <span style="color:#a2f;font-weight:bold">for</span> the kubelets in the cluster
 <span style="color:#666">[</span>upload-certs<span style="color:#666">]</span> Skipping phase. Please see --upload-certs
 <span style="color:#666">[</span>mark-control-plane<span style="color:#666">]</span> Marking the node <span style="color:#666">10</span>.0.2.15 as control-plane by adding the label <span style="color:#b44">&#34;node-role.kubernetes.io/master=&#39;&#39;&#34;</span>
 <span style="color:#666">[</span>mark-control-plane<span style="color:#666">]</span> Marking the node <span style="color:#666">10</span>.0.2.15 as control-plane by adding the taints <span style="color:#666">[</span>node-role.kubernetes.io/master:NoSchedule<span style="color:#666">]</span>
-<span style="color:#666">[</span>bootstrap-token<span style="color:#666">]</span> Using token: 7mnksf.b8tbspljpnkyrj35
+<span style="color:#666">[</span>bootstrap-token<span style="color:#666">]</span> Using token: n2e7ii.lp571oh88qidwzdj
 <span style="color:#666">[</span>bootstrap-token<span style="color:#666">]</span> Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles
 <span style="color:#666">[</span>bootstrap-token<span style="color:#666">]</span> configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order <span style="color:#a2f;font-weight:bold">for</span> nodes to get long term certificate credentials
 <span style="color:#666">[</span>bootstrap-token<span style="color:#666">]</span> configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
@@ -481,9 +506,87 @@ Run <span style="color:#b44">&#34;kubectl apply -f [podnetwork].yaml&#34;</span>
 
 Then you can join any number of worker nodes by running the following on each as root:
 
-kubeadm join <span style="color:#666">10</span>.0.2.15:6443 --token 7mnksf.b8tbspljpnkyrj35 <span style="color:#b62;font-weight:bold">\
-</span><span style="color:#b62;font-weight:bold"></span>    --discovery-token-ca-cert-hash sha256:9727bf731d1b9ee9ce19cf1758881919842ef9fadbc119c78be8961f7fc9be63
-<span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span>#</code></pre></div>
+kubeadm join <span style="color:#666">10</span>.0.2.15:6443 --token n2e7ii.lp571oh88qidwzdj <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --discovery-token-ca-cert-hash sha256:0957baa4cdea8fda244c159cf2a038a2afe2c0b20fb922014472c5c7918dac81</code></pre></div>
+<h2 id="kubelet-service">kubelet service</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># service kubelet status</span>
+Redirecting to /bin/systemctl status kubelet.service
+● kubelet.service - kubelet: The Kubernetes Node Agent
+   Loaded: loaded <span style="color:#666">(</span>/etc/systemd/system/kubelet.service; enabled; vendor preset: disabled<span style="color:#666">)</span>
+  Drop-In: /etc/systemd/system/kubelet.service.d
+           └─10-kubeadm.conf
+   Active: active <span style="color:#666">(</span>running<span style="color:#666">)</span> since zo <span style="color:#666">2019</span>-09-01 <span style="color:#666">21</span>:04:42 CEST; 1min 9s ago
+     Docs: http://kubernetes.io/docs/
+ Main PID: <span style="color:#666">4682</span> <span style="color:#666">(</span>kubelet<span style="color:#666">)</span>
+   CGroup: /system.slice/kubelet.service
+           └─4682 /usr/bin/kubelet --bootstrap-kubeconfig<span style="color:#666">=</span>/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig<span style="color:#666">=</span>/etc/kubernetes/kubelet.conf --c...
+
+sep <span style="color:#666">01</span> <span style="color:#666">21</span>:05:35 <span style="color:#666">10</span>.0.2.15 kubelet<span style="color:#666">[</span><span style="color:#666">4682</span><span style="color:#666">]</span>: E0901 <span style="color:#666">21</span>:05:35.780354    <span style="color:#666">4682</span> summary_sys_containers.go:47<span style="color:#666">]</span> Failed to get system container stats <span style="color:#a2f;font-weight:bold">for</span> ...
+sep <span style="color:#666">01</span> <span style="color:#666">21</span>:05:35 <span style="color:#666">10</span>.0.2.15 kubelet<span style="color:#666">[</span><span style="color:#666">4682</span><span style="color:#666">]</span>: E0901 <span style="color:#666">21</span>:05:35.780463    <span style="color:#666">4682</span> summary_sys_containers.go:47<span style="color:#666">]</span> Failed to get system container stats <span style="color:#a2f;font-weight:bold">for</span> ...
+sep <span style="color:#666">01</span> <span style="color:#666">21</span>:05:37 <span style="color:#666">10</span>.0.2.15 kubelet<span style="color:#666">[</span><span style="color:#666">4682</span><span style="color:#666">]</span>: W0901 <span style="color:#666">21</span>:05:37.277274    <span style="color:#666">4682</span> cni.go:213<span style="color:#666">]</span> Unable to update cni config: No networks found in /...ni/net.d
+sep <span style="color:#666">01</span> <span style="color:#666">21</span>:05:40 <span style="color:#666">10</span>.0.2.15 kubelet<span style="color:#666">[</span><span style="color:#666">4682</span><span style="color:#666">]</span>: E0901 <span style="color:#666">21</span>:05:40.725221    <span style="color:#666">4682</span> kubelet.go:2169<span style="color:#666">]</span> Container runtime network not ready: NetworkRe...tialized
+sep <span style="color:#666">01</span> <span style="color:#666">21</span>:05:42 <span style="color:#666">10</span>.0.2.15 kubelet<span style="color:#666">[</span><span style="color:#666">4682</span><span style="color:#666">]</span>: W0901 <span style="color:#666">21</span>:05:42.277894    <span style="color:#666">4682</span> cni.go:213<span style="color:#666">]</span> Unable to update cni config: No networks found in /...ni/net.d
+sep <span style="color:#666">01</span> <span style="color:#666">21</span>:05:45 <span style="color:#666">10</span>.0.2.15 kubelet<span style="color:#666">[</span><span style="color:#666">4682</span><span style="color:#666">]</span>: E0901 <span style="color:#666">21</span>:05:45.728937    <span style="color:#666">4682</span> kubelet.go:2169<span style="color:#666">]</span> Container runtime network not ready: NetworkRe...tialized
+sep <span style="color:#666">01</span> <span style="color:#666">21</span>:05:45 <span style="color:#666">10</span>.0.2.15 kubelet<span style="color:#666">[</span><span style="color:#666">4682</span><span style="color:#666">]</span>: E0901 <span style="color:#666">21</span>:05:45.813742    <span style="color:#666">4682</span> summary_sys_containers.go:47<span style="color:#666">]</span> Failed to get system container stats <span style="color:#a2f;font-weight:bold">for</span> ...
+sep <span style="color:#666">01</span> <span style="color:#666">21</span>:05:45 <span style="color:#666">10</span>.0.2.15 kubelet<span style="color:#666">[</span><span style="color:#666">4682</span><span style="color:#666">]</span>: E0901 <span style="color:#666">21</span>:05:45.813868    <span style="color:#666">4682</span> summary_sys_containers.go:47<span style="color:#666">]</span> Failed to get system container stats <span style="color:#a2f;font-weight:bold">for</span> ...
+sep <span style="color:#666">01</span> <span style="color:#666">21</span>:05:47 <span style="color:#666">10</span>.0.2.15 kubelet<span style="color:#666">[</span><span style="color:#666">4682</span><span style="color:#666">]</span>: W0901 <span style="color:#666">21</span>:05:47.278690    <span style="color:#666">4682</span> cni.go:213<span style="color:#666">]</span> Unable to update cni config: No networks found in /...ni/net.d
+sep <span style="color:#666">01</span> <span style="color:#666">21</span>:05:50 <span style="color:#666">10</span>.0.2.15 kubelet<span style="color:#666">[</span><span style="color:#666">4682</span><span style="color:#666">]</span>: E0901 <span style="color:#666">21</span>:05:50.733668    <span style="color:#666">4682</span> kubelet.go:2169<span style="color:#666">]</span> Container runtime network not ready: NetworkRe...tialized
+Hint: Some lines were ellipsized, use -l to show in full.</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic">#run the following as a regular user, to start using the cluster</span>
+mkdir -p <span style="color:#b8860b">$HOME</span>/.kube
+sudo cp -i /etc/kubernetes/admin.conf <span style="color:#b8860b">$HOME</span>/.kube/config
+sudo chown <span style="color:#a2f;font-weight:bold">$(</span>id -u<span style="color:#a2f;font-weight:bold">)</span>:<span style="color:#a2f;font-weight:bold">$(</span>id -g<span style="color:#a2f;font-weight:bold">)</span> <span style="color:#b8860b">$HOME</span>/.kube/config
+
+<span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># kubectl get nodes</span>
+NAME        STATUS     ROLES    AGE     VERSION
+<span style="color:#666">10</span>.0.2.15   NotReady   master   6m38s   v1.15.3</code></pre></div>
+<h2 id="etc-kubernetes">etc/kubernetes</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 kubernetes<span style="color:#666">]</span><span style="color:#080;font-style:italic"># tree /etc/kubernetes</span>
+/etc/kubernetes
+├── admin.conf
+├── controller-manager.conf
+├── kubelet.conf
+├── manifests
+│   ├── etcd.yaml
+│   ├── kube-apiserver.yaml
+│   ├── kube-controller-manager.yaml
+│   └── kube-scheduler.yaml
+├── pki
+│   ├── apiserver.crt
+│   ├── apiserver-etcd-client.crt
+│   ├── apiserver-etcd-client.key
+│   ├── apiserver.key
+│   ├── apiserver-kubelet-client.crt
+│   ├── apiserver-kubelet-client.key
+│   ├── ca.crt
+│   ├── ca.key
+│   ├── etcd
+│   │   ├── ca.crt
+│   │   ├── ca.key
+│   │   ├── healthcheck-client.crt
+│   │   ├── healthcheck-client.key
+│   │   ├── peer.crt
+│   │   ├── peer.key
+│   │   ├── server.crt
+│   │   └── server.key
+│   ├── front-proxy-ca.crt
+│   ├── front-proxy-ca.key
+│   ├── front-proxy-client.crt
+│   ├── front-proxy-client.key
+│   ├── sa.key
+│   └── sa.pub
+└── scheduler.conf
+
+<span style="color:#666">3</span> directories, <span style="color:#666">30</span> files</code></pre></div>
+<h2 id="docker-images-for-kubernetes-cluster">Docker images for kubernetes cluster</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 kubernetes<span style="color:#666">]</span><span style="color:#080;font-style:italic"># docker images</span>
+REPOSITORY                           TAG                 IMAGE ID            CREATED             SIZE
+k8s.gcr.io/kube-proxy                v1.15.3             232b5c793146        <span style="color:#666">13</span> days ago         <span style="color:#666">82</span>.4 MB
+k8s.gcr.io/kube-apiserver            v1.15.3             5eb2d3fc7a44        <span style="color:#666">13</span> days ago         <span style="color:#666">207</span> MB
+k8s.gcr.io/kube-scheduler            v1.15.3             703f9c69a5d5        <span style="color:#666">13</span> days ago         <span style="color:#666">81</span>.1 MB
+k8s.gcr.io/kube-controller-manager   v1.15.3             e77c31de5547        <span style="color:#666">13</span> days ago         <span style="color:#666">159</span> MB
+k8s.gcr.io/coredns                   <span style="color:#666">1</span>.3.1               eb516548c180        <span style="color:#666">7</span> months ago        <span style="color:#666">40</span>.3 MB
+k8s.gcr.io/etcd                      <span style="color:#666">3</span>.3.10              2c4adeb21b4f        <span style="color:#666">9</span> months ago        <span style="color:#666">258</span> MB
+k8s.gcr.io/pause                     <span style="color:#666">3</span>.1                 da86e6ba6ca1        <span style="color:#666">20</span> months ago       <span style="color:#666">742</span> kB</code></pre></div>
 <h2 id="kubeadm-reset">kubeadm reset</h2>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># kubeadm reset</span>
 <span style="color:#666">[</span>reset<span style="color:#666">]</span> Reading configuration from the cluster...
@@ -511,6 +614,21 @@ to reset your system<span style="">&#39;</span>s IPVS tables.
 The reset process does not clean your kubeconfig files and you must remove them manually.
 Please, check the contents of the <span style="color:#b8860b">$HOME</span>/.kube/config file.
 <span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span>#</code></pre></div>
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p><code>kubelet service not starting</code></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># /var/log/messages</span>
+Sep  <span style="color:#666">1</span> <span style="color:#666">20</span>:57:25 localhost kubelet: F0901 <span style="color:#666">20</span>:57:25.706063    <span style="color:#666">2874</span> server.go:198<span style="color:#666">]</span> failed to load Kubelet config file /var/lib/kubelet/config.yaml, error failed to <span style="color:#a2f">read</span> kubelet config file <span style="color:#b44">&#34;/var/lib/kubelet/config.yaml&#34;</span>, error: open /var/lib/kubelet/config.yaml: no such file or directory
+Sep  <span style="color:#666">1</span> <span style="color:#666">20</span>:57:25 localhost systemd: kubelet.service: main process exited, <span style="color:#b8860b">code</span><span style="color:#666">=</span>exited, <span style="color:#b8860b">status</span><span style="color:#666">=</span><span style="color:#666">255</span>/n/a
+Sep  <span style="color:#666">1</span> <span style="color:#666">20</span>:57:25 localhost systemd: Unit kubelet.service entered failed state.
+Sep  <span style="color:#666">1</span> <span style="color:#666">20</span>:57:25 localhost systemd: kubelet.service failed.
+Sep  <span style="color:#666">1</span> <span style="color:#666">20</span>:57:35 localhost systemd: kubelet.service holdoff <span style="color:#a2f">time</span> over, scheduling restart.
+Sep  <span style="color:#666">1</span> <span style="color:#666">20</span>:57:35 localhost systemd: Stopped kubelet: The Kubernetes Node Agent.
+Sep  <span style="color:#666">1</span> <span style="color:#666">20</span>:57:35 localhost systemd: Started kubelet: The Kubernetes Node Agent.
+Sep  <span style="color:#666">1</span> <span style="color:#666">20</span>:57:35 localhost kubelet: F0901 <span style="color:#666">20</span>:57:35.968939    <span style="color:#666">2882</span> server.go:198<span style="color:#666">]</span> failed to load Kubelet config file /var/lib/kubelet/config.yaml, error failed to <span style="color:#a2f">read</span> kubelet config file <span style="color:#b44">&#34;/var/lib/kubelet/config.yaml&#34;</span>, error: open /var/lib/kubelet/config.yaml: no such file or directory
+Sep  <span style="color:#666">1</span> <span style="color:#666">20</span>:57:35 localhost systemd: kubelet.service: main process exited, <span style="color:#b8860b">code</span><span style="color:#666">=</span>exited, <span style="color:#b8860b">status</span><span style="color:#666">=</span><span style="color:#666">255</span>/n/a
+Sep  <span style="color:#666">1</span> <span style="color:#666">20</span>:57:35 localhost systemd: Unit kubelet.service entered failed state.
+Sep  <span style="color:#666">1</span> <span style="color:#666">20</span>:57:35 localhost systemd: kubelet.service failed.</code></pre></div>
 
 
 
@@ -521,8 +639,8 @@ Please, check the contents of the <span style="color:#b8860b">$HOME</span>/.kube
 
 <h3 id="references">References</h3>
 
-<p><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/" target="_blank">https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/</a>
-<a href="https://github.com/kubernetes/kubeadm/issues/610" target="_blank">https://github.com/kubernetes/kubeadm/issues/610</a></p>
+<p><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/" target="_blank">Install Kubeadm</a><br />
+<a href="https://github.com/kubernetes/kubeadm/issues/610" target="_blank">ERROR Swap</a></p>
 
 
 
