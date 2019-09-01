@@ -24,7 +24,7 @@
   
   <url>
     <loc>//localhost:1313/docs/k8s/architecture/</loc>
-    <lastmod>2019-08-26T22:41:50+02:00</lastmod>
+    <lastmod>2019-08-31T22:23:21+02:00</lastmod>
   </url>
   
   <url>
@@ -59,7 +59,7 @@
   
   <url>
     <loc>//localhost:1313/docs/k8s/deployments/</loc>
-    <lastmod>2019-08-26T22:41:50+02:00</lastmod>
+    <lastmod>2019-08-31T22:23:21+02:00</lastmod>
   </url>
   
   <url>
@@ -95,6 +95,10 @@
   <url>
     <loc>//localhost:1313/docs/git/git/</loc>
     <lastmod>2019-07-12T06:32:56+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/k8s/installingk8s/</loc>
   </url>
   
   <url>
@@ -144,7 +148,7 @@
   
   <url>
     <loc>//localhost:1313/docs/linux/</loc>
-    <lastmod>2019-07-07T21:45:46+02:00</lastmod>
+    <lastmod>2019-08-31T22:23:21+02:00</lastmod>
   </url>
   
   <url>
@@ -160,6 +164,11 @@
   <url>
     <loc>//localhost:1313/docs/security/hardening/</loc>
     <lastmod>2019-06-29T22:49:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/k8s/minikube/</loc>
+    <lastmod>2019-08-31T22:23:21+02:00</lastmod>
   </url>
   
   <url>
@@ -189,7 +198,7 @@
   
   <url>
     <loc>//localhost:1313/docs/k8s/pod/</loc>
-    <lastmod>2019-08-26T22:41:50+02:00</lastmod>
+    <lastmod>2019-08-31T22:23:21+02:00</lastmod>
   </url>
   
   <url>
@@ -205,10 +214,6 @@
   <url>
     <loc>//localhost:1313/docs/git/</loc>
     <lastmod>2019-06-22T08:42:44+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>//localhost:1313/docs/k8s/secrets/</loc>
   </url>
   
   <url>
@@ -229,6 +234,11 @@
   <url>
     <loc>//localhost:1313/docs/scripting/</loc>
     <lastmod>2019-06-22T08:42:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/k8s/secrets/</loc>
+    <lastmod>2019-08-31T22:23:21+02:00</lastmod>
   </url>
   
   <url>
@@ -273,7 +283,7 @@
   
   <url>
     <loc>//localhost:1313/docs/linux/ubuntu/</loc>
-    <lastmod>2019-07-07T22:28:43+02:00</lastmod>
+    <lastmod>2019-08-31T22:23:21+02:00</lastmod>
   </url>
   
   <url>
@@ -308,12 +318,7 @@
   
   <url>
     <loc>//localhost:1313/docs/k8s/kubectl/</loc>
-    <lastmod>2019-08-26T22:41:50+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>//localhost:1313/docs/k8s/minikube/</loc>
-    <lastmod>2019-07-12T06:32:56+02:00</lastmod>
+    <lastmod>2019-08-31T22:23:21+02:00</lastmod>
   </url>
   
 </urlset>

@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html id="docs" lang="en" class="">
+	<head>
+	
+
+<meta charset="utf-8">
+<title>Installing Kubernetes - SY Knowledge Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<link rel="stylesheet" href="/css/base_fonts.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<link rel="stylesheet" href="/css/sweetalert.min.css">
+<link rel="stylesheet" href="/css/callouts.css">
+<link rel="stylesheet" href="/css/custom-jekyll/tags.css">
+
+
+
+<meta name="description" content="References https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/ https://github.com/kubernetes/kubeadm/issues/610">
+<meta property="og:description" content="References https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/ https://github.com/kubernetes/kubeadm/issues/610">
+<meta name="twitter:description" content="References https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/ https://github.com/kubernetes/kubeadm/issues/610">
+<meta property="og:url" content="//localhost:1313/docs/k8s/installingk8s/">
+<meta property="og:title" content="Installing Kubernetes">
+<meta name="twitter:title" content="Installing Kubernetes">
+<meta name="twitter:image" content="https://github.com/sriram-yeluri/images/raw/master/favicon.png"/>
+
+<meta name="twitter:image:alt" content="SY Knowledge Hub">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="/js/anchor-4.1.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script src="/js/bootstrap-4.3.1.min.js"></script>
+<script src="/js/sweetalert-1.1.3.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/custom-jekyll/tags.js"></script>
+
+
+	</head>
+	<body>
+		<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="/" class="logo"></a>
+
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="/docs/" class="active">Documentation</a></li>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+             <li>
+                <a href="#">
+                     <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                </ul>
+            </li>
+         
+            <li>
+                <a href="#">
+                     <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                </ul>
+            </li>
+        </ul>   
+
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite"></h5>
+            <a href="https://github.com/sriram-yeluri" class="button" data-auto-burger-exclude></a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite"></h5>
+            <div class="social">                
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+		
+		
+		<section id="hero" class="light-text no-sub">
+			
+
+
+
+
+
+
+
+
+
+
+
+<h1>Kubernetes</h1>
+<h5></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="/docs/provisioning/">PROVISIONING</a></li>
+		
+		
+		<li><a href="/docs/aws/">AWS</a></li>
+		
+		
+		<li><a href="/docs/cicd/">CICD</a></li>
+		
+		
+		<li><a href="/docs/k8s/" class="YAH">KUBERNETES</a></li>
+		
+		
+		<li><a href="/docs/ldap/">LDAP</a></li>
+		
+		
+		<li><a href="/docs/linux/">LINUX</a></li>
+		
+		
+		<li><a href="/docs/programming/">PROGRAMMING</a></li>
+		
+		
+		<li><a href="/docs/git/">SCM</a></li>
+		
+		
+		<li><a href="/docs/scripting/">SCRIPTING</a></li>
+		
+		
+		<li><a href="/docs/security/">SECURITY</a></li>
+		
+		
+		<li><a href="/docs/virtualization/">VIRTUALIZATION</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input type="text" id="search" name="q" placeholder="Search" aria-label="Search">
+	</form>
+</div>
+
+		</section>
+		
+		
+
+		<section id="encyclopedia">
+			
+<div id="docsToc">
+     <div class="pi-accordion">
+    	
+        
+        
+        
+        
+        
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
+                          
+                          
+                 
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+             
+         
+         
+        
+        <a class="item" data-title="Kubernetes" href="/docs/k8s/"></a>
+
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Architecture" href="/docs/k8s/architecture/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Deployments" href="/docs/k8s/deployments/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Installing Kubernetes" href="/docs/k8s/installingk8s/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Kind" href="/docs/k8s/kind/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Minikube" href="/docs/k8s/minikube/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Pod" href="/docs/k8s/pod/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Secrets" href="/docs/k8s/secrets/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Troubleshooting" href="/docs/k8s/troubleshooting/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="kubectl" href="/docs/k8s/kubectl/"></a>
+
+		
+	
+
+
+
+
+
+     </div> 
+    <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+</div> 
+
+
+			<div id="docsContent">
+        
+
+
+
+<h1>Installing Kubernetes</h1>
+
+
+
+<p><b>[This page is under construction &hellip;]</b></p>
+
+<p>I am going to cover installation of kubernetes in two ways as mentioned below:</p>
+
+<ul>
+<li>Install kubernetes with kubeadm</li>
+<li>Install kubernetes the hard way</li>
+</ul>
+
+
+
+
+
+
+
+
+
+<ul id="markdown-toc">
+
+
+
+
+
+
+
+
+
+
+<li><a href="#install-kubelet-kubectl-and-kubeadm">Install kubelet, kubectl and kubeadm</a></li>
+
+
+
+
+<li><a href="#kubeadm-init">kubeadm init</a></li>
+
+
+
+
+<li><a href="#kubeadm-reset">kubeadm reset</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+<p>Prerequisites to install kubernetes with kubeadm</p>
+
+<ul>
+<li>VirtualBox</li>
+<li>Centos Image</li>
+<li>Virtual Machine with min 2 CPU</li>
+</ul>
+
+<h2 id="install-kubelet-kubectl-and-kubeadm">Install kubelet, kubectl and kubeadm</h2>
+
+<p><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl" target="_blank">Installing-kubeadm-kubelet-and-kubectl</a></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># This script is modified version from k8s documentation</span>
+<span style="color:#b8860b">RELEASE</span><span style="color:#666">=</span><span style="color:#b44">&#34;</span><span style="color:#a2f;font-weight:bold">$(</span>curl -sSL https://dl.k8s.io/release/stable.txt<span style="color:#a2f;font-weight:bold">)</span><span style="color:#b44">&#34;</span>
+
+mkdir -p /usr/bin
+<span style="color:#a2f">cd</span> /usr/bin
+
+curl -L --remote-name-all https://storage.googleapis.com/kubernetes-release/release/<span style="color:#b68;font-weight:bold">${</span><span style="color:#b8860b">RELEASE</span><span style="color:#b68;font-weight:bold">}</span>/bin/linux/amd64/<span style="color:#666">{</span>kubeadm,kubelet,kubectl<span style="color:#666">}</span>
+chmod +x <span style="color:#666">{</span>kubeadm,kubelet,kubectl<span style="color:#666">}</span>
+
+curl -sSL <span style="color:#b44">&#34;https://raw.githubusercontent.com/kubernetes/kubernetes/</span><span style="color:#b68;font-weight:bold">${</span><span style="color:#b8860b">RELEASE</span><span style="color:#b68;font-weight:bold">}</span><span style="color:#b44">/build/debs/kubelet.service&#34;</span> &gt; /etc/systemd/system/kubelet.service
+
+mkdir -p /etc/systemd/system/kubelet.service.d
+
+curl -sSL <span style="color:#b44">&#34;https://raw.githubusercontent.com/kubernetes/kubernetes/</span><span style="color:#b68;font-weight:bold">${</span><span style="color:#b8860b">RELEASE</span><span style="color:#b68;font-weight:bold">}</span><span style="color:#b44">/build/debs/10-kubeadm.conf&#34;</span> &gt; /etc/systemd/system/kubelet.service.d/10-kubeadm.conf</code></pre></div>
+<h2 id="kubeadm-init">kubeadm init</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># swapoff -a</span>
+<span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># kubeadm init</span>
+<span style="color:#666">[</span>init<span style="color:#666">]</span> Using Kubernetes version: v1.15.3
+<span style="color:#666">[</span>preflight<span style="color:#666">]</span> Running pre-flight checks
+	<span style="color:#666">[</span>WARNING Firewalld<span style="color:#666">]</span>: firewalld is active, please ensure ports <span style="color:#666">[</span><span style="color:#666">6443</span> <span style="color:#666">10250</span><span style="color:#666">]</span> are open or your cluster may not <span style="color:#a2f;font-weight:bold">function</span> correctly
+	<span style="color:#666">[</span>WARNING Service-Docker<span style="color:#666">]</span>: docker service is not enabled, please run <span style="color:#b44">&#39;systemctl enable docker.service&#39;</span>
+<span style="color:#666">[</span>preflight<span style="color:#666">]</span> Pulling images required <span style="color:#a2f;font-weight:bold">for</span> setting up a Kubernetes cluster
+<span style="color:#666">[</span>preflight<span style="color:#666">]</span> This might take a minute or two, depending on the speed of your internet connection
+<span style="color:#666">[</span>preflight<span style="color:#666">]</span> You can also perform this action in beforehand using <span style="color:#b44">&#39;kubeadm config images pull&#39;</span>
+<span style="color:#666">[</span>kubelet-start<span style="color:#666">]</span> Writing kubelet environment file with flags to file <span style="color:#b44">&#34;/var/lib/kubelet/kubeadm-flags.env&#34;</span>
+<span style="color:#666">[</span>kubelet-start<span style="color:#666">]</span> Writing kubelet configuration to file <span style="color:#b44">&#34;/var/lib/kubelet/config.yaml&#34;</span>
+<span style="color:#666">[</span>kubelet-start<span style="color:#666">]</span> Activating the kubelet service
+<span style="color:#666">[</span>certs<span style="color:#666">]</span> Using certificateDir folder <span style="color:#b44">&#34;/etc/kubernetes/pki&#34;</span>
+<span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;ca&#34;</span> certificate and key
+<span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;apiserver-kubelet-client&#34;</span> certificate and key
+<span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;apiserver&#34;</span> certificate and key
+<span style="color:#666">[</span>certs<span style="color:#666">]</span> apiserver serving cert is signed <span style="color:#a2f;font-weight:bold">for</span> DNS names <span style="color:#666">[</span><span style="color:#666">10</span>.0.2.15 kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local<span style="color:#666">]</span> and IPs <span style="color:#666">[</span><span style="color:#666">10</span>.96.0.1 <span style="color:#666">10</span>.0.2.15<span style="color:#666">]</span>
+<span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;front-proxy-ca&#34;</span> certificate and key
+<span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;front-proxy-client&#34;</span> certificate and key
+<span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;etcd/ca&#34;</span> certificate and key
+<span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;etcd/server&#34;</span> certificate and key
+<span style="color:#666">[</span>certs<span style="color:#666">]</span> etcd/server serving cert is signed <span style="color:#a2f;font-weight:bold">for</span> DNS names <span style="color:#666">[</span><span style="color:#666">10</span>.0.2.15 localhost<span style="color:#666">]</span> and IPs <span style="color:#666">[</span><span style="color:#666">10</span>.0.2.15 <span style="color:#666">127</span>.0.0.1 ::1<span style="color:#666">]</span>
+<span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;etcd/peer&#34;</span> certificate and key
+<span style="color:#666">[</span>certs<span style="color:#666">]</span> etcd/peer serving cert is signed <span style="color:#a2f;font-weight:bold">for</span> DNS names <span style="color:#666">[</span><span style="color:#666">10</span>.0.2.15 localhost<span style="color:#666">]</span> and IPs <span style="color:#666">[</span><span style="color:#666">10</span>.0.2.15 <span style="color:#666">127</span>.0.0.1 ::1<span style="color:#666">]</span>
+<span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;etcd/healthcheck-client&#34;</span> certificate and key
+<span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;apiserver-etcd-client&#34;</span> certificate and key
+<span style="color:#666">[</span>certs<span style="color:#666">]</span> Generating <span style="color:#b44">&#34;sa&#34;</span> key and public key
+<span style="color:#666">[</span>kubeconfig<span style="color:#666">]</span> Using kubeconfig folder <span style="color:#b44">&#34;/etc/kubernetes&#34;</span>
+<span style="color:#666">[</span>kubeconfig<span style="color:#666">]</span> Writing <span style="color:#b44">&#34;admin.conf&#34;</span> kubeconfig file
+<span style="color:#666">[</span>kubeconfig<span style="color:#666">]</span> Writing <span style="color:#b44">&#34;kubelet.conf&#34;</span> kubeconfig file
+<span style="color:#666">[</span>kubeconfig<span style="color:#666">]</span> Writing <span style="color:#b44">&#34;controller-manager.conf&#34;</span> kubeconfig file
+<span style="color:#666">[</span>kubeconfig<span style="color:#666">]</span> Writing <span style="color:#b44">&#34;scheduler.conf&#34;</span> kubeconfig file
+<span style="color:#666">[</span>control-plane<span style="color:#666">]</span> Using manifest folder <span style="color:#b44">&#34;/etc/kubernetes/manifests&#34;</span>
+<span style="color:#666">[</span>control-plane<span style="color:#666">]</span> Creating static Pod manifest <span style="color:#a2f;font-weight:bold">for</span> <span style="color:#b44">&#34;kube-apiserver&#34;</span>
+<span style="color:#666">[</span>control-plane<span style="color:#666">]</span> Creating static Pod manifest <span style="color:#a2f;font-weight:bold">for</span> <span style="color:#b44">&#34;kube-controller-manager&#34;</span>
+<span style="color:#666">[</span>control-plane<span style="color:#666">]</span> Creating static Pod manifest <span style="color:#a2f;font-weight:bold">for</span> <span style="color:#b44">&#34;kube-scheduler&#34;</span>
+<span style="color:#666">[</span>etcd<span style="color:#666">]</span> Creating static Pod manifest <span style="color:#a2f;font-weight:bold">for</span> <span style="color:#a2f">local</span> etcd in <span style="color:#b44">&#34;/etc/kubernetes/manifests&#34;</span>
+<span style="color:#666">[</span>wait-control-plane<span style="color:#666">]</span> Waiting <span style="color:#a2f;font-weight:bold">for</span> the kubelet to boot up the control plane as static Pods from directory <span style="color:#b44">&#34;/etc/kubernetes/manifests&#34;</span>. This can take up to 4m0s
+<span style="color:#666">[</span>apiclient<span style="color:#666">]</span> All control plane components are healthy after <span style="color:#666">18</span>.507261 seconds
+<span style="color:#666">[</span>upload-config<span style="color:#666">]</span> Storing the configuration used in ConfigMap <span style="color:#b44">&#34;kubeadm-config&#34;</span> in the <span style="color:#b44">&#34;kube-system&#34;</span> Namespace
+<span style="color:#666">[</span>kubelet<span style="color:#666">]</span> Creating a ConfigMap <span style="color:#b44">&#34;kubelet-config-1.15&#34;</span> in namespace kube-system with the configuration <span style="color:#a2f;font-weight:bold">for</span> the kubelets in the cluster
+<span style="color:#666">[</span>upload-certs<span style="color:#666">]</span> Skipping phase. Please see --upload-certs
+<span style="color:#666">[</span>mark-control-plane<span style="color:#666">]</span> Marking the node <span style="color:#666">10</span>.0.2.15 as control-plane by adding the label <span style="color:#b44">&#34;node-role.kubernetes.io/master=&#39;&#39;&#34;</span>
+<span style="color:#666">[</span>mark-control-plane<span style="color:#666">]</span> Marking the node <span style="color:#666">10</span>.0.2.15 as control-plane by adding the taints <span style="color:#666">[</span>node-role.kubernetes.io/master:NoSchedule<span style="color:#666">]</span>
+<span style="color:#666">[</span>bootstrap-token<span style="color:#666">]</span> Using token: 7mnksf.b8tbspljpnkyrj35
+<span style="color:#666">[</span>bootstrap-token<span style="color:#666">]</span> Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles
+<span style="color:#666">[</span>bootstrap-token<span style="color:#666">]</span> configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order <span style="color:#a2f;font-weight:bold">for</span> nodes to get long term certificate credentials
+<span style="color:#666">[</span>bootstrap-token<span style="color:#666">]</span> configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+<span style="color:#666">[</span>bootstrap-token<span style="color:#666">]</span> configured RBAC rules to allow certificate rotation <span style="color:#a2f;font-weight:bold">for</span> all node client certificates in the cluster
+<span style="color:#666">[</span>bootstrap-token<span style="color:#666">]</span> Creating the <span style="color:#b44">&#34;cluster-info&#34;</span> ConfigMap in the <span style="color:#b44">&#34;kube-public&#34;</span> namespace
+<span style="color:#666">[</span>addons<span style="color:#666">]</span> Applied essential addon: CoreDNS
+<span style="color:#666">[</span>addons<span style="color:#666">]</span> Applied essential addon: kube-proxy
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p <span style="color:#b8860b">$HOME</span>/.kube
+  sudo cp -i /etc/kubernetes/admin.conf <span style="color:#b8860b">$HOME</span>/.kube/config
+  sudo chown <span style="color:#a2f;font-weight:bold">$(</span>id -u<span style="color:#a2f;font-weight:bold">)</span>:<span style="color:#a2f;font-weight:bold">$(</span>id -g<span style="color:#a2f;font-weight:bold">)</span> <span style="color:#b8860b">$HOME</span>/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run <span style="color:#b44">&#34;kubectl apply -f [podnetwork].yaml&#34;</span> with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join <span style="color:#666">10</span>.0.2.15:6443 --token 7mnksf.b8tbspljpnkyrj35 <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --discovery-token-ca-cert-hash sha256:9727bf731d1b9ee9ce19cf1758881919842ef9fadbc119c78be8961f7fc9be63
+<span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span>#</code></pre></div>
+<h2 id="kubeadm-reset">kubeadm reset</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># kubeadm reset</span>
+<span style="color:#666">[</span>reset<span style="color:#666">]</span> Reading configuration from the cluster...
+<span style="color:#666">[</span>reset<span style="color:#666">]</span> FYI: You can look at this config file with <span style="color:#b44">&#39;kubectl -n kube-system get cm kubeadm-config -oyaml&#39;</span>
+<span style="color:#666">[</span>reset<span style="color:#666">]</span> WARNING: Changes made to this host by <span style="color:#b44">&#39;kubeadm init&#39;</span> or <span style="color:#b44">&#39;kubeadm join&#39;</span> will be reverted.
+<span style="color:#666">[</span>reset<span style="color:#666">]</span> Are you sure you want to proceed? <span style="color:#666">[</span>y/N<span style="color:#666">]</span>: y
+<span style="color:#666">[</span>preflight<span style="color:#666">]</span> Running pre-flight checks
+<span style="color:#666">[</span>reset<span style="color:#666">]</span> Removing info <span style="color:#a2f;font-weight:bold">for</span> node <span style="color:#b44">&#34;10.0.2.15&#34;</span> from the ConfigMap <span style="color:#b44">&#34;kubeadm-config&#34;</span> in the <span style="color:#b44">&#34;kube-system&#34;</span> Namespace
+W0901 <span style="color:#666">11</span>:56:16.802756   <span style="color:#666">29062</span> removeetcdmember.go:61<span style="color:#666">]</span> <span style="color:#666">[</span>reset<span style="color:#666">]</span> failed to remove etcd member: error syncing endpoints with etc: etcdclient: no available endpoints
+.Please manually remove this etcd member using etcdctl
+<span style="color:#666">[</span>reset<span style="color:#666">]</span> Stopping the kubelet service
+<span style="color:#666">[</span>reset<span style="color:#666">]</span> Unmounting mounted directories in <span style="color:#b44">&#34;/var/lib/kubelet&#34;</span>
+<span style="color:#666">[</span>reset<span style="color:#666">]</span> Deleting contents of config directories: <span style="color:#666">[</span>/etc/kubernetes/manifests /etc/kubernetes/pki<span style="color:#666">]</span>
+<span style="color:#666">[</span>reset<span style="color:#666">]</span> Deleting files: <span style="color:#666">[</span>/etc/kubernetes/admin.conf /etc/kubernetes/kubelet.conf /etc/kubernetes/bootstrap-kubelet.conf /etc/kubernetes/controller-manager.conf /etc/kubernetes/scheduler.conf<span style="color:#666">]</span>
+<span style="color:#666">[</span>reset<span style="color:#666">]</span> Deleting contents of stateful directories: <span style="color:#666">[</span>/var/lib/etcd /var/lib/kubelet /etc/cni/net.d /var/lib/dockershim /var/run/kubernetes<span style="color:#666">]</span>
+
+The reset process does not reset or clean up iptables rules or IPVS tables.
+If you wish to reset iptables, you must <span style="color:#a2f;font-weight:bold">do</span> so manually.
+For example:
+iptables -F <span style="color:#666">&amp;&amp;</span> iptables -t nat -F <span style="color:#666">&amp;&amp;</span> iptables -t mangle -F <span style="color:#666">&amp;&amp;</span> iptables -X
+
+If your cluster was setup to utilize IPVS, run ipvsadm --clear <span style="color:#666">(</span>or similar<span style="color:#666">)</span>
+to reset your system<span style="">&#39;</span>s IPVS tables.
+
+The reset process does not clean your kubeconfig files and you must remove them manually.
+Please, check the contents of the <span style="color:#b8860b">$HOME</span>/.kube/config file.
+<span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span>#</code></pre></div>
+
+
+
+
+
+
+
+
+<h3 id="references">References</h3>
+
+<p><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/" target="_blank">https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/</a>
+<a href="https://github.com/kubernetes/kubeadm/issues/610" target="_blank">https://github.com/kubernetes/kubeadm/issues/610</a></p>
+
+
+
+
+
+
+
+
+
+        
+        
+  <h2></h2>
+  <p class="feedback--prompt"> </p>
+  <button class="button feedback--yes"></button>
+  <button class="button feedback--no"></button>
+  <p class="feedback--response feedback--response__hidden">
+    
+    <a target="_blank" rel="noopener"
+      href="#">
+      Stack Overflow</a>.
+    
+    <a class="feedback--link" target="_blank" rel="noopener"
+      href="#">
+      </a>
+    
+    <a class="feedback--link" target="_blank" rel="noopener"
+      href="#">
+      </a>.
+  </p>
+  <script>
+    const yes = document.querySelector('.feedback--yes');
+    const no = document.querySelector('.feedback--no');
+    document.querySelectorAll('.feedback--link').forEach(link => {
+      link.href = link.href + window.location.pathname;
+    });
+    const sendFeedback = (value) => {
+      if (!gtag) { console.log('!gtag'); }
+      gtag('event', 'click', {
+        'event_category': 'Helpful',
+        'event_label': window.location.pathname,
+        value
+      });
+    };
+    const disableButtons = () => {
+      yes.disabled = true;
+      yes.classList.add('feedback--button__disabled');
+      no.disabled = true;
+      no.classList.add('feedback--button__disabled');
+    };
+    yes.addEventListener('click', () => {
+      sendFeedback(1);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+    no.addEventListener('click', () => {
+      sendFeedback(0);
+      disableButtons();
+      document.querySelector('.feedback--response').classList.remove('feedback--response__hidden');
+    });
+  </script>
+
+
+
+        <div id="pre-footer"> 
+  <hr />
+
+</div>
+
+			</div>
+		</section>
+		<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </nav>
+        <div id="miceType" class="center">
+            Sriram Yeluri &copy; 2019
+        </div>
+    </main>
+</footer>
+
+		<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+    <script language="application/javascript">
+      
+      (function addHeadingLinks(){
+        var article = document.getElementById('docsContent');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = heading.innerHTML;
+            a.href = '#'+heading.id;
+            a.classList.add('inpage_heading');
+            heading.innerHTML = '';
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
+	<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
+</html>
