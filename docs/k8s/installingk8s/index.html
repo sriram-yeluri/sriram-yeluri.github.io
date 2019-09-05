@@ -27,11 +27,14 @@
 
 
 <meta name="description" content="References Install Kubeadm
-ERROR Swap">
+ERROR Swap
+weavenet">
 <meta property="og:description" content="References Install Kubeadm
-ERROR Swap">
+ERROR Swap
+weavenet">
 <meta name="twitter:description" content="References Install Kubeadm
-ERROR Swap">
+ERROR Swap
+weavenet">
 <meta property="og:url" content="//localhost:1313/docs/k8s/installingk8s/">
 <meta property="og:title" content="Installing Kubernetes">
 <meta name="twitter:title" content="Installing Kubernetes">
@@ -373,6 +376,16 @@ ERROR Swap">
 
 
 
+<li><a href="#deploy-weave-network-for-networking">Deploy Weave Network for networking</a></li>
+
+
+
+
+<li><a href="#verification">Verification</a></li>
+
+
+
+
 <li><a href="#etc-kubernetes">etc/kubernetes</a></li>
 
 
@@ -384,6 +397,11 @@ ERROR Swap">
 
 
 <li><a href="#kubeadm-reset">kubeadm reset</a></li>
+
+
+
+
+<li><a href="#start-k8s-cluster-after-system-reboot">Start k8s cluster after system reboot</a></li>
 
 
 
@@ -422,7 +440,7 @@ ERROR Swap">
 <h2 id="install-kubelet-kubectl-and-kubeadm">Install kubelet, kubectl and kubeadm</h2>
 
 <p><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl" target="_blank">Installing-kubeadm-kubelet-and-kubectl</a></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># This script is modified version from k8s documentation</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># This script is the modified version from k8s documentation</span>
 <span style="color:#b8860b">RELEASE</span><span style="color:#666">=</span><span style="color:#b44">&#34;</span><span style="color:#a2f;font-weight:bold">$(</span>curl -sSL https://dl.k8s.io/release/stable.txt<span style="color:#a2f;font-weight:bold">)</span><span style="color:#b44">&#34;</span>
 
 mkdir -p /usr/bin
@@ -539,6 +557,50 @@ sudo chown <span style="color:#a2f;font-weight:bold">$(</span>id -u<span style="
 <span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># kubectl get nodes</span>
 NAME        STATUS     ROLES    AGE     VERSION
 <span style="color:#666">10</span>.0.2.15   NotReady   master   6m38s   v1.15.3</code></pre></div>
+<h2 id="deploy-weave-network-for-networking">Deploy Weave Network for networking</h2>
+
+<p>Weave uses POD CIDR of 10.32.0.0/12 by default.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># kubectl apply -f &#34;https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d &#39;\n&#39;)&#34;</span>
+serviceaccount/weave-net created
+clusterrole.rbac.authorization.k8s.io/weave-net created
+clusterrolebinding.rbac.authorization.k8s.io/weave-net created
+role.rbac.authorization.k8s.io/weave-net created
+rolebinding.rbac.authorization.k8s.io/weave-net created
+daemonset.extensions/weave-net created
+
+<span style="color:#080;font-style:italic"># kubernetes master is now in Ready status after deploying weave-net</span>
+<span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># kubectl get nodes</span>
+NAME        STATUS   ROLES    AGE   VERSION
+<span style="color:#666">10</span>.0.2.15   Ready    master   4d    v1.15.3</code></pre></div>
+<h2 id="verification">Verification</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># kubectl get pods -n kube-system</span>
+NAME                                READY   STATUS             RESTARTS   AGE
+coredns-5c98db65d4-swnfh            <span style="color:#666">0</span>/1     CrashLoopBackOff   <span style="color:#666">5</span>          4d
+coredns-5c98db65d4-tqn2p            <span style="color:#666">0</span>/1     CrashLoopBackOff   <span style="color:#666">5</span>          4d
+etcd-10.0.2.15                      <span style="color:#666">1</span>/1     Running            <span style="color:#666">1</span>          4d
+kube-apiserver-10.0.2.15            <span style="color:#666">1</span>/1     Running            <span style="color:#666">1</span>          4d
+kube-controller-manager-10.0.2.15   <span style="color:#666">1</span>/1     Running            <span style="color:#666">1</span>          4d
+kube-proxy-f9vqp                    <span style="color:#666">1</span>/1     Running            <span style="color:#666">1</span>          4d
+kube-scheduler-10.0.2.15            <span style="color:#666">1</span>/1     Running            <span style="color:#666">1</span>          4d
+weave-net-rvvzm                     <span style="color:#666">2</span>/2     Running            <span style="color:#666">0</span>          5m13s</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># kubectl get componentstatuses</span>
+NAME                 STATUS    MESSAGE             ERROR
+controller-manager   Healthy   ok
+scheduler            Healthy   ok
+etcd-0               Healthy   <span style="color:#666">{</span><span style="color:#b44">&#34;health&#34;</span>:<span style="color:#b44">&#34;true&#34;</span><span style="color:#666">}</span></code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># kubectl get events</span>
+LAST SEEN   TYPE     REASON                    OBJECT           MESSAGE
+4d          Normal   NodeHasSufficientMemory   node/10.0.2.15   Node <span style="color:#666">10</span>.0.2.15 status is now: NodeHasSufficientMemory
+4d          Normal   NodeHasNoDiskPressure     node/10.0.2.15   Node <span style="color:#666">10</span>.0.2.15 status is now: NodeHasNoDiskPressure
+4d          Normal   NodeHasSufficientPID      node/10.0.2.15   Node <span style="color:#666">10</span>.0.2.15 status is now: NodeHasSufficientPID
+4d          Normal   RegisteredNode            node/10.0.2.15   Node <span style="color:#666">10</span>.0.2.15 event: Registered Node <span style="color:#666">10</span>.0.2.15 in Controller
+4d          Normal   Starting                  node/10.0.2.15   Starting kube-proxy.
+38m         Normal   Starting                  node/10.0.2.15   Starting kubelet.
+38m         Normal   NodeHasSufficientMemory   node/10.0.2.15   Node <span style="color:#666">10</span>.0.2.15 status is now: NodeHasSufficientMemory
+38m         Normal   NodeHasNoDiskPressure     node/10.0.2.15   Node <span style="color:#666">10</span>.0.2.15 status is now: NodeHasNoDiskPressure
+38m         Normal   NodeHasSufficientPID      node/10.0.2.15   Node <span style="color:#666">10</span>.0.2.15 status is now: NodeHasSufficientPID
+38m         Normal   NodeAllocatableEnforced   node/10.0.2.15   Updated Node Allocatable limit across pods
+38m         Normal   Starting                  node/10.0.2.15   Starting kube-proxy.
+38m         Normal   RegisteredNode            node/10.0.2.15   Node <span style="color:#666">10</span>.0.2.15 event: Registered Node <span style="color:#666">10</span>.0.2.15 in Controller
+12m         Normal   NodeReady                 node/10.0.2.15   Node <span style="color:#666">10</span>.0.2.15 status is now: NodeReady</code></pre></div>
 <h2 id="etc-kubernetes">etc/kubernetes</h2>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 kubernetes<span style="color:#666">]</span><span style="color:#080;font-style:italic"># tree /etc/kubernetes</span>
 /etc/kubernetes
@@ -614,10 +676,14 @@ to reset your system<span style="">&#39;</span>s IPVS tables.
 The reset process does not clean your kubeconfig files and you must remove them manually.
 Please, check the contents of the <span style="color:#b8860b">$HOME</span>/.kube/config file.
 <span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span>#</code></pre></div>
+<h2 id="start-k8s-cluster-after-system-reboot">Start k8s cluster after system reboot</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># swapoff -a</span>
+<span style="color:#080;font-style:italic"># systemctl start kubelet</span>
+<span style="color:#080;font-style:italic"># systemctl status kubelet</span></code></pre></div>
 <h2 id="troubleshooting">Troubleshooting</h2>
 
 <p><code>kubelet service not starting</code></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># /var/log/messages</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># vi /var/log/messages</span>
 Sep  <span style="color:#666">1</span> <span style="color:#666">20</span>:57:25 localhost kubelet: F0901 <span style="color:#666">20</span>:57:25.706063    <span style="color:#666">2874</span> server.go:198<span style="color:#666">]</span> failed to load Kubelet config file /var/lib/kubelet/config.yaml, error failed to <span style="color:#a2f">read</span> kubelet config file <span style="color:#b44">&#34;/var/lib/kubelet/config.yaml&#34;</span>, error: open /var/lib/kubelet/config.yaml: no such file or directory
 Sep  <span style="color:#666">1</span> <span style="color:#666">20</span>:57:25 localhost systemd: kubelet.service: main process exited, <span style="color:#b8860b">code</span><span style="color:#666">=</span>exited, <span style="color:#b8860b">status</span><span style="color:#666">=</span><span style="color:#666">255</span>/n/a
 Sep  <span style="color:#666">1</span> <span style="color:#666">20</span>:57:25 localhost systemd: Unit kubelet.service entered failed state.
@@ -629,6 +695,9 @@ Sep  <span style="color:#666">1</span> <span style="color:#666">20</span>:57:35 
 Sep  <span style="color:#666">1</span> <span style="color:#666">20</span>:57:35 localhost systemd: kubelet.service: main process exited, <span style="color:#b8860b">code</span><span style="color:#666">=</span>exited, <span style="color:#b8860b">status</span><span style="color:#666">=</span><span style="color:#666">255</span>/n/a
 Sep  <span style="color:#666">1</span> <span style="color:#666">20</span>:57:35 localhost systemd: Unit kubelet.service entered failed state.
 Sep  <span style="color:#666">1</span> <span style="color:#666">20</span>:57:35 localhost systemd: kubelet.service failed.</code></pre></div>
+<p>Check journal for kubelet messages
+<code>journalctl -xeu kubelet</code></p>
+
 
 
 
@@ -640,7 +709,8 @@ Sep  <span style="color:#666">1</span> <span style="color:#666">20</span>:57:35 
 <h3 id="references">References</h3>
 
 <p><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/" target="_blank">Install Kubeadm</a><br />
-<a href="https://github.com/kubernetes/kubeadm/issues/610" target="_blank">ERROR Swap</a></p>
+<a href="https://github.com/kubernetes/kubeadm/issues/610" target="_blank">ERROR Swap</a><br />
+<a href="https://www.weave.works/docs/net/latest/kubernetes/kube-addon/" target="_blank">weavenet</a></p>
 
 
 
