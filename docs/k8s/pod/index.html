@@ -26,9 +26,9 @@
 
 
 
-<meta name="description" content="">
-<meta property="og:description" content="">
-<meta name="twitter:description" content="">
+<meta name="description" content="Resources Eviction">
+<meta property="og:description" content="Resources Eviction">
+<meta name="twitter:description" content="Resources Eviction">
 <meta property="og:url" content="//localhost:1313/docs/k8s/pod/">
 <meta property="og:title" content="Pod">
 <meta name="twitter:title" content="Pod">
@@ -358,6 +358,11 @@
 
 
 
+<li><a href="#pod-eviction">POD Eviction</a></li>
+
+
+
+
 
 
 
@@ -452,11 +457,23 @@ $ kubectl delete pod label-demo</p>
 <p>PODS that are created by kubelet without any communication from kube-apiserver are called static pods.<br />
 If master node fails, kublet on worker node can manage deploying/deleting the pods. This can be achieved by placing the pod definition files directly in the manifests path on the node (/etc/kubernetes/manifests). Kublet monitors this path regularly and creates a POD and also ensures the POD stays alive.</p>
 
+<h2 id="pod-eviction">POD Eviction</h2>
+
+<p>If a node runs out of CPU, memory or disk, Kubernetes may decide to evict one or more pods. It may choose to evict the Weave Net pod, which will disrupt pod network operations.</p>
+
+<p>You can see when pods have been evicted via the <code>kubectl get events</code> command or <code>kubectl get pods</code></p>
 
 
 
 
 
+
+
+
+
+<h3 id="resources">Resources</h3>
+
+<p><a href="https://kubernetes.io/docs/tasks/administer-cluster/out-of-resource/" target="_blank">Eviction</a></p>
 
 
 
