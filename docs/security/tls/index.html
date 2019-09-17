@@ -341,6 +341,11 @@ TLS is a protocol for encrypting internet traffic and to verify the identity of 
 
 
 
+<li><a href="#how-to-find-validity-of-a-certificate">How to find validity of a certificate</a></li>
+
+
+
+
 <li><a href="#get-public-key-from-private-key">Get public key from Private key</a></li>
 
 
@@ -385,6 +390,8 @@ Server Temp Key: X25519, <span style="color:#666">253</span> bits</code></pre></
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">openssl s_client -connect google.com:443 -servername google.com -cipher ALL -showcerts</code></pre></div>
 <h2 id="export-public-key-from-a-certificate">Export Public key from a Certificate</h2>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">openssl x509 -pubkey -noout -in cert.pem  &gt; pubkey.pem</code></pre></div>
+<h2 id="how-to-find-validity-of-a-certificate">How to find validity of a certificate</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#a2f">echo</span> | openssl s_client -connect google.com:443 <span style="color:#666">2</span>&gt;/dev/null | openssl x509 -noout -dates</code></pre></div>
 <h2 id="get-public-key-from-private-key">Get public key from Private key</h2>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># Generate a private key</span>
 openssl genrsa -out mykey.pem <span style="color:#666">2048</span>
