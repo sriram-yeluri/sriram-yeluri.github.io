@@ -73,6 +73,10 @@
   </url>
   
   <url>
+    <loc>//localhost:1313/docs/virtualization/docker/dockervolumes/</loc>
+  </url>
+  
+  <url>
     <loc>//localhost:1313/docs/virtualization/docker/dockerfile/</loc>
     <lastmod>2019-06-29T22:49:26+02:00</lastmod>
   </url>
@@ -99,7 +103,7 @@
   
   <url>
     <loc>//localhost:1313/docs/k8s/installingk8s/</loc>
-    <lastmod>2019-09-01T21:33:57+02:00</lastmod>
+    <lastmod>2019-09-05T22:04:41+02:00</lastmod>
   </url>
   
   <url>
@@ -199,7 +203,7 @@
   
   <url>
     <loc>//localhost:1313/docs/k8s/pod/</loc>
-    <lastmod>2019-09-01T12:08:35+02:00</lastmod>
+    <lastmod>2019-09-05T22:04:41+02:00</lastmod>
   </url>
   
   <url>

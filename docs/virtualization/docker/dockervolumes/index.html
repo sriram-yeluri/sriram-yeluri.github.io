@@ -4,7 +4,7 @@
 	
 
 <meta charset="utf-8">
-<title>Docker Networking - SY Knowledge Hub</title>
+<title>Docker Volumes - SY Knowledge Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 
@@ -26,12 +26,12 @@
 
 
 
-<meta name="description" content="Docker Networking">
-<meta property="og:description" content="Docker Networking">
-<meta name="twitter:description" content="Docker Networking">
-<meta property="og:url" content="//localhost:1313/docs/virtualization/docker/dockernetworking/">
-<meta property="og:title" content="Docker Networking">
-<meta name="twitter:title" content="Docker Networking">
+<meta name="description" content="Docker NetwoVolumesrking">
+<meta property="og:description" content="Docker NetwoVolumesrking">
+<meta name="twitter:description" content="Docker NetwoVolumesrking">
+<meta property="og:url" content="//localhost:1313/docs/virtualization/docker/dockervolumes/">
+<meta property="og:title" content="Docker Volumes">
+<meta name="twitter:title" content="Docker Volumes">
 <meta name="twitter:image" content="https://github.com/sriram-yeluri/images/raw/master/favicon.png"/>
 
 <meta name="twitter:image:alt" content="SY Knowledge Hub">
@@ -311,11 +311,11 @@
 
 
 
-<h1>Docker Networking</h1>
+<h1>Docker Volumes</h1>
 
 
 
-<p>Docker Networking</p>
+<p>Docker Volumes</p>
 
 
 
@@ -336,17 +336,17 @@
 
 
 
-<li><a href="#creating-a-custom-docker-network">Creating a custom docker network</a></li>
+<li><a href="#nexus">Nexus</a></li>
 
 
 
 
-<li><a href="#how-to-add-container-to-a-custom-network">How to add container to a custom Network</a></li>
+<li><a href="#jenkins">Jenkins</a></li>
 
 
 
 
-<li><a href="#how-to-know-the-ip-address-of-a-running-container">How to know the IP address of a running container</a></li>
+<li><a href="#postgres">Postgres</a></li>
 
 
 
@@ -369,29 +369,42 @@
 </ul>
 
 
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># By default, docker will add all running containers to default bridge network</span>
-<span style="color:#080;font-style:italic"># To inspect docker bridge network, use below command</span>
-docker network inspect bridge</code></pre></div>
-<p><img src="/images/Docker/docker_network_1.png" alt="" /></p>
+<h2 id="nexus">Nexus</h2>
 
-<h2 id="creating-a-custom-docker-network">Creating a custom docker network</h2>
+<h3 id="sonatype-nexus-docker-with-persisent-data">Sonatype Nexus Docker with persisent data</h3>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chown -R <span style="color:#666">200</span> /home/sriram.yeluri/Data/NEXUS_DATA  
 
-<p><img src="/images/Docker/docker_network_2.png" alt="" /></p>
+docker run -d <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>-p <span style="color:#666">8081</span>:8081 <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--name nexus <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>-v /home/sriram.yeluri/Data/NEXUS_DATA:/nexus-data <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>sonatype/nexus3</code></pre></div>
+<h2 id="jenkins">Jenkins</h2>
 
-<h2 id="how-to-add-container-to-a-custom-network">How to add container to a custom Network</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># To run a docker container and join to a custom bridge network, use --net flag</span>
-docker container run --rm --itd --name &lt;container_name&gt; --net &lt;network_name&gt;</code></pre></div>
-<h2 id="how-to-know-the-ip-address-of-a-running-container">How to know the IP address of a running container</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker <span style="color:#a2f">exec</span> &lt;container_name&gt; ifconfig
-docker <span style="color:#a2f">exec</span> &lt;container_name&gt; ip -a</code></pre></div>
-<h3 id="references">References</h3>
+<h3 id="jenkins-with-persisent-data">Jenkins with persisent data</h3>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run -p <span style="color:#666">8080</span>:8080 -p <span style="color:#666">50000</span>:50000 <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--name jenkins <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>-v /home/sriram.yeluri/Data/JENKINS_HOME:/var/jenkins_home <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>jenkins
 
-<p><a href="https://docs.docker.com/network/" target="_blank">docker-networking</a></p>
+docker run -p <span style="color:#666">8080</span>:8080 -p <span style="color:#666">50000</span>:50000 <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--name jenkins <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>-v /home/sriram.yeluri/Data/JENKINS_HOME:/var/jenkins_home <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>jenkins/jenkins:lts</code></pre></div>
+<h3 id="jenkins-operations-center-joc">Jenkins Operations Center - JOC</h3>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run -p <span style="color:#666">8089</span>:8080 -p <span style="color:#666">50001</span>:50000 <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--name cjoc <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>-v /home/sriram.yeluri/Data/JENKINS_OC_HOME:/var/jenkins_home <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>cloudbees/jenkins-operations-center
 
-<h3 id="to-do">To-DO</h3>
-
-<p><a href="https://docs.docker.com/network/overlay/" target="_blank">overlay-networking</a></p>
-
+<span style="color:#080;font-style:italic">#Initial secret can be found at below path</span>
+/var/jenkins_home/secrets/initialAdminPassword</code></pre></div>
+<h2 id="postgres">Postgres</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--name postgres <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>-e <span style="color:#b8860b">POSTGRES_PASSWORD</span><span style="color:#666">=</span>secret <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>-d postgres <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>-v /home/sriram.yeluri/Data/PG_DATA:/var/lib/postgresql/data</code></pre></div>
 
 
 
