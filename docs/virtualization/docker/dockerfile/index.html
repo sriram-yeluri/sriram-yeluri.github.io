@@ -278,6 +278,13 @@
 		
 			
 
+<a class="item" data-title="Docker Volumes" href="/docs/virtualization/docker/dockervolumes/"></a>
+
+		
+	
+		
+			
+
 <a class="item" data-title="Dockerfile" href="/docs/virtualization/docker/dockerfile/"></a>
 
 		
@@ -395,12 +402,13 @@
 </span><span style=""></span><span style="color:#a2f;font-weight:bold">WORKDIR</span><span style="">
 </span><span style=""></span><span style="color:#a2f;font-weight:bold">RUN</span><span style="">
 </span><span style=""></span><span style="color:#a2f;font-weight:bold">VOLUME</span><span style="">
-</span><span style=""></span><span style="color:#a2f;font-weight:bold">EXPOSE</span><span style="color:#b44"> </span><span style="">
+</span><span style=""></span><span style="color:#a2f;font-weight:bold">EXPOSE</span><span style="">
 </span><span style=""></span><span style="color:#a2f;font-weight:bold">ENTRYPOINT</span><span style="color:#b44"> --&gt; Executes custom scripts while starting a docker container</span><span style="">
 </span><span style=""></span>           --&gt; Do not add layer to docker image<span style="">
 </span><span style=""></span><span style="color:#a2f;font-weight:bold">CMD</span></code></pre></div>
-<p>!!! note
-    There can only be one CMD instruction in a Dockerfile. If you list more than one CMD, then only the last CMD will take effect.</p>
+<blockquote class="note">
+  <div><strong>Note:</strong> There can only be one CMD instruction in a Dockerfile. If you list more than one CMD, then only the last CMD will take effect.</div>
+</blockquote>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># Example dockerfile</span>
 COPY docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh

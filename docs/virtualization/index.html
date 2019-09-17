@@ -278,6 +278,13 @@
 		
 			
 
+<a class="item" data-title="Docker Volumes" href="/docs/virtualization/docker/dockervolumes/"></a>
+
+		
+	
+		
+			
+
 <a class="item" data-title="Dockerfile" href="/docs/virtualization/docker/dockerfile/"></a>
 
 		
@@ -338,37 +345,22 @@
 
 
 
-<li><a href="#install-docker-ee-on-rhel-7-4">Install Docker EE on RHEL 7.4</a></li>
-
-
-
-
 <li><a href="#install-docker-ce-on-centos7">Install Docker CE on Centos7</a></li>
 
 
 
 
-<li><a href="#docker-config">Docker config</a></li>
+<li><a href="#docker-config-file">Docker config file</a></li>
 
 
 
 
-<li><a href="#nexus">Nexus</a></li>
+<li><a href="#var-run-docker-sock">/var/run/docker.sock</a></li>
 
 
 
 
-<li><a href="#jenkins">Jenkins</a></li>
-
-
-
-
-<li><a href="#postgres">Postgres</a></li>
-
-
-
-
-<li><a href="#enabling-docker-remote-api-on-ubuntu">Enabling Docker Remote API on Ubuntu</a></li>
+<li><a href="#how-to-enable-docker-remote-api-on-ubuntu">How to enable Docker Remote API on Ubuntu</a></li>
 
 
 
@@ -391,13 +383,9 @@
 </ul>
 
 
-<h2 id="install-docker-ee-on-rhel-7-4">Install Docker EE on RHEL 7.4</h2>
-
-<p><img src="/images/Docker/docker-ee-trial.png" alt="Docker EE Trail " /></p>
-
 <h2 id="install-docker-ce-on-centos7">Install Docker CE on Centos7</h2>
 
-<p><a href="https://docs.docker.com/engine/installation/linux/docker-ce/centos/#install-docker-ce" target="_blank">Install Docker CE on Centos7</a></p>
+<p><a href="https://docs.docker.com/engine/installation/linux/docker-ce/centos/#install-docker-ce" target="_blank">Docker CE on Centos7</a></p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># Installing dockerCE</span>
 yum install -y yum-utils <span style="color:#b62;font-weight:bold">\
 </span><span style="color:#b62;font-weight:bold"></span>  device-mapper-persistent-data <span style="color:#b62;font-weight:bold">\
@@ -423,37 +411,30 @@ Note: Forwarding request to <span style="color:#b44">&#39;systemctl enable docke
 service docker start
 
 docker ps</code></pre></div>
-<h2 id="docker-config">Docker config</h2>
+<h2 id="docker-config-file">Docker config file</h2>
 
 <p>login credentials are saved in <code>/home/username/.docker/config.json</code></p>
 
-<h2 id="nexus">Nexus</h2>
+<h2 id="var-run-docker-sock">/var/run/docker.sock</h2>
 
-<h3 id="sonatype-nexus-docker-with-persisent-data">Sonatype Nexus Docker with persisent data</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">chown -R <span style="color:#666">200</span> /home/sriram.yeluri/Data/NEXUS_DATA  
+<p>This is an Unix socket the Docker daemon listens on by default, and it can be used to communicate with the daemon from within a container.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic">#Example, portainer an opensource web interface to manage containers using bind mount</span>
+$ docker container run -d <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>  -p <span style="color:#666">9000</span>:9000 <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>  -v /var/run/docker.sock:/var/run/docker.sock <span style="color:#b62;font-weight:bold">\ </span><span style="color:#080;font-style:italic">#bind mount</span>
+  portainer/portainer</code></pre></div>
+<blockquote class="caution">
+  <div><strong>Caution:</strong> Bind mounting the Docker daemon socket gives a lot of power to a container as it can control the daemon. It must be used with caution, and only with containers we can trust.</div>
+</blockquote>
 
-docker run -d -p <span style="color:#666">8081</span>:8081 --name nexus -v /home/sriram.yeluri/Data/NEXUS_DATA:/nexus-data sonatype/nexus3</code></pre></div>
-<h2 id="jenkins">Jenkins</h2>
-
-<h3 id="jenkins-with-persisent-data">Jenkins with persisent data</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run -p <span style="color:#666">8080</span>:8080 -p <span style="color:#666">50000</span>:50000 --name jenkins -v /home/sriram.yeluri/Data/JENKINS_HOME:/var/jenkins_home jenkins
-
-docker run -p <span style="color:#666">8080</span>:8080 -p <span style="color:#666">50000</span>:50000 --name jenkins -v /home/sriram.yeluri/Data/JENKINS_HOME:/var/jenkins_home jenkins/jenkins:lts</code></pre></div>
-<h3 id="jenkins-operations-center-joc">Jenkins Operations Center - JOC</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run -p <span style="color:#666">8089</span>:8080 -p <span style="color:#666">50001</span>:50000 --name cjoc -v /home/sriram.yeluri/Data/JENKINS_OC_HOME:/var/jenkins_home cloudbees/jenkins-operations-center
-
-<span style="color:#080;font-style:italic">#Initial secret can be found at below path</span>
-/var/jenkins_home/secrets/initialAdminPassword</code></pre></div>
-<h2 id="postgres">Postgres</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run --name postgres -e <span style="color:#b8860b">POSTGRES_PASSWORD</span><span style="color:#666">=</span>secret -d postgres -v /home/sriram.yeluri/Data/PG_DATA:/var/lib/postgresql/data</code></pre></div>
-<h2 id="enabling-docker-remote-api-on-ubuntu">Enabling Docker Remote API on Ubuntu</h2>
+<h2 id="how-to-enable-docker-remote-api-on-ubuntu">How to enable Docker Remote API on Ubuntu</h2>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo vi /lib/systemd/system/docker.service
 
 <span style="color:#080;font-style:italic"># Modify the line that starts with ExecStart</span>
 <span style="color:#b8860b">ExecStart</span><span style="color:#666">=</span>/usr/bin/docker daemon -H fd:// -H tcp://0.0.0.0:4243
 
 systemctl daemon-reload
-sudo service docker restart</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">Testing:
+sudo service docker restart</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic">#Testing</span>
 sriram@optimus-prime:~$ curl http://localhost:4243/version
 <span style="color:#666">{</span><span style="color:#b44">&#34;Platform&#34;</span>:<span style="color:#666">{</span><span style="color:#b44">&#34;Name&#34;</span>:<span style="color:#b44">&#34;&#34;</span><span style="color:#666">}</span>,<span style="color:#b44">&#34;Components&#34;</span>:<span style="color:#666">[{</span><span style="color:#b44">&#34;Name&#34;</span>:<span style="color:#b44">&#34;Engine&#34;</span>,<span style="color:#b44">&#34;Version&#34;</span>:<span style="color:#b44">&#34;18.03.1-ce&#34;</span>,<span style="color:#b44">&#34;Details&#34;</span>:<span style="color:#666">{</span><span style="color:#b44">&#34;ApiVersion&#34;</span>:<span style="color:#b44">&#34;1.37&#34;</span>,<span style="color:#b44">&#34;Arch&#34;</span>:<span style="color:#b44">&#34;amd64&#34;</span>,<span style="color:#b44">&#34;BuildTime&#34;</span>:<span style="color:#b44">&#34;2018-04-26T07:15:45.000000000+00:00&#34;</span>,<span style="color:#b44">&#34;Experimental&#34;</span>:<span style="color:#b44">&#34;false&#34;</span>,<span style="color:#b44">&#34;GitCommit&#34;</span>:<span style="color:#b44">&#34;9ee9f40&#34;</span>,<span style="color:#b44">&#34;GoVersion&#34;</span>:<span style="color:#b44">&#34;go1.9.5&#34;</span>,<span style="color:#b44">&#34;KernelVersion&#34;</span>:<span style="color:#b44">&#34;4.15.0-38-generic&#34;</span>,<span style="color:#b44">&#34;MinAPIVersion&#34;</span>:<span style="color:#b44">&#34;1.12&#34;</span>,<span style="color:#b44">&#34;Os&#34;</span>:<span style="color:#b44">&#34;linux&#34;</span><span style="color:#666">}}]</span>,<span style="color:#b44">&#34;Version&#34;</span>:<span style="color:#b44">&#34;18.03.1-ce&#34;</span>,<span style="color:#b44">&#34;ApiVersion&#34;</span>:<span style="color:#b44">&#34;1.37&#34;</span>,<span style="color:#b44">&#34;MinAPIVersion&#34;</span>:<span style="color:#b44">&#34;1.12&#34;</span>,<span style="color:#b44">&#34;GitCommit&#34;</span>:<span style="color:#b44">&#34;9ee9f40&#34;</span>,<span style="color:#b44">&#34;GoVersion&#34;</span>:<span style="color:#b44">&#34;go1.9.5&#34;</span>,<span style="color:#b44">&#34;Os&#34;</span>:<span style="color:#b44">&#34;linux&#34;</span>,<span style="color:#b44">&#34;Arch&#34;</span>:<span style="color:#b44">&#34;amd64&#34;</span>,<span style="color:#b44">&#34;KernelVersion&#34;</span>:<span style="color:#b44">&#34;4.15.0-38-generic&#34;</span>,<span style="color:#b44">&#34;BuildTime&#34;</span>:<span style="color:#b44">&#34;2018-04-26T07:15:45.000000000+00:00&#34;</span><span style="color:#666">}</span></code></pre></div>
 

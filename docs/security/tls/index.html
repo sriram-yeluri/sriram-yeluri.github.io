@@ -336,6 +336,16 @@ TLS is a protocol for encrypting internet traffic and to verify the identity of 
 
 
 
+<li><a href="#export-public-key-from-a-certificate">Export Public key from a Certificate</a></li>
+
+
+
+
+<li><a href="#get-public-key-from-private-key">Get public key from Private key</a></li>
+
+
+
+
 <li><a href="#tls-handshake-explained">TLS Handshake explained</a></li>
 
 
@@ -373,6 +383,14 @@ Verification: OK
 Server Temp Key: X25519, <span style="color:#666">253</span> bits</code></pre></div>
 <h2 id="show-server-certificate-chain">Show Server Certificate chain</h2>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">openssl s_client -connect google.com:443 -servername google.com -cipher ALL -showcerts</code></pre></div>
+<h2 id="export-public-key-from-a-certificate">Export Public key from a Certificate</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">openssl x509 -pubkey -noout -in cert.pem  &gt; pubkey.pem</code></pre></div>
+<h2 id="get-public-key-from-private-key">Get public key from Private key</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># Generate a private key</span>
+openssl genrsa -out mykey.pem <span style="color:#666">2048</span>
+
+<span style="color:#080;font-style:italic"># Extract public key from above generated private key</span>
+openssl rsa -in mykey.pem -pubout &gt; mykey.pub</code></pre></div>
 <h2 id="tls-handshake-explained">TLS Handshake explained</h2>
 
 <p>Below example explains how the TLS Handshake happens between a client and server.</p>
