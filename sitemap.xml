@@ -74,7 +74,7 @@
   
   <url>
     <loc>//localhost:1313/docs/virtualization/docker/dockervolumes/</loc>
-    <lastmod>2019-09-17T06:27:02+02:00</lastmod>
+    <lastmod>2019-09-17T06:35:09+02:00</lastmod>
   </url>
   
   <url>
@@ -274,7 +274,7 @@
   
   <url>
     <loc>//localhost:1313/docs/security/tls/</loc>
-    <lastmod>2019-09-17T06:27:02+02:00</lastmod>
+    <lastmod>2019-09-17T06:35:09+02:00</lastmod>
   </url>
   
   <url>
@@ -310,6 +310,10 @@
   <url>
     <loc>//localhost:1313/docs/linux/yum/</loc>
     <lastmod>2019-07-01T22:53:34+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/programming/golang/flags/</loc>
   </url>
   
   <url>
