@@ -4,7 +4,7 @@
 	
 
 <meta charset="utf-8">
-<title>golang-projects - SY Knowledge Hub</title>
+<title>flags - SY Knowledge Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 
@@ -26,12 +26,12 @@
 
 
 
-<meta name="description" content="">
-<meta property="og:description" content="">
-<meta name="twitter:description" content="">
-<meta property="og:url" content="//localhost:1313/docs/programming/golang/golang-projects/">
-<meta property="og:title" content="golang-projects">
-<meta name="twitter:title" content="golang-projects">
+<meta name="description" content="References Package flag">
+<meta property="og:description" content="References Package flag">
+<meta name="twitter:description" content="References Package flag">
+<meta property="og:url" content="//localhost:1313/docs/programming/golang/flags/">
+<meta property="og:title" content="flags">
+<meta name="twitter:title" content="flags">
 <meta name="twitter:image" content="https://github.com/sriram-yeluri/images/raw/master/favicon.png"/>
 
 <meta name="twitter:image:alt" content="SY Knowledge Hub">
@@ -287,11 +287,11 @@
 
 
 
-<h1>golang-projects</h1>
+<h1>flags</h1>
 
 
 
-<p>Projects created with golang.</p>
+<p>Golang flags for creating CLI</p>
 
 
 
@@ -308,21 +308,6 @@
 
 
 
-
-
-
-
-<li><a href="#sonar-cli">sonar-cli</a></li>
-
-
-
-
-<li><a href="#jenkins-cli">jenkins-cli</a></li>
-
-
-
-
-<li><a href="#ignore-ssl">Ignore SSL</a></li>
 
 
 
@@ -345,31 +330,61 @@
 </ul>
 
 
-<h2 id="sonar-cli">sonar-cli</h2>
+<p>Defining flags and using them to create a CLI in golang is achieved by following the below steps.</p>
 
-<p><a href="https://github.com/sriram-yeluri/sonar-cli" target="_blank">sonar-cli</a></p>
+<p>Import flags package</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a2f;font-weight:bold">import</span> (
+    <span style="color:#b44">&#34;flag&#34;</span>
+)</code></pre></div>
+<p>Define flags</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a2f;font-weight:bold">var</span> name <span style="color:#0b0;font-weight:bold">string</span>
+<span style="color:#a2f;font-weight:bold">var</span> prompt <span style="color:#0b0;font-weight:bold">bool</span></code></pre></div>
+<p>Parse flags</p>
 
-<p>sonar-cli project is a cli application for sonarqube interface. This cli uses REST API calls of sonarqube.
-Detais about this cli and its usage are explained in the git-hub repo.</p>
+<p>flag.variableType(variable_reference, &ldquo;flag_name&rdquo;, &ldquo;default_value&rdquo;, &ldquo;Usage of flag&rdquo;)</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">flag.<span style="color:#00a000">StringVar</span>(<span style="color:#666">&amp;</span>name,<span style="color:#b44">&#34;name&#34;</span>,<span style="color:#b44">&#34;&#34;</span>,<span style="color:#b44">&#34;required a name to display&#34;</span>)
+flag.<span style="color:#00a000">BoolVar</span>(<span style="color:#666">&amp;</span>prompt,<span style="color:#b44">&#34;prompt&#34;</span>,<span style="color:#b44">&#34;&#34;</span>,<span style="color:#b44">&#34;Use prompt to input a name&#34;</span>)
 
-<h2 id="jenkins-cli">jenkins-cli</h2>
+<span style="color:#080;font-style:italic">/* Call this after all flags are defined */</span>
+flag.<span style="color:#00a000">Parse</span>()</code></pre></div>
+<p>Show usage if flags are invalid</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a2f;font-weight:bold">if</span> prompt <span style="color:#666">==</span> <span style="color:#a2f;font-weight:bold">false</span> <span style="color:#666">&amp;&amp;</span> name <span style="color:#666">==</span> <span style="color:#b44">&#34;&#34;</span> {
+    flag.<span style="color:#00a000">Usage</span>()
+    os.<span style="color:#00a000">Exit</span>(<span style="color:#666">1</span>)
+}
+<span style="color:#080;font-style:italic">/* flag.PrintDefaults() can be used to print the usage message explicitly */</span></code></pre></div>
+<p><strong>Example Code</strong></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a2f;font-weight:bold">package</span> main
 
-<p><a href="https://github.com/sriram-yeluri/jenkins-cli" target="_blank">jenkins-cli</a></p>
+<span style="color:#a2f;font-weight:bold">import</span> (
+	<span style="color:#b44">&#34;flag&#34;</span>
+	<span style="color:#b44">&#34;fmt&#34;</span>	
+	<span style="color:#b44">&#34;os&#34;</span>
+)
 
-<p>jenkins-cli project is a cli application for jenkins interface. This cli uses REST API calls of Jenkins.
-Detais about this cli and its usage are explained in the git-hub repo.</p>
+<span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">main</span>(){
+	<span style="color:#a2f;font-weight:bold">var</span> name <span style="color:#0b0;font-weight:bold">string</span>
+	flag.<span style="color:#00a000">StringVar</span>(<span style="color:#666">&amp;</span>name,<span style="color:#b44">&#34;name&#34;</span>,<span style="color:#b44">&#34;&#34;</span>,<span style="color:#b44">&#34;required name flag&#34;</span>)
+	flag.<span style="color:#00a000">Parse</span>()
 
-<h2 id="ignore-ssl">Ignore SSL</h2>
-
-<p><a href="https://raw.githubusercontent.com/sriram-yeluri/golang/master/ignoreSSL.go" target="_blank">ignoreSSL.go</a></p>
-
-<p>Healthcheck utility with ignore SSL</p>
-
-
-
-
+	<span style="color:#a2f;font-weight:bold">if</span> name <span style="color:#666">==</span> <span style="color:#b44">&#34;&#34;</span>{
+		flag.<span style="color:#00a000">Usage</span>()		
+		os.<span style="color:#00a000">Exit</span>(<span style="color:#666">1</span>)
+	} <span style="color:#a2f;font-weight:bold">else</span> {
+		fmt.<span style="color:#00a000">Println</span>(<span style="color:#b44">&#34;Name : &#34;</span>,name)
+	}
+}</code></pre></div>
 
 
+
+
+
+
+
+
+<h3 id="references">References</h3>
+
+<p><a href="https://golang.org/pkg/flag/" target="_blank">Package flag</a></p>
 
 
 
