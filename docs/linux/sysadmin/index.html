@@ -357,6 +357,11 @@
 
 
 
+<li><a href="#lsof-list-of-open-files">lsof - List of Open Files</a></li>
+
+
+
+
 
 
 
@@ -417,6 +422,26 @@
 <p>You are a member of a team of admins who are responsible for a critical system. This system has two different web servers installed: The first (Nginx) is used to serve content, the other (httpd) is installed only to satisfy dependencies and should never be started as it causes a conflict. What command could you run to ensure that &lsquo;httpd&rsquo; is never accidentally started or enabled by another admin?</p>
 
 <p><code>systemctl mask httpd</code></p>
+
+<p>How to find open ports/sockets ?</p>
+
+<ul>
+<li>old systems : <code>ipstat -tulpn</code></li>
+<li>new systems (socket statistics) : <code>ss -a</code></li>
+</ul>
+
+<h2 id="lsof-list-of-open-files">lsof - List of Open Files</h2>
+
+<p>How to find list of open files ? <code>lsof</code></p>
+
+<p>How to know Which process is listening on port X ? <code>lsof -i :80</code></p>
+
+<p>Which process opened the file : <code>lsof /path_to_file</code></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># lsof /usr/bin/bash</span>
+COMMAND  PID USER  FD   TYPE DEVICE SIZE/OFF    NODE NAME
+bash    <span style="color:#666">1533</span> root txt    REG  <span style="color:#666">253</span>,0  <span style="color:#666">1219216</span> <span style="color:#666">8512853</span> /usr/bin/bash
+bash    <span style="color:#666">1820</span> root txt    REG  <span style="color:#666">253</span>,0  <span style="color:#666">1219216</span> <span style="color:#666">8512853</span> /usr/bin/bash</code></pre></div>
+<p>How to find all files that a process has opened ? <code>lsof -p PID</code></p>
 
 
 
