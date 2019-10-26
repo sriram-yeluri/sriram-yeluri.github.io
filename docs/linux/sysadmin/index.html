@@ -352,6 +352,11 @@
 
 
 
+<li><a href="#system-utilities">System Utilities</a></li>
+
+
+
+
 
 
 
@@ -370,21 +375,48 @@
 </ul>
 
 
+<h2 id="system-utilities">System Utilities</h2>
+
+<p>List all Hardware : <code>lshw</code></p>
+
+<p>List all pci devices : <code>lspci</code></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># Required pciutuls package to be installed &#39;yum install pciutils&#39;</span>
+
+<span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># lspci</span>
+<span style="color:#666">00</span>:00.0 Host bridge: Intel Corporation Xeon E3-1200 v6/7th Gen Core Processor Host Bridge/DRAM Registers <span style="color:#666">(</span>rev <span style="color:#666">02</span><span style="color:#666">)</span>
+<span style="color:#666">00</span>:02.0 VGA compatible controller: Intel Corporation HD Graphics <span style="color:#666">620</span> <span style="color:#666">(</span>rev <span style="color:#666">02</span><span style="color:#666">)</span>
+<span style="color:#666">00</span>:04.0 Signal processing controller: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Thermal Subsystem <span style="color:#666">(</span>rev <span style="color:#666">02</span><span style="color:#666">)</span>
+<span style="color:#666">00</span>:14.0 USB controller: Intel Corporation Sunrise Point-LP USB <span style="color:#666">3</span>.0 xHCI Controller <span style="color:#666">(</span>rev <span style="color:#666">21</span><span style="color:#666">)</span>
+<span style="color:#666">00</span>:14.2 Signal processing controller: Intel Corporation Sunrise Point-LP Thermal subsystem <span style="color:#666">(</span>rev <span style="color:#666">21</span><span style="color:#666">)</span>
+<span style="color:#666">00</span>:15.0 Signal processing controller: Intel Corporation Sunrise Point-LP Serial IO I2C Controller <span style="color:#080;font-style:italic">#0 (rev 21)</span>
+<span style="color:#666">00</span>:15.1 Signal processing controller: Intel Corporation Sunrise Point-LP Serial IO I2C Controller <span style="color:#080;font-style:italic">#1 (rev 21)</span>
+<span style="color:#666">00</span>:16.0 Communication controller: Intel Corporation Sunrise Point-LP CSME HECI <span style="color:#080;font-style:italic">#1 (rev 21)</span>
+<span style="color:#666">00</span>:17.0 SATA controller: Intel Corporation Sunrise Point-LP SATA Controller <span style="color:#666">[</span>AHCI mode<span style="color:#666">]</span> <span style="color:#666">(</span>rev <span style="color:#666">21</span><span style="color:#666">)</span>
+<span style="color:#666">00</span>:1c.0 PCI bridge: Intel Corporation Sunrise Point-LP PCI Express Root Port <span style="color:#080;font-style:italic">#5 (rev f1)</span>
+<span style="color:#666">00</span>:1c.5 PCI bridge: Intel Corporation Sunrise Point-LP PCI Express Root Port <span style="color:#080;font-style:italic">#6 (rev f1)</span>
+<span style="color:#666">00</span>:1f.0 ISA bridge: Intel Corporation Sunrise Point-LP LPC Controller <span style="color:#666">(</span>rev <span style="color:#666">21</span><span style="color:#666">)</span>
+<span style="color:#666">00</span>:1f.2 Memory controller: Intel Corporation Sunrise Point-LP PMC <span style="color:#666">(</span>rev <span style="color:#666">21</span><span style="color:#666">)</span>
+<span style="color:#666">00</span>:1f.3 Audio device: Intel Corporation Sunrise Point-LP HD Audio <span style="color:#666">(</span>rev <span style="color:#666">21</span><span style="color:#666">)</span>
+<span style="color:#666">00</span>:1f.4 SMBus: Intel Corporation Sunrise Point-LP SMBus <span style="color:#666">(</span>rev <span style="color:#666">21</span><span style="color:#666">)</span>
+<span style="color:#666">01</span>:00.0 Network controller: Intel Corporation Wireless <span style="color:#666">3165</span> <span style="color:#666">(</span>rev <span style="color:#666">79</span><span style="color:#666">)</span>
+<span style="color:#666">02</span>:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL810xE PCI Express Fast Ethernet controller <span style="color:#666">(</span>rev <span style="color:#666">07</span><span style="color:#666">)</span></code></pre></div>
 <h3 id="how-to-reset-root-password">How to reset root password</h3>
 
 <p>&lsquo;rd.break&rsquo; drops to a rescue shell earlier than any other rescue mode. Reboot the system, add &lsquo;rd.break&rsquo; to the kernel boot parameters, remount the root filesystem R/W, use &lsquo;chroot&rsquo; to switch to the proper root FS and run &lsquo;passwd&rsquo;. Remember to &lsquo;touch /.autorelabel&rsquo; before typing &lsquo;exit&rsquo; twice to resume booting.</p>
 
 <h3 id="questions">Questions</h3>
 
-<p>Where could you configure the order in which filesystems are checked at boot time?</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">/etc/fstab</code></pre></div>
-<p>In a situation in which you wished to drop to a minimal rescue environment in which only you remained logged in and the system was not available over the network, what command would you run?</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">systemctl isolate rescue.target</code></pre></div>
-<p>Which rescue parameter would you pass to the kernel from the grub2 menu if your system was failing to boot because a filesystem check was failing?</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">systemd.unit<span style="color:#666">=</span>emergency.target</code></pre></div>
+<p>Where could you configure the order in which filesystems are checked at boot time?
+<code>/etc/fstab</code></p>
+
+<p>How to drop to a minimal rescue environment in which only you remained logged in and the system was not available over the network, what command would you run? <code>systemctl isolate rescue.target</code></p>
+
+<p>Which rescue parameter would you pass to the kernel from the grub2 menu if your system was failing to boot because a filesystem check was failing?
+<code>systemd.unit=emergency.target</code></p>
+
 <p>You are a member of a team of admins who are responsible for a critical system. This system has two different web servers installed: The first (Nginx) is used to serve content, the other (httpd) is installed only to satisfy dependencies and should never be started as it causes a conflict. What command could you run to ensure that &lsquo;httpd&rsquo; is never accidentally started or enabled by another admin?</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">systemctl mask httpd</code></pre></div>
-<h3 id="references">References</h3>
+
+<p><code>systemctl mask httpd</code></p>
 
 
 
