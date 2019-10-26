@@ -4,7 +4,7 @@
 	
 
 <meta charset="utf-8">
-<title>Linux Hardening - SY Knowledge Hub</title>
+<title>SELinux - SY Knowledge Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 
@@ -26,12 +26,12 @@
 
 
 
-<meta name="description" content="Hardening">
-<meta property="og:description" content="Hardening">
-<meta name="twitter:description" content="Hardening">
-<meta property="og:url" content="//localhost:1313/docs/security/hardening/">
-<meta property="og:title" content="Linux Hardening">
-<meta name="twitter:title" content="Linux Hardening">
+<meta name="description" content="Security Enhanced Linux">
+<meta property="og:description" content="Security Enhanced Linux">
+<meta name="twitter:description" content="Security Enhanced Linux">
+<meta property="og:url" content="//localhost:1313/docs/security/selinux/">
+<meta property="og:title" content="SELinux">
+<meta name="twitter:title" content="SELinux">
 <meta name="twitter:image" content="https://github.com/sriram-yeluri/images/raw/master/favicon.png"/>
 
 <meta name="twitter:image:alt" content="SY Knowledge Hub">
@@ -307,11 +307,11 @@
 
 
 
-<h1>Linux Hardening</h1>
+<h1>SELinux</h1>
 
 
 
-<p>Hardening</p>
+<p>Security Enhanced Linux</p>
 
 
 
@@ -328,11 +328,6 @@
 
 
 
-
-
-
-
-<li><a href="#references">References</a></li>
 
 
 
@@ -355,10 +350,52 @@
 </ul>
 
 
-<h2 id="references">References</h2>
+<ul>
+<li>SELinux is a security mechanism built into the Linux kernel.</li>
+<li>Linux distributions like CentOS, RHEL, and Fedora are enabled with SELinux by default.</li>
+</ul>
 
-<p><a href="https://www.tecmint.com/linux-server-hardening-security-tips/" target="_blank">linux-server-hardening-security-tips</a><br />
-<a href="https://www.cyberciti.biz/tips/linux-security.html" target="_blank">40 Linux Server Hardening Security Tips</a></p>
+<p>SELinux Modes</p>
+
+<ul>
+<li><code>Enforcing</code>: The default mode which will enable and enforce the SELinux security policy on the system, denying access and logging actions</li>
+<li><code>Permissive</code>: In Permissive mode, SELinux is enabled but will not enforce the security policy, only warn and log actions. Permissive mode is useful for troubleshooting SELinux issues. Changing modes between enforcing and permissive does not require a system reboot.</li>
+<li><code>Disabled</code>: SELinux is turned off</li>
+</ul>
+
+<p>Check status of SELinux : <code>sestatus</code></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># sestatus</span>
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual <span style="color:#666">(</span>secure<span style="color:#666">)</span>
+Max kernel policy version:      <span style="color:#666">31</span></code></pre></div>
+<p>SElinux Configuration <code>/etc/selinux/config</code></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># cat /etc/selinux/config</span>
+
+<span style="color:#080;font-style:italic"># This file controls the state of SELinux on the system.</span>
+<span style="color:#080;font-style:italic"># SELINUX= can take one of these three values:</span>
+<span style="color:#080;font-style:italic">#     enforcing - SELinux security policy is enforced.</span>
+<span style="color:#080;font-style:italic">#     permissive - SELinux prints warnings instead of enforcing.</span>
+<span style="color:#080;font-style:italic">#     disabled - No SELinux policy is loaded.</span>
+<span style="color:#b8860b">SELINUX</span><span style="color:#666">=</span>enforcing
+<span style="color:#080;font-style:italic"># SELINUXTYPE= can take one of these three values:</span>
+<span style="color:#080;font-style:italic">#     targeted - Targeted processes are protected,</span>
+<span style="color:#080;font-style:italic">#     minimum - Modification of targeted policy. Only selected processes are protected.</span>
+<span style="color:#080;font-style:italic">#     mls - Multi Level Security protection.</span>
+<span style="color:#b8860b">SELINUXTYPE</span><span style="color:#666">=</span>targeted</code></pre></div>
+<p>SELinux log messages : <code>/var/log/audit/audit.log</code></p>
+
+<p>To change the mode from enforcing to permissive type: <code>setenforce 0</code></p>
+
+<blockquote class="note">
+  <div><strong>Note:</strong> changes only apply to the current session. They turn back to default after a reboot. To make the changes permanent, edit the configuration file</div>
+</blockquote>
 
 
 
