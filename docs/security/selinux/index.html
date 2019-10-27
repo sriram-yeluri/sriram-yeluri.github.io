@@ -332,6 +332,16 @@
 
 
 
+<li><a href="#selinux-modes">SELinux Modes</a></li>
+
+
+
+
+<li><a href="#selinux-troubleshooting">SELinux Troubleshooting</a></li>
+
+
+
+
 
 
 
@@ -350,18 +360,34 @@
 </ul>
 
 
+<p>SELinux is built into the kernel, and provides a non-discretional (ie. mandatory) access control framework for controlling how OS objects such as ports, users, and executables may interact.</p>
+
 <ul>
+<li>kernel level mandatory access control mechanism.</li>
 <li>SELinux is a security mechanism built into the Linux kernel.</li>
 <li>Linux distributions like CentOS, RHEL, and Fedora are enabled with SELinux by default.</li>
 </ul>
 
-<p>SELinux Modes</p>
+<h2 id="selinux-modes">SELinux Modes</h2>
 
 <ul>
 <li><code>Enforcing</code>: The default mode which will enable and enforce the SELinux security policy on the system, denying access and logging actions</li>
 <li><code>Permissive</code>: In Permissive mode, SELinux is enabled but will not enforce the security policy, only warn and log actions. Permissive mode is useful for troubleshooting SELinux issues. Changing modes between enforcing and permissive does not require a system reboot.</li>
 <li><code>Disabled</code>: SELinux is turned off</li>
 </ul>
+
+<p>By default, SELinux starts up in <code>Enforcing</code> mode, running the <code>targeted</code> policy.<br />
+SELinux can manage / secure many different type of <code>objects</code> like file system objects, Network Ports, Running Exeutables.</p>
+
+<h2 id="selinux-troubleshooting">SELinux Troubleshooting</h2>
+
+<p><code>setroubleshoot-server</code> &amp; <code>policycoreutils-gui</code> can help you trouble shoot by making the errors easier to understand.</p>
+
+<p>Further information:</p>
+
+<p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/sect-security-enhanced_linux-working_with_selinux-which_log_file_is_used" target="_blank">redhat-selinux_users_and_administrators_guide</a></p>
+
+<p><a href="https://access.redhat.com/solutions/2529361" target="_blank">https://access.redhat.com/solutions/2529361</a></p>
 
 <p>Check status of SELinux : <code>sestatus</code></p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># sestatus</span>
