@@ -327,9 +327,20 @@
 
 
 
-<p>Kubernetes PODS</p>
+<h2>ERROR</h2> 
+
+<p>You must define a <span style="font-family: monospace">overview</span></p>
 
 
+<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 
@@ -348,17 +359,7 @@
 
 
 
-<li><a href="#pod-manifest-definition">POD Manifest/Definition</a></li>
-
-
-
-
-<li><a href="#static-pod">Static POD</a></li>
-
-
-
-
-<li><a href="#pod-eviction">POD Eviction</a></li>
+<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
 
 
 
@@ -381,89 +382,20 @@
 </ul>
 
 
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl describe pods
+<h2>ERROR</h2> 
 
-Name:           kubernetes-bootcamp-5b48cfdcbd-5ddlwNamespace:      defaultPriority:       <span style="color:#666">0</span>
-
-Node:           minikube/172.17.0.90
-Start Time:     Mon, <span style="color:#666">26</span> Aug <span style="color:#666">2019</span> <span style="color:#666">11</span>:54:05 +0000
-Labels:         pod-template-hash<span style="color:#666">=</span>5b48cfdcbd
-                <span style="color:#b8860b">run</span><span style="color:#666">=</span>kubernetes-bootcamp
-
-Annotations:    &lt;none&gt;
-
-Status:         Running
-IP:             <span style="color:#666">172</span>.18.0.5
-Controlled By:  ReplicaSet/kubernetes-bootcamp-5b48cfdcbd
-
-Containers:
-
-  kubernetes-bootcamp:
-    Container ID:   docker://016f25827984c14dc74e5cbaafe43b0fb77b20b8838b5818d1e9a90376b8ad5d
-    Image:          gcr.io/google-samples/kubernetes-bootcamp:v1
-    Image ID:       docker-pullable://jocatalin/kubernetes-bootcamp@sha256:0d6b8ee63bb57c5f5b6156f446b3bc3b3c143d233037f3a2f00e279c8fcc64af
-    Port:           <span style="color:#666">8080</span>/TCP
-    Host Port:      <span style="color:#666">0</span>/TCP
-    State:          Running
-      Started:      Mon, <span style="color:#666">26</span> Aug <span style="color:#666">2019</span> <span style="color:#666">11</span>:54:06 +0000
-    Ready:          True
-    Restart Count:  <span style="color:#666">0</span>
-    Environment:    &lt;none&gt;
-    Mounts:
-      /var/run/secrets/kubernetes.io/serviceaccount from default-token-5wbkl <span style="color:#666">(</span>ro<span style="color:#666">)</span>
-Conditions:
-  Type              Status
-  Initialized       True
-  Ready             True
-  ContainersReady   True
-  PodScheduled      True
-Volumes:
-  default-token-5wbkl:
-    Type:        Secret <span style="color:#666">(</span>a volume populated by a Secret<span style="color:#666">)</span>
-    SecretName:  default-token-5wbkl
-    Optional:    <span style="color:#a2f">false</span>
-QoS Class:       BestEffort
-Node-Selectors:  &lt;none&gt;
-Tolerations:     node.kubernetes.io/not-ready:NoExecute <span style="color:#a2f;font-weight:bold">for</span> 300s
-                 node.kubernetes.io/unreachable:NoExecute <span style="color:#a2f;font-weight:bold">for</span> 300s
-Events:
-  Type    Reason     Age    From               Message
-  ----    ------     ----   ----               -------
-  Normal  Scheduled  6m58s  default-scheduler  Successfully assigned default/kubernetes-bootcamp-5b48cfdcbd-5ddlw to minikube
-  Normal  Pulled     6m57s  kubelet, minikube  Container image <span style="color:#b44">&#34;gcr.io/google-samples/kubernetes-bootcamp:v1&#34;</span> already present on machine
-  Normal  Created    6m57s  kubelet, minikube  Created container kubernetes-bootcamp
-  Normal  Started    6m57s  kubelet, minikube  Started container kubernetes-bootcamp</code></pre></div>
-<h2 id="pod-manifest-definition">POD Manifest/Definition</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
-</span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>Pod<span style="color:#bbb">
-</span><span style="color:#bbb"></span>metadata:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>name:<span style="color:#bbb"> </span>label-demo<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>labels:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>environment:<span style="color:#bbb"> </span>production<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>app:<span style="color:#bbb"> </span>nginx<span style="color:#bbb">
-</span><span style="color:#bbb"></span>spec:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>containers:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>-<span style="color:#bbb"> </span>name:<span style="color:#bbb"> </span>nginx<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>image:<span style="color:#bbb"> </span>nginx:<span style="color:#666">1.7</span>.<span style="color:#666">9</span><span style="color:#bbb">
-</span><span style="color:#bbb">    </span>ports:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>-<span style="color:#bbb"> </span>containerPort:<span style="color:#bbb"> </span><span style="color:#666">80</span></code></pre></div>
-<p>$ kubectl apply -f nginx-pod.yaml
-$ kubectl get events
-$ kubectl get pods
-$ kubectl delete pod label-demo</p>
-
-<h2 id="static-pod">Static POD</h2>
-
-<p>PODS that are created by kubelet without any communication from kube-apiserver are called static pods.<br />
-If master node fails, kublet on worker node can manage deploying/deleting the pods. This can be achieved by placing the pod definition files directly in the manifests path on the node (/etc/kubernetes/manifests). Kublet monitors this path regularly and creates a POD and also ensures the POD stays alive.</p>
-
-<h2 id="pod-eviction">POD Eviction</h2>
-
-<p>If a node runs out of CPU, memory or disk, Kubernetes may decide to evict one or more pods. It may choose to evict the Weave Net pod, which will disrupt pod network operations.</p>
-
-<p>You can see when pods have been evicted via the <code>kubectl get events</code> command or <code>kubectl get pods</code></p>
+<p>You must define a <span style="font-family: monospace">body</span></p>
 
 
+<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 

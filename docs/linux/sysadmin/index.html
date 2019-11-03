@@ -259,7 +259,21 @@
 		
 			
 
+<a class="item" data-title="Firewall" href="/docs/linux/firewall/"></a>
+
+		
+	
+		
+			
+
 <a class="item" data-title="KDE" href="/docs/linux/kde_configuration/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Linux FilePermissions" href="/docs/linux/filepermissions/"></a>
 
 		
 	
@@ -281,6 +295,13 @@
 			
 
 <a class="item" data-title="RHEL" href="/docs/linux/rhel/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Storage" href="/docs/linux/storage/"></a>
 
 		
 	
@@ -443,6 +464,22 @@ bash    <span style="color:#666">1533</span> root txt    REG  <span style="color
 bash    <span style="color:#666">1820</span> root txt    REG  <span style="color:#666">253</span>,0  <span style="color:#666">1219216</span> <span style="color:#666">8512853</span> /usr/bin/bash</code></pre></div>
 <p>How to find all files that a process has opened ? <code>lsof -p PID</code></p>
 
+<p>How To Create a Sudo User on CentOS ?</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@CentosServer1910 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># useradd sriram</span>
+<span style="color:#666">[</span>root@CentosServer1910 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># passwd sriram</span>
+Changing password <span style="color:#a2f;font-weight:bold">for</span> user sriram.
+New password: 
+Retype new password: 
+passwd: all authentication tokens updated successfully.
+<span style="color:#080;font-style:italic"># By default, on CentOS, members of the wheel group have sudo privileges.</span>
+<span style="color:#666">[</span>root@CentosServer1910 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># usermod -aG wheel sriram</span>
+<span style="color:#666">[</span>root@CentosServer1910 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># id sriram</span>
+<span style="color:#b8860b">uid</span><span style="color:#666">=</span><span style="color:#666">1000</span><span style="color:#666">(</span>sriram<span style="color:#666">)</span> <span style="color:#b8860b">gid</span><span style="color:#666">=</span><span style="color:#666">1000</span><span style="color:#666">(</span>sriram<span style="color:#666">)</span> <span style="color:#b8860b">groups</span><span style="color:#666">=</span><span style="color:#666">1000</span><span style="color:#666">(</span>sriram<span style="color:#666">)</span>,10<span style="color:#666">(</span>wheel<span style="color:#666">)</span>
+
+<span style="color:#080;font-style:italic"># Testing new SUDO user</span>
+<span style="color:#666">[</span>sriram@CentosServer1910 ~<span style="color:#666">]</span>$ sudo blkid /dev/sda1
+<span style="color:#666">[</span>sudo<span style="color:#666">]</span> password <span style="color:#a2f;font-weight:bold">for</span> sriram:
+/dev/sda1: <span style="color:#b8860b">UUID</span><span style="color:#666">=</span><span style="color:#b44">&#34;64b6f04f-d510-4c39-9a37-cacfeeec774b&#34;</span> <span style="color:#b8860b">TYPE</span><span style="color:#666">=</span><span style="color:#b44">&#34;ext4&#34;</span> <span style="color:#b8860b">PARTUUID</span><span style="color:#666">=</span><span style="color:#b44">&#34;ec47036c-01&#34;</span></code></pre></div>
 
 
 

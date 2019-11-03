@@ -297,9 +297,20 @@
 
 
 
-<p>Linux Shell Scripting</p>
+<h2>ERROR</h2> 
+
+<p>You must define a <span style="font-family: monospace">overview</span></p>
 
 
+<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 
@@ -318,42 +329,7 @@
 
 
 
-<li><a href="#file-test-operators">File Test Operators</a></li>
-
-
-
-
-<li><a href="#standard-streams">Standard Streams</a></li>
-
-
-
-
-<li><a href="#string-vs-numeric-comparision">String vs Numeric comparision</a></li>
-
-
-
-
-<li><a href="#for-and-while-loops">For and While loops</a></li>
-
-
-
-
-<li><a href="#loop-through-array-elements">Loop through array elements</a></li>
-
-
-
-
-<li><a href="#conditional-exit-with-break">Conditional exit with break</a></li>
-
-
-
-
-<li><a href="#continue">Continue</a></li>
-
-
-
-
-<li><a href="#case">Case</a></li>
+<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
 
 
 
@@ -376,411 +352,20 @@
 </ul>
 
 
-<table>
-<thead>
-<tr>
-<th>Special Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
+<h2>ERROR</h2> 
 
-<tbody>
-<tr>
-<td>$0</td>
-<td>returns name of the script</td>
-</tr>
-
-<tr>
-<td>$#</td>
-<td>returns total number of arguments count</td>
-</tr>
-
-<tr>
-<td>$@</td>
-<td>returns list of arguments</td>
-</tr>
-
-<tr>
-<td>$*</td>
-<td>If a script receives two arguments, $* is equivalent to $1 $2.</td>
-</tr>
-
-<tr>
-<td>$?</td>
-<td>returns exit value of the last executed command</td>
-</tr>
-
-<tr>
-<td>$!</td>
-<td>returns process number of the last background command</td>
-</tr>
-
-<tr>
-<td>$$</td>
-<td>returns PID of current shell</td>
-</tr>
-
-<tr>
-<td>!$</td>
-<td>Last argument in a command</td>
-</tr>
-</tbody>
-</table>
-
-<blockquote class="note">
-  <div><strong>Note:</strong> <code>$*</code> and <code>$@</code> both will act the same unless they are enclosed in double quotes, &ldquo;&rdquo;.
-    &ldquo;$*&rdquo; special parameter takes the entire list as one argument with spaces between and the &ldquo;$@&rdquo; special parameter takes the entire list and separates it into separate arguments.</div>
-</blockquote>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080">#!/bin/bash
-</span><span style="color:#080"></span><span style="color:#080;font-style:italic"># Check if arguments are given, $0 is the script name #</span>
-<span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">[</span> <span style="color:#b8860b">$#</span> -lt <span style="color:#666">3</span> <span style="color:#666">]</span>
-<span style="color:#a2f;font-weight:bold">then</span>
-        <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;Missing Arguments&#34;</span>
-        <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;Usage : </span><span style="color:#b8860b">$0</span><span style="color:#b44"> arg1 arg2 arg3&#34;</span>
-        <span style="color:#a2f">exit</span>
-<span style="color:#a2f;font-weight:bold">fi</span></code></pre></div>
-<h2 id="file-test-operators">File Test Operators</h2>
-
-<table>
-<thead>
-<tr>
-<th>operator</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>-a file</td>
-<td>True if file exists.</td>
-</tr>
-
-<tr>
-<td>-b file</td>
-<td>True if file exists and is a block special file.</td>
-</tr>
-
-<tr>
-<td>-c file</td>
-<td>True if file exists and is a character special file.</td>
-</tr>
-
-<tr>
-<td>-d file</td>
-<td>True if file exists and is a directory.</td>
-</tr>
-
-<tr>
-<td>-e file</td>
-<td>True if file exists.</td>
-</tr>
-
-<tr>
-<td>-f file</td>
-<td>True if file exists and is a regular file.</td>
-</tr>
-
-<tr>
-<td>-g file</td>
-<td>True if file exists and is set-group-id.</td>
-</tr>
-
-<tr>
-<td>-h file</td>
-<td>True if file exists and is a symbolic link.</td>
-</tr>
-
-<tr>
-<td>-k file</td>
-<td>True if file exists and its ``sticky&rdquo; bit is set.</td>
-</tr>
-
-<tr>
-<td>-p file</td>
-<td>True if file exists and is a named pipe (FIFO).</td>
-</tr>
-
-<tr>
-<td>-r file</td>
-<td>True if file exists and is readable.</td>
-</tr>
-
-<tr>
-<td>-s file</td>
-<td>True if file exists and has a size greater than zero.</td>
-</tr>
-
-<tr>
-<td>-t fd</td>
-<td>True if file descriptor fd is open and refers to a terminal.</td>
-</tr>
-
-<tr>
-<td>-u file</td>
-<td>True if file exists and its set-user-id bit is set.</td>
-</tr>
-
-<tr>
-<td>-w file</td>
-<td>True if file exists and is writable.</td>
-</tr>
-
-<tr>
-<td>-x file</td>
-<td>True if file exists and is executable.</td>
-</tr>
-
-<tr>
-<td>-G file</td>
-<td>True if file exists and is owned by the effective group id.</td>
-</tr>
-
-<tr>
-<td>-L file</td>
-<td>True if file exists and is a symbolic link.</td>
-</tr>
-
-<tr>
-<td>-N file</td>
-<td>True if file exists and has been modified since it was last read.</td>
-</tr>
-
-<tr>
-<td>-O file</td>
-<td>True if file exists and is owned by the effective user id.</td>
-</tr>
-
-<tr>
-<td>-S file</td>
-<td>True if file exists and is a socket.</td>
-</tr>
-
-<tr>
-<td>-v varname</td>
-<td>True if the shell variable varname is set (has been assigned a value).</td>
-</tr>
-
-<tr>
-<td>-z string</td>
-<td>True if the length of string is zero.</td>
-</tr>
-
-<tr>
-<td>-n string</td>
-<td>True if the length of string is non-zero.</td>
-</tr>
-
-<tr>
-<td>str</td>
-<td>Check if str is not empty; if empty, then returns false.</td>
-</tr>
-</tbody>
-</table>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># $1 is the first argument, expecting a string</span>
-<span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">[</span> -z <span style="color:#b8860b">$1</span> <span style="color:#666">]</span>; <span style="color:#a2f;font-weight:bold">then</span>
-   <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;You must specify a string in first argument&#34;</span>
-   <span style="color:#a2f">exit</span>
-<span style="color:#a2f;font-weight:bold">fi</span>
-
-<span style="color:#080;font-style:italic"># using translate command &#39;tr&#39;, Translate any uppercase characters into lowercase #</span>
-<span style="color:#b8860b">test</span><span style="color:#666">=</span><span style="color:#a2f;font-weight:bold">$(</span> <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;</span><span style="color:#b8860b">$1</span><span style="color:#b44">&#34;</span> | tr -s  <span style="color:#b44">&#39;[:upper:]&#39;</span>  <span style="color:#b44">&#39;[:lower:]&#39;</span> <span style="color:#a2f;font-weight:bold">)</span></code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># Check if the given file exists where arg3 is the given filename to check #</span>
-<span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">[</span> ! -f <span style="color:#b8860b">$3</span> <span style="color:#666">]</span>
-<span style="color:#a2f;font-weight:bold">then</span>
-        <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;Filename given \&#34;</span><span style="color:#b8860b">$3</span><span style="color:#b44">\&#34; doesn&#39;t exist&#34;</span>
-        <span style="color:#a2f">exit</span>
-<span style="color:#a2f;font-weight:bold">fi</span></code></pre></div>
-<h2 id="standard-streams">Standard Streams</h2>
-
-<table>
-<thead>
-<tr>
-<th>value</th>
-<th>Stream</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>0</td>
-<td>/dev/stdin</td>
-</tr>
-
-<tr>
-<td>1</td>
-<td>/dev/stdout</td>
-</tr>
-
-<tr>
-<td>2</td>
-<td>/dev/stderr</td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="string-vs-numeric-comparision">String vs Numeric comparision</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">For string comparision use,
-<span style="color:#666">==</span>  
-!<span style="color:#666">=</span>  
-&amp;lt;  
-
-For numeric comparision use,
--gt
--lt
--eq
--ne</code></pre></div>
-<h2 id="for-and-while-loops">For and While loops</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080">#!/bin/bash
-</span><span style="color:#080"></span><span style="color:#a2f;font-weight:bold">for</span> variable in <span style="color:#666">{</span>list<span style="color:#666">}</span>
-<span style="color:#a2f;font-weight:bold">do</span>
-    &lt;commands&gt;
-<span style="color:#a2f;font-weight:bold">done</span>
-
-<span style="color:#080;font-style:italic"># Example</span>
-<span style="color:#a2f;font-weight:bold">for</span> i in <span style="color:#666">{</span><span style="color:#666">1</span>..10<span style="color:#666">}</span>
-<span style="color:#a2f;font-weight:bold">do</span>
-    <span style="color:#a2f">echo</span> <span style="color:#b8860b">$i</span>
-<span style="color:#a2f;font-weight:bold">done</span>
-
-<span style="color:#080;font-style:italic"># Bash v4.0+ has inbuilt support for setting up a step value using {START..END..INCREMENT} syntax</span>
-<span style="color:#080">#!/bin/bash
-</span><span style="color:#080"></span><span style="color:#a2f">echo</span> <span style="color:#b44">&#34;Bash version </span><span style="color:#b68;font-weight:bold">${</span><span style="color:#b8860b">BASH_VERSION</span><span style="color:#b68;font-weight:bold">}</span><span style="color:#b44">...&#34;</span>
-<span style="color:#a2f;font-weight:bold">for</span> i in <span style="color:#666">{</span><span style="color:#666">0</span>..10..2<span style="color:#666">}</span>
-  <span style="color:#a2f;font-weight:bold">do</span>
-     <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;Count </span><span style="color:#b8860b">$i</span><span style="color:#b44"> times&#34;</span>
- <span style="color:#a2f;font-weight:bold">done</span>
-
-<span style="color:#080;font-style:italic">#output</span>
-Bash version <span style="color:#666">4</span>.4.20<span style="color:#666">(</span><span style="color:#666">1</span><span style="color:#666">)</span>-release...
-Count <span style="color:#666">0</span> <span style="color:#a2f">times</span>
-Count <span style="color:#666">2</span> <span style="color:#a2f">times</span>
-Count <span style="color:#666">4</span> <span style="color:#a2f">times</span>
-Count <span style="color:#666">6</span> <span style="color:#a2f">times</span>
-Count <span style="color:#666">8</span> <span style="color:#a2f">times</span>
-Count <span style="color:#666">10</span> times</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># C Style for loop</span>
-<span style="color:#080">#!/bin/bash
-</span><span style="color:#080"></span><span style="color:#a2f;font-weight:bold">for</span> <span style="color:#666">((</span> <span style="color:#b8860b">i</span><span style="color:#666">=</span><span style="color:#666">1</span>; i&lt;<span style="color:#666">=</span><span style="color:#666">5</span>; i++ <span style="color:#666">))</span>
-<span style="color:#a2f;font-weight:bold">do</span>  
-   <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;Welcome </span><span style="color:#b8860b">$i</span><span style="color:#b44"> times&#34;</span>
-<span style="color:#a2f;font-weight:bold">done</span>
-
-<span style="color:#080;font-style:italic"># Infinite loop</span>
-<span style="color:#080">#!/bin/bash
-</span><span style="color:#080"></span><span style="color:#a2f;font-weight:bold">for</span> <span style="color:#666">((</span> ; ; <span style="color:#666">))</span>
-<span style="color:#a2f;font-weight:bold">do</span>
-   <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;infinite loops [ hit CTRL+C to stop]&#34;</span>
-<span style="color:#a2f;font-weight:bold">done</span></code></pre></div>
-<h2 id="loop-through-array-elements">Loop through array elements</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#b8860b">BOOKS</span><span style="color:#666">=(</span><span style="color:#b44">&#39;Title-1&#39;</span> <span style="color:#b62;font-weight:bold">\
-</span><span style="color:#b62;font-weight:bold"></span>     <span style="color:#b44">&#39;Title-2&#39;</span> <span style="color:#b62;font-weight:bold">\
-</span><span style="color:#b62;font-weight:bold"></span>     <span style="color:#b44">&#39;Title-3&#39;</span> <span style="color:#b62;font-weight:bold">\
-</span><span style="color:#b62;font-weight:bold"></span>     <span style="color:#b44">&#39;Title-4&#39;</span><span style="color:#666">)</span>
-<span style="color:#a2f;font-weight:bold">for</span> book in <span style="color:#b44">&#34;</span><span style="color:#b68;font-weight:bold">${</span><span style="color:#b8860b">BOOKS</span>[@]<span style="color:#b68;font-weight:bold">}</span><span style="color:#b44">&#34;</span>
-<span style="color:#a2f;font-weight:bold">do</span>
-  <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;Book: </span><span style="color:#b8860b">$book</span><span style="color:#b44">&#34;</span>
-<span style="color:#a2f;font-weight:bold">done</span>
-
-<span style="color:#080;font-style:italic"># Output</span>
-Book: Title-1
-Book: Title-2
-Book: Title-3
-Book: Title-4</code></pre></div>
-<h2 id="conditional-exit-with-break">Conditional exit with break</h2>
-
-<p>You can do early exit with break statement inside the for loop.You can exit from within a <code>FOR</code>, <code>WHILE</code> or <code>UNTIL</code> loop using break.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#a2f;font-weight:bold">for</span> i in <span style="color:#666">{</span><span style="color:#666">1</span>..10<span style="color:#666">}</span>
-<span style="color:#a2f;font-weight:bold">do</span>
-  statements1      <span style="color:#080;font-style:italic">#Executed for all values of &#39;&#39;i&#39;&#39;, up to a disaster-condition if any.</span>
-  statements2
-  <span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">(</span>disaster-condition<span style="color:#666">)</span>
-  <span style="color:#a2f;font-weight:bold">then</span>
-     <span style="color:#a2f">break</span>            <span style="color:#080;font-style:italic">#Abandon the loop.</span>
-  <span style="color:#a2f;font-weight:bold">fi</span>
-  statements3         <span style="color:#080;font-style:italic">#While good and, no disaster-condition.</span>
-<span style="color:#a2f;font-weight:bold">done</span>
-
-<span style="color:#080;font-style:italic"># Example</span>
-<span style="color:#080;font-style:italic"># This shell script will go though all files stored in /etc directory.</span>
-<span style="color:#080;font-style:italic"># The for loop will be abandon when /etc/resolv.conf file found.</span>
-
-<span style="color:#080">#!/bin/bash
-</span><span style="color:#080"></span><span style="color:#a2f;font-weight:bold">for</span> file in /etc/*
-<span style="color:#a2f;font-weight:bold">do</span>
-     <span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">[</span> <span style="color:#b44">&#34;</span><span style="color:#b68;font-weight:bold">${</span><span style="color:#b8860b">file</span><span style="color:#b68;font-weight:bold">}</span><span style="color:#b44">&#34;</span> <span style="color:#666">==</span> <span style="color:#b44">&#34;/etc/resolv.conf&#34;</span> <span style="color:#666">]</span>
-     <span style="color:#a2f;font-weight:bold">then</span>
-          <span style="color:#b8860b">countNameservers</span><span style="color:#666">=</span><span style="color:#a2f;font-weight:bold">$(</span>grep -c nameserver /etc/resolv.conf<span style="color:#a2f;font-weight:bold">)</span>
-          <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;Total  </span><span style="color:#b68;font-weight:bold">${</span><span style="color:#b8860b">countNameservers</span><span style="color:#b68;font-weight:bold">}</span><span style="color:#b44"> nameservers defined in </span><span style="color:#b68;font-weight:bold">${</span><span style="color:#b8860b">file</span><span style="color:#b68;font-weight:bold">}</span><span style="color:#b44">&#34;</span>
-          <span style="color:#a2f">break</span>
-     <span style="color:#a2f;font-weight:bold">fi</span>
-<span style="color:#a2f;font-weight:bold">done</span></code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080">#!/bin/bash
-</span><span style="color:#080"></span><span style="color:#a2f;font-weight:bold">while</span> <span style="color:#666">[[</span>condition<span style="color:#666">]]</span>  
-<span style="color:#a2f;font-weight:bold">do</span>
-    &lt;commands&gt;
-<span style="color:#a2f;font-weight:bold">done</span>
-
-<span style="color:#080;font-style:italic"># Example</span>
-<span style="color:#b8860b">num</span><span style="color:#666">=</span><span style="color:#666">1</span>
-<span style="color:#a2f;font-weight:bold">while</span> <span style="color:#666">[</span> <span style="color:#b8860b">$num</span> -le <span style="color:#666">5</span> <span style="color:#666">]</span>
-<span style="color:#a2f;font-weight:bold">do</span>
-   <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;</span><span style="color:#b8860b">$num</span><span style="color:#b44">&#34;</span>
-   <span style="color:#b8860b">num</span><span style="color:#666">=</span><span style="color:#a2f;font-weight:bold">$((</span>num+1<span style="color:#a2f;font-weight:bold">))</span>
-<span style="color:#a2f;font-weight:bold">done</span></code></pre></div>
-<h2 id="continue">Continue</h2>
-
-<p>To resume the next iteration of the enclosing <code>FOR</code>, <code>WHILE</code> or <code>UNTIL</code> loop use continue statement.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#a2f;font-weight:bold">for</span> I in <span style="color:#666">1</span> <span style="color:#666">2</span> <span style="color:#666">3</span> <span style="color:#666">4</span> <span style="color:#666">5</span>
-<span style="color:#a2f;font-weight:bold">do</span>
-  statements1      <span style="color:#080;font-style:italic">#Executed for all values of &#39;&#39;I&#39;&#39;, up to a disaster-condition if any.</span>
-  statements2
-  <span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">(</span>condition<span style="color:#666">)</span>
-  <span style="color:#a2f;font-weight:bold">then</span>
-     <span style="color:#a2f;font-weight:bold">continue</span>   <span style="color:#080;font-style:italic">#Go to next iteration of I in the loop and skip statements3</span>
-  <span style="color:#a2f;font-weight:bold">fi</span>
-  statements3
-<span style="color:#a2f;font-weight:bold">done</span>
-
-<span style="color:#080;font-style:italic"># Example</span>
-<span style="color:#080;font-style:italic"># This script will make backup of all file names specified on command line. If .bak file exists, it will skip the cp command.</span>
-<span style="color:#080">#!/bin/bash
-</span><span style="color:#080"></span><span style="color:#b8860b">FILES</span><span style="color:#666">=</span><span style="color:#b44">&#34;</span><span style="color:#b8860b">$@</span><span style="color:#b44">&#34;</span>
-<span style="color:#a2f;font-weight:bold">for</span> f in <span style="color:#b8860b">$FILES</span>
-<span style="color:#a2f;font-weight:bold">do</span>
-        <span style="color:#080;font-style:italic"># if .bak backup file exists, read next file</span>
-     <span style="color:#a2f;font-weight:bold">if</span> <span style="color:#666">[</span> -f <span style="color:#b68;font-weight:bold">${</span><span style="color:#b8860b">f</span><span style="color:#b68;font-weight:bold">}</span>.bak <span style="color:#666">]</span>
-     <span style="color:#a2f;font-weight:bold">then</span>
-          <span style="color:#a2f">echo</span> <span style="color:#b44">&#34;Skiping </span><span style="color:#b8860b">$f</span><span style="color:#b44"> file...&#34;</span>
-          <span style="color:#a2f;font-weight:bold">continue</span>  <span style="color:#080;font-style:italic"># read next file and skip the cp command</span>
-     <span style="color:#a2f;font-weight:bold">fi</span>
-     /bin/cp <span style="color:#b8860b">$f</span> <span style="color:#b8860b">$f</span>.bak
-<span style="color:#a2f;font-weight:bold">done</span></code></pre></div>
-<h2 id="case">Case</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># The CASE statement is the simplest form of the IF-THEN-ELSE statement in BASH.</span>
-<span style="color:#a2f;font-weight:bold">case</span> <span style="color:#b8860b">$variable</span> in
-     pattern-1<span style="color:#666">)</span>
-          commands
-          ;;
-     pattern-2<span style="color:#666">)</span>
-          commands
-          ;;
-     pattern-3|pattern-4|pattern-5<span style="color:#666">)</span>
-          commands
-          ;;
-     pattern-N<span style="color:#666">)</span>
-          commands
-          ;;
-     *<span style="color:#666">)</span>
-          commands
-          ;;
-<span style="color:#a2f;font-weight:bold">esac</span></code></pre></div>
-<h3 id="references">References</h3>
-
-<p><a href="https://www.gnu.org/software/bash/manual/bashref.html" target="_blank">gnu.org Bash Reference Manual</a><br />
-<a href="https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html" target="_blank">Conditional Expressions</a><br />
-<a href="https://en.wikibooks.org/wiki/Bash_Shell_Scripting" target="_blank">bash wikibook</a><br />
-<a href="https://bash.cyberciti.biz/guide/Main_Page" target="_blank">Linux Shell Scripting Tutorial</a><br />
-<a href="https://tecadmin.net/tutorial/bash-scripting/hello-world/" target="_blank">Bash-Scripting</a><br />
-<a href="http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html" target="_blank">Bash-Beginners-Guide</a></p>
+<p>You must define a <span style="font-family: monospace">body</span></p>
 
 
+<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 

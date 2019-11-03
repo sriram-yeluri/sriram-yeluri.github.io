@@ -315,9 +315,20 @@
 
 
 
-<p>Git is a distributed version control system</p>
+<h2>ERROR</h2> 
+
+<p>You must define a <span style="font-family: monospace">overview</span></p>
 
 
+<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 
@@ -336,32 +347,7 @@
 
 
 
-<li><a href="#vbox-logs">VBox Logs</a></li>
-
-
-
-
-<li><a href="#ipod-not-recognised-in-windows-guest">ipod-not-recognised-in-windows-guest</a></li>
-
-
-
-
-<li><a href="#install-virtualbox-extension-pack">Install virtualbox Extension pack</a></li>
-
-
-
-
-<li><a href="#cloning-vms-in-virtualbox">Cloning VMs in VirtualBox</a></li>
-
-
-
-
-<li><a href="#run-vm-in-background">Run VM in background</a></li>
-
-
-
-
-<li><a href="#networking">Networking</a></li>
+<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
 
 
 
@@ -384,54 +370,20 @@
 </ul>
 
 
-<h2 id="vbox-logs">VBox Logs</h2>
+<h2>ERROR</h2> 
 
-<p>For Vbox if you encounter errors, check vbox logs</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># log location</span>
-/var/log/vboxadd-install.log
-
-<span style="color:#080;font-style:italic"># Command to display list of vms on the vbox</span>
-vboxmanage list vms
-
-vboxmanage showvminfo Centos7 --details</code></pre></div>
-<h2 id="ipod-not-recognised-in-windows-guest">ipod-not-recognised-in-windows-guest</h2>
-
-<ul>
-<li>Install Extension Pack.</li>
-<li>Install Guest Additions in the Windows 7 guest machine.</li>
-<li>select USB 2.0 as the controller in Settings</li>
-</ul>
-
-<h2 id="install-virtualbox-extension-pack">Install virtualbox Extension pack</h2>
-
-<p><a href="https://unix.stackexchange.com/questions/289685/how-to-install-virtualbox-extension-pack/290462" target="_blank">how-to-install-virtualbox-extension-pack</a></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">wget http://download.virtualbox.org/virtualbox/5.2.4/Oracle_VM_VirtualBox_Extension_Pack-5.2.4-119785.vbox-extpack 
-sudo vboxmanage extpack Oracle_VM_VirtualBox_Extension_Pack-5.2.4-119785.vbox-extpack
-Once installed, you can see at : File -&gt; Preferences -&gt; Extensions
-To verify <span style="color:#a2f;font-weight:bold">if</span> it has been successfully installed, list all installed extension packs:
-VBoxManage list extpacks</code></pre></div>
-<h2 id="cloning-vms-in-virtualbox">Cloning VMs in VirtualBox</h2>
-
-<p><a href="https://askubuntu.com/questions/82322/how-do-i-fix-broken-networking-in-cloned-virtual-machines" target="_blank">how-do-i-fix-broken-networking-in-cloned-virtual-machines</a></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">/etc/sysconfig/network-scripts/ifcfg-enp0s3
-/etc/udev/rules.d/*-persistent-net.rules</code></pre></div>
-<h2 id="run-vm-in-background">Run VM in background</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic">#Get the VM name by listing VMs</span>
-vboxmanage list vms
-
-VBoxManage startvm <span style="color:#b68;font-weight:bold">${</span><span style="color:#b8860b">VM_NAME</span><span style="color:#b68;font-weight:bold">}</span> --type headless
-example : vboxmanage startvm centos7vm2 --type headless</code></pre></div>
-<h2 id="networking">Networking</h2>
-
-<p><a href="https://blogs.oracle.com/scoter/networking-in-virtualbox-v2" target="_blank">vbox Networking concepts</a></p>
-
-<p><img src="/images/vbox/vbox_nw_1.png" alt="" />
-<img src="/images/vbox/vbox_nw_2.png" alt="" />
-<img src="/images/vbox/vbox_vm_nw_1.png" alt="" />
-<img src="/images/vbox/vbox_vm_nw_2.png" alt="" />
-<img src="/images/vbox/vbox_vm_nw_3.png" alt="" /></p>
+<p>You must define a <span style="font-family: monospace">body</span></p>
 
 
+<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 

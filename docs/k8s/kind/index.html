@@ -327,9 +327,20 @@
 
 
 
-<p>kind : kubernetes in docker</p>
+<h2>ERROR</h2> 
+
+<p>You must define a <span style="font-family: monospace">overview</span></p>
 
 
+<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 
@@ -348,7 +359,7 @@
 
 
 
-<li><a href="#references">References</a></li>
+<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
 
 
 
@@ -371,35 +382,20 @@
 </ul>
 
 
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># Set go path, kind path and KUBECONFIG path</span>
+<h2>ERROR</h2> 
 
-<span style="color:#a2f">export</span> <span style="color:#b8860b">PATH</span><span style="color:#666">=</span><span style="color:#b8860b">$PATH</span>:<span style="color:#b8860b">$HOME</span>/go/bin:<span style="color:#b8860b">$HOME</span>/k8s/bin
-kind get kubeconfig-path<span style="color:#666">)</span>
-<span style="color:#080;font-style:italic"># output: /home/sriram/.kube/kind-config-kind</span>
-<span style="color:#a2f">export</span> <span style="color:#b8860b">KUBECONFIG</span><span style="color:#666">=</span><span style="color:#b44">&#34;</span><span style="color:#a2f;font-weight:bold">$(</span>kind get kubeconfig-path<span style="color:#a2f;font-weight:bold">)</span><span style="color:#b44">&#34;</span></code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sriram@sriram-Inspiron-5567:~$ kind create cluster
-Creating cluster <span style="color:#b44">&#34;kind&#34;</span> ...
- ✓ Ensuring node image <span style="color:#666">(</span>kindest/node:v1.15.0<span style="color:#666">)</span> 🖼 
- ✓ Preparing nodes 📦 
- ✓ Creating kubeadm config 📜 
- ✓ Starting control-plane 🕹️ 
- ✓ Installing CNI 🔌 
- ✓ Installing StorageClass 💾 
-Cluster creation complete. You can now use the cluster with:
-
-<span style="color:#a2f">export</span> <span style="color:#b8860b">KUBECONFIG</span><span style="color:#666">=</span><span style="color:#b44">&#34;</span><span style="color:#a2f;font-weight:bold">$(</span>kind get kubeconfig-path --name<span style="color:#666">=</span><span style="color:#b44">&#34;kind&#34;</span><span style="color:#a2f;font-weight:bold">)</span><span style="color:#b44">&#34;</span>
-kubectl cluster-info</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kind create cluster
- kubectl cluster-info
- Kubernetes master is running at https://localhost:37933
- KubeDNS is running at https://localhost:37933/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
-
-<span style="color:#080;font-style:italic"># To further debug and diagnose cluster problems, use &#39;kubectl cluster-info dump&#39;.</span></code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kind delete cluster
-Deleting cluster <span style="color:#b44">&#34;kind&#34;</span> ...
-<span style="color:#b8860b">$KUBECONFIG</span> is still <span style="color:#a2f">set</span> to use /home/sriram/.kube/kind-config-kind even though that file has been deleted, remember to <span style="color:#a2f">unset</span> it</code></pre></div>
-<h2 id="references">References</h2>
-
-<p><a href="https://kind.sigs.k8s.io/docs/user/quick-start" target="_blank">https://kind.sigs.k8s.io/docs/user/quick-start</a></p>
+<p>You must define a <span style="font-family: monospace">body</span></p>
 
 
+<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 

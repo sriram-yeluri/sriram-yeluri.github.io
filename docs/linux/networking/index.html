@@ -259,7 +259,21 @@
 		
 			
 
+<a class="item" data-title="Firewall" href="/docs/linux/firewall/"></a>
+
+		
+	
+		
+			
+
 <a class="item" data-title="KDE" href="/docs/linux/kde_configuration/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Linux FilePermissions" href="/docs/linux/filepermissions/"></a>
 
 		
 	
@@ -281,6 +295,13 @@
 			
 
 <a class="item" data-title="RHEL" href="/docs/linux/rhel/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Storage" href="/docs/linux/storage/"></a>
 
 		
 	
@@ -331,9 +352,20 @@
 
 
 
-<p>Linux Networking</p>
+<h2>ERROR</h2> 
+
+<p>You must define a <span style="font-family: monospace">overview</span></p>
 
 
+<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 
@@ -352,22 +384,7 @@
 
 
 
-<li><a href="#ip-address-statistics-with-colors-and-human-readable-format">ip address statistics with colors and human readable format</a></li>
-
-
-
-
-<li><a href="#how-to-start-stop-an-interface">How to start/stop an interface</a></li>
-
-
-
-
-<li><a href="#nmcli-command-line-tool-for-network-management">nmcli - command line tool for network management</a></li>
-
-
-
-
-<li><a href="#how-to-configure-static-ip-address">How to configure Static IP address</a></li>
+<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
 
 
 
@@ -390,133 +407,20 @@
 </ul>
 
 
-<blockquote class="note">
-  <div><strong>Note:</strong> net-tools utilities are obsoleted by iproute2<br />
-<a href="https://wiki.linuxfoundation.org/networking/iproute2" target="_blank">https://wiki.linuxfoundation.org/networking/iproute2</a></div>
-</blockquote>
+<h2>ERROR</h2> 
 
-<table>
-<thead>
-<tr>
-<th>Legacy utility</th>
-<th>Replacement command</th>
-<th>Note</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>ifconfig</td>
-<td>ip addr, ip link, ip -s</td>
-<td>Address and link configuration</td>
-</tr>
-
-<tr>
-<td>route</td>
-<td>ip route</td>
-<td>Routing tables</td>
-</tr>
-
-<tr>
-<td>arp</td>
-<td>ip neigh</td>
-<td>Neighbors</td>
-</tr>
-
-<tr>
-<td>iptunnel</td>
-<td>ip tunnel</td>
-<td>Tunnels</td>
-</tr>
-
-<tr>
-<td>nameif</td>
-<td>ifrename, ip link set name</td>
-<td>Rename network interfaces</td>
-</tr>
-
-<tr>
-<td>ipmaddr</td>
-<td>ip maddr</td>
-<td>Multicast</td>
-</tr>
-
-<tr>
-<td>netstat</td>
-<td>ip -s, ss, ip route</td>
-<td>Show various networking statistics</td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="ip-address-statistics-with-colors-and-human-readable-format">ip address statistics with colors and human readable format</h2>
-
-<p><code>ip -stats -color -human addr</code><br />
-<code>ip -s -c -h a</code></p>
-
-<h2 id="how-to-start-stop-an-interface">How to start/stop an interface</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ifup eth0  
-ifdown eth0</code></pre></div>
-<h2 id="nmcli-command-line-tool-for-network-management">nmcli - command line tool for network management</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># nmcli d</span>
-List out all network interfaces and status
-
-<span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># nmcli d</span>
-DEVICE  TYPE      STATE      CONNECTION
-enp0s3  ethernet  connected  enp0s3
-enp0s8  ethernet  connected  enp0s8
-lo      loopback  unmanaged  --</code></pre></div>
-<h2 id="how-to-configure-static-ip-address">How to configure Static IP address</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># vim /etc/sysconfig/network-scripts/ifcfg-eth0</span>
-
-<span style="color:#080;font-style:italic">## Default Configuration</span>
-<span style="color:#b8860b">DEVICE</span><span style="color:#666">=</span><span style="color:#b44">&#34;eth0&#34;</span>
-<span style="color:#b8860b">ONBOOT</span><span style="color:#666">=</span>yes
-<span style="color:#b8860b">NETBOOT</span><span style="color:#666">=</span>yes
-<span style="color:#b8860b">UUID</span><span style="color:#666">=</span><span style="color:#b44">&#34;41171a6f-bce1-44de-8a6e-cf5e782f8bd6&#34;</span>
-<span style="color:#b8860b">IPV6INIT</span><span style="color:#666">=</span>yes
-<span style="color:#b8860b">BOOTPROTO</span><span style="color:#666">=</span>dhcp
-<span style="color:#b8860b">HWADDR</span><span style="color:#666">=</span><span style="color:#b44">&#34;00:08:a2:0a:ba:b8&#34;</span>
-<span style="color:#b8860b">TYPE</span><span style="color:#666">=</span>Ethernet
-<span style="color:#b8860b">NAME</span><span style="color:#666">=</span><span style="color:#b44">&#34;eth0&#34;</span>
-
-<span style="color:#080;font-style:italic">## Configuration for Static IP</span>
-<span style="color:#b8860b">HWADDR</span><span style="color:#666">=</span><span style="color:#666">00</span>:08:A2:0A:BA:B8
-<span style="color:#b8860b">TYPE</span><span style="color:#666">=</span>Ethernet
-<span style="color:#b8860b">BOOTPROTO</span><span style="color:#666">=</span>static
-<span style="color:#080;font-style:italic"># Server IP #</span>
-<span style="color:#b8860b">IPADDR</span><span style="color:#666">=</span><span style="color:#666">192</span>.168.2.203
-<span style="color:#080;font-style:italic"># Subnet #</span>
-<span style="color:#b8860b">PREFIX</span><span style="color:#666">=</span><span style="color:#666">24</span>
-<span style="color:#080;font-style:italic"># Set default gateway IP #</span>
-<span style="color:#b8860b">GATEWAY</span><span style="color:#666">=</span><span style="color:#666">192</span>.168.2.254
-<span style="color:#080;font-style:italic"># Set dns servers #</span>
-<span style="color:#b8860b">DNS1</span><span style="color:#666">=</span><span style="color:#666">192</span>.168.2.254
-<span style="color:#b8860b">DNS2</span><span style="color:#666">=</span><span style="color:#666">8</span>.8.8.8
-<span style="color:#b8860b">DNS3</span><span style="color:#666">=</span><span style="color:#666">8</span>.8.4.4
-<span style="color:#b8860b">DEFROUTE</span><span style="color:#666">=</span>yes
-<span style="color:#b8860b">IPV4_FAILURE_FATAL</span><span style="color:#666">=</span>no
-<span style="color:#080;font-style:italic"># Disable ipv6 #</span>
-<span style="color:#b8860b">IPV6INIT</span><span style="color:#666">=</span>no
-<span style="color:#b8860b">NAME</span><span style="color:#666">=</span>eth0
-<span style="color:#080;font-style:italic"># This is system specific and can be created using `uuidgen eth0` command #</span>
-<span style="color:#b8860b">UUID</span><span style="color:#666">=</span>41171a6f-bce1-44de-8a6e-cf5e782f8bd6
-<span style="color:#b8860b">DEVICE</span><span style="color:#666">=</span>eth0
-<span style="color:#b8860b">ONBOOT</span><span style="color:#666">=</span>yes</code></pre></div>
-<h3 id="restart-network-interface">Restart network interface</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">systemctl restart NetworkManager</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># Verify new IP settings:</span>
-ip a s eth0
-
-<span style="color:#080;font-style:italic"># Verify new routing settings:</span>
-ip r
-
-<span style="color:#080;font-style:italic"># Verify DNS servers settings</span>
-cat /etc/resolv.conf</code></pre></div>
-<h3 id="references">References</h3>
-
-<p><a href="http://www.policyrouting.org/iproute2.doc.html#ss9.2.1" target="_blank">IPROUTE2 Utility Suite Howto</a></p>
+<p>You must define a <span style="font-family: monospace">body</span></p>
 
 
+<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 

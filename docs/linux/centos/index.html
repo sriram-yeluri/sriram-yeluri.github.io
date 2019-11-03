@@ -259,7 +259,21 @@
 		
 			
 
+<a class="item" data-title="Firewall" href="/docs/linux/firewall/"></a>
+
+		
+	
+		
+			
+
 <a class="item" data-title="KDE" href="/docs/linux/kde_configuration/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Linux FilePermissions" href="/docs/linux/filepermissions/"></a>
 
 		
 	
@@ -281,6 +295,13 @@
 			
 
 <a class="item" data-title="RHEL" href="/docs/linux/rhel/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Storage" href="/docs/linux/storage/"></a>
 
 		
 	
@@ -331,9 +352,20 @@
 
 
 
-<p>Centos</p>
+<h2>ERROR</h2> 
+
+<p>You must define a <span style="font-family: monospace">overview</span></p>
 
 
+<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 
@@ -348,6 +380,11 @@
 
 
 
+
+
+
+
+<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
 
 
 
@@ -370,47 +407,20 @@
 </ul>
 
 
-<h3 id="your-system-does-not-seem-to-be-set-up-to-build-kernel-modules">Your system does not seem to be set up to build kernel modules</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum clean all
-yum install gcc-c++
-yum install kernel-devel
-yum install kernel-headers</code></pre></div>
-<h3 id="how-to-setup-network-after-rhel-centos-minimal-installation">How to setup network after RHEL/CentOS minimal installation</h3>
+<h2>ERROR</h2> 
 
-<p>After installing RHEL/CentOS minimal, You may not able to connect network in that machine. This will happen because Ethernet interfaces are not enabled by default.</p>
-
-<h4 id="method-1-using-networkmanager-service">Method 1 – Using NetworkManager Service</h4>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">edit <span style="color:#b44">&#39;/etc/sysconfig/network-scripts/ifcfg-enp0s8&#39;</span>
-change onboot parameter to yes, and restart the interface
-<span style="color:#b44">&#39;ONBOOT=YES&#39;</span>
-<span style="color:#080;font-style:italic"># Restart the interface</span>
-ifdown ifcfg-enp0s8
-ifup ifcfg-enp0s8</code></pre></div>
-<h4 id="method-2-using-nmcli-tool">Method 2 – Using nmcli Tool</h4>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic">#nmcli d (List the available interfaces)</span>
-<span style="color:#080;font-style:italic">#nmtui</span>
-<span style="color:#666">1</span>. open Network manager, and choose Edit connection
-<span style="color:#666">2</span>. choose you network interfaces and click “Edit”
-<span style="color:#666">3</span>. Choose “Automatic” in IPv4 CONFIGURATION and check Automatically connect check box and press OK and quit from Network manager.
-<span style="color:#666">4</span>. Restart network service <span style="color:#b44">&#39;systemctl restart NetworkManager.service&#39;</span>
-
-<span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># nmcli dev status</span>
-<span style="color:#666">[</span>or<span style="color:#666">]</span>
-<span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># nmcli d</span>
-DEVICE  TYPE      STATE      CONNECTION
-enp0s3  ethernet  connected  enp0s3
-enp0s8  ethernet  connected  enp0s8</code></pre></div>
-<p><img src="/images/CentOS_7-network-setup.png" alt="CentOS_7-network-setup" /></p>
-
-<p><img src="/images/CentOS_7-Network-manager-screen.png" alt="CentOS_7-Network-manager-screen" /></p>
-
-<p><img src="/images/Edit-your-network-interfaces.png" alt="Edit-your-network-interfaces" /></p>
-
-<p><img src="/images/Set-ip-adress-using-DHCP.png" alt="Set-ip-adress-using-DHCP" /></p>
-
-<p><img src="/images/CentOS-7-check-ip-address.png" alt="CentOS-7-check-ip-address" /></p>
+<p>You must define a <span style="font-family: monospace">body</span></p>
 
 
+<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 

@@ -311,9 +311,20 @@
 
 
 
-<p>SSH</p>
+<h2>ERROR</h2> 
+
+<p>You must define a <span style="font-family: monospace">overview</span></p>
 
 
+<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 
@@ -332,22 +343,7 @@
 
 
 
-<li><a href="#how-ssh-communication-is-established">How SSH communication is established</a></li>
-
-
-
-
-<li><a href="#how-to-generate-ssh-keypair">How to generate SSH keypair</a></li>
-
-
-
-
-<li><a href="#install-public-key-to-host-machine">Install public key to host machine</a></li>
-
-
-
-
-<li><a href="#references">References</a></li>
+<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
 
 
 
@@ -370,38 +366,20 @@
 </ul>
 
 
-<h2 id="how-ssh-communication-is-established">How SSH communication is established</h2>
+<h2>ERROR</h2> 
 
-<ul>
-<li><p>The client sends a request to the server for a secure session. The server responds by sending its X.509 digital certificate to the client.</p></li>
-
-<li><p>The client receives the server&rsquo;s X.509 digital certificate.</p></li>
-
-<li><p>The client authenticates the server, using a list of known certificate authorities.</p></li>
-
-<li><p>The client generates a random symmetric key and encrypts it using server&rsquo;s public key.</p></li>
-
-<li><p>The server decrypts the message with private key and extracts the symmetric key sent by client.</p></li>
-
-<li><p>The client and server now both know the symmetric key and can use the SSL encryption process to encrypt and decrypt the information contained in the client request and the server response.</p></li>
-</ul>
-
-<h2 id="how-to-generate-ssh-keypair">How to generate SSH keypair</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ssh-keygen -t rsa -b <span style="color:#666">2048</span> -C <span style="color:#b44">&#34;your_email@example.com&#34;</span>
-
-ssh keygen will create <span style="color:#666">2</span> files in .ssh default path which are id_rsa and id_rsa.pub  
-id_rsa file will have private key  
-id_rsa.pub will have the public key</code></pre></div>
-<p><img src="/images/Linux/ssh-keygen.png" alt="ssh-keygen" /></p>
-
-<h2 id="install-public-key-to-host-machine">Install public key to host machine</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ssh-copy-id user@host
-<span style="color:#080;font-style:italic"># This will add public key from ~/.ssh/id_rsa.pub on your system to /home/USER/authorized_keys on target HOST</span></code></pre></div>
-<h2 id="references">References</h2>
-
-<p><a href="https://wiki.centos.org/HowTos/Network/SecuringSSH" target="_blank">Securing SSH</a></p>
+<p>You must define a <span style="font-family: monospace">body</span></p>
 
 
+<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 

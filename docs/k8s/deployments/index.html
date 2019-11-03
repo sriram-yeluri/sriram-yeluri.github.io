@@ -327,9 +327,20 @@
 
 
 
-<p>Deployments in Kubernetes</p>
+<h2>ERROR</h2> 
+
+<p>You must define a <span style="font-family: monospace">overview</span></p>
 
 
+<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 
@@ -348,22 +359,7 @@
 
 
 
-<li><a href="#deployment">Deployment</a></li>
-
-
-
-
-<li><a href="#nexus-deployment">Nexus Deployment</a></li>
-
-
-
-
-<li><a href="#nginx-deployment">nginx deployment</a></li>
-
-
-
-
-<li><a href="#cleanup">Cleanup</a></li>
+<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
 
 
 
@@ -386,118 +382,20 @@
 </ul>
 
 
-<p>The Deployment instructs Kubernetes how to create and update instances of your application.</p>
+<h2>ERROR</h2> 
 
-<p>The Kubernetes master schedules mentioned application instances onto individual Nodes in the cluster.</p>
-
-<p>Once the application instances are created, a Kubernetes Deployment Controller continuously monitors those instances.</p>
-
-<h2 id="deployment">Deployment</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl create deployment hello-node --image<span style="color:#666">=</span>gcr.io/hello-minikube-zero-install/hello-node
-
-deployment.apps/hello-node created
-
-$ kubectl get deployments
-
-NAME         READY   UP-TO-DATE   AVAILABLE   AGE
-hello-node   <span style="color:#666">1</span>/1     <span style="color:#666">1</span>            <span style="color:#666">1</span>           19s
-
-$ kubectl get pods
-NAME                          READY   STATUS    RESTARTS   AGE
-hello-node-55b49fb9f8-bkmnb   <span style="color:#666">1</span>/1     Running   <span style="color:#666">0</span>          43s
+<p>You must define a <span style="font-family: monospace">body</span></p>
 
 
-$ kubectl get events
+<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
+be displayed under the heading <b></b>.
 
-LAST SEEN   TYPE     REASON                    OBJECT                             MESSAGE
+To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
 
-94s         Normal   Scheduled                 pod/hello-node-55b49fb9f8-bkmnb    Successfully assigned default/hello-node-55b49fb9f8-bkmnb to minikube
-92s         Normal   Pulling                   pod/hello-node-55b49fb9f8-bkmnb    Pulling image <span style="color:#b44">&#34;gcr.io/hello-minikube-zero-install/hello-node&#34;</span>
-91s         Normal   Pulled                    pod/hello-node-55b49fb9f8-bkmnb    Successfully pulled image <span style="color:#b44">&#34;gcr.io/hello-minikube-zero-install/hello-node&#34;</span>
-90s         Normal   Created                   pod/hello-node-55b49fb9f8-bkmnb    Created container hello-node
-90s         Normal   Started                   pod/hello-node-55b49fb9f8-bkmnb    Started container hello-node
-94s         Normal   SuccessfulCreate          replicaset/hello-node-55b49fb9f8   Created pod: hello-node-55b49fb9f8-bkmnb
-94s         Normal   ScalingReplicaSet         deployment/hello-node              Scaled up replica <span style="color:#a2f">set</span> hello-node-55b49fb9f8 to <span style="color:#666">1</span>
-4m34s       Normal   NodeHasSufficientMemory   node/minikube                      Node minikube status is now: NodeHasSufficientMemory
-4m34s       Normal   NodeHasNoDiskPressure     node/minikube                      Node minikube status is now: NodeHasNoDiskPressure
-4m34s       Normal   NodeHasSufficientPID      node/minikube                      Node minikube status is now: NodeHasSufficientPID
-4m11s       Normal   RegisteredNode            node/minikube                      Node minikube event: Registered Node minikube in Controller
-4m6s        Normal   Starting                  node/minikube                      Starting kube-proxy.
 
-$ kubectl config view
 
-apiVersion: v1
-clusters:
-- cluster:
-    certificate-authority: /root/.minikube/ca.crt
-    server: https://172.17.0.27:8443
-  name: minikube
-contexts:
-- context:
-    cluster: minikube
-    user: minikube
-  name: minikube
-current-context: minikube
-kind: Config
-preferences: <span style="color:#666">{}</span>
-users:
-- name: minikube
-  user:
-    client-certificate: /root/.minikube/client.crt
-    client-key: /root/.minikube/client.key</code></pre></div>
-<h2 id="nexus-deployment">Nexus Deployment</h2>
 
-<p><code>kubectl run nexus --image=sonatype/nexus3:3.2.1 --port 8081</code></p>
-
-<p>Expose service:<br />
-<code>kubectl expose deployment nexus --type=NodePort</code></p>
-
-<p>Access the service:
-<code>Minikube service nexus</code></p>
-
-<h2 id="nginx-deployment">nginx deployment</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#080;font-style:italic"># nginx-deployment.yaml</span><span style="color:#bbb">
-</span><span style="color:#bbb"></span>apiVersion:<span style="color:#bbb"> </span>apps/v1<span style="color:#bbb">
-</span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>Deployment<span style="color:#bbb">
-</span><span style="color:#bbb"></span>metadata:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>name:<span style="color:#bbb"> </span>nginx-deployment<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>labels:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>app:<span style="color:#bbb"> </span>nginx<span style="color:#bbb">
-</span><span style="color:#bbb"></span>spec:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>replicas:<span style="color:#bbb"> </span><span style="color:#666">3</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span>selector:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>matchLabels:<span style="color:#bbb">
-</span><span style="color:#bbb">      </span>app:<span style="color:#bbb"> </span>nginx<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>template:<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>metadata:<span style="color:#bbb">
-</span><span style="color:#bbb">      </span>labels:<span style="color:#bbb">
-</span><span style="color:#bbb">        </span>app:<span style="color:#bbb"> </span>nginx<span style="color:#bbb">
-</span><span style="color:#bbb">    </span>spec:<span style="color:#bbb">
-</span><span style="color:#bbb">      </span>containers:<span style="color:#bbb">
-</span><span style="color:#bbb">      </span>-<span style="color:#bbb"> </span>name:<span style="color:#bbb"> </span>nginx<span style="color:#bbb">
-</span><span style="color:#bbb">        </span>image:<span style="color:#bbb"> </span>nginx:<span style="color:#666">1.7</span>.<span style="color:#666">9</span><span style="color:#bbb">
-</span><span style="color:#bbb">        </span>ports:<span style="color:#bbb">
-</span><span style="color:#bbb">        </span>-<span style="color:#bbb"> </span>containerPort:<span style="color:#bbb"> </span><span style="color:#666">80</span></code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl apply -f nginx-deployment.yaml
-deployment.apps/nginx-deployment created
-$ kubectl get events
-$ kubectl get pods
-$ kubectl delete deployment nginx-deployment
-deployment.extensions <span style="color:#b44">&#34;nginx-deployment&#34;</span> deleted</code></pre></div>
-<h2 id="cleanup">Cleanup</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl get deployments
-
-NAME         READY   UP-TO-DATE   AVAILABLE   AGE
-hello-node   <span style="color:#666">1</span>/1     <span style="color:#666">1</span>            <span style="color:#666">1</span>           4m16s
-
-$ kubectl delete deployment hello-node
-deployment.extensions <span style="color:#b44">&#34;hello-node&#34;</span> deleted
-
-$ kubectl get deployments
-No resources found.
-
-$ kubectl get pods
-No resources found.</code></pre></div>
-
+</p>
 
 
 

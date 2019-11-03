@@ -327,9 +327,20 @@
 
 
 
-<p>minikube is a tool/utility which runs a single node kuberbetes cluster using a virtual box. This tool helps in learning k8s with local setup.</p>
+<h2>ERROR</h2> 
+
+<p>You must define a <span style="font-family: monospace">overview</span></p>
 
 
+<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 
@@ -348,42 +359,7 @@
 
 
 
-<li><a href="#starting-minikube-for-the-first-time">starting minikube for the first time</a></li>
-
-
-
-
-<li><a href="#status">status</a></li>
-
-
-
-
-<li><a href="#minikube-service-list">minikube service list</a></li>
-
-
-
-
-<li><a href="#minikube-stop">minikube stop</a></li>
-
-
-
-
-<li><a href="#restarting-minikube">restarting minikube</a></li>
-
-
-
-
-<li><a href="#enable-metrics-service-and-listing-all-apiservices">Enable metrics service and listing all apiservices</a></li>
-
-
-
-
-<li><a href="#minikube-behind-proxy">Minikube behind Proxy</a></li>
-
-
-
-
-<li><a href="#references">References</a></li>
+<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
 
 
 
@@ -406,103 +382,20 @@
 </ul>
 
 
-<h2 id="starting-minikube-for-the-first-time">starting minikube for the first time</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sriram@sriram-Inspiron-5567:~/k8s$ minikube start
-😄  minikube v1.2.0 on linux <span style="color:#666">(</span>amd64<span style="color:#666">)</span>
-💿  Downloading Minikube ISO ...
- <span style="color:#666">129</span>.33 MB / <span style="color:#666">129</span>.33 MB <span style="color:#666">[============================================]</span> <span style="color:#666">100</span>.00% 0s
-🔥  Creating virtualbox VM <span style="color:#666">(</span><span style="color:#b8860b">CPUs</span><span style="color:#666">=</span><span style="color:#666">2</span>, <span style="color:#b8860b">Memory</span><span style="color:#666">=</span>2048MB, <span style="color:#b8860b">Disk</span><span style="color:#666">=</span>20000MB<span style="color:#666">)</span> ...
-🐳  Configuring environment <span style="color:#a2f;font-weight:bold">for</span> Kubernetes v1.15.0 on Docker <span style="color:#666">18</span>.09.6
-💾  Downloading kubeadm v1.15.0
-💾  Downloading kubelet v1.15.0
-🚜  Pulling images ...
-🚀  Launching Kubernetes ... 
-⌛  Verifying: apiserver proxy etcd scheduler controller dns
-🏄  Done! kubectl is now configured to use <span style="color:#b44">&#34;minikube&#34;</span></code></pre></div>
-<h2 id="status">status</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ minikube status
-host: Running
-kubelet: Running
-apiserver: Running
-kubectl: Correctly Configured: pointing to minikube-vm at <span style="color:#666">192</span>.168.99.100</code></pre></div>
-<h2 id="minikube-service-list">minikube service list</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ minikube service list
+<h2>ERROR</h2> 
 
-|-------------|------------|--------------|
-|  NAMESPACE  |    NAME    |     URL      |
-|-------------|------------|--------------|
-| default     | kubernetes | No node port |
-| kube-system | kube-dns   | No node port |
-|-------------|------------|--------------|</code></pre></div>
-<h2 id="minikube-stop">minikube stop</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ minikube stop
-✋  Stopping <span style="color:#b44">&#34;minikube&#34;</span> in virtualbox ...
-🛑  <span style="color:#b44">&#34;minikube&#34;</span> stopped.
-
-$ minikube status
-host: Stopped
-kubelet:
-apiserver:
-kubectl:</code></pre></div>
-<h2 id="restarting-minikube">restarting minikube</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sriram@sriram-Inspiron-5567:~/k8s$ minikube start
-😄  minikube v1.2.0 on linux <span style="color:#666">(</span>amd64<span style="color:#666">)</span>
-💡  Tip: Use <span style="color:#b44">&#39;minikube start -p &lt;name&gt;&#39;</span> to create a new cluster, or <span style="color:#b44">&#39;minikube delete&#39;</span> to delete this one.
-🔄  Restarting existing virtualbox VM <span style="color:#a2f;font-weight:bold">for</span> <span style="color:#b44">&#34;minikube&#34;</span> ...
-⌛  Waiting <span style="color:#a2f;font-weight:bold">for</span> SSH access ...
-🐳  Configuring environment <span style="color:#a2f;font-weight:bold">for</span> Kubernetes v1.15.0 on Docker <span style="color:#666">18</span>.09.6
-🔄  Relaunching Kubernetes v1.15.0 using kubeadm ... 
-⌛  Verifying: apiserver proxy etcd scheduler controller dns
-🏄  Done! kubectl is now configured to use <span style="color:#b44">&#34;minikube&#34;</span></code></pre></div>
-<h2 id="enable-metrics-service-and-listing-all-apiservices">Enable metrics service and listing all apiservices</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ minikube addons <span style="color:#a2f">enable</span> metrics-server
-✅  metrics-server was successfully enabled
-
-sriram@sriram-Inspiron-5567:~/k8s$ kubectl get apiservices
-NAME                                   SERVICE                      AVAILABLE   AGE
-v1.                                    Local                        True        31m
-v1.apps                                Local                        True        31m
-v1.authentication.k8s.io               Local                        True        31m
-v1.authorization.k8s.io                Local                        True        31m
-v1.autoscaling                         Local                        True        31m
-v1.batch                               Local                        True        31m
-v1.coordination.k8s.io                 Local                        True        31m
-v1.networking.k8s.io                   Local                        True        31m
-v1.rbac.authorization.k8s.io           Local                        True        31m
-v1.scheduling.k8s.io                   Local                        True        31m
-v1.storage.k8s.io                      Local                        True        31m
-v1beta1.admissionregistration.k8s.io   Local                        True        31m
-v1beta1.apiextensions.k8s.io           Local                        True        31m
-v1beta1.apps                           Local                        True        31m
-v1beta1.authentication.k8s.io          Local                        True        31m
-v1beta1.authorization.k8s.io           Local                        True        31m
-v1beta1.batch                          Local                        True        31m
-v1beta1.certificates.k8s.io            Local                        True        31m
-v1beta1.coordination.k8s.io            Local                        True        31m
-v1beta1.events.k8s.io                  Local                        True        31m
-v1beta1.extensions                     Local                        True        31m
-v1beta1.metrics.k8s.io                 kube-system/metrics-server   True        95s
-v1beta1.networking.k8s.io              Local                        True        31m
-v1beta1.node.k8s.io                    Local                        True        31m
-v1beta1.policy                         Local                        True        31m
-v1beta1.rbac.authorization.k8s.io      Local                        True        31m
-v1beta1.scheduling.k8s.io              Local                        True        31m
-v1beta1.storage.k8s.io                 Local                        True        31m
-v1beta2.apps                           Local                        True        31m
-v2beta1.autoscaling                    Local                        True        31m
-v2beta2.autoscaling                    Local                        True        31m</code></pre></div>
-<h2 id="minikube-behind-proxy">Minikube behind Proxy</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#a2f">export</span> <span style="color:#b8860b">HTTP_PROXY</span><span style="color:#666">=</span>http://&lt;proxy hostname:port&gt;
-<span style="color:#a2f">export</span> <span style="color:#b8860b">HTTPS_PROXY</span><span style="color:#666">=</span>https://&lt;proxy hostname:port&gt;
-<span style="color:#a2f">export</span> <span style="color:#b8860b">NO_PROXY</span><span style="color:#666">=</span>localhost,127.0.0.1,10.96.0.0/12,192.168.99.0/24,192.168.39.0/24
-
-minikube start</code></pre></div>
-<h2 id="references">References</h2>
-
-<p><a href="https://kubernetes.io/docs/setup/learning-environment/minikube/" target="_blank">minikube</a>
-<a href="https://github.com/kubernetes/minikube/blob/master/docs/http_proxy.md" target="_blank">http-proxy</a></p>
+<p>You must define a <span style="font-family: monospace">body</span></p>
 
 
+<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 

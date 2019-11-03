@@ -265,14 +265,20 @@
 
 
 
-<ul>
-<li>Automation tool for configuration management</li>
-<li>Tool for automated deployments</li>
-<li>Agent less</li>
-<li>Yaml syntax playbooks</li>
-</ul>
+<h2>ERROR</h2> 
+
+<p>You must define a <span style="font-family: monospace">overview</span></p>
 
 
+<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 
@@ -291,32 +297,7 @@
 
 
 
-<li><a href="#installation-of-ansible">Installation of Ansible</a></li>
-
-
-
-
-<li><a href="#setting-up-inventory">Setting up Inventory</a></li>
-
-
-
-
-<li><a href="#setting-up-ansible-configuration-file">Setting up Ansible Configuration file</a></li>
-
-
-
-
-<li><a href="#ansible-tasks">Ansible Tasks</a></li>
-
-
-
-
-<li><a href="#using-valut-in-ansible">Using valut in Ansible</a></li>
-
-
-
-
-<li><a href="#docker-ansible-control-machine">Docker ansible control machine</a></li>
+<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
 
 
 
@@ -339,73 +320,20 @@
 </ul>
 
 
-<h2 id="installation-of-ansible">Installation of Ansible</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum update -y <span style="color:#666">&amp;&amp;</span> <span style="color:#b62;font-weight:bold">\
-</span><span style="color:#b62;font-weight:bold"></span>yum install ansible -y</code></pre></div>
-<h2 id="setting-up-inventory">Setting up Inventory</h2>
+<h2>ERROR</h2> 
 
-<ul>
-<li>Inventory file lists hostnames and groups in INI-like format</li>
-<li>Inventory file can be static or Dynamic</li>
-<li>Inventory file can specify IP addresses, hostnames and groups</li>
-<li>Inventory file can include specific parameters like non standard ports, aliases</li>
-<li>Default location for ansible inventory : /etc/ansible/hosts</li>
-<li>Inventory can also be located else where and used with -i flag by providing the path in command line</li>
-<li>Important to have local group as ansible communicates back to host instance</li>
-</ul>
-
-<p>Example :</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Ansible" data-lang="Ansible">[webservers]
-web1 ansible_host=www.mywebserver.com:5309
-
-[loadbalancers]
-lb ansible_host=192.168.10.2
-
-[local]
-control ansible_connection=local --&gt; this is required to tell ansible not to ssh to local host</code></pre></div>
-<p>Inventory Commands:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Ansible" data-lang="Ansible">ansible --list-hosts all</code></pre></div>
-<h2 id="setting-up-ansible-configuration-file">Setting up Ansible Configuration file</h2>
-
-<p>Ansible will search for configuration file in below order</p>
-
-<ol>
-<li>ANSIBLE_CONFIG (environment variable if set)</li>
-<li>ansible.cfg (in current directory)</li>
-<li><code>~/.ansible.cfg</code> (in home directory)</li>
-<li><code>/etc/ansible/ansible.cfg</code></li>
-</ol>
-
-<p>Create ansible.cfg file in project folder, to control ansible environment settings</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Ansible" data-lang="Ansible"># ansible.cfg
-
-[defaults]
-inventory = ./inventory-file
-remote_user = user_id_of_host_servers
-private_key_file = ~/.ssh/ssh_key_file_of_host_servers.pem
-host_key_checking = FALSE --&gt; do not check host key finger print while ssh when connecting for first time</code></pre></div>
-<h2 id="ansible-tasks">Ansible Tasks</h2>
-
-<p>Ansible tasks allows us to run adhoc commands against our inventory file.
-In simple terms , Task is a call to ansible module.</p>
-
-<p>syntax: ansible options host-pattern<br />
-Ex: ansible -m ping all &mdash;&gt; ansible-command module_flag module_name inventory</p>
-
-<h2 id="using-valut-in-ansible">Using valut in Ansible</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Ansible" data-lang="Ansible">ansible-playbook -i hosts site.yml --ask-vault-pass
-ansible-playbook -i hosts site.yml --vault-password-file vault-pass</code></pre></div>
-<h2 id="docker-ansible-control-machine">Docker ansible control machine</h2>
-
-<p>Inorder to leaverage the container technology, i have created a simple docker image from centos and installed ansible. So we can spin up a container and use this as a control machine to run ansible playbooks.<br />
-<a href="https://hub.docker.com/r/yeluris/ansibleimage/" target="_blank">Centos Docker Image with Ansible</a></p>
-
-<h3 id="references">References</h3>
-
-<p><a href="https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html" target="_blank">Installation Guide</a><br />
-<a href="https://docs.ansible.com/ansible/latest/reference_appendices/config.html#ansible-configuration-settings" target="_blank">Configuration File</a></p>
+<p>You must define a <span style="font-family: monospace">body</span></p>
 
 
+<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 

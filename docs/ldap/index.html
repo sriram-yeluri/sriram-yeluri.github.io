@@ -282,9 +282,20 @@
 
 
 
-<p>OpenLDAP is a free and opensource LightWeight Directory Access Protocol software.</p>
+<h2>ERROR</h2> 
+
+<p>You must define a <span style="font-family: monospace">overview</span></p>
 
 
+<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 
@@ -303,37 +314,7 @@
 
 
 
-<li><a href="#docker-images-for-openldap">Docker images for OpenLDAP</a></li>
-
-
-
-
-<li><a href="#generate-password-for-slapd-conf-file">Generate password for slapd.conf file</a></li>
-
-
-
-
-<li><a href="#update-slapd-conf">Update slapd.conf</a></li>
-
-
-
-
-<li><a href="#how-to-know-the-version-of-openldap">How to know the version of OpenLdap</a></li>
-
-
-
-
-<li><a href="#how-to-start-the-openldap-server-manually">How to start the OpenLDAP server manually</a></li>
-
-
-
-
-<li><a href="#how-to-take-openldap-backup-manually">How to take OpenLDAP backup manually</a></li>
-
-
-
-
-<li><a href="#how-to-restore-openldap-manually">How to restore OpenLDAP manually</a></li>
+<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
 
 
 
@@ -356,40 +337,20 @@
 </ul>
 
 
-<h2 id="docker-images-for-openldap">Docker images for OpenLDAP</h2>
+<h2>ERROR</h2> 
 
-<p><a href="https://hub.docker.com/r/yeluris/openldap/" target="_blank">Docker Image for OpenLDAP</a><br />
-<a href="https://bitbucket.org/sriramyeluri/openldap" target="_blank">How to compile and Build OpenLdap</a></p>
-
-<h2 id="generate-password-for-slapd-conf-file">Generate password for slapd.conf file</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"> /appl/openldap/sbin/slappasswd</code></pre></div>
-<h2 id="update-slapd-conf">Update slapd.conf</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"> ./slaptest -f  /appl/openldap/etc/openldap/slapd.conf -F /appl/openldap/etc/openldap/slapd.d </code></pre></div>
-<h2 id="how-to-know-the-version-of-openldap">How to know the version of OpenLdap</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"> /appl/openldap/libexec/slapd -VV
- /appl/openldap/bin/ldapsearch -VV</code></pre></div>
-<h2 id="how-to-start-the-openldap-server-manually">How to start the OpenLDAP server manually</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># Go to the path /appl/openldap/libexec and run OpenLDAP daemon</span>
- ./slapd -h <span style="color:#b44">&#34;ldap://0.0.0.0:10389 ldaps://0.0.0.0:10636&#34;</span></code></pre></div>
-<h2 id="how-to-take-openldap-backup-manually">How to take OpenLDAP backup manually</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># Use slapcat utility from OpenLDAP to create a backup file</span>
- /appl/openldap/sbin/slapcat -b <span style="color:#b44">&#34;cn=root,o=sccm&#34;</span> -l openldap-backupfile.ldif</code></pre></div>
-<h2 id="how-to-restore-openldap-manually">How to restore OpenLDAP manually</h2>
-
-<ul>
-<li>Stop OpenLDAP service by stopping slapd daemon</li>
-<li>Go to <code>/appl/openldap/var/openldap-data-sccm</code> and delete all the files</li>
-<li>Execute the slapadd command <code>./slapadd -q -l /appl/openldap/backup/backupfile.ldif</code></li>
-<li>Change the permissions <code>chmod -R 700 /appl/openldap/var/openldap-data</code></li>
-<li>Start OpenLDAP service by starting slapd daemon</li>
-</ul>
-
-<h3 id="references">References</h3>
-
-<p><a href="https://www.openldap.org/" target="_blank">OpenLDAP</a><br />
-<a href="http://www.zytrax.com/books/ldap/ch6/slapd-config.html" target="_blank">OpenLDAP using OLC-online configuration</a></p>
+<p>You must define a <span style="font-family: monospace">body</span></p>
 
 
+<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 
