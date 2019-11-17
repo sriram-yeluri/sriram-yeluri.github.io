@@ -315,20 +315,9 @@
 
 
 
-<h2>ERROR</h2> 
-
-<p>You must define a <span style="font-family: monospace">overview</span></p>
+<p>Docker</p>
 
 
-<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 
@@ -347,7 +336,22 @@ To get rid of this message and take advantage of this template, capture the <i>o
 
 
 
-<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
+<li><a href="#install-docker-ce-on-centos7">Install Docker CE on Centos7</a></li>
+
+
+
+
+<li><a href="#docker-config-file">Docker config file</a></li>
+
+
+
+
+<li><a href="#var-run-docker-sock">/var/run/docker.sock</a></li>
+
+
+
+
+<li><a href="#how-to-enable-docker-remote-api-on-ubuntu">How to enable Docker Remote API on Ubuntu</a></li>
 
 
 
@@ -370,20 +374,61 @@ To get rid of this message and take advantage of this template, capture the <i>o
 </ul>
 
 
-<h2>ERROR</h2> 
+<h2 id="install-docker-ce-on-centos7">Install Docker CE on Centos7</h2>
 
-<p>You must define a <span style="font-family: monospace">body</span></p>
+<p><a href="https://docs.docker.com/engine/installation/linux/docker-ce/centos/#install-docker-ce" target="_blank">Docker CE on Centos7</a></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># Installing dockerCE</span>
+yum install -y yum-utils <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>  device-mapper-persistent-data <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>  lvm2
 
+yum-config-manager <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    --add-repo <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>    https://download.docker.com/linux/centos/docker-ce.repo
 
-<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
-be displayed under the heading <b></b>.
+yum install docker-ce
 
-To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
+<span style="color:#080;font-style:italic"># Installing dockerCE</span>
 
+<span style="color:#080;font-style:italic"># to run docker as non root user</span>
+usermod -aG docker &lt;user_id&gt;
 
+<span style="color:#666">[</span>root@centos7vm ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># systemctl enable docker</span>
+Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
 
+<span style="color:#666">[</span>root@centos7vm ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># chkconfig docker on</span>
+Note: Forwarding request to <span style="color:#b44">&#39;systemctl enable docker.service&#39;</span>.
 
-</p>
+service docker start
+
+docker ps</code></pre></div>
+<h2 id="docker-config-file">Docker config file</h2>
+
+<p>login credentials are saved in <code>/home/username/.docker/config.json</code></p>
+
+<h2 id="var-run-docker-sock">/var/run/docker.sock</h2>
+
+<p>This is an Unix socket the Docker daemon listens on by default, and it can be used to communicate with the daemon from within a container.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic">#Example, portainer an opensource web interface to manage containers using bind mount</span>
+$ docker container run -d <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>  -p <span style="color:#666">9000</span>:9000 <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>  -v /var/run/docker.sock:/var/run/docker.sock <span style="color:#b62;font-weight:bold">\ </span><span style="color:#080;font-style:italic">#bind mount</span>
+  portainer/portainer</code></pre></div>
+<blockquote class="caution">
+  <div><strong>Caution:</strong> Bind mounting the Docker daemon socket gives a lot of power to a container as it can control the daemon. It must be used with caution, and only with containers we can trust.</div>
+</blockquote>
+
+<h2 id="how-to-enable-docker-remote-api-on-ubuntu">How to enable Docker Remote API on Ubuntu</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo vi /lib/systemd/system/docker.service
+
+<span style="color:#080;font-style:italic"># Modify the line that starts with ExecStart</span>
+<span style="color:#b8860b">ExecStart</span><span style="color:#666">=</span>/usr/bin/docker daemon -H fd:// -H tcp://0.0.0.0:4243
+
+systemctl daemon-reload
+sudo service docker restart</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic">#Testing</span>
+sriram@optimus-prime:~$ curl http://localhost:4243/version
+<span style="color:#666">{</span><span style="color:#b44">&#34;Platform&#34;</span>:<span style="color:#666">{</span><span style="color:#b44">&#34;Name&#34;</span>:<span style="color:#b44">&#34;&#34;</span><span style="color:#666">}</span>,<span style="color:#b44">&#34;Components&#34;</span>:<span style="color:#666">[{</span><span style="color:#b44">&#34;Name&#34;</span>:<span style="color:#b44">&#34;Engine&#34;</span>,<span style="color:#b44">&#34;Version&#34;</span>:<span style="color:#b44">&#34;18.03.1-ce&#34;</span>,<span style="color:#b44">&#34;Details&#34;</span>:<span style="color:#666">{</span><span style="color:#b44">&#34;ApiVersion&#34;</span>:<span style="color:#b44">&#34;1.37&#34;</span>,<span style="color:#b44">&#34;Arch&#34;</span>:<span style="color:#b44">&#34;amd64&#34;</span>,<span style="color:#b44">&#34;BuildTime&#34;</span>:<span style="color:#b44">&#34;2018-04-26T07:15:45.000000000+00:00&#34;</span>,<span style="color:#b44">&#34;Experimental&#34;</span>:<span style="color:#b44">&#34;false&#34;</span>,<span style="color:#b44">&#34;GitCommit&#34;</span>:<span style="color:#b44">&#34;9ee9f40&#34;</span>,<span style="color:#b44">&#34;GoVersion&#34;</span>:<span style="color:#b44">&#34;go1.9.5&#34;</span>,<span style="color:#b44">&#34;KernelVersion&#34;</span>:<span style="color:#b44">&#34;4.15.0-38-generic&#34;</span>,<span style="color:#b44">&#34;MinAPIVersion&#34;</span>:<span style="color:#b44">&#34;1.12&#34;</span>,<span style="color:#b44">&#34;Os&#34;</span>:<span style="color:#b44">&#34;linux&#34;</span><span style="color:#666">}}]</span>,<span style="color:#b44">&#34;Version&#34;</span>:<span style="color:#b44">&#34;18.03.1-ce&#34;</span>,<span style="color:#b44">&#34;ApiVersion&#34;</span>:<span style="color:#b44">&#34;1.37&#34;</span>,<span style="color:#b44">&#34;MinAPIVersion&#34;</span>:<span style="color:#b44">&#34;1.12&#34;</span>,<span style="color:#b44">&#34;GitCommit&#34;</span>:<span style="color:#b44">&#34;9ee9f40&#34;</span>,<span style="color:#b44">&#34;GoVersion&#34;</span>:<span style="color:#b44">&#34;go1.9.5&#34;</span>,<span style="color:#b44">&#34;Os&#34;</span>:<span style="color:#b44">&#34;linux&#34;</span>,<span style="color:#b44">&#34;Arch&#34;</span>:<span style="color:#b44">&#34;amd64&#34;</span>,<span style="color:#b44">&#34;KernelVersion&#34;</span>:<span style="color:#b44">&#34;4.15.0-38-generic&#34;</span>,<span style="color:#b44">&#34;BuildTime&#34;</span>:<span style="color:#b44">&#34;2018-04-26T07:15:45.000000000+00:00&#34;</span><span style="color:#666">}</span></code></pre></div>
+
 
 
 

@@ -327,20 +327,9 @@
 
 
 
-<h2>ERROR</h2> 
-
-<p>You must define a <span style="font-family: monospace">overview</span></p>
+<p>Troubleshooting</p>
 
 
-<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 
@@ -355,11 +344,6 @@ To get rid of this message and take advantage of this template, capture the <i>o
 
 
 
-
-
-
-
-<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
 
 
 
@@ -382,20 +366,37 @@ To get rid of this message and take advantage of this template, capture the <i>o
 </ul>
 
 
-<h2>ERROR</h2> 
+<p><code>kubectl get</code> - list resources</p>
 
-<p>You must define a <span style="font-family: monospace">body</span></p>
+<p><code>kubectl describe</code> - show detailed information about a resource</p>
 
+<p><code>kubectl logs</code> - print the logs from a container in a pod</p>
 
-<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
-be displayed under the heading <b></b>.
+<p><code>kubectl exec</code> - execute a command on a container in a pod</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ <span style="color:#a2f">export</span> <span style="color:#b8860b">POD_NAME</span><span style="color:#666">=</span><span style="color:#a2f;font-weight:bold">$(</span>kubectl get pods -o go-template --template <span style="color:#b44">&#39;{{range .items}}{{.metadata.name}}{{&#34;\n&#34;}}{{end}}&#39;</span><span style="color:#a2f;font-weight:bold">)</span>
 
-To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
+$ <span style="color:#a2f">echo</span> <span style="color:#b8860b">$POD_NAME</span>
+kubernetes-bootcamp-5b48cfdcbd-5ddlw
 
+$ kubectl <span style="color:#a2f">exec</span> <span style="color:#b8860b">$POD_NAME</span> env
 
+<span style="color:#b8860b">PATH</span><span style="color:#666">=</span>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+<span style="color:#b8860b">HOSTNAME</span><span style="color:#666">=</span>kubernetes-bootcamp-5b48cfdcbd-5ddlw
+<span style="color:#b8860b">KUBERNETES_SERVICE_HOST</span><span style="color:#666">=</span><span style="color:#666">10</span>.96.0.1
+<span style="color:#b8860b">KUBERNETES_SERVICE_PORT</span><span style="color:#666">=</span><span style="color:#666">443</span>
+<span style="color:#b8860b">KUBERNETES_SERVICE_PORT_HTTPS</span><span style="color:#666">=</span><span style="color:#666">443</span>
+<span style="color:#b8860b">KUBERNETES_PORT</span><span style="color:#666">=</span>tcp://10.96.0.1:443
+<span style="color:#b8860b">KUBERNETES_PORT_443_TCP</span><span style="color:#666">=</span>tcp://10.96.0.1:443
+<span style="color:#b8860b">KUBERNETES_PORT_443_TCP_PROTO</span><span style="color:#666">=</span>tcp
+<span style="color:#b8860b">KUBERNETES_PORT_443_TCP_PORT</span><span style="color:#666">=</span><span style="color:#666">443</span>
+<span style="color:#b8860b">KUBERNETES_PORT_443_TCP_ADDR</span><span style="color:#666">=</span><span style="color:#666">10</span>.96.0.1
+<span style="color:#b8860b">NPM_CONFIG_LOGLEVEL</span><span style="color:#666">=</span>info
+<span style="color:#b8860b">NODE_VERSION</span><span style="color:#666">=</span><span style="color:#666">6</span>.3.1
+<span style="color:#b8860b">HOME</span><span style="color:#666">=</span>/root</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># Start a bash session in the Pod’s container:</span>
+ <span style="color:#080;font-style:italic">## name of the container can be omitted if we only have a single container in the Pod</span>
 
+kubectl <span style="color:#a2f">exec</span> -ti <span style="color:#b8860b">$POD_NAME</span> bash</code></pre></div>
 
-</p>
 
 
 

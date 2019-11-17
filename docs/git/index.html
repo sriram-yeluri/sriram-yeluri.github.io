@@ -288,20 +288,9 @@
 
 
 
-<h2>ERROR</h2> 
-
-<p>You must define a <span style="font-family: monospace">overview</span></p>
+<p>Git is a distributed version control system</p>
 
 
-<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 
@@ -320,7 +309,52 @@ To get rid of this message and take advantage of this template, capture the <i>o
 
 
 
-<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
+<li><a href="#git-config-file">Git config file</a></li>
+
+
+
+
+<li><a href="#basic-git-commands">Basic Git commands</a></li>
+
+
+
+
+<li><a href="#remove-files-from-staging-area">Remove files from staging area</a></li>
+
+
+
+
+<li><a href="#git-tagging">Git Tagging</a></li>
+
+
+
+
+<li><a href="#information-about-remote-repository">Information about Remote Repository</a></li>
+
+
+
+
+<li><a href="#git-branching">Git branching</a></li>
+
+
+
+
+<li><a href="#discard-all-local-changes">Discard all local changes</a></li>
+
+
+
+
+<li><a href="#commit-history">Commit History</a></li>
+
+
+
+
+<li><a href="#revert-commits">Revert commits</a></li>
+
+
+
+
+<li><a href="#compile-git-from-source">Compile Git from Source</a></li>
 
 
 
@@ -343,20 +377,87 @@ To get rid of this message and take advantage of this template, capture the <i>o
 </ul>
 
 
-<h2>ERROR</h2> 
+<h2 id="git-config-file">Git config file</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"> git config --global user.email <span style="color:#b44">&#34;yeluris@gmail.com&#34;</span>
+ git config --global user.name <span style="color:#b44">&#34;Sriram Yeluri&#34;</span>  
+ git config --list  </code></pre></div>
+<h2 id="basic-git-commands">Basic Git commands</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"> git init <span style="color:#666">(</span>initialize a <span style="color:#a2f">local</span> repository<span style="color:#666">)</span>  
+ git add --all <span style="color:#666">(</span>or<span style="color:#666">)</span>  
+ git add <span style="color:#666">[</span>filename<span style="color:#666">]</span> <span style="color:#666">(</span>or<span style="color:#666">)</span>
+ git add . <span style="color:#666">[</span>all changed files <span style="color:#a2f;font-weight:bold">for</span> commit<span style="color:#666">]</span>  
+ git status <span style="color:#666">(</span>show the status of working tree<span style="color:#666">)</span>  
+ git commit -m <span style="color:#b44">&#34;commit message&#34;</span>  
+ git push  <span style="color:#666">(</span>push to remote repository<span style="color:#666">)</span>  
+ git pull <span style="color:#666">(</span>fetch changes from remote repository<span style="color:#666">)</span>  
+ git clone <span style="color:#666">[</span>git repo url<span style="color:#666">]</span>  
+ git fetch <span style="color:#666">(</span>fetch branches, tags from remote repository<span style="color:#666">)</span></code></pre></div>
+<h2 id="remove-files-from-staging-area">Remove files from staging area</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"> git reset file_name  <span style="color:#666">(</span>or<span style="color:#666">)</span>  
+ git reset  <span style="color:#666">(</span>to remove all files from staging area<span style="color:#666">)</span>  </code></pre></div>
+<h2 id="git-tagging">Git Tagging</h2>
 
-<p>You must define a <span style="font-family: monospace">body</span></p>
+<p>Git tagging is used to mark an important history like a release v1.0</p>
+
+<blockquote class="note">
+  <div><strong>Note:</strong> By default git push will not commit the tags to remote server, instead we have to explicitly mention the remote</div>
+</blockquote>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"> git tag -a v1.0 -m <span style="color:#b44">&#34;Reason for tagging&#34;</span>
+ git push origin v1.0
+
+<span style="color:#080;font-style:italic"># If there are multiple tags, then use --tags flag</span>  
+ git push origin --tags <span style="color:#666">(</span>to push all tags<span style="color:#666">)</span>  
+
+<span style="color:#080;font-style:italic"># To list out all the available tags</span>
+ git tag
+ git tag -l <span style="color:#666">(</span>or<span style="color:#666">)</span> --list  <span style="color:#666">(</span>optional<span style="color:#666">)</span></code></pre></div>
+<h2 id="information-about-remote-repository">Information about Remote Repository</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"> git remote -v  </code></pre></div>
+<h2 id="git-branching">Git branching</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#080;font-style:italic"># To display all branches that are present remotely and locally</span>
+ git branch -a
+<span style="color:#080;font-style:italic"># To create a new branch</span>
+ git branch branch_name  
+ git checkout branch_name  </code></pre></div>
+<h2 id="discard-all-local-changes">Discard all local changes</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#080;font-style:italic"># discard all local changes/commits and pull from upstream</span>
+
+git reset --hard origin/master
+git pull origin master</code></pre></div>
+<h2 id="commit-history">Commit History</h2>
+
+<p><code>git log</code></p>
+
+<h2 id="revert-commits">Revert commits</h2>
+
+<p><code>git revert &lt;commit-id&gt;</code></p>
+
+<h2 id="compile-git-from-source">Compile Git from Source</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.22.0.tar.gz
+tar -xvf git-2.22.0.tar.gz
+<span style="color:#a2f">cd</span> git-2.22.0
+make configure
+./configure --prefix<span style="color:#666">=</span>/appl/Git/2.22.0 --with-curl --with-expat
+make all
+make install
+
+<span style="color:#a2f">cd</span> /appl
+tar -cvf git-2.22.0.tar Git/2.22.0</code></pre></div>
+<h3 id="references">References</h3>
+
+<p><a href="https://git-scm.com/" target="_blank">git-scm</a><br />
+<a href="https://git-scm.com/book/en/v2" target="_blank">pro git book</a><br />
+<a href="https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html" target="_blank">Git basic commands by Atlassian</a></p>
+
+<h4 id="video-references">Video References</h4>
+
+<p><html><u><b>Git Tutorial for Beginners: Command-Line Fundamentals</b></u></html></p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/HVsySz-h9r4?autoplay=1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
 
 
-<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 

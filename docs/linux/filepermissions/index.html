@@ -352,20 +352,9 @@
 
 
 
-<h2>ERROR</h2> 
-
-<p>You must define a <span style="font-family: monospace">overview</span></p>
+<p>Linux File Permissions</p>
 
 
-<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 
@@ -380,11 +369,6 @@ To get rid of this message and take advantage of this template, capture the <i>o
 
 
 
-
-
-
-
-<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
 
 
 
@@ -407,20 +391,28 @@ To get rid of this message and take advantage of this template, capture the <i>o
 </ul>
 
 
-<h2>ERROR</h2> 
+<p><code>-rwsrwsrwt</code><br />
+<code>chmod u+s,g+s,o+t dir</code></p>
 
-<p>You must define a <span style="font-family: monospace">body</span></p>
+<ul>
+<li>Sticky bit<br />
+Items in directory may only be deleted by owner.</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># ls -ld /tmp</span>
+drwxrwxrwt. <span style="color:#666">8</span> root root <span style="color:#666">216</span> Oct <span style="color:#666">27</span> <span style="color:#666">11</span>:18 /tmp</code></pre></div>
+<ul>
+<li><p>SGID - Set Group Identity<br />
+Can be set on directories aswell as on files
+Directory : New objects in this directory inherit its group ownership.<br />
+Execuable File : Runs as owining group rather than invoker&rsquo;s group.</p></li>
+
+<li><p>SUID - Set User Identity<br />
+Executable: Program runs as owner, rather than caller.</p></li>
+</ul>
+
+<p><img src="/images/Linux/SpecialPermissions.png" alt="" width="800"/></p>
 
 
-<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 

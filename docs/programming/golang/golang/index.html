@@ -291,20 +291,14 @@
 
 
 
-<h2>ERROR</h2> 
-
-<p>You must define a <span style="font-family: monospace">overview</span></p>
-
-
-<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
+<ul>
+<li>Go is an opensource programming language developed by Google.</li>
+<li>Go is very similar to C programming lauguage.</li>
+<li>Go provides garbage collection, type safety, dynamic-typing capability.</li>
+<li>Go provides a rich standard library, called as packages - <a href="https://golang.org/pkg/" target="_blank">goPackages</a></li>
+</ul>
 
 
-
-
-</p>
 
 
 
@@ -323,7 +317,27 @@ To get rid of this message and take advantage of this template, capture the <i>o
 
 
 
-<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
+<li><a href="#environment-variables">Environment variables</a></li>
+
+
+
+
+<li><a href="#workspaces">Workspaces</a></li>
+
+
+
+
+<li><a href="#ide-for-golang">IDE for golang</a></li>
+
+
+
+
+<li><a href="#getting-help-with-go-commands">Getting help with go commands</a></li>
+
+
+
+
+<li><a href="#how-to-build-go-executables-for-different-architectures">How to build go executables for different architectures</a></li>
 
 
 
@@ -346,20 +360,111 @@ To get rid of this message and take advantage of this template, capture the <i>o
 </ul>
 
 
-<h2>ERROR</h2> 
+<h3 id="getting-started">Getting Started</h3>
 
-<p>You must define a <span style="font-family: monospace">body</span></p>
+<ol>
+<li><a href="https://golang.org/doc/install" target="_blank">How to install and set up Go</a></li>
+<li><a href="https://github.com/golang/go/wiki/SettingGOPATH" target="_blank">How to set custom goPATH</a></li>
+<li><a href="https://golang.org/doc/code.html" target="_blank">How to write Go Code</a></li>
+</ol>
+
+<blockquote class="note">
+  <div><strong>Note:</strong> <strong><em>GOPATH must not be the same path as your Go Installation</em></strong></div>
+</blockquote>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># gopath can be any directory on your system</span>  
+Edit your <span style="color:#b44">`</span>~/.bash_profile<span style="color:#b44">`</span> and add the line: <span style="color:#b44">`</span><span style="color:#a2f">export</span> <span style="color:#b8860b">GOPATH</span><span style="color:#666">=</span><span style="color:#b8860b">$HOME</span>/go<span style="color:#b44">`</span>  
+<span style="color:#a2f">source</span> your bash_profile <span style="color:#b44">`</span><span style="color:#a2f">source</span> ~/.bash_profile<span style="color:#b44">`</span></code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># Set the GOBIN path to generate a binary file when go install is executed.</span>
+ <span style="color:#b44">`</span><span style="color:#a2f">export</span> <span style="color:#b8860b">GOBIN</span><span style="color:#666">=</span><span style="color:#b8860b">$HOME</span>/go/bin<span style="color:#b44">`</span></code></pre></div>
+<h2 id="environment-variables">Environment variables</h2>
+
+<p>Command to check environment variables <code>go env</code></p>
+
+<h2 id="workspaces">Workspaces</h2>
+
+<p>Workspace in go is a directory hierarchy with 3 directories at its root</p>
+
+<ul>
+<li>src : The src directory contains source code.The path below src determines the import path or executable name.</li>
+<li>pkg : contains go installed package objects. Each target operating system and architecture pair has its own subdirectory of pkg<br />
+    format: pkg/GOOS_GOARCH<br />
+    example: pkg/linux_amd64</li>
+<li>bin : contains executable binaries.</li>
+</ul>
+
+<h2 id="ide-for-golang">IDE for golang</h2>
+
+<p><a href="https://github.com/Microsoft/vscode-go" target="_blank">Visual Studio Code with Go language support from Microsoft</a><br />
+<a href="https://github.com/DisposaBoy/GoSublime" target="_blank">goplugin for Sublime Text</a></p>
+
+<h2 id="getting-help-with-go-commands">Getting help with go commands</h2>
+
+<p>go provides extensive command line help by simply using help option as argument,
+For any help related to go , use</p>
+
+<p><code>go help &lt;command&gt;</code></p>
+
+<p>examples:</p>
+
+<p><code>go help build</code></p>
+
+<p><code>go help install</code></p>
+
+<p><code>go help clean</code></p>
+
+<p><code>go help gopath</code></p>
+
+<h2 id="how-to-build-go-executables-for-different-architectures">How to build go executables for different architectures</h2>
+
+<p>The go build command allows us to create executables for all golang supported architectures. To build executables for different architectures <code>GOOS</code> and <code>GOARC</code> arguments need to be set accordingly.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">env GOOS=target<span style="color:#666">-</span>OS GOARCH=target<span style="color:#666">-</span>architecture <span style="color:#a2f;font-weight:bold">go</span> build &lt;<span style="color:#a2f;font-weight:bold">package</span><span style="color:#666">-</span><span style="color:#a2f;font-weight:bold">import</span><span style="color:#666">-</span>path&gt;
+
+sriram<span style="">@</span>optimus<span style="color:#666">-</span>prime:<span style="">~$</span> env GOOS=windows GOARCH=amd64 <span style="color:#a2f;font-weight:bold">go</span> build &lt;path_to_go_src&gt;</code></pre></div>
+<p>To get a complete list of all supported platforms and architectures, use the command : <code>go tool dist list</code></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sriram@optimus-prime:~$ go tool dist list
+android/386
+android/amd64
+android/arm
+android/arm64
+darwin/386
+darwin/amd64
+darwin/arm
+darwin/arm64
+dragonfly/amd64
+freebsd/386
+freebsd/amd64
+freebsd/arm
+linux/386
+linux/amd64
+linux/arm
+linux/arm64
+linux/mips
+linux/mips64
+linux/mips64le
+linux/mipsle
+linux/ppc64
+linux/ppc64le
+linux/s390x
+nacl/386
+nacl/amd64p32
+nacl/arm
+netbsd/386
+netbsd/amd64
+netbsd/arm
+openbsd/386
+openbsd/amd64
+openbsd/arm
+plan9/386
+plan9/amd64
+plan9/arm
+solaris/amd64
+windows/386
+windows/amd64</code></pre></div>
+<h3 id="references">References</h3>
+
+<p><a href="https://www.tutorialspoint.com/go/index.htm" title="title&quot; target=&quot;_blank" target="_blank">golang Tutorial</a><br />
+<a href="https://en.wikipedia.org/wiki/Go_(programming_language)" target="_blank">golang wiki page</a></p>
 
 
-<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 

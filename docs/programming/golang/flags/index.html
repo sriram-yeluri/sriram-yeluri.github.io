@@ -291,20 +291,9 @@
 
 
 
-<h2>ERROR</h2> 
-
-<p>You must define a <span style="font-family: monospace">overview</span></p>
+<p>Golang flags for creating CLI</p>
 
 
-<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 
@@ -319,11 +308,6 @@ To get rid of this message and take advantage of this template, capture the <i>o
 
 
 
-
-
-
-
-<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
 
 
 
@@ -346,20 +330,51 @@ To get rid of this message and take advantage of this template, capture the <i>o
 </ul>
 
 
-<h2>ERROR</h2> 
+<p>Defining flags and using them to create a CLI in golang is achieved by following the below steps.</p>
 
-<p>You must define a <span style="font-family: monospace">body</span></p>
+<p>Import flags package</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a2f;font-weight:bold">import</span> (
+    <span style="color:#b44">&#34;flag&#34;</span>
+)</code></pre></div>
+<p>Define flags</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a2f;font-weight:bold">var</span> name <span style="color:#0b0;font-weight:bold">string</span>
+<span style="color:#a2f;font-weight:bold">var</span> prompt <span style="color:#0b0;font-weight:bold">bool</span></code></pre></div>
+<p>Parse flags</p>
 
+<p>flag.variableType(variable_reference, &ldquo;flag_name&rdquo;, &ldquo;default_value&rdquo;, &ldquo;Usage of flag&rdquo;)</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">flag.<span style="color:#00a000">StringVar</span>(<span style="color:#666">&amp;</span>name,<span style="color:#b44">&#34;name&#34;</span>,<span style="color:#b44">&#34;&#34;</span>,<span style="color:#b44">&#34;required a name to display&#34;</span>)
+flag.<span style="color:#00a000">BoolVar</span>(<span style="color:#666">&amp;</span>prompt,<span style="color:#b44">&#34;prompt&#34;</span>,<span style="color:#b44">&#34;&#34;</span>,<span style="color:#b44">&#34;Use prompt to input a name&#34;</span>)
 
-<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
-be displayed under the heading <b></b>.
+<span style="color:#080;font-style:italic">/* Call this after all flags are defined */</span>
+flag.<span style="color:#00a000">Parse</span>()</code></pre></div>
+<p>Show usage if flags are invalid</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a2f;font-weight:bold">if</span> prompt <span style="color:#666">==</span> <span style="color:#a2f;font-weight:bold">false</span> <span style="color:#666">&amp;&amp;</span> name <span style="color:#666">==</span> <span style="color:#b44">&#34;&#34;</span> {
+    flag.<span style="color:#00a000">Usage</span>()
+    os.<span style="color:#00a000">Exit</span>(<span style="color:#666">1</span>)
+}
+<span style="color:#080;font-style:italic">/* flag.PrintDefaults() can be used to print the usage message explicitly */</span></code></pre></div>
+<p><strong>Example Code</strong></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a2f;font-weight:bold">package</span> main
 
-To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
+<span style="color:#a2f;font-weight:bold">import</span> (
+	<span style="color:#b44">&#34;flag&#34;</span>
+	<span style="color:#b44">&#34;fmt&#34;</span>	
+	<span style="color:#b44">&#34;os&#34;</span>
+)
 
+<span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">main</span>(){
+	<span style="color:#a2f;font-weight:bold">var</span> name <span style="color:#0b0;font-weight:bold">string</span>
+	flag.<span style="color:#00a000">StringVar</span>(<span style="color:#666">&amp;</span>name,<span style="color:#b44">&#34;name&#34;</span>,<span style="color:#b44">&#34;&#34;</span>,<span style="color:#b44">&#34;required name flag&#34;</span>)
+	flag.<span style="color:#00a000">Parse</span>()
 
+	<span style="color:#a2f;font-weight:bold">if</span> name <span style="color:#666">==</span> <span style="color:#b44">&#34;&#34;</span>{
+		flag.<span style="color:#00a000">Usage</span>()		
+		os.<span style="color:#00a000">Exit</span>(<span style="color:#666">1</span>)
+	} <span style="color:#a2f;font-weight:bold">else</span> {
+		fmt.<span style="color:#00a000">Println</span>(<span style="color:#b44">&#34;Name : &#34;</span>,name)
+	}
+}</code></pre></div>
 
-
-</p>
 
 
 

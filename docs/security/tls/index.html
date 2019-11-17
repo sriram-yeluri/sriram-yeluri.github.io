@@ -311,20 +311,10 @@
 
 
 
-<h2>ERROR</h2> 
-
-<p>You must define a <span style="font-family: monospace">overview</span></p>
-
-
-<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
+<p>TLS - Transport Layer Security<br />
+TLS is a protocol for encrypting internet traffic and to verify the identity of server.</p>
 
 
-
-
-</p>
 
 
 
@@ -343,7 +333,32 @@ To get rid of this message and take advantage of this template, capture the <i>o
 
 
 
-<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
+<li><a href="#how-to-extract-remote-certificates">How to extract remote Certificates</a></li>
+
+
+
+
+<li><a href="#show-server-certificate-chain">Show Server Certificate chain</a></li>
+
+
+
+
+<li><a href="#export-public-key-from-a-certificate">Export Public key from a Certificate</a></li>
+
+
+
+
+<li><a href="#how-to-find-validity-of-a-certificate">How to find validity of a certificate</a></li>
+
+
+
+
+<li><a href="#get-public-key-from-private-key">Get public key from Private key</a></li>
+
+
+
+
+<li><a href="#tls-handshake-explained">TLS Handshake explained</a></li>
 
 
 
@@ -366,20 +381,96 @@ To get rid of this message and take advantage of this template, capture the <i>o
 </ul>
 
 
-<h2>ERROR</h2> 
+<h2 id="how-to-extract-remote-certificates">How to extract remote Certificates</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#a2f">echo</span> | openssl s_client -connect www.google.com:443 <span style="color:#666">2</span>&gt;&amp;<span style="color:#666">1</span> | sed --quiet <span style="color:#b44">&#39;/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p&#39;</span> &gt; google.crt</code></pre></div>
+<p>How to verify the TLS connection status ?</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sriram@sriram-Inspiron-5567:~$ openssl s_client -connect google.com:443 -servername google.com -cipher ALL -brief
+CONNECTION ESTABLISHED
+Protocol version: TLSv1.3
+Ciphersuite: TLS_AES_256_GCM_SHA384
+Peer certificate: <span style="color:#b8860b">C</span> <span style="color:#666">=</span> US, <span style="color:#b8860b">ST</span> <span style="color:#666">=</span> California, <span style="color:#b8860b">L</span> <span style="color:#666">=</span> Mountain View, <span style="color:#b8860b">O</span> <span style="color:#666">=</span> Google LLC, <span style="color:#b8860b">CN</span> <span style="color:#666">=</span> *.google.com
+Hash used: SHA256
+Signature type: ECDSA
+Verification: OK
+Server Temp Key: X25519, <span style="color:#666">253</span> bits</code></pre></div>
+<h2 id="show-server-certificate-chain">Show Server Certificate chain</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">openssl s_client -connect google.com:443 -servername google.com -cipher ALL -showcerts</code></pre></div>
+<h2 id="export-public-key-from-a-certificate">Export Public key from a Certificate</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">openssl x509 -pubkey -noout -in cert.pem  &gt; pubkey.pem</code></pre></div>
+<h2 id="how-to-find-validity-of-a-certificate">How to find validity of a certificate</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#a2f">echo</span> | openssl s_client -connect google.com:443 <span style="color:#666">2</span>&gt;/dev/null | openssl x509 -noout -dates</code></pre></div>
+<h2 id="get-public-key-from-private-key">Get public key from Private key</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># Generate a private key</span>
+openssl genrsa -out mykey.pem <span style="color:#666">2048</span>
 
-<p>You must define a <span style="font-family: monospace">body</span></p>
+<span style="color:#080;font-style:italic"># Extract public key from above generated private key</span>
+openssl rsa -in mykey.pem -pubout &gt; mykey.pub</code></pre></div>
+<h2 id="tls-handshake-explained">TLS Handshake explained</h2>
+
+<p>Below example explains how the TLS Handshake happens between a client and server.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sriram@sriram-Inspiron-5567:~$ curl abnamro.com -L -v
+* Rebuilt URL to: abnamro.com/
+*   Trying <span style="color:#666">88</span>.221.24.80...
+* TCP_NODELAY <span style="color:#a2f">set</span>
+* Connected to abnamro.com <span style="color:#666">(</span><span style="color:#666">88</span>.221.24.80<span style="color:#666">)</span> port <span style="color:#666">80</span> <span style="color:#666">(</span><span style="color:#080;font-style:italic">#0)</span>
+&gt; GET / HTTP/1.1
+&gt; Host: abnamro.com
+&gt; User-Agent: curl/7.58.0
+&gt; Accept: */*
+&lt; HTTP/1.1 <span style="color:#666">301</span> Moved Permanently
+&lt; Server: AkamaiGHost
+&lt; Content-Length: <span style="color:#666">0</span>
+&lt; Location: https://www.abnamro.com/
+&lt; Expires: Fri, <span style="color:#666">09</span> Aug <span style="color:#666">2019</span> <span style="color:#666">04</span>:24:52 GMT
+&lt; Cache-Control: max-age<span style="color:#666">=</span><span style="color:#666">0</span>, no-cache, no-store
+&lt; Pragma: no-cache
+&lt; Date: Fri, <span style="color:#666">09</span> Aug <span style="color:#666">2019</span> <span style="color:#666">04</span>:24:52 GMT
+&lt; Connection: keep-alive
+* Connection <span style="color:#080;font-style:italic">#0 to host abnamro.com left intact</span>
+* Issue another request to this URL: <span style="color:#b44">&#39;https://www.abnamro.com/&#39;</span>
+*   Trying <span style="color:#666">88</span>.221.24.96...
+* TCP_NODELAY <span style="color:#a2f">set</span>
+* Connected to www.abnamro.com <span style="color:#666">(</span><span style="color:#666">88</span>.221.24.96<span style="color:#666">)</span> port <span style="color:#666">443</span> <span style="color:#666">(</span><span style="color:#080;font-style:italic">#1)</span>
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully <span style="color:#a2f">set</span> certificate verify locations:
+*   CAfile: /etc/ssl/certs/ca-certificates.crt
+  CApath: /etc/ssl/certs
+* <span style="color:#666">(</span><span style="color:#666">304</span><span style="color:#666">)</span> <span style="color:#666">(</span>OUT<span style="color:#666">)</span>, TLS handshake, Client hello <span style="color:#666">(</span><span style="color:#666">1</span><span style="color:#666">)</span>:
+* <span style="color:#666">(</span><span style="color:#666">304</span><span style="color:#666">)</span> <span style="color:#666">(</span>IN<span style="color:#666">)</span>, TLS handshake, Server hello <span style="color:#666">(</span><span style="color:#666">2</span><span style="color:#666">)</span>:
+* TLSv1.2 <span style="color:#666">(</span>IN<span style="color:#666">)</span>, TLS handshake, Certificate <span style="color:#666">(</span><span style="color:#666">11</span><span style="color:#666">)</span>:
+* TLSv1.2 <span style="color:#666">(</span>IN<span style="color:#666">)</span>, TLS handshake, Server key exchange <span style="color:#666">(</span><span style="color:#666">12</span><span style="color:#666">)</span>:
+* TLSv1.2 <span style="color:#666">(</span>IN<span style="color:#666">)</span>, TLS handshake, Server finished <span style="color:#666">(</span><span style="color:#666">14</span><span style="color:#666">)</span>:
+* TLSv1.2 <span style="color:#666">(</span>OUT<span style="color:#666">)</span>, TLS handshake, Client key exchange <span style="color:#666">(</span><span style="color:#666">16</span><span style="color:#666">)</span>:
+* TLSv1.2 <span style="color:#666">(</span>OUT<span style="color:#666">)</span>, TLS change cipher, Client hello <span style="color:#666">(</span><span style="color:#666">1</span><span style="color:#666">)</span>:
+* TLSv1.2 <span style="color:#666">(</span>OUT<span style="color:#666">)</span>, TLS handshake, Finished <span style="color:#666">(</span><span style="color:#666">20</span><span style="color:#666">)</span>:
+* TLSv1.2 <span style="color:#666">(</span>IN<span style="color:#666">)</span>, TLS handshake, Finished <span style="color:#666">(</span><span style="color:#666">20</span><span style="color:#666">)</span>:
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES256-GCM-SHA384
+* ALPN, server accepted to use h2
+* Server certificate:
+*  subject: <span style="color:#b8860b">jurisdictionC</span><span style="color:#666">=</span>NL; <span style="color:#b8860b">jurisdictionST</span><span style="color:#666">=</span>NH; <span style="color:#b8860b">jurisdictionL</span><span style="color:#666">=</span>Amsterdam; <span style="color:#b8860b">businessCategory</span><span style="color:#666">=</span>Private Organization; <span style="color:#b8860b">serialNumber</span><span style="color:#666">=</span><span style="color:#666">34334259</span>; <span style="color:#b8860b">C</span><span style="color:#666">=</span>NL; <span style="color:#b8860b">ST</span><span style="color:#666">=</span>NH; <span style="color:#b8860b">L</span><span style="color:#666">=</span>Amsterdam; <span style="color:#b8860b">O</span><span style="color:#666">=</span>ABN AMRO Bank N.V.; <span style="color:#b8860b">OU</span><span style="color:#666">=</span>Internet Banking; <span style="color:#b8860b">CN</span><span style="color:#666">=</span>www.abnamro.com
+*  start date: Sep <span style="color:#666">24</span> <span style="color:#666">13</span>:22:58 <span style="color:#666">2018</span> GMT
+*  expire date: Sep <span style="color:#666">24</span> <span style="color:#666">13</span>:31:00 <span style="color:#666">2020</span> GMT
+*  subjectAltName: host <span style="color:#b44">&#34;www.abnamro.com&#34;</span> matched cert<span style="">&#39;</span>s <span style="color:#b44">&#34;www.abnamro.com&#34;</span>
+*  issuer: <span style="color:#b8860b">C</span><span style="color:#666">=</span>BM; <span style="color:#b8860b">O</span><span style="color:#666">=</span>QuoVadis Limited; <span style="color:#b8860b">CN</span><span style="color:#666">=</span>QuoVadis EV SSL ICA G1
+*  SSL certificate verify ok.
+* Using HTTP2, server supports multi-use
+* Connection state changed <span style="color:#666">(</span>HTTP/2 confirmed<span style="color:#666">)</span>
+* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: <span style="color:#b8860b">len</span><span style="color:#666">=</span><span style="color:#666">0</span>
+* Using Stream ID: <span style="color:#666">1</span> <span style="color:#666">(</span>easy handle 0x5602954b8580<span style="color:#666">)</span>
+&gt; GET / HTTP/2
+&gt; Host: www.abnamro.com
+&gt; User-Agent: curl/7.58.0
+&gt; Accept: */*</code></pre></div>
+<h3 id="references">References</h3>
+
+<p><a href="https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html" target="_blank">https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html</a><br />
+<a href="https://www.ssllabs.com/ssltest/index.html" target="_blank">https://www.ssllabs.com/ssltest/index.html</a><br />
+<a href="https://testssl.sh/" target="_blank">https://testssl.sh/</a><br />
+<a href="http://openssl.cs.utah.edu/docs/apps/s_client.html" target="_blank">http://openssl.cs.utah.edu/docs/apps/s_client.html</a><br />
+<a href="https://www.cloudflare.com/learning/ssl/what-is-an-ssl-certificate/" target="_blank">https://www.cloudflare.com/learning/ssl/what-is-an-ssl-certificate/</a></p>
 
 
-<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 

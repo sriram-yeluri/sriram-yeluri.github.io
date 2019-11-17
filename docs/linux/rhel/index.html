@@ -352,20 +352,9 @@
 
 
 
-<h2>ERROR</h2> 
-
-<p>You must define a <span style="font-family: monospace">overview</span></p>
+<p>RedHat Enterprise Linux.</p>
 
 
-<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 
@@ -384,7 +373,7 @@ To get rid of this message and take advantage of this template, capture the <i>o
 
 
 
-<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
+<li><a href="#how-to-subscribe-to-redhat-using-subscription-manager">How to subscribe to Redhat using subscription-manager</a></li>
 
 
 
@@ -407,20 +396,40 @@ To get rid of this message and take advantage of this template, capture the <i>o
 </ul>
 
 
-<h2>ERROR</h2> 
+<p><img src="/images/RHEL/rhel-release-7_4.png" alt="RHEL release" /></p>
 
-<p>You must define a <span style="font-family: monospace">body</span></p>
+<h2 id="how-to-subscribe-to-redhat-using-subscription-manager">How to subscribe to Redhat using subscription-manager</h2>
+
+<h3 id="subscription-manager">subscription-manager</h3>
+
+<p><img src="/images/RHEL/subscription-manager.png" alt="subscription-manager" /></p>
+
+<h3 id="subscription-manager-list">subscription-manager list</h3>
+
+<p><img src="/images/RHEL/subscription-manager-list.png" alt="subscription-manager list" /></p>
+
+<h3 id="subscription-manager-register">subscription-manager register</h3>
+
+<p><img src="/images/RHEL/subscription-manager-register.png" alt="subscription-manager register" /></p>
+
+<h3 id="subscription-manager-attach">subscription-manager attach</h3>
+
+<p><img src="/images/RHEL/subscription-manager-attach.png" alt="subscription-manager attach" /></p>
+
+<h3 id="subscription-manager-identity">subscription-manager identity</h3>
+
+<p><img src="/images/RHEL/subscription-manager-identity.png" alt="subscription-manager identity" /></p>
+
+<h3 id="add-gui-from-basic-installation">Add GUI from basic installation</h3>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"> yum groupinstall gnome-desktop x11 fonts  
+ yum groupinstall <span style="color:#b44">&#34;Server with GUI&#34;</span>  
+ systemctl set-default graphical.target  
+ systemctl start graphical.target  </code></pre></div>
+<h3 id="references">References</h3>
+
+<p><a href="https://access.redhat.com/solutions/5238?tour=6" target="_blank">Add GUI</a></p>
 
 
-<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 

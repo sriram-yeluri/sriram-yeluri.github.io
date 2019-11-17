@@ -352,20 +352,9 @@
 
 
 
-<h2>ERROR</h2> 
-
-<p>You must define a <span style="font-family: monospace">overview</span></p>
+<p>Yum Concepts</p>
 
 
-<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 
@@ -384,7 +373,12 @@ To get rid of this message and take advantage of this template, capture the <i>o
 
 
 
-<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
+<li><a href="#yum-broken">YUM broken</a></li>
+
+
+
+
+<li><a href="#how-to-rebuild-the-yum-database">How to rebuild the yum database</a></li>
 
 
 
@@ -407,20 +401,19 @@ To get rid of this message and take advantage of this template, capture the <i>o
 </ul>
 
 
-<h2>ERROR</h2> 
+<h2 id="yum-broken">YUM broken</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic">### YUM not working on Centos and gave below error</span> 
+could not retrieve mirrorlist http://mirrorlist.centos.org/?release<span style="color:#666">=</span><span style="color:#666">7</span>&amp;<span style="color:#b8860b">arch</span><span style="color:#666">=</span>x86_64&amp;<span style="color:#b8860b">repo</span><span style="color:#666">=</span>extras&amp;<span style="color:#b8860b">infra</span><span style="color:#666">=</span>stock error was
+<span style="color:#666">14</span>: curl#6 - <span style="color:#b44">&#34;Could not resolve host: mirrorlist.centos.org; Unknown error&#34;</span>
 
-<p>You must define a <span style="font-family: monospace">body</span></p>
+<span style="color:#080;font-style:italic">### To Fix above issue : go to /etc/resolve.conf and add/update nameserver</span>
+nameserver <span style="color:#666">8</span>.8.8.8</code></pre></div>
+<h2 id="how-to-rebuild-the-yum-database">How to rebuild the yum database</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># yum clean all</span>
+<span style="color:#080;font-style:italic"># rm -f /var/lib/rpm/__db*</span>
+<span style="color:#080;font-style:italic"># rpm --rebuilddb</span>
+<span style="color:#080;font-style:italic"># yum update</span></code></pre></div>
 
-
-<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 

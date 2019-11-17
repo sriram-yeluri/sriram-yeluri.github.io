@@ -315,20 +315,14 @@
 
 
 
-<h2>ERROR</h2> 
+<p>Dockerfile</p>
 
-<p>You must define a <span style="font-family: monospace">overview</span></p>
-
-
-<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
+<ul>
+<li>Dockerfile is a simple text file to create a docker image.<br /></li>
+<li>Default file name is &ldquo;Dockerfile&rdquo;<br /></li>
+</ul>
 
 
-
-
-</p>
 
 
 
@@ -347,7 +341,37 @@ To get rid of this message and take advantage of this template, capture the <i>o
 
 
 
-<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
+<li><a href="#example-dockerfile">Example dockerfile</a></li>
+
+
+
+
+<li><a href="#how-to-build-a-docker-image">How to build a docker image</a></li>
+
+
+
+
+<li><a href="#how-to-run-the-container">How to run the container</a></li>
+
+
+
+
+<li><a href="#how-to-connect-to-a-running-container">How to connect to a running container</a></li>
+
+
+
+
+<li><a href="#data-persistance-and-volume-sharing-between-running-containers">Data persistance and volume sharing between running containers</a></li>
+
+
+
+
+<li><a href="#optimizing-docker-images">optimizing docker images</a></li>
+
+
+
+
+<li><a href="#useful-docker-commands">Useful docker commands</a></li>
 
 
 
@@ -370,20 +394,68 @@ To get rid of this message and take advantage of this template, capture the <i>o
 </ul>
 
 
-<h2>ERROR</h2> 
+<h2 id="example-dockerfile">Example dockerfile</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-docker" data-lang="docker"><span style="color:#a2f;font-weight:bold">ENV</span><span style="">
+</span><span style=""></span><span style="color:#a2f;font-weight:bold">FROM</span><span style="">
+</span><span style=""></span>LABEL <span style="color:#b8860b">maintainer</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span><span style="">
+</span><span style=""></span>      <span style="color:#b8860b">version</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span>  <span style="">
+</span><span style=""></span><span style="color:#a2f;font-weight:bold">WORKDIR</span><span style="">
+</span><span style=""></span><span style="color:#a2f;font-weight:bold">RUN</span><span style="">
+</span><span style=""></span><span style="color:#a2f;font-weight:bold">VOLUME</span><span style="">
+</span><span style=""></span><span style="color:#a2f;font-weight:bold">EXPOSE</span><span style="">
+</span><span style=""></span><span style="color:#a2f;font-weight:bold">ENTRYPOINT</span><span style="color:#b44"> --&gt; Executes custom scripts while starting a docker container</span><span style="">
+</span><span style=""></span>           --&gt; Do not add layer to docker image<span style="">
+</span><span style=""></span><span style="color:#a2f;font-weight:bold">CMD</span></code></pre></div>
+<blockquote class="note">
+  <div><strong>Note:</strong> There can only be one CMD instruction in a Dockerfile. If you list more than one CMD, then only the last CMD will take effect.</div>
+</blockquote>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># Example dockerfile</span>
+COPY docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
+ENTRYPOINT <span style="color:#666">[</span><span style="color:#b44">&#34;/docker-entrypoint.sh&#34;</span><span style="color:#666">]</span></code></pre></div>
+<h2 id="how-to-build-a-docker-image">How to build a docker image</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic">#docker image build -t &lt;image_name&gt;:&lt;version_tag&gt; .</span>
+docker image build -t ansible:v1.0 .</code></pre></div>
+<h2 id="how-to-run-the-container">How to run the container</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker container run -d -t --name ansible ansible:v1.0 bin/bash</code></pre></div>
+<h2 id="how-to-connect-to-a-running-container">How to connect to a running container</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker container <span style="color:#a2f">exec</span> -it &lt;container_id&gt; bash
+<span style="color:#080;font-style:italic"># (or) to run shell command directly on a running container, then</span>
+$ docker container <span style="color:#a2f">exec</span> &lt;container_name/id&gt; cat /appl/readme.txt</code></pre></div>
+<h2 id="data-persistance-and-volume-sharing-between-running-containers">Data persistance and volume sharing between running containers</h2>
 
-<p>You must define a <span style="font-family: monospace">body</span></p>
+<p>In docker, sharing of volumes can be done in 2 ways</p>
+
+<ul>
+<li>Add VOLUME in dockerfile , example VOLUME [/appl]</li>
+<li>[or] Add -v <volume_path> as a flag while running the container to expose the path, example below</li>
+</ul>
+
+<blockquote class="note">
+  <div><strong>Note:</strong> If volume is exposed in either of the above methods, then both the src and dst containers should run on the same physical host</div>
+</blockquote>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker container run --rm -itd --name &lt;container_name&gt; -v <span style="color:#b8860b">$PWD</span>:/appl -v /appl/data</code></pre></div>
+<p>Inorder to access data from other containers, use volumes-from flag while running the container</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker container run --rm -itd --name &lt;dest-container&gt; --volumes-from &lt;src_container_name_from_which_data_is_accessed&gt;</code></pre></div>
+<h2 id="optimizing-docker-images">optimizing docker images</h2>
+
+<p>.dockerignore</p>
+
+<h2 id="useful-docker-commands">Useful docker commands</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># To stop all running containers in one go, below command can be used</span>
+docker container stop <span style="color:#a2f;font-weight:bold">$(</span>docker container ls -a -q<span style="color:#a2f;font-weight:bold">)</span></code></pre></div>
+<h3 id="references">References</h3>
+
+<p><a href="https://docs.docker.com/engine/reference/builder/#usage" target="_blank">Detailed Explanation of Dockerfile</a><br />
+<a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/" target="_blank">Best practices for writing Dockerfiles</a></p>
+
+<h3 id="video-references">Video References</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/LQjaJINkQXY?autoplay=1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
 
 
-<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 

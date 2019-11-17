@@ -352,20 +352,9 @@
 
 
 
-<h2>ERROR</h2> 
-
-<p>You must define a <span style="font-family: monospace">overview</span></p>
+<p>Linux Firewall</p>
 
 
-<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 
@@ -384,7 +373,12 @@ To get rid of this message and take advantage of this template, capture the <i>o
 
 
 
-<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
+<li><a href="#firewalld">firewalld</a></li>
+
+
+
+
+<li><a href="#firewall-cmd">firewall-cmd</a></li>
 
 
 
@@ -407,20 +401,73 @@ To get rid of this message and take advantage of this template, capture the <i>o
 </ul>
 
 
-<h2>ERROR</h2> 
+<p>A firewall provides a means to protect machines from any unwanted traffic. It enables users/administrators to control incoming network traffic on host machines by defining a set of firewall rules. These rules are used to sort the incoming traffic and either block it or allow through.</p>
 
-<p>You must define a <span style="font-family: monospace">body</span></p>
+<h2 id="firewalld">firewalld</h2>
+
+<ul>
+<li><p><code>firewalld</code> is a firewall service daemon that provides a dynamic customizable host-based firewall. Being dynamic, it enables creating, changing, and deleting the rules without the necessity to restart the firewall daemon each time the rules are changed.</p></li>
+
+<li><p>firewalld uses the concepts of zones and services</p></li>
+
+<li><p>Zones are predefined sets of rules.</p></li>
+
+<li><p>Network interfaces and sources can be assigned to a zone.</p></li>
+
+<li><p>The traffic allowed depends on the network your computer is connected to and the security level this network is assigned.</p></li>
+
+<li><p>Firewall services are predefined rules that cover all necessary settings to allow incoming traffic for a specific service and they apply within a zone.</p></li>
+
+<li><p>Services use one or more ports or addresses for network communication.</p></li>
+
+<li><p>Firewall filter communication based on ports.</p></li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># To start firewalld</span>
+systemctl unmask firewalld
+systemctl <span style="color:#a2f">enable</span> firewalld.service
+systemctl start firewalld
+
+<span style="color:#080;font-style:italic"># To stop firewalld</span>
+systemctl stop firewalld
+systemctl disable firewalld
+systemctl mask firewalld
+
+<span style="color:#080;font-style:italic"># Quick command to check whether the firewall is enabled or disabled</span>
+systemctl is-enabled firewalld</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@centos8 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># systemctl status firewalld</span>
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded <span style="color:#666">(</span>/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled<span style="color:#666">)</span>
+   Active: active <span style="color:#666">(</span>running<span style="color:#666">)</span> since Mon <span style="color:#666">2019</span>-10-28 <span style="color:#666">15</span>:05:45 CET; 1min 25s ago
+     Docs: man:firewalld<span style="color:#666">(</span><span style="color:#666">1</span><span style="color:#666">)</span>
+ Main PID: <span style="color:#666">772</span> <span style="color:#666">(</span>firewalld<span style="color:#666">)</span>
+    Tasks: <span style="color:#666">2</span> <span style="color:#666">(</span>limit: <span style="color:#666">11525</span><span style="color:#666">)</span>
+   Memory: <span style="color:#666">36</span>.2M
+   CGroup: /system.slice/firewalld.service
+           └─772 /usr/libexec/platform-python -s /usr/sbin/firewalld --nofork --nopid
+
+Oct <span style="color:#666">28</span> <span style="color:#666">15</span>:05:44 centos8 systemd<span style="color:#666">[</span><span style="color:#666">1</span><span style="color:#666">]</span>: Starting firewalld - dynamic firewall daemon...
+Oct <span style="color:#666">28</span> <span style="color:#666">15</span>:05:45 centos8 systemd<span style="color:#666">[</span><span style="color:#666">1</span><span style="color:#666">]</span>: Started firewalld - dynamic firewall daemon.</code></pre></div>
+<h2 id="firewall-cmd">firewall-cmd</h2>
+
+<p>firewall-cmd is a cli for firewall service.
+To get more details on how to use firewall-cmd : <code>firewall-cmd --help</code></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># Examples:</span>
+
+<span style="color:#080;font-style:italic"># How to add a service to firewall</span>
+yum install tftp-server
+firewall-cmd --add-service<span style="color:#666">=</span>tftp
+
+<span style="color:#080;font-style:italic"># How to add and open port to firewall</span>
+<span style="color:#080;font-style:italic">## The command below will open the port effective immediately, but will not persist across reboots:</span>
+firewall-cmd --add-port<span style="color:#666">=</span>&lt;YOUR PORT&gt;/tcp
+<span style="color:#080;font-style:italic">## The following command will create a persistent rule, but will not be put into effect immediately:</span>
+firewall-cmd --permanent --add-port<span style="color:#666">=</span>&lt;YOUR PORT&gt;/tcp</code></pre></div>
+<h3 id="resources">Resources</h3>
+
+<p>firewalld(1) man page<br />
+firewalld.zone(5) man page<br />
+<a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/securing_networks/using-and-configuring-firewalls_securing-networks" target="_blank">redhat-documentation</a></p>
 
 
-<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 

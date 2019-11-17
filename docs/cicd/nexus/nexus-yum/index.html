@@ -398,20 +398,9 @@
 
 
 
-<h2>ERROR</h2> 
-
-<p>You must define a <span style="font-family: monospace">overview</span></p>
+<p>Managing Yum packages with Nexus Repository Manager</p>
 
 
-<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 
@@ -430,7 +419,12 @@ To get rid of this message and take advantage of this template, capture the <i>o
 
 
 
-<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
+<li><a href="#yum-repositories-in-nexus">YUM repositories in Nexus</a></li>
+
+
+
+
+<li><a href="#how-to-download-the-latest-available-artifact-from-nexus">How to download the latest available artifact from nexus</a></li>
 
 
 
@@ -453,20 +447,48 @@ To get rid of this message and take advantage of this template, capture the <i>o
 </ul>
 
 
-<h2>ERROR</h2> 
+<h2 id="yum-repositories-in-nexus">YUM repositories in Nexus</h2>
 
-<p>You must define a <span style="font-family: monospace">body</span></p>
+<ul>
+<li><p>Create a repo of type yum (example as shown below)
+<img src="/images/Nexus/nexus-yum1.png" alt="Nexus YUM Configurtion" /></p></li>
+
+<li><p>Create a repo file in /etc/yum.repos.d/nexus.repo</p></li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>nexusrepo<span style="color:#666">]</span>
+<span style="color:#b8860b">name</span><span style="color:#666">=</span>Nexus Repository
+<span style="color:#b8860b">baseurl</span><span style="color:#666">=</span>http://localhost:8081/repository/yum-google-chrome/
+<span style="color:#b8860b">enabled</span><span style="color:#666">=</span><span style="color:#666">1</span>
+<span style="color:#b8860b">gpgcheck</span><span style="color:#666">=</span><span style="color:#666">1</span>
+<span style="color:#b8860b">gpgkey</span><span style="color:#666">=</span>https://dl-ssl.google.com/linux/linux_signing_key.pub
+<span style="color:#b8860b">priority</span><span style="color:#666">=</span><span style="color:#666">1</span></code></pre></div>
+<ul>
+<li><p>yum check-update  &mdash;&gt; this command will check if there is any update for this package</p></li>
+
+<li><p>google-chrome repo fetched from nexus
+<img src="/images/Nexus/nexus-yum2.png" alt="nexus repo" /></p></li>
+
+<li><p>Browse yum proxy repository in nexus<br />
+<img src="/images/Nexus/nexus-yum3.png" alt="Browse yum proxy" /></p></li>
+
+<li><p>Update existing package using yum update as shown below
+<img src="/images/Nexus/nexus-yum4.png" alt="yum update" /></p></li>
+
+<li><p>Browse yum proxy to verify if new package is downloaded
+<img src="/images/Nexus/nexus-yum5.png" alt="yum nexus proxy updated" /></p></li>
+</ul>
+
+<h2 id="how-to-download-the-latest-available-artifact-from-nexus">How to download the latest available artifact from nexus</h2>
+
+<p>There is a metadata file that maintains a latest version of the artifact that you store in Nexus and by using something like the below URL you will be able to download the latest available artifact from nexus</p>
+
+<p><code>https://localhost:8443/nexus/service/local/artifact/maven/redirect?r=ABC-releases&amp;g=&lt;group_ID&gt;&amp;a=&lt;artifact&gt;&amp;v=LATEST</code></p>
+
+<p><a href="https://oss.sonatype.org/nexus-restlet1x-plugin/default/docs/path__artifact_maven_redirect.html" target="_blank">API : /artifact/maven/redirect</a></p>
+
+<h3 id="references">References</h3>
 
 
-<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 

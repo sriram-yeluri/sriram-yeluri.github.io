@@ -315,20 +315,9 @@
 
 
 
-<h2>ERROR</h2> 
-
-<p>You must define a <span style="font-family: monospace">overview</span></p>
+<p>Docker Networking</p>
 
 
-<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 
@@ -347,7 +336,17 @@ To get rid of this message and take advantage of this template, capture the <i>o
 
 
 
-<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
+<li><a href="#creating-a-custom-docker-network">Creating a custom docker network</a></li>
+
+
+
+
+<li><a href="#how-to-add-container-to-a-custom-network">How to add container to a custom Network</a></li>
+
+
+
+
+<li><a href="#how-to-know-the-ip-address-of-a-running-container">How to know the IP address of a running container</a></li>
 
 
 
@@ -370,20 +369,30 @@ To get rid of this message and take advantage of this template, capture the <i>o
 </ul>
 
 
-<h2>ERROR</h2> 
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># By default, docker will add all running containers to default bridge network</span>
+<span style="color:#080;font-style:italic"># To inspect docker bridge network, use below command</span>
+docker network inspect bridge</code></pre></div>
+<p><img src="/images/Docker/docker_network_1.png" alt="" /></p>
 
-<p>You must define a <span style="font-family: monospace">body</span></p>
+<h2 id="creating-a-custom-docker-network">Creating a custom docker network</h2>
+
+<p><img src="/images/Docker/docker_network_2.png" alt="" /></p>
+
+<h2 id="how-to-add-container-to-a-custom-network">How to add container to a custom Network</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># To run a docker container and join to a custom bridge network, use --net flag</span>
+docker container run --rm --itd --name &lt;container_name&gt; --net &lt;network_name&gt;</code></pre></div>
+<h2 id="how-to-know-the-ip-address-of-a-running-container">How to know the IP address of a running container</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker <span style="color:#a2f">exec</span> &lt;container_name&gt; ifconfig
+docker <span style="color:#a2f">exec</span> &lt;container_name&gt; ip -a</code></pre></div>
+<h3 id="references">References</h3>
+
+<p><a href="https://docs.docker.com/network/" target="_blank">docker-networking</a></p>
+
+<h3 id="to-do">To-DO</h3>
+
+<p><a href="https://docs.docker.com/network/overlay/" target="_blank">overlay-networking</a></p>
 
 
-<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 

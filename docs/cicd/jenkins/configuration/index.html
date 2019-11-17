@@ -398,20 +398,9 @@
 
 
 
-<h2>ERROR</h2> 
-
-<p>You must define a <span style="font-family: monospace">overview</span></p>
+<p>Jenkins Configuration</p>
 
 
-<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 
@@ -430,7 +419,7 @@ To get rid of this message and take advantage of this template, capture the <i>o
 
 
 
-<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
+<li><a href="#jenkins-configuration">Jenkins-Configuration</a></li>
 
 
 
@@ -453,20 +442,18 @@ To get rid of this message and take advantage of this template, capture the <i>o
 </ul>
 
 
-<h2>ERROR</h2> 
+<h2 id="jenkins-configuration">Jenkins-Configuration</h2>
 
-<p>You must define a <span style="font-family: monospace">body</span></p>
+<p>!!! question
+    In the Global Security, I didn&rsquo;t have a TCP port for JNLP agents enabled, which automatically disables the line &ldquo;Launch agent via Java Web Start&rdquo;</p>
+
+<pre><code>Solution:  
+Manage Jenkins =&gt; Configure Global Security =&gt; Enable security =&gt; TCP port for JNLP agents Set it to either Fixed (for this option also set the port number) or Random.
+</code></pre>
+
+<p><img src="/images/Jenkins/enable-jnlp-agents.png" alt="enable-jnlp-agent" /></p>
 
 
-<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 

@@ -352,20 +352,9 @@
 
 
 
-<h2>ERROR</h2> 
-
-<p>You must define a <span style="font-family: monospace">overview</span></p>
+<p>Linux Filesystem Concepts</p>
 
 
-<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 
@@ -384,7 +373,7 @@ To get rid of this message and take advantage of this template, capture the <i>o
 
 
 
-<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
+<li><a href="#linux-filesystem">Linux FileSystem</a></li>
 
 
 
@@ -407,20 +396,25 @@ To get rid of this message and take advantage of this template, capture the <i>o
 </ul>
 
 
-<h2>ERROR</h2> 
+<h2 id="linux-filesystem">Linux FileSystem</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sriram@sriram-Inspiron-5567:~$ sudo fdisk -l /dev/sda
+Disk /dev/sda: <span style="color:#666">111</span>,8 GiB, <span style="color:#666">120034123776</span> bytes, <span style="color:#666">234441648</span> sectors
+Units: sectors of <span style="color:#666">1</span> * <span style="color:#b8860b">512</span> <span style="color:#666">=</span> <span style="color:#666">512</span> bytes
+Sector size <span style="color:#666">(</span>logical/physical<span style="color:#666">)</span>: <span style="color:#666">512</span> bytes / <span style="color:#666">512</span> bytes
+I/O size <span style="color:#666">(</span>minimum/optimal<span style="color:#666">)</span>: <span style="color:#666">512</span> bytes / <span style="color:#666">512</span> bytes
+Disklabel type: gpt
+Disk identifier: 833807FE-A7E1-46DA-B629-ECC1B32A087E
 
-<p>You must define a <span style="font-family: monospace">body</span></p>
+Device         Start       End   Sectors   Size Type
+/dev/sda1       <span style="color:#666">2048</span>   <span style="color:#666">1050623</span>   <span style="color:#666">1048576</span>   512M EFI System
+/dev/sda2    <span style="color:#666">1050624</span> <span style="color:#666">217874431</span> <span style="color:#666">216823808</span> <span style="color:#666">103</span>,4G Linux filesystem
+/dev/sda3  <span style="color:#666">217874432</span> <span style="color:#666">234440703</span>  <span style="color:#666">16566272</span>   <span style="color:#666">7</span>,9G Linux swap</code></pre></div>
+<h3 id="references">References</h3>
+
+<p><a href="https://www.tldp.org/LDP/intro-linux/html/sect_03_01.html" target="_blank">Linux file system</a><br />
+man hier</p>
 
 
-<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 

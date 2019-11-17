@@ -352,20 +352,9 @@
 
 
 
-<h2>ERROR</h2> 
-
-<p>You must define a <span style="font-family: monospace">overview</span></p>
+<p>Linux Storage</p>
 
 
-<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 
@@ -384,7 +373,7 @@ To get rid of this message and take advantage of this template, capture the <i>o
 
 
 
-<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
+<li><a href="#uuid-get-the-uuid-of-devices-on-linux">UUID - Get the uuid of devices on linux</a></li>
 
 
 
@@ -407,20 +396,81 @@ To get rid of this message and take advantage of this template, capture the <i>o
 </ul>
 
 
-<h2>ERROR</h2> 
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># from baremetal</span>
+sriram@sriram-Inspiron-5567:~$ sudo fdisk -l /dev/sda
+Disk /dev/sda: <span style="color:#666">111</span>,8 GiB, <span style="color:#666">120034123776</span> bytes, <span style="color:#666">234441648</span> sectors
+Units: sectors of <span style="color:#666">1</span> * <span style="color:#b8860b">512</span> <span style="color:#666">=</span> <span style="color:#666">512</span> bytes
+Sector size <span style="color:#666">(</span>logical/physical<span style="color:#666">)</span>: <span style="color:#666">512</span> bytes / <span style="color:#666">512</span> bytes
+I/O size <span style="color:#666">(</span>minimum/optimal<span style="color:#666">)</span>: <span style="color:#666">512</span> bytes / <span style="color:#666">512</span> bytes
+Disklabel type: gpt
+Disk identifier: 833807FE-A7E1-46DA-B629-ECC1B32A087E
 
-<p>You must define a <span style="font-family: monospace">body</span></p>
+Device         Start       End   Sectors   Size Type
+/dev/sda1       <span style="color:#666">2048</span>   <span style="color:#666">1050623</span>   <span style="color:#666">1048576</span>   512M EFI System
+/dev/sda2    <span style="color:#666">1050624</span> <span style="color:#666">217874431</span> <span style="color:#666">216823808</span> <span style="color:#666">103</span>,4G Linux filesystem
+/dev/sda3  <span style="color:#666">217874432</span> <span style="color:#666">234440703</span>  <span style="color:#666">16566272</span>   <span style="color:#666">7</span>,9G Linux swap
+
+<span style="color:#080;font-style:italic"># From Virtual Machine</span>
+<span style="color:#666">[</span>root@CentosServer1910 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># fdisk -l</span>
+Disk /dev/sda: <span style="color:#666">10</span> GiB, <span style="color:#666">10737418240</span> bytes, <span style="color:#666">20971520</span> sectors
+Units: sectors of <span style="color:#666">1</span> * <span style="color:#b8860b">512</span> <span style="color:#666">=</span> <span style="color:#666">512</span> bytes
+Sector size <span style="color:#666">(</span>logical/physical<span style="color:#666">)</span>: <span style="color:#666">512</span> bytes / <span style="color:#666">512</span> bytes
+I/O size <span style="color:#666">(</span>minimum/optimal<span style="color:#666">)</span>: <span style="color:#666">512</span> bytes / <span style="color:#666">512</span> bytes
+Disklabel type: dos
+Disk identifier: 0xec47036c
+
+Device     Boot   Start      End  Sectors Size Id Type
+/dev/sda1  *       <span style="color:#666">2048</span>  <span style="color:#666">2099199</span>  <span style="color:#666">2097152</span>   1G <span style="color:#666">83</span> Linux
+/dev/sda2       <span style="color:#666">2099200</span> <span style="color:#666">20971519</span> <span style="color:#666">18872320</span>   9G 8e Linux LVM
+
+Disk /dev/mapper/cl_centosserver1910-root: <span style="color:#666">8</span> GiB, <span style="color:#666">8585740288</span> bytes, <span style="color:#666">16769024</span> sectors
+Units: sectors of <span style="color:#666">1</span> * <span style="color:#b8860b">512</span> <span style="color:#666">=</span> <span style="color:#666">512</span> bytes
+Sector size <span style="color:#666">(</span>logical/physical<span style="color:#666">)</span>: <span style="color:#666">512</span> bytes / <span style="color:#666">512</span> bytes
+I/O size <span style="color:#666">(</span>minimum/optimal<span style="color:#666">)</span>: <span style="color:#666">512</span> bytes / <span style="color:#666">512</span> bytes
+
+Disk /dev/mapper/cl_centosserver1910-swap: <span style="color:#666">1</span> GiB, <span style="color:#666">1073741824</span> bytes, <span style="color:#666">2097152</span> sectors
+Units: sectors of <span style="color:#666">1</span> * <span style="color:#b8860b">512</span> <span style="color:#666">=</span> <span style="color:#666">512</span> bytes
+Sector size <span style="color:#666">(</span>logical/physical<span style="color:#666">)</span>: <span style="color:#666">512</span> bytes / <span style="color:#666">512</span> bytes
+I/O size <span style="color:#666">(</span>minimum/optimal<span style="color:#666">)</span>: <span style="color:#666">512</span> bytes / <span style="color:#666">512</span> bytes</code></pre></div>
+<h2 id="uuid-get-the-uuid-of-devices-on-linux">UUID - Get the uuid of devices on linux</h2>
+
+<p>UUID is the &ldquo;universally unique identifier&rdquo; that is assigned to devices on a linux system for the purpose of identification.
+For example if your hard disk has 3 partitions then each partition is a device and has a uuid.</p>
+
+<p>To find the uuid of devices connected to a system use the command <code>ls -l /dev/disk/by-uuid/</code></p>
+
+<pre><code>[sriram@CentosServer1910 ~]$ ls -l /dev/disk/by-uuid/
+total 0
+lrwxrwxrwx. 1 root root 10 Nov  3 12:55 64b6f04f-d510-4c39-9a37-cacfeeec774b -&gt; ../../sda1
+lrwxrwxrwx. 1 root root 10 Nov  3 12:55 860d422d-1b58-4545-a139-10ffc6677f63 -&gt; ../../dm-1
+lrwxrwxrwx. 1 root root 10 Nov  3 12:55 86f561ac-6bdf-4768-8cdd-4333d6e74b47 -&gt; ../../dm-0
+</code></pre>
+
+<p>Another command to find UUI : <code>blkid</code></p>
+
+<pre><code># from baremetal
+sriram@sriram-Inspiron-5567:~$ sudo blkid
+/dev/sda1: UUID=&quot;5FAA-9D41&quot; TYPE=&quot;vfat&quot; PARTLABEL=&quot;EFI System Partition&quot; PARTUUID=&quot;80a7a0c8-1f77-45b0-b720-93a044c6b597&quot;
+/dev/sda2: UUID=&quot;17e11c76-30e6-4e5d-84ee-9ad13021351b&quot; TYPE=&quot;ext4&quot; PARTUUID=&quot;2376aa03-2148-4b8c-92c5-c0a40a3124a3&quot;
+/dev/sda3: UUID=&quot;170ab405-c120-4c49-a8cd-24a0b2bf346d&quot; TYPE=&quot;swap&quot; PARTUUID=&quot;ed20cc7f-76de-4371-8016-e10c030c1ef8&quot;
+
+# from virtual server
+[sriram@CentosServer1910 ~]$ blkid
+/dev/mapper/cl_centosserver1910-root: UUID=&quot;86f561ac-6bdf-4768-8cdd-4333d6e74b47&quot; TYPE=&quot;xfs&quot;
+/dev/sda2: UUID=&quot;wi21xh-Sj3l-ocKe-Q6Qr-aRLv-n3Nm-hcYhL5&quot; TYPE=&quot;LVM2_member&quot; PARTUUID=&quot;ec47036c-02&quot;
+</code></pre>
+
+<p>To get the uuid of a specific device, simply put the device name next to blkid : <code>blkid /dev/sda1</code></p>
+
+<pre><code>[sriram@CentosServer1910 ~]$ sudo blkid /dev/sda*
+/dev/sda: PTUUID=&quot;ec47036c&quot; PTTYPE=&quot;dos&quot;
+/dev/sda1: UUID=&quot;64b6f04f-d510-4c39-9a37-cacfeeec774b&quot; TYPE=&quot;ext4&quot; PARTUUID=&quot;ec47036c-01&quot;
+/dev/sda2: UUID=&quot;wi21xh-Sj3l-ocKe-Q6Qr-aRLv-n3Nm-hcYhL5&quot; TYPE=&quot;LVM2_member&quot; PARTUUID=&quot;ec47036c-02&quot;
+</code></pre>
+
+<hr />
 
 
-<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
-be displayed under the heading <b></b>.
-
-To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
-
-
-
-
-</p>
 
 
 
