@@ -406,6 +406,11 @@ weavenet">
 
 
 
+<li><a href="#kubeadm-join-token">kubeadm join token</a></li>
+
+
+
+
 <li><a href="#troubleshooting">Troubleshooting</a></li>
 
 
@@ -574,15 +579,26 @@ NAME        STATUS   ROLES    AGE   VERSION
 <span style="color:#666">10</span>.0.2.15   Ready    master   4d    v1.15.3</code></pre></div>
 <h2 id="verification">Verification</h2>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># kubectl get pods -n kube-system</span>
-NAME                                READY   STATUS             RESTARTS   AGE
-coredns-5c98db65d4-swnfh            <span style="color:#666">0</span>/1     CrashLoopBackOff   <span style="color:#666">5</span>          4d
-coredns-5c98db65d4-tqn2p            <span style="color:#666">0</span>/1     CrashLoopBackOff   <span style="color:#666">5</span>          4d
-etcd-10.0.2.15                      <span style="color:#666">1</span>/1     Running            <span style="color:#666">1</span>          4d
-kube-apiserver-10.0.2.15            <span style="color:#666">1</span>/1     Running            <span style="color:#666">1</span>          4d
-kube-controller-manager-10.0.2.15   <span style="color:#666">1</span>/1     Running            <span style="color:#666">1</span>          4d
-kube-proxy-f9vqp                    <span style="color:#666">1</span>/1     Running            <span style="color:#666">1</span>          4d
-kube-scheduler-10.0.2.15            <span style="color:#666">1</span>/1     Running            <span style="color:#666">1</span>          4d
-weave-net-rvvzm                     <span style="color:#666">2</span>/2     Running            <span style="color:#666">0</span>          5m13s</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># kubectl get componentstatuses</span>
+NAME                                READY   STATUS    RESTARTS   AGE
+coredns-5644d7b6d9-9gp2m            <span style="color:#666">0</span>/1     Running   <span style="color:#666">0</span>          23m
+coredns-5644d7b6d9-x5f9f            <span style="color:#666">0</span>/1     Running   <span style="color:#666">0</span>          23m
+etcd-10.0.2.15                      <span style="color:#666">1</span>/1     Running   <span style="color:#666">0</span>          22m
+kube-apiserver-10.0.2.15            <span style="color:#666">1</span>/1     Running   <span style="color:#666">0</span>          22m
+kube-controller-manager-10.0.2.15   <span style="color:#666">1</span>/1     Running   <span style="color:#666">0</span>          22m
+kube-proxy-xw6mq                    <span style="color:#666">1</span>/1     Running   <span style="color:#666">0</span>          23m
+kube-scheduler-10.0.2.15            <span style="color:#666">1</span>/1     Running   <span style="color:#666">0</span>          22m
+weave-net-8hmqc                     <span style="color:#666">2</span>/2     Running   <span style="color:#666">0</span>          2m6s
+
+<span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># kubectl get pods -A</span>
+NAMESPACE     NAME                                READY   STATUS    RESTARTS   AGE
+kube-system   coredns-5644d7b6d9-9gp2m            <span style="color:#666">0</span>/1     Running   <span style="color:#666">0</span>          23m
+kube-system   coredns-5644d7b6d9-x5f9f            <span style="color:#666">0</span>/1     Running   <span style="color:#666">0</span>          23m
+kube-system   etcd-10.0.2.15                      <span style="color:#666">1</span>/1     Running   <span style="color:#666">0</span>          22m
+kube-system   kube-apiserver-10.0.2.15            <span style="color:#666">1</span>/1     Running   <span style="color:#666">0</span>          22m
+kube-system   kube-controller-manager-10.0.2.15   <span style="color:#666">1</span>/1     Running   <span style="color:#666">0</span>          22m
+kube-system   kube-proxy-xw6mq                    <span style="color:#666">1</span>/1     Running   <span style="color:#666">0</span>          23m
+kube-system   kube-scheduler-10.0.2.15            <span style="color:#666">1</span>/1     Running   <span style="color:#666">0</span>          22m
+kube-system   weave-net-8hmqc                     <span style="color:#666">2</span>/2     Running   <span style="color:#666">0</span>          2m9s</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># kubectl get componentstatuses</span>
 NAME                 STATUS    MESSAGE             ERROR
 controller-manager   Healthy   ok
 scheduler            Healthy   ok
@@ -680,6 +696,14 @@ Please, check the contents of the <span style="color:#b8860b">$HOME</span>/.kube
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># swapoff -a</span>
 <span style="color:#080;font-style:italic"># systemctl start kubelet</span>
 <span style="color:#080;font-style:italic"># systemctl status kubelet</span></code></pre></div>
+<h2 id="kubeadm-join-token">kubeadm join token</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># This command will create a new token and display the connection string</span>
+<span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># kubeadm token create --print-join-command</span>
+kubeadm join <span style="color:#666">10</span>.0.2.15:6443 --token 1clhim.pk9teustr2v1gnu2     --discovery-token-ca-cert-hash sha256:efe18b97c7a320e7173238af7126e33ebe76f3877255c8f9aa055f292dbf3755
+
+<span style="color:#080;font-style:italic"># Other toke commands</span>
+kubeadm token list
+kubeadm token delete &lt;TOKEN&gt;</code></pre></div>
 <h2 id="troubleshooting">Troubleshooting</h2>
 
 <p><code>kubelet service not starting</code></p>
