@@ -410,7 +410,7 @@
 </ul>
 
 
-<p><img src="/images/k8s/k8s-components.png" alt="arc" /></p>
+<p><img src="/images/k8s/k8sArc.png" alt="arc" /></p>
 
 <h2 id="master">Master</h2>
 
@@ -438,7 +438,7 @@
 
 <p>Every Kubernetes Node runs at least:</p>
 
-<p><code>Kubelet</code>, a process responsible for communication between the Kubernetes Master and the Node; it manages the Pods and the containers running on a machine.</p>
+<p><strong>Kubelet</strong>  : process responsible for communication between the Kubernetes Master and the Node; it manages the Pods and the containers running on a machine.</p>
 
 <p>A container runtime (like Docker) responsible for pulling the container image from a registry, unpacking the container, and running the application.</p>
 
@@ -452,13 +452,23 @@
 
 <h2 id="controller-manager">Controller manager</h2>
 
-<p>todo</p>
+<p>The Kubernetes controller manager is a daemon that embeds the core control loops shipped with Kubernetes.</p>
+
+<p>a controller is a control loop that watches the shared state of the cluster through the apiserver and makes changes attempting to move the current state towards the desired state.</p>
+
+<p>Examples of controllers that ship with Kubernetes:</p>
+
+<ul>
+<li>node controller.</li>
+<li>replication controller</li>
+<li>endpoints controller</li>
+<li>namespace controller</li>
+<li>serviceaccounts controller</li>
+</ul>
 
 <h2 id="etcd">etcd</h2>
 
-<ul>
-<li>etcd is an opensource, distributed key-value database which acts as a single source of truth for all components of the cluster.</li>
-</ul>
+<p><strong>etcd</strong> is an opensource, distributed key-value database which acts as a single source of truth for all components of the cluster.</p>
 
 <h2 id="daemon-set">Daemon Set</h2>
 
@@ -568,7 +578,7 @@
             
         </nav>
         <div id="miceType" class="center">
-            Sriram Yeluri &copy; 2019
+            Sriram Yeluri &copy; 2020
         </div>
     </main>
 </footer>
