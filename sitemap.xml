@@ -8,13 +8,12 @@
   </url>
   
   <url>
-    <loc>//localhost:1313/docs/aws/</loc>
-    <lastmod>2019-06-29T22:49:26+02:00</lastmod>
+    <loc>//localhost:1313/docs/cloud/aws/</loc>
   </url>
   
   <url>
     <loc>//localhost:1313/docs/about/</loc>
-    <lastmod>2019-08-14T22:29:12+02:00</lastmod>
+    <lastmod>2020-02-02T12:23:45+01:00</lastmod>
   </url>
   
   <url>
@@ -28,8 +27,7 @@
   </url>
   
   <url>
-    <loc>//localhost:1313/docs/scripting/bash/</loc>
-    <lastmod>2019-10-27T11:22:43+01:00</lastmod>
+    <loc>//localhost:1313/docs/cloud/azure/</loc>
   </url>
   
   <url>
@@ -43,8 +41,7 @@
   </url>
   
   <url>
-    <loc>//localhost:1313/docs/aws/cft/</loc>
-    <lastmod>2019-08-14T22:29:12+02:00</lastmod>
+    <loc>//localhost:1313/docs/cloud/aws/cft/</loc>
   </url>
   
   <url>
@@ -55,6 +52,10 @@
   <url>
     <loc>//localhost:1313/docs/linux/centos/</loc>
     <lastmod>2019-10-26T15:25:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/cloud/</loc>
   </url>
   
   <url>
@@ -144,7 +145,7 @@
   
   <url>
     <loc>//localhost:1313/</loc>
-    <lastmod>2019-07-07T15:06:56+02:00</lastmod>
+    <lastmod>2020-02-02T12:23:45+01:00</lastmod>
   </url>
   
   <url>
@@ -248,16 +249,6 @@
   </url>
   
   <url>
-    <loc>//localhost:1313/docs/scripting/scripts/</loc>
-    <lastmod>2019-08-24T12:58:58+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>//localhost:1313/docs/scripting/</loc>
-    <lastmod>2019-06-22T08:42:44+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>//localhost:1313/docs/k8s/secrets/</loc>
     <lastmod>2019-09-01T12:08:35+02:00</lastmod>
   </url>
@@ -265,6 +256,14 @@
   <url>
     <loc>//localhost:1313/docs/security/</loc>
     <lastmod>2019-06-22T08:42:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/cloud/aws/services/</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/linux/shellscripting/</loc>
   </url>
   
   <url>
@@ -333,6 +332,14 @@
   </url>
   
   <url>
+    <loc>//localhost:1313/docs/cloud/aws/ebs/</loc>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/cloud/aws/efs/</loc>
+  </url>
+  
+  <url>
     <loc>//localhost:1313/docs/programming/golang/flags/</loc>
     <lastmod>2019-09-22T16:18:07+02:00</lastmod>
   </url>
@@ -350,6 +357,10 @@
   <url>
     <loc>//localhost:1313/docs/k8s/kubectl/</loc>
     <lastmod>2019-08-31T22:23:21+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/docs/cloud/aws/s3/</loc>
   </url>
   
 </urlset>
