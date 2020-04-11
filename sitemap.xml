@@ -8,7 +8,12 @@
   </url>
   
   <url>
+    <loc>//localhost:1313/docs/linux/awk/</loc>
+  </url>
+  
+  <url>
     <loc>//localhost:1313/docs/cloud/aws/</loc>
+    <lastmod>2020-02-06T06:26:00+01:00</lastmod>
   </url>
   
   <url>
@@ -28,6 +33,7 @@
   
   <url>
     <loc>//localhost:1313/docs/cloud/azure/</loc>
+    <lastmod>2020-02-06T06:26:00+01:00</lastmod>
   </url>
   
   <url>
@@ -42,11 +48,12 @@
   
   <url>
     <loc>//localhost:1313/docs/cloud/aws/cft/</loc>
+    <lastmod>2020-02-06T06:26:00+01:00</lastmod>
   </url>
   
   <url>
     <loc>//localhost:1313/docs/cicd/</loc>
-    <lastmod>2019-07-12T06:32:56+02:00</lastmod>
+    <lastmod>2020-02-06T06:26:00+01:00</lastmod>
   </url>
   
   <url>
@@ -56,6 +63,7 @@
   
   <url>
     <loc>//localhost:1313/docs/cloud/</loc>
+    <lastmod>2020-02-06T06:26:00+01:00</lastmod>
   </url>
   
   <url>
@@ -224,6 +232,10 @@
   </url>
   
   <url>
+    <loc>//localhost:1313/docs/cloud/aws/qanda/</loc>
+  </url>
+  
+  <url>
     <loc>//localhost:1313/docs/linux/rhel/</loc>
     <lastmod>2019-06-23T22:57:11+02:00</lastmod>
   </url>
@@ -260,10 +272,12 @@
   
   <url>
     <loc>//localhost:1313/docs/cloud/aws/services/</loc>
+    <lastmod>2020-02-06T06:26:00+01:00</lastmod>
   </url>
   
   <url>
     <loc>//localhost:1313/docs/linux/shellscripting/</loc>
+    <lastmod>2020-02-06T06:26:00+01:00</lastmod>
   </url>
   
   <url>
@@ -278,7 +292,7 @@
   
   <url>
     <loc>//localhost:1313/docs/tutorials/topics/startlearning/</loc>
-    <lastmod>2019-09-22T21:49:00+02:00</lastmod>
+    <lastmod>2020-02-06T06:26:00+01:00</lastmod>
   </url>
   
   <url>
@@ -294,6 +308,11 @@
   <url>
     <loc>//localhost:1313/docs/security/tls/</loc>
     <lastmod>2019-09-17T06:35:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/tabfiles/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -332,11 +351,11 @@
   </url>
   
   <url>
-    <loc>//localhost:1313/docs/cloud/aws/ebs/</loc>
+    <loc>//localhost:1313/tabfiles/ebs/</loc>
   </url>
   
   <url>
-    <loc>//localhost:1313/docs/cloud/aws/efs/</loc>
+    <loc>//localhost:1313/tabfiles/efs/</loc>
   </url>
   
   <url>
@@ -360,7 +379,7 @@
   </url>
   
   <url>
-    <loc>//localhost:1313/docs/cloud/aws/s3/</loc>
+    <loc>//localhost:1313/tabfiles/s3/</loc>
   </url>
   
 </urlset>

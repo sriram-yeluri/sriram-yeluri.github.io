@@ -4,7 +4,7 @@
 	
 
 <meta charset="utf-8">
-<title>s3 - SY Knowledge Hub</title>
+<title>AWK - SY Knowledge Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 
@@ -29,9 +29,9 @@
 <meta name="description" content="">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
-<meta property="og:url" content="//localhost:1313/docs/cloud/aws/s3/">
-<meta property="og:title" content="s3">
-<meta name="twitter:title" content="s3">
+<meta property="og:url" content="//localhost:1313/docs/linux/awk/">
+<meta property="og:title" content="AWK">
+<meta name="twitter:title" content="AWK">
 <meta name="twitter:image" content="https://github.com/sriram-yeluri/images/raw/master/favicon.png"/>
 
 <meta name="twitter:image:alt" content="SY Knowledge Hub">
@@ -125,14 +125,14 @@
 
 
 
-<h1>Cloud</h1>
+
+
+
+
+
+
+<h1>Linux</h1>
 <h5></h5>
-
-
-
-
-
-
 
 
 
@@ -153,7 +153,7 @@
 		<li><a href="/docs/cicd/">CICD</a></li>
 		
 		
-		<li><a href="/docs/cloud/" class="YAH">CLOUD</a></li>
+		<li><a href="/docs/cloud/">CLOUD</a></li>
 		
 		
 		<li><a href="/docs/k8s/">KUBERNETES</a></li>
@@ -162,7 +162,7 @@
 		<li><a href="/docs/ldap/">LDAP</a></li>
 		
 		
-		<li><a href="/docs/linux/">LINUX</a></li>
+		<li><a href="/docs/linux/" class="YAH">LINUX</a></li>
 		
 		
 		<li><a href="/docs/programming/">PROGRAMMING</a></li>
@@ -207,6 +207,18 @@
          
              
                  
+             
+         
+             
+                 
+             
+         
+             
+                 
+             
+         
+             
+                 
                           
                           
                  
@@ -222,15 +234,9 @@
          
              
          
-             
-         
-             
-         
-             
-         
          
         
-        <a class="item" data-title="Cloud" href="/docs/cloud/"></a>
+        <a class="item" data-title="Linux" href="/docs/linux/"></a>
 
 	
 	
@@ -238,61 +244,99 @@
 	
 		
 			
-<div class="item" data-title="AWS">
-	<div class="container">
-		
-		
-	
-	
-	
-	
-		
-			
 
-<a class="item" data-title="CFT" href="/docs/cloud/aws/cft/"></a>
+<a class="item" data-title="AWK" href="/docs/linux/awk/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Services" href="/docs/cloud/aws/services/"></a>
+<a class="item" data-title="Centos" href="/docs/linux/centos/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="efs" href="/docs/cloud/aws/efs/"></a>
+<a class="item" data-title="Firewall" href="/docs/linux/firewall/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="s3" href="/docs/cloud/aws/s3/"></a>
-
-		
-	
-
-	</div>
-</div>
+<a class="item" data-title="KDE" href="/docs/linux/kde_configuration/"></a>
 
 		
 	
 		
 			
-<div class="item" data-title="Azure">
-	<div class="container">
-		
-		
-	
-	
-	
-	
 
-	</div>
-</div>
+<a class="item" data-title="Linux FilePermissions" href="/docs/linux/filepermissions/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Linux Filesystem" href="/docs/linux/filesystem/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Networking" href="/docs/linux/networking/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="RHEL" href="/docs/linux/rhel/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Shell Scripting" href="/docs/linux/shellscripting/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Storage" href="/docs/linux/storage/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="System Admin" href="/docs/linux/sysadmin/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Ubuntu" href="/docs/linux/ubuntu/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="VIM" href="/docs/linux/vim/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Yum" href="/docs/linux/yum/"></a>
 
 		
 	
@@ -311,7 +355,75 @@
 
 
 
-<h1>s3</h1>
+<h1>AWK</h1>
+
+
+
+<p>AWK</p>
+
+<ul>
+<li>Scans a file line by line</li>
+<li>Splits each input line into fields</li>
+<li>Compares input line/fields to pattern</li>
+<li>Performs action(s) on matched lines</li>
+</ul>
+
+
+
+
+
+
+
+
+
+<ul id="markdown-toc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+<p>Search Patterns:</p>
+
+<p>Patterns are marked by <code>forward slash</code> at beginning and end of search key word</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">awk <span style="color:#b44">&#39;/keyword/ {print}&#39;</span>
+cat /etc/passwd | awk -F: <span style="color:#b44">&#39;/bin/ {print}&#39;</span>
+cat /etc/passwd | awk -F: <span style="color:#b44">&#39;/bin\/false/ {print}&#39;</span>
+cat /etc/passwd | awk -F: <span style="color:#b44">&#39;/usr\/sbin\/nologin/ {print $1}&#39;</span></code></pre></div>
+<p>Delimiter and Multiple Delimiters</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat /etc/passwd | awk -F: <span style="color:#b44">&#39;/bin/ {print}&#39;</span>
+
+awk -F<span style="color:#b44">&#39;[/=]&#39;</span> <span style="color:#b44">&#39;{print $3 &#34;\t&#34; $5 &#34;\t&#34; $8}&#39;</span> filename
+
+SYNTAX: -F<span style="color:#b44">&#34;&lt;separator1&gt;|&lt;separator2&gt;|...&#34;</span>
+awk -F<span style="color:#b44">&#34;/|=&#34;</span> <span style="color:#b44">&#39;{print $3 &#34;\t&#34; $5 &#34;\t&#34; $8}&#39;</span> filename</code></pre></div>
+
+
+
+
+
 
 
 
