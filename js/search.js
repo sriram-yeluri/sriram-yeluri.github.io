@@ -33,26 +33,7 @@
     }
 
     window.renderBingSearchResults = () => {
-        var searchTerm  = window.location.search.split("=")[1].split("&")[0],
-            page        = window.location.search.split("=")[2],
-            q           = "site:kubernetes.io " + searchTerm;
-
-        page = (!page) ?  1 : page.split("&")[0];
-
-        var results = '', pagination = '', offset = (page - 1) * 10, ajaxConf = {};
-
-        ajaxConf.url = 'https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/search';
-        ajaxConf.data =  { q: q, offset: offset, customConfig: '320659264' };
-        ajaxConf.type = "GET";
-        ajaxConf.beforeSend = function(xhr){ xhr.setRequestHeader('Ocp-Apim-Subscription-Key', '51efd23677624e04b4abe921225ea7ec'); };
-
-        $.ajax(ajaxConf).done(function(res) {
-            var paginationAnchors = window.getPaginationAnchors(Math.ceil(res.webPages.totalEstimatedMatches / 10));
-            res.webPages.value.map(ob => { results += window.getResultMarkupString(ob); })
-
-            if($('#bing-results-container').length > 0) $('#bing-results-container').html(results);
-            if($('#bing-pagination-container').length > 0) $('#bing-pagination-container').html(paginationAnchors);
-        });
+        
     }
 
     //China Verification

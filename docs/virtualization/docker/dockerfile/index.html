@@ -178,7 +178,7 @@
 		
 	</ul>
 	<form id="searchBox" action="/docs/search/">
-		<input type="text" id="search" name="q" placeholder="Search" aria-label="Search">
+		<input type="text" id="search" name="q" placeholder="" aria-label="Search">
 	</form>
 </div>
 
@@ -398,7 +398,7 @@
 </span><span style=""></span>           --&gt; Do not add layer to docker image<span style="">
 </span><span style=""></span><span style="color:#a2f;font-weight:bold">CMD</span></code></pre></div>
 <blockquote class="note">
-  <div><strong>Note:</strong> There can only be one CMD instruction in a Dockerfile. If you list more than one CMD, then only the last CMD will take effect.</div>
+  <div><strong></strong> There can only be one CMD instruction in a Dockerfile. If you list more than one CMD, then only the last CMD will take effect.</div>
 </blockquote>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># Example dockerfile</span>
 COPY docker-entrypoint.sh /
@@ -423,7 +423,7 @@ $ docker container <span style="color:#a2f">exec</span> &lt;container_name/id&gt
 </ul>
 
 <blockquote class="note">
-  <div><strong>Note:</strong> If volume is exposed in either of the above methods, then both the src and dst containers should run on the same physical host</div>
+  <div><strong></strong> If volume is exposed in either of the above methods, then both the src and dst containers should run on the same physical host</div>
 </blockquote>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker container run --rm -itd --name &lt;container_name&gt; -v <span style="color:#b8860b">$PWD</span>:/appl -v /appl/data</code></pre></div>
 <p>Inorder to access data from other containers, use volumes-from flag while running the container</p>

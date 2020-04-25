@@ -178,7 +178,7 @@
 		
 	</ul>
 	<form id="searchBox" action="/docs/search/">
-		<input type="text" id="search" name="q" placeholder="Search" aria-label="Search">
+		<input type="text" id="search" name="q" placeholder="" aria-label="Search">
 	</form>
 </div>
 
@@ -244,15 +244,31 @@
 	
 		
 			
+<div class="item" data-title="FileSystem">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
 
-<a class="item" data-title="AWK" href="/docs/linux/awk/"></a>
+<a class="item" data-title="FilePermissions" href="/docs/linux/filesystem/filepermissions/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Centos" href="/docs/linux/centos/"></a>
+<a class="item" data-title="Filesystem" href="/docs/linux/filesystem/filesystem/"></a>
+
+		
+	
+
+	</div>
+</div>
 
 		
 	
@@ -273,42 +289,97 @@
 		
 			
 
-<a class="item" data-title="Linux FilePermissions" href="/docs/linux/filepermissions/"></a>
-
-		
-	
-		
-			
-
-<a class="item" data-title="Linux Filesystem" href="/docs/linux/filesystem/"></a>
-
-		
-	
-		
-			
-
 <a class="item" data-title="Networking" href="/docs/linux/networking/"></a>
 
 		
 	
 		
 			
+<div class="item" data-title="Operating System">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
 
-<a class="item" data-title="RHEL" href="/docs/linux/rhel/"></a>
+<a class="item" data-title="Centos" href="/docs/linux/operatingsystems/centos/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Shell Scripting" href="/docs/linux/shellscripting/"></a>
+<a class="item" data-title="RHEL" href="/docs/linux/operatingsystems/rhel/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Storage" href="/docs/linux/storage/"></a>
+<a class="item" data-title="Ubuntu" href="/docs/linux/operatingsystems/ubuntu/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Scripting">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="AWK" href="/docs/linux/scripting/awk/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Shell Scripting" href="/docs/linux/scripting/shellscripting/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Storage">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="Storage" href="/docs/linux/storage/storage/"></a>
+
+		
+	
+
+	</div>
+</div>
 
 		
 	
@@ -316,13 +387,6 @@
 			
 
 <a class="item" data-title="System Admin" href="/docs/linux/sysadmin/"></a>
-
-		
-	
-		
-			
-
-<a class="item" data-title="Ubuntu" href="/docs/linux/ubuntu/"></a>
 
 		
 	
@@ -359,23 +423,14 @@
     
     
 	 
-    
-    
-    
+	 
 
 
-<h1>AWK</h1>
+<h1>Linux</h1>
 
 
 
-<p>AWK</p>
-
-<ul>
-<li>Scans a file line by line</li>
-<li>Splits each input line into fields</li>
-<li>Compares input line/fields to pattern</li>
-<li>Performs action(s) on matched lines</li>
-</ul>
+<p>Bellow are the list of topics to be covered for Linux learning</p>
 
 
 
@@ -414,20 +469,16 @@
 </ul>
 
 
-<p>Search Patterns:</p>
-
-<p>Patterns are marked by <code>forward slash</code> at beginning and end of search key word</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">awk <span style="color:#b44">&#39;/keyword/ {print}&#39;</span>
-cat /etc/passwd | awk -F: <span style="color:#b44">&#39;/bin/ {print}&#39;</span>
-cat /etc/passwd | awk -F: <span style="color:#b44">&#39;/bin\/false/ {print}&#39;</span>
-cat /etc/passwd | awk -F: <span style="color:#b44">&#39;/usr\/sbin\/nologin/ {print $1}&#39;</span></code></pre></div>
-<p>Delimiter and Multiple Delimiters</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat /etc/passwd | awk -F: <span style="color:#b44">&#39;/bin/ {print}&#39;</span>
-
-awk -F<span style="color:#b44">&#39;[/=]&#39;</span> <span style="color:#b44">&#39;{print $3 &#34;\t&#34; $5 &#34;\t&#34; $8}&#39;</span> filename
-
-SYNTAX: -F<span style="color:#b44">&#34;&lt;separator1&gt;|&lt;separator2&gt;|...&#34;</span>
-awk -F<span style="color:#b44">&#34;/|=&#34;</span> <span style="color:#b44">&#39;{print $3 &#34;\t&#34; $5 &#34;\t&#34; $8}&#39;</span> filename</code></pre></div>
+<p>Linux File System<br />
+Files and Permissions<br />
+Linux Basic Commands<br />
+Sudo access and root<br />
+User and Group Management<br />
+Service Management<br />
+Curl and Wget<br />
+SSH Secure Shell<br />
+Transferring with scp and sftp<br />
+Scripting</p>
 
 
 
@@ -441,8 +492,10 @@ awk -F<span style="color:#b44">&#34;/|=&#34;</span> <span style="color:#b44">&#3
 
 
 
-    
-    
+
+
+
+	 
 
         
         
