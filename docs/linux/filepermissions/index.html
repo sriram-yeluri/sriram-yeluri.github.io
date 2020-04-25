@@ -4,7 +4,7 @@
 	
 
 <meta charset="utf-8">
-<title>Linux FilePermissions - SY Knowledge Hub</title>
+<title>FilePermissions - SY Knowledge Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 
@@ -30,8 +30,8 @@
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:url" content="//localhost:1313/docs/linux/filepermissions/">
-<meta property="og:title" content="Linux FilePermissions">
-<meta name="twitter:title" content="Linux FilePermissions">
+<meta property="og:title" content="FilePermissions">
+<meta name="twitter:title" content="FilePermissions">
 <meta name="twitter:image" content="https://github.com/sriram-yeluri/images/raw/master/favicon.png"/>
 
 <meta name="twitter:image:alt" content="SY Knowledge Hub">
@@ -178,7 +178,7 @@
 		
 	</ul>
 	<form id="searchBox" action="/docs/search/">
-		<input type="text" id="search" name="q" placeholder="Search" aria-label="Search">
+		<input type="text" id="search" name="q" placeholder="" aria-label="Search">
 	</form>
 </div>
 
@@ -245,14 +245,14 @@
 		
 			
 
-<a class="item" data-title="AWK" href="/docs/linux/awk/"></a>
+<a class="item" data-title="FilePermissions" href="/docs/linux/filepermissions/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Centos" href="/docs/linux/centos/"></a>
+<a class="item" data-title="Filesystem" href="/docs/linux/filesystem/"></a>
 
 		
 	
@@ -273,35 +273,74 @@
 		
 			
 
-<a class="item" data-title="Linux FilePermissions" href="/docs/linux/filepermissions/"></a>
-
-		
-	
-		
-			
-
-<a class="item" data-title="Linux Filesystem" href="/docs/linux/filesystem/"></a>
-
-		
-	
-		
-			
-
 <a class="item" data-title="Networking" href="/docs/linux/networking/"></a>
 
 		
 	
 		
 			
+<div class="item" data-title="Operating System">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
 
-<a class="item" data-title="RHEL" href="/docs/linux/rhel/"></a>
+<a class="item" data-title="Centos" href="/docs/linux/operatingsystems/centos/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Shell Scripting" href="/docs/linux/shellscripting/"></a>
+<a class="item" data-title="RHEL" href="/docs/linux/operatingsystems/rhel/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Ubuntu" href="/docs/linux/operatingsystems/ubuntu/"></a>
+
+		
+	
+
+	</div>
+</div>
+
+		
+	
+		
+			
+<div class="item" data-title="Scripting">
+	<div class="container">
+		
+		
+	
+	
+	
+	
+		
+			
+
+<a class="item" data-title="AWK" href="/docs/linux/scripting/awk/"></a>
+
+		
+	
+		
+			
+
+<a class="item" data-title="Shell Scripting" href="/docs/linux/scripting/shellscripting/"></a>
+
+		
+	
+
+	</div>
+</div>
 
 		
 	
@@ -316,13 +355,6 @@
 			
 
 <a class="item" data-title="System Admin" href="/docs/linux/sysadmin/"></a>
-
-		
-	
-		
-			
-
-<a class="item" data-title="Ubuntu" href="/docs/linux/ubuntu/"></a>
 
 		
 	
@@ -355,13 +387,24 @@
 
 
 
-<h1>Linux FilePermissions</h1>
+<h1>FilePermissions</h1>
 
 
 
-<p>Linux File Permissions</p>
+<h2>ERROR</h2> 
+
+<p>You must define a <span style="font-family: monospace">overview</span></p>
 
 
+<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 
@@ -380,6 +423,11 @@
 
 
 
+<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
+
+
+
+
 
 
 
@@ -398,28 +446,20 @@
 </ul>
 
 
-<p><code>-rwsrwsrwt</code><br />
-<code>chmod u+s,g+s,o+t dir</code></p>
+<h2>ERROR</h2> 
 
-<ul>
-<li>Sticky bit<br />
-Items in directory may only be deleted by owner.</li>
-</ul>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@10 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># ls -ld /tmp</span>
-drwxrwxrwt. <span style="color:#666">8</span> root root <span style="color:#666">216</span> Oct <span style="color:#666">27</span> <span style="color:#666">11</span>:18 /tmp</code></pre></div>
-<ul>
-<li><p>SGID - Set Group Identity<br />
-Can be set on directories aswell as on files
-Directory : New objects in this directory inherit its group ownership.<br />
-Execuable File : Runs as owining group rather than invoker&rsquo;s group.</p></li>
-
-<li><p>SUID - Set User Identity<br />
-Executable: Program runs as owner, rather than caller.</p></li>
-</ul>
-
-<p><img src="/images/Linux/SpecialPermissions.png" alt="" width="800"/></p>
+<p>You must define a <span style="font-family: monospace">body</span></p>
 
 
+<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 

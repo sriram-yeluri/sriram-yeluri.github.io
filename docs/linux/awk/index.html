@@ -178,7 +178,7 @@
 		
 	</ul>
 	<form id="searchBox" action="/docs/search/">
-		<input type="text" id="search" name="q" placeholder="Search" aria-label="Search">
+		<input type="text" id="search" name="q" placeholder="" aria-label="Search">
 	</form>
 </div>
 
@@ -359,16 +359,20 @@
 
 
 
-<p>AWK</p>
+<h2>ERROR</h2> 
 
-<ul>
-<li>Scans a file line by line</li>
-<li>Splits each input line into fields</li>
-<li>Compares input line/fields to pattern</li>
-<li>Performs action(s) on matched lines</li>
-</ul>
+<p>You must define a <span style="font-family: monospace">overview</span></p>
 
 
+<p>This template requires that you provide text that states, in one or two sentences, the purpose of this document. The text in this block will
+be displayed under the heading <b></b>.
+
+To get rid of this message and take advantage of this template, capture the <i>overview</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 
@@ -387,6 +391,11 @@
 
 
 
+<li><a href="#%3ch2%3eERROR%3c%2fh2%3e">ERROR</a></li>
+
+
+
+
 
 
 
@@ -405,21 +414,20 @@
 </ul>
 
 
-<p>Search Patterns:</p>
+<h2>ERROR</h2> 
 
-<p>Patterns are marked by <code>forward slash</code> at beginning and end of search key word</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">awk <span style="color:#b44">&#39;/keyword/ {print}&#39;</span>
-cat /etc/passwd | awk -F: <span style="color:#b44">&#39;/bin/ {print}&#39;</span>
-cat /etc/passwd | awk -F: <span style="color:#b44">&#39;/bin\/false/ {print}&#39;</span>
-cat /etc/passwd | awk -F: <span style="color:#b44">&#39;/usr\/sbin\/nologin/ {print $1}&#39;</span></code></pre></div>
-<p>Delimiter and Multiple Delimiters</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat /etc/passwd | awk -F: <span style="color:#b44">&#39;/bin/ {print}&#39;</span>
+<p>You must define a <span style="font-family: monospace">body</span></p>
 
-awk -F<span style="color:#b44">&#39;[/=]&#39;</span> <span style="color:#b44">&#39;{print $3 &#34;\t&#34; $5 &#34;\t&#34; $8}&#39;</span> filename
 
-SYNTAX: -F<span style="color:#b44">&#34;&lt;separator1&gt;|&lt;separator2&gt;|...&#34;</span>
-awk -F<span style="color:#b44">&#34;/|=&#34;</span> <span style="color:#b44">&#39;{print $3 &#34;\t&#34; $5 &#34;\t&#34; $8}&#39;</span> filename</code></pre></div>
+<p>This template requires that you provide text that supplies the body of the page content.. The text in this block will
+be displayed under the heading <b></b>.
 
+To get rid of this message and take advantage of this template, capture the <i>body</i> variable and populate it with content.
+
+
+
+
+</p>
 
 
 

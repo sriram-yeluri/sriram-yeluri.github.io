@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "style.css",
-	"sourceRoot": "/home/sriram/hugo-docs/sy-docs",
+	"sourceRoot": "/home/sriram/bitbucket_repos/sy-docs",
 	"sources": [
 		"assets/sass/style.sass",
 		"assets/sass/_reset.sass",
