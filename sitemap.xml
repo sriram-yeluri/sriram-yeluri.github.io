@@ -9,6 +9,7 @@
   
   <url>
     <loc>//localhost:1313/docs/linux/scripting/awk/</loc>
+    <lastmod>2020-04-26T13:22:41+02:00</lastmod>
   </url>
   
   <url>
@@ -58,6 +59,7 @@
   
   <url>
     <loc>//localhost:1313/docs/linux/operatingsystems/centos/</loc>
+    <lastmod>2020-04-26T13:22:41+02:00</lastmod>
   </url>
   
   <url>
@@ -97,14 +99,17 @@
   
   <url>
     <loc>//localhost:1313/docs/linux/filesystem/filepermissions/</loc>
+    <lastmod>2020-04-26T13:22:41+02:00</lastmod>
   </url>
   
   <url>
     <loc>//localhost:1313/docs/linux/filesystem/</loc>
+    <lastmod>2020-04-26T13:22:41+02:00</lastmod>
   </url>
   
   <url>
     <loc>//localhost:1313/docs/linux/filesystem/filesystem/</loc>
+    <lastmod>2020-04-26T13:22:41+02:00</lastmod>
   </url>
   
   <url>
@@ -179,7 +184,7 @@
   
   <url>
     <loc>//localhost:1313/docs/linux/</loc>
-    <lastmod>2019-06-22T08:42:44+02:00</lastmod>
+    <lastmod>2020-04-26T13:22:41+02:00</lastmod>
   </url>
   
   <url>
@@ -219,6 +224,7 @@
   
   <url>
     <loc>//localhost:1313/docs/linux/operatingsystems/</loc>
+    <lastmod>2020-04-26T13:22:41+02:00</lastmod>
   </url>
   
   <url>
@@ -238,6 +244,7 @@
   
   <url>
     <loc>//localhost:1313/docs/linux/operatingsystems/rhel/</loc>
+    <lastmod>2020-04-26T13:22:41+02:00</lastmod>
   </url>
   
   <url>
@@ -262,6 +269,7 @@
   
   <url>
     <loc>//localhost:1313/docs/linux/scripting/</loc>
+    <lastmod>2020-04-26T13:22:41+02:00</lastmod>
   </url>
   
   <url>
@@ -281,6 +289,7 @@
   
   <url>
     <loc>//localhost:1313/docs/linux/scripting/shellscripting/</loc>
+    <lastmod>2020-04-26T13:22:41+02:00</lastmod>
   </url>
   
   <url>
@@ -300,10 +309,12 @@
   
   <url>
     <loc>//localhost:1313/docs/linux/storage/</loc>
+    <lastmod>2020-04-26T13:22:41+02:00</lastmod>
   </url>
   
   <url>
     <loc>//localhost:1313/docs/linux/storage/storage/</loc>
+    <lastmod>2020-04-26T13:22:41+02:00</lastmod>
   </url>
   
   <url>
@@ -314,12 +325,6 @@
   <url>
     <loc>//localhost:1313/docs/security/tls/</loc>
     <lastmod>2019-09-17T06:35:09+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>//localhost:1313/tabfiles/</loc>
-    <lastmod>2020-04-11T12:27:00+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -334,6 +339,7 @@
   
   <url>
     <loc>//localhost:1313/docs/linux/operatingsystems/ubuntu/</loc>
+    <lastmod>2020-04-26T13:22:41+02:00</lastmod>
   </url>
   
   <url>
@@ -357,23 +363,13 @@
   </url>
   
   <url>
-    <loc>//localhost:1313/tabfiles/ebs/</loc>
-    <lastmod>2020-04-11T12:27:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>//localhost:1313/tabfiles/efs/</loc>
-    <lastmod>2020-04-11T12:27:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>//localhost:1313/docs/programming/golang/flags/</loc>
     <lastmod>2019-09-22T16:18:07+02:00</lastmod>
   </url>
   
   <url>
     <loc>//localhost:1313/docs/programming/golang/</loc>
-    <lastmod>2019-09-22T16:18:07+02:00</lastmod>
+    <lastmod>2020-04-26T13:22:41+02:00</lastmod>
   </url>
   
   <url>
@@ -389,11 +385,6 @@
   <url>
     <loc>//localhost:1313/docs/k8s/kubectl/</loc>
     <lastmod>2019-08-31T22:23:21+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>//localhost:1313/tabfiles/s3/</loc>
-    <lastmod>2020-04-11T12:27:00+02:00</lastmod>
   </url>
   
 </urlset>
