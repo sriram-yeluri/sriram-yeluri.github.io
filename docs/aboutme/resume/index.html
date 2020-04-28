@@ -4,7 +4,7 @@
 	
 
 <meta charset="utf-8">
-<title>kubectl - SY Knowledge Hub</title>
+<title>Resume - SY Knowledge Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
 
@@ -26,12 +26,18 @@
 
 
 
-<meta name="description" content="">
-<meta property="og:description" content="">
-<meta name="twitter:description" content="">
-<meta property="og:url" content="//localhost:1313/docs/k8s/kubectl/">
-<meta property="og:title" content="kubectl">
-<meta name="twitter:title" content="kubectl">
+<meta name="description" content=" I am a software professional, working in the field of IT for 15&#43; years. I have worked in telecom and banking domains with major clients like Erisson, BankofAmerica, AbnAmro.
+I worked at various projects using multiple tools and technologies.
+Skills Certifications Experience Education ">
+<meta property="og:description" content=" I am a software professional, working in the field of IT for 15&#43; years. I have worked in telecom and banking domains with major clients like Erisson, BankofAmerica, AbnAmro.
+I worked at various projects using multiple tools and technologies.
+Skills Certifications Experience Education ">
+<meta name="twitter:description" content=" I am a software professional, working in the field of IT for 15&#43; years. I have worked in telecom and banking domains with major clients like Erisson, BankofAmerica, AbnAmro.
+I worked at various projects using multiple tools and technologies.
+Skills Certifications Experience Education ">
+<meta property="og:url" content="//localhost:1313/docs/aboutme/resume/">
+<meta property="og:title" content="Resume">
+<meta name="twitter:title" content="Resume">
 <meta name="twitter:image" content="https://github.com/sriram-yeluri/images/raw/master/favicon.png"/>
 
 <meta name="twitter:image:alt" content="SY Knowledge Hub">
@@ -127,9 +133,6 @@
 
 
 
-<h1>Kubernetes</h1>
-<h5></h5>
-
 
 
 
@@ -156,7 +159,7 @@
 		<li><a href="/docs/cloud/">CLOUD</a></li>
 		
 		
-		<li><a href="/docs/k8s/" class="YAH">KUBERNETES</a></li>
+		<li><a href="/docs/k8s/">KUBERNETES</a></li>
 		
 		
 		<li><a href="/docs/ldap/">LDAP</a></li>
@@ -203,21 +206,15 @@
          
              
                  
-             
-         
-             
-                 
-             
-         
-             
-                 
-             
-         
-             
-                 
                           
                           
                  
+             
+         
+             
+         
+             
+         
              
          
              
@@ -236,7 +233,7 @@
          
          
         
-        <a class="item" data-title="Kubernetes" href="/docs/k8s/"></a>
+        <a class="item" data-title="AboutMe" href="/docs/aboutme/"></a>
 
 	
 	
@@ -245,63 +242,14 @@
 		
 			
 
-<a class="item" data-title="Architecture" href="/docs/k8s/architecture/"></a>
+<a class="item" data-title="AboutMe" href="/docs/aboutme/about/"></a>
 
 		
 	
 		
 			
 
-<a class="item" data-title="Deployments" href="/docs/k8s/deployments/"></a>
-
-		
-	
-		
-			
-
-<a class="item" data-title="Installing Kubernetes" href="/docs/k8s/installingk8s/"></a>
-
-		
-	
-		
-			
-
-<a class="item" data-title="Kind" href="/docs/k8s/kind/"></a>
-
-		
-	
-		
-			
-
-<a class="item" data-title="Minikube" href="/docs/k8s/minikube/"></a>
-
-		
-	
-		
-			
-
-<a class="item" data-title="Pod" href="/docs/k8s/pod/"></a>
-
-		
-	
-		
-			
-
-<a class="item" data-title="Secrets" href="/docs/k8s/secrets/"></a>
-
-		
-	
-		
-			
-
-<a class="item" data-title="Troubleshooting" href="/docs/k8s/troubleshooting/"></a>
-
-		
-	
-		
-			
-
-<a class="item" data-title="kubectl" href="/docs/k8s/kubectl/"></a>
+<a class="item" data-title="Resume" href="/docs/aboutme/resume/"></a>
 
 		
 	
@@ -320,137 +268,35 @@
 
 
 
-<h1>kubectl</h1>
+<h1>Resume</h1>
 
 
 
-<p><code>kubectl</code> is the command line interface which uses kubernetes API to interact with the cluster</p>
-
-
-
-
-
-
-
-
-
-<ul id="markdown-toc">
-
-
-
-
-
-
-
-
-
-
-<li><a href="#kubectl-version">kubectl version</a></li>
-
-
-
-
-<li><a href="#cluster-info">cluster-info</a></li>
-
-
-
-
-<li><a href="#get-nodes">get nodes</a></li>
-
-
-
-
-<li><a href="#creating-namespace-to-isolate-the-pods-in-cluster">Creating namespace to isolate the pods in cluster</a></li>
-
-
-
-
-<li><a href="#configmaps">ConfigMaps</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#certifications">Certifications</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#education">Education</a></li>
+</ul></li>
 </ul>
-
-
-<h2 id="kubectl-version">kubectl version</h2>
-
-<p>Once kubectl is configured we can see both the version of the client and as well as the server.
-The client version is the kubectl version; the server version is the Kubernetes version installed on the master. You can also see details about the build.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl version
-
-Client Version: version.Info<span style="color:#666">{</span>Major:<span style="color:#b44">&#34;1&#34;</span>, Minor:<span style="color:#b44">&#34;15&#34;</span>, GitVersion:<span style="color:#b44">&#34;v1.15.2&#34;</span>, GitCommit:<span style="color:#b44">&#34;f6278300bebbb750328ac16ee6dd3aa7d3549568&#34;</span>, GitTreeState:<span style="color:#b44">&#34;clean&#34;</span>, BuildDate:<span style="color:#b44">&#34;2019-08-05T09:23:26Z&#34;</span>, GoVersion:<span style="color:#b44">&#34;go1.12.5&#34;</span>, Compiler:<span style="color:#b44">&#34;gc&#34;</span>, Platform:<span style="color:#b44">&#34;linux/amd64&#34;</span><span style="color:#666">}</span>
-
-Server Version: version.Info<span style="color:#666">{</span>Major:<span style="color:#b44">&#34;1&#34;</span>, Minor:<span style="color:#b44">&#34;15&#34;</span>, GitVersion:<span style="color:#b44">&#34;v1.15.0&#34;</span>, GitCommit:<span style="color:#b44">&#34;e8462b5b5dc2584fdcd18e6bcfe9f1e4d970a529&#34;</span>, GitTreeState:<span style="color:#b44">&#34;clean&#34;</span>, BuildDate:<span style="color:#b44">&#34;2019-06-19T16:32:14Z&#34;</span>, GoVersion:<span style="color:#b44">&#34;go1.12.5&#34;</span>, Compiler:<span style="color:#b44">&#34;gc&#34;</span>, Platform:<span style="color:#b44">&#34;linux/amd64&#34;</span><span style="color:#666">}</span></code></pre></div>
-<h2 id="cluster-info">cluster-info</h2>
-
-<p><code>$ kubectl cluster-info</code></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl cluster-info
-Kubernetes master is running at https://172.17.0.45:8443
-KubeDNS is running at https://172.17.0.45:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
-To further debug and diagnose cluster problems, use <span style="color:#b44">&#39;kubectl cluster-info dump&#39;</span>.</code></pre></div>
-<h2 id="get-nodes">get nodes</h2>
-
-<p>To view the nodes in the cluster, run the kubectl get nodes command:</p>
-
-<p>This command shows all nodes that can be used to host our applications.<br />
-Now we have only one node, and we can see that its status is ready (it is ready to accept applications for deployment).</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ kubectl get nodes
-NAME       STATUS   ROLES    AGE   VERSION
-minikube   Ready    master   11m   v1.15.0
-
-<span style="color:#080;font-style:italic"># list nodes with more information</span>
-$ kubectl get nodes -o<span style="color:#666">=</span>wide
-NAME       STATUS   ROLES    AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE              KERNEL-VERSION   CONTAINER-RUNTIME
-minikube   Ready    master   13m   v1.15.0   <span style="color:#666">10</span>.0.2.15     &lt;none&gt;        Buildroot <span style="color:#666">2018</span>.05.3   <span style="color:#666">4</span>.15.0           docker://18.9.6</code></pre></div>
-<h2 id="creating-namespace-to-isolate-the-pods-in-cluster">Creating namespace to isolate the pods in cluster</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl create namespace dev</code></pre></div>
-<h2 id="configmaps">ConfigMaps</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">Kubectl create configmap <span style="color:#b62;font-weight:bold">\
-</span><span style="color:#b62;font-weight:bold"></span> &lt;config-name&gt; --from-literal<span style="color:#666">=</span>&lt;key&gt;<span style="color:#666">=</span>&lt;value&gt;
-
-<span style="color:#666">(</span>or<span style="color:#666">)</span>
-Kubectl create configmap <span style="color:#b62;font-weight:bold">\
-</span><span style="color:#b62;font-weight:bold"></span> &lt;config-name&gt; --from-file<span style="color:#666">=</span>&lt;path_to_file&gt;</code></pre></div>
-<p>Example :</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">Kubectl create configmap <span style="color:#b62;font-weight:bold">\
-</span><span style="color:#b62;font-weight:bold"></span>app-color-config –from-literal<span style="color:#666">=</span><span style="color:#b8860b">APP_COLOR</span><span style="color:#666">=</span>blue <span style="color:#b62;font-weight:bold">\
-</span><span style="color:#b62;font-weight:bold"></span>--from-literal<span style="color:#666">=</span><span style="color:#b8860b">APP_MOD</span><span style="color:#666">=</span>prod
-
-Kubectl create configmap <span style="color:#b62;font-weight:bold">\
-</span><span style="color:#b62;font-weight:bold"></span>app-config  --from-file<span style="color:#666">=</span>app-config.properties</code></pre></div>
-<p>View Configmaps :<br />
-Kubectl get configmaps</p>
-
-<h3 id="references">References</h3>
-
-<p><a href="https://github.com/katacoda-scenarios/kubernetes-bootcamp-scenarios" target="_blank">kubernetes-bootcamp-scenarios</a></p>
+</nav>
 
 
 
+<p>I am a software professional, working in the field of IT for 15+ years. I have worked in telecom and banking domains with major clients like Erisson, BankofAmerica, AbnAmro.</p>
 
+<p>I worked at various projects using multiple tools and technologies.</p>
 
+<h2 id="skills">Skills</h2>
 
+<h2 id="certifications">Certifications</h2>
 
+<h2 id="experience">Experience</h2>
 
-
-
-
+<h2 id="education">Education</h2>
 
 
 
