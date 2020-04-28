@@ -219,6 +219,10 @@
          
              
                  
+             
+         
+             
+                 
                           
                           
                  
@@ -393,6 +397,13 @@
 		
 			
 
+<a class="item" data-title="Tasks" href="/docs/linux/tasks/"></a>
+
+		
+	
+		
+			
+
 <a class="item" data-title="VIM" href="/docs/linux/vim/"></a>
 
 		
@@ -499,7 +510,13 @@
 <span style="color:#666">02</span>:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL810xE PCI Express Fast Ethernet controller <span style="color:#666">(</span>rev <span style="color:#666">07</span><span style="color:#666">)</span></code></pre></div>
 <h3 id="how-to-reset-root-password">How to reset root password</h3>
 
-<p>&lsquo;rd.break&rsquo; drops to a rescue shell earlier than any other rescue mode. Reboot the system, add &lsquo;rd.break&rsquo; to the kernel boot parameters, remount the root filesystem R/W, use &lsquo;chroot&rsquo; to switch to the proper root FS and run &lsquo;passwd&rsquo;. Remember to &lsquo;touch /.autorelabel&rsquo; before typing &lsquo;exit&rsquo; twice to resume booting.</p>
+<ul>
+<li>&lsquo;rd.break&rsquo; drops to a rescue shell earlier than any other rescue mode.</li>
+<li>Reboot the system, add &lsquo;rd.break&rsquo; to the kernel boot parameters</li>
+<li>remount the root filesystem R/W</li>
+<li>use &lsquo;chroot&rsquo; to switch to the proper root FS and run &lsquo;passwd&rsquo;.</li>
+<li>Remember to &lsquo;touch /.autorelabel&rsquo; before typing &lsquo;exit&rsquo; twice to resume booting.</li>
+</ul>
 
 <h3 id="questions">Questions</h3>
 
@@ -539,8 +556,8 @@ bash    <span style="color:#666">1820</span> root txt    REG  <span style="color
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#666">[</span>root@CentosServer1910 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># useradd sriram</span>
 <span style="color:#666">[</span>root@CentosServer1910 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># passwd sriram</span>
 Changing password <span style="color:#a2f;font-weight:bold">for</span> user sriram.
-New password: 
-Retype new password: 
+New password:
+Retype new password:
 passwd: all authentication tokens updated successfully.
 <span style="color:#080;font-style:italic"># By default, on CentOS, members of the wheel group have sudo privileges.</span>
 <span style="color:#666">[</span>root@CentosServer1910 ~<span style="color:#666">]</span><span style="color:#080;font-style:italic"># usermod -aG wheel sriram</span>
