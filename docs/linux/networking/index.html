@@ -547,7 +547,7 @@
 <tr>
 <td>netstat</td>
 <td>ip -s, ss, ip route</td>
-<td>Show various networking statistics</td>
+<td>Socket statistics</td>
 </tr>
 </tbody>
 </table>
@@ -558,8 +558,114 @@
 <code>ip -s -c -h a</code></p>
 
 <h2 id="how-to-start-stop-an-interface">How to start/stop an interface</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ifup eth0  
-ifdown eth0</code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ifup eth0  <span style="color:#666">(</span>deprecated<span style="color:#666">)</span>
+ifdown eth0 <span style="color:#666">(</span>deprecated<span style="color:#666">)</span></code></pre></div>
+<p>To show the current neighbour table in kernel
+$ ip neigh</p>
+
+<p>To temporarily assign IP Address to a specific network interface (eth0), type.
+$ sudo ip addr add 192.168.56.1 dev eth0</p>
+
+<p>To remove an assigned IP address from an network interface (eth0), type.
+$ sudo ip addr del 192.168.56.15/24 dev eth0</p>
+
+<p>ethtool is a command line utility for querying and modifying network interface controller parameters and device drivers.
+$ sudo ethtool enp0s3</p>
+
+<p>ping (Packet INternet Groper) is a utility normally used for testing connectivity between two systems on a network (Local Area Network (LAN) or Wide Area Network (WAN)). It use ICMP (Internet Control Message Protocol) to communicate to nodes on a network.
+To test connectivity to another node, simply provide its IP or host name, for example.
+$ ping 192.168.0.1</p>
+
+<p>Traceroute is a command line utility for tracing the full path from your local system to another network system. It prints number of hops (router IP’s) in that path you travel to reach the end server. It is an easy-to-use network troubleshooting utility after ping command.</p>
+
+<p>In this example, we are tracing the route packets take from the local system to one of Google’s servers with IP address 216.58.204.46.
+$ traceroute 216.58.204.46</p>
+
+<p>MTR is a modern command-line network diagnostic tool that combines the functionality of ping and traceroute into a single diagnostic tool. Its output is updated in real-time, by default until you exit the program by pressing q.</p>
+
+<p>The easiest way of running mtr is to provide it a host name or IP address as an argument, as follows.</p>
+
+<p>$ mtr google.com
+OR
+$ mtr 216.58.223.78</p>
+
+<p>route is a command line utility for displaying or manipulating the IP routing table of a Linux system. It is mainly used to configure static routes to specific hosts or networks via an interface.</p>
+
+<p>You can view Kernel IP routing table by typing.
+$ route</p>
+
+<p>Add a default gateway to the routing table.
+$ sudo route add default gw <gateway-ip></p>
+
+<p>Add a network route to the routing table.
+$ sudo route add -net <network ip/cidr> gw <gateway ip> <interface></p>
+
+<p>Delete a specific route entry from the routing table.
+$ sudo route del -net <network ip/cidr></p>
+
+<p>Nmcli is an easy-to-use, scriptable command-line tool to report network status, manage network connections, and control the NetworkManager.
+To view all your network devices, type.
+$ nmcli dev status</p>
+
+<p>To check network connections on your system, type.
+$ nmcli con show</p>
+
+<hr />
+
+<p>NOTE: netstat is obsolete and replaced by ss
+netstat is a command line tool that displays useful information such as network connections, routing tables, interface statistics, and much more, concerning the Linux networking subsystem. It is useful for network troubleshooting and performance analysis.</p>
+
+<p>Additionally, it is also a fundamental network service debugging tool used to check which programs are listening on what ports. For instance, the following command will show all TCP ports in listening mode and what programs are listening on them.
+$ sudo netstat -tnlp</p>
+
+<p>To view kernel routing table, use the -r flag (which is equivalent to running route command above).
+$ netstat -r</p>
+
+<hr />
+
+<p>ss (socket statistics) is a powerful command line utility to investigate sockets. It dumps socket statistics and displays information similar to netstat. In addition, it shows more TCP and state information compared to other similar utilities.</p>
+
+<p>The following example show how to list all TCP ports (sockets) that are open on a server.
+$ ss -ta</p>
+
+<p>NC (NetCat) also referred to as the “Network Swiss Army knife”, is a powerful utility used for almost any task related to TCP, UDP, or UNIX-domain sockets. It is used open TCP connections, listen on arbitrary TCP and UDP ports, perform port scanning plus more.</p>
+
+<p>The following example, will show how to scan a list of ports.
+$ nc -zv server2.tecmint.lan 21 22 80 443 3000</p>
+
+<p>You can also specify a range of ports as shown.
+$ nc -zv server2.tecmint.lan 20-90</p>
+
+<p>The following example shows how to use nc to open a TCP connection to port 5000 on server2.tecmint.lan, using port 3000 as the source port, with a timeout of 10 seconds.
+$ nc -p 3000 -w 10 server2.tecmint.lan 5000</p>
+
+<p>Nmap (Network Mapper) is a powerful and extremely versatile tool for Linux system/network administrators. It is used gather information about a single host or explore networks an entire network. Nmap is also used to perform security scans, network audit and finding open ports on remote hosts and so much more.</p>
+
+<p>You can scan a host using its host name or IP address, for instance.
+$ nmap google.com</p>
+
+<p>DNS Lookup Utilities:
+host command is a simple utility for carrying out DNS lookups, it translates host names to IP addresses and vice versa.
+$ host google.com</p>
+
+<p>dig (domain information groper) is also another simple DNS lookup utility, that is used to query DNS related information such as A Record, CNAME, MX Record etc, for example:
+$ dig google.com</p>
+
+<p>Nslookup is also a popular command line utility to query DNS servers both interactively and non-interactively. It is used to query DNS resource records (RR). You can find out “A” record (IP address) of a domain as shown.
+$ nslookup google.com</p>
+
+<p>Linux Network Packet Analyzers:
+Tcpdump is a very powerful and widely used command-line network sniffer. It is used to capture and analyze TCP/IP packets transmitted or received over a network on a specific interface.</p>
+
+<p>To capture packets from a given interface, specify it using the -i option.
+$ tcpdump -i eth1</p>
+
+<p>To capture a specific number of packets, use the -c option to enter the desired number.
+$ tcpdump -c 5 -i eth1</p>
+
+<p>You can also capture and save packets to a file for later analysis, use the -w flag to specify the output file.
+$ tcpdump -w captured.pacs -i eth1</p>
+
 <h2 id="nmcli-command-line-tool-for-network-management">nmcli - command line tool for network management</h2>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#080;font-style:italic"># nmcli d</span>
 List out all network interfaces and status

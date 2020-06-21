@@ -28,6 +28,10 @@
   </url>
   
   <url>
+    <loc>//localhost:1313/docs/cloud/azure/activedirectory/</loc>
+  </url>
+  
+  <url>
     <loc>//localhost:1313/docs/provisioning/ansible/</loc>
     <lastmod>2019-07-12T06:32:56+02:00</lastmod>
   </url>
