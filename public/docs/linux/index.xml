@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Knowledge Hub</title>
+    <link>http://localhost:1313/docs/linux/</link>
+    <description>Recent content in Linux on Knowledge Hub</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/docs/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>System Admin</title>
+      <link>http://localhost:1313/docs/linux/sysadmin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/sysadmin/</guid>
+      <description>List all Hardware : lshw&#xA;List all pci devices : lspci&#xA;# Required pciutuls package to be installed &amp;#39;yum install pciutils&amp;#39; [root@10 ~]# lspci 00:00.0 Host bridge: Intel Corporation Xeon E3-1200 v6/7th Gen Core Processor Host Bridge/DRAM Registers (rev 02) 00:02.0 VGA compatible controller: Intel Corporation HD Graphics 620 (rev 02) 00:04.0 Signal processing controller: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Thermal Subsystem (rev 02) 00:14.0 USB controller: Intel Corporation Sunrise Point-LP USB 3.</description>
+    </item>
+    <item>
+      <title>vim</title>
+      <link>http://localhost:1313/docs/linux/vim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/vim/</guid>
+      <description>To start with vim, go through the tutorial using command : vimtutor&#xA;Basic vim commands Task Command start editing the file content :i[enter] save the file and exit the editor :x[return] quit vim without saving the file :q![return] Save :w save and exit :wq exit :q copy a line :yy copy :y Paste p cut d cut a line dd Undo u go to the end of the file: :$ and press Enter Move to the beginning of a line type 0 Move to the end of a line type $ Go to beginning of file gg Go to end of file G (shift + g) How to search and replace %s/text/replacement/g How to search and replace with confirmation %s/text/replacement/gc Forward Search : /</description>
+    </item>
+  </channel>
+</rss>

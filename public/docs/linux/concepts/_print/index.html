@@ -1,0 +1,1030 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="canonical" type="text/html" href="http://localhost:1313/docs/linux/concepts/">
+<link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/docs/linux/concepts/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Concepts | Knowledge Hub</title>
+<meta name="description" content="Learn about various linux concepts like filesystem, storage, firewalls etc.
+">
+<meta property="og:url" content="http://localhost:1313/docs/linux/concepts/">
+  <meta property="og:site_name" content="Knowledge Hub">
+  <meta property="og:title" content="Concepts">
+  <meta property="og:description" content="Learn about various linux concepts like filesystem, storage, firewalls etc.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Concepts">
+  <meta itemprop="description" content="Learn about various linux concepts like filesystem, storage, firewalls etc.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Concepts">
+  <meta name="twitter:description" content="Learn about various linux concepts like filesystem, storage, firewalls etc.">
+
+
+
+
+
+<link href="/scss/main.css" rel="stylesheet">
+
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500"><g><path style="fill:#fff" d="M116.8525 421.9722c-5.7041.0-10.3442-4.3127-10.3442-9.6129V88.183c0-5.3002 4.6401-9.6117 10.3442-9.6117H320.858c3.0347.0 9.3959.5498 11.7506 2.6302l.3545.3442 58.905 63.2912c2.3101 2.491 2.9202 8.4928 2.9202 11.3184v256.2039c0 5.3002-4.6407 9.6129-10.3436 9.6129H116.8525z"/><g><g><g><path style="fill:#767676" d="M384.4445 423.2066H116.852c-6.3839.0-11.5786-4.8658-11.5786-10.8474V88.1831c0-5.9804 5.1947-10.8461 11.5786-10.8461h204.0062c.377.0 9.2786.0329 12.568 2.9389l.3947.3833 58.9508 63.337c3.2135 3.4652 3.2514 11.7924 3.2514 12.1593v256.2036C396.0231 418.3408 390.8284 423.2066 384.4445 423.2066zM116.5079 411.9189c.0848.0278.1999.0531.3441.0531h267.5925c.1442.0.2581-.0253.3441-.0531V156.1556c-.0076-.9033-.3593-3.7347-.7034-5.0037l-57.6527-61.9416c-1.4651-.3176-4.4533-.6389-5.5742-.6389H116.852c-.143.0-.2594.024-.3441.0531V411.9189zm267.4533-261.149zM327.0321 89.371v.0013V89.371z"/></g></g></g><g><g><path style="fill:#5b7fc0" d="M189.0874 210.1754l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4473C177.5953 212.627 183.0601 210.1742 189.0874 210.1754zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 234.1722 197.0804 232.033z"/><path style="opacity:.3;fill:#fff" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/><g><defs><path id="SVGID_1_" d="M194.7376 237.6875c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 234.2399 196.1861 236.239 194.7376 237.6875z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#fff" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/><path style="opacity:.13;clip-path:url(#SVGID_2_);fill:#020202" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/></g><g><defs><path id="SVGID_3_" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_4_);fill:#5b7fc0" d="M172.6595 215.6045c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8475-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 209.1953 176.6171 211.647 172.6595 215.6045z"/></g></g><rect x="198.8952" y="225.1043" style="fill:#5b7fc0" width="122.6266" height="13.8671"/></g><g><path style="fill:#d95140" d="M189.0874 155.7611l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.0249 2.454-11.4897 6.4116-15.4473C177.5953 158.2128 183.0601 155.7599 189.0874 155.7611zm7.993 21.8577c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.2508 181.7667 197.0816 179.758 197.0804 177.6188z"/><path style="opacity:.3;fill:#fff" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/><g><defs><path id="SVGID_5_" d="M194.7376 183.2733c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 179.8256 196.1861 181.8248 194.7376 183.2733z"/></defs><clipPath id="SVGID_6_"><use xlink:href="#SVGID_5_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_6_);fill:#fff" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/><path style="opacity:.13;clip-path:url(#SVGID_6_);fill:#020202" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/></g><g><defs><path id="SVGID_7_" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/></defs><clipPath id="SVGID_8_"><use xlink:href="#SVGID_7_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_8_);fill:#d95140" d="M172.6595 161.1903c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 154.7811 176.6171 157.2327 172.6595 161.1903z"/></g><rect x="198.8952" y="170.69" style="fill:#d95140" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#56a55c" d="M189.5379 264.6147l.0012-.0012c7.7751.0012 15.0294 4.1862 18.932 10.9235 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.3281-2.2733-15.458-6.4032-4.13-4.13-6.4032-9.6186-6.4056-15.4628.0012-6.0249 2.454-11.4897 6.4116-15.4472C178.0458 267.0663 183.5105 264.6135 189.5379 264.6147zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6538 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.7013 290.6202 197.5321 288.6115 197.5309 286.4723z"/><path style="opacity:.3;fill:#fff" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/><g><defs><path id="SVGID_9_" d="M195.1881 292.1268c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9941 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.5344 288.6792 196.6366 290.6783 195.1881 292.1268z"/></defs><clipPath id="SVGID_10_"><use xlink:href="#SVGID_9_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_10_);fill:#fff" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/><path style="opacity:.13;clip-path:url(#SVGID_10_);fill:#020202" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/></g><g><defs><path id="SVGID_11_" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/></defs><clipPath id="SVGID_12_"><use xlink:href="#SVGID_11_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_12_);fill:#56a55c" d="M173.11 270.0439c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7325-11.1497-10.9151-18.926-10.9151C182.5311 263.6346 177.0676 266.0863 173.11 270.0439z"/></g></g><rect x="199.3456" y="279.5436" style="fill:#56a55c" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#f1bc42" d="M189.0874 318.7208l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3305-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4472C177.5953 321.1724 183.0601 318.7196 189.0874 318.7208zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 342.7176 197.0804 340.5784z"/><path style="opacity:.3;fill:#fff" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/><g><defs><path id="SVGID_13_" d="M194.7376 346.2329c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 342.7853 196.1861 344.7844 194.7376 346.2329z"/></defs><clipPath id="SVGID_14_"><use xlink:href="#SVGID_13_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_14_);fill:#fff" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/><path style="opacity:.13;clip-path:url(#SVGID_14_);fill:#020202" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/></g><g><defs><path id="SVGID_15_" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/></defs><clipPath id="SVGID_16_"><use xlink:href="#SVGID_15_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_16_);fill:#f1bc42" d="M172.6595 324.15c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8474-1.0151-7.6327-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 317.7407 176.6171 320.1924 172.6595 324.15z"/></g></g><rect x="198.8952" y="333.6497" style="fill:#f1bc42" width="122.6266" height="13.8671"/></g></g></svg></span><span class="navbar-brand__name">Knowledge Hub</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/docs/about/"><span>About</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/docs/"><span>Documentation</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/linux/concepts/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Concepts</h1>
+<div class="lead">Learn about various linux concepts like filesystem, storage, firewalls etc.</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-39235228585ba081488b474292164ee8">Firewall</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-bbcbc8c3c56150ba709e087a441545a5">Linux FileSystem</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>2.1: <a href="#pg-ad02a42c84650fc09c0a2e6efa53c1de">Linux file system</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-02adc058a1145bb284595e307a38bf25">Networking</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-54a7ccdf0ca2b548717d1da43429076d">Package Management</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>4.1: <a href="#pg-8edc50c45d2becb41e8fac29be74f79d">apk</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4.2: <a href="#pg-63e5c0257b3f03ca600899d7bf6adbaa">deb</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4.3: <a href="#pg-8f6d941b2fec72653c6aa609dfe86e2a">dnf</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4.4: <a href="#pg-74023e1c043fc41b923bc9e2a983141e">rpm</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4.5: <a href="#pg-b621aebe47a0822d0f510b1458530591">yum</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>5: <a href="#pg-cc4874b4092c2616a6c2961f09a962c3">Storage</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>5.1: <a href="#pg-0f99246b915cbe62bd86021a258f940d">Storage</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
+    
+    
+	
+<li>6: <a href="#pg-fddd1ce9b718b621a30d7dda6c13fa5d">users</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-39235228585ba081488b474292164ee8">1 - Firewall</h1>
+    <div class="lead">Learn about linux firewall setup</div>
+	<p>A firewall provides a means to protect machines from any unwanted traffic. It enables users/administrators to control incoming network traffic on host machines by defining a set of firewall rules. These rules are used to sort the incoming traffic and either block it or allow through.</p>
+<h2 id="firewalld">firewalld</h2>
+<ul>
+<li>
+<p><code>firewalld</code> is a firewall service daemon that provides a dynamic customizable host-based firewall. Being dynamic, it enables creating, changing, and deleting the rules without the necessity to restart the firewall daemon each time the rules are changed.</p>
+</li>
+<li>
+<p>firewalld uses the concepts of zones and services</p>
+</li>
+<li>
+<p>Zones are predefined sets of rules.</p>
+</li>
+<li>
+<p>Network interfaces and sources can be assigned to a zone.</p>
+</li>
+<li>
+<p>The traffic allowed depends on the network your computer is connected to and the security level this network is assigned.</p>
+</li>
+<li>
+<p>Firewall services are predefined rules that cover all necessary settings to allow incoming traffic for a specific service and they apply within a zone.</p>
+</li>
+<li>
+<p>Services use one or more ports or addresses for network communication.</p>
+</li>
+<li>
+<p>Firewall filter communication based on ports.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># To start firewalld</span>
+</span></span><span style="display:flex;"><span>systemctl unmask firewalld
+</span></span><span style="display:flex;"><span>systemctl <span style="color:#204a87">enable</span> firewalld.service
+</span></span><span style="display:flex;"><span>systemctl start firewalld
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># To stop firewalld</span>
+</span></span><span style="display:flex;"><span>systemctl stop firewalld
+</span></span><span style="display:flex;"><span>systemctl disable firewalld
+</span></span><span style="display:flex;"><span>systemctl mask firewalld
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># Quick command to check whether the firewall is enabled or disabled</span>
+</span></span><span style="display:flex;"><span>systemctl is-enabled firewalld
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>root@centos8 ~<span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#8f5902;font-style:italic"># systemctl status firewalld</span>
+</span></span><span style="display:flex;"><span>● firewalld.service - firewalld - dynamic firewall daemon
+</span></span><span style="display:flex;"><span>   Loaded: loaded <span style="color:#ce5c00;font-weight:bold">(</span>/usr/lib/systemd/system/firewalld.service<span style="color:#000;font-weight:bold">;</span> enabled<span style="color:#000;font-weight:bold">;</span> vendor preset: enabled<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>   Active: active <span style="color:#ce5c00;font-weight:bold">(</span>running<span style="color:#ce5c00;font-weight:bold">)</span> since Mon 2019-10-28 15:05:45 CET<span style="color:#000;font-weight:bold">;</span> 1min 25s ago
+</span></span><span style="display:flex;"><span>     Docs: man:firewalld<span style="color:#ce5c00;font-weight:bold">(</span>1<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span> Main PID: <span style="color:#0000cf;font-weight:bold">772</span> <span style="color:#ce5c00;font-weight:bold">(</span>firewalld<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>    Tasks: <span style="color:#0000cf;font-weight:bold">2</span> <span style="color:#ce5c00;font-weight:bold">(</span>limit: 11525<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>   Memory: 36.2M
+</span></span><span style="display:flex;"><span>   CGroup: /system.slice/firewalld.service
+</span></span><span style="display:flex;"><span>           └─772 /usr/libexec/platform-python -s /usr/sbin/firewalld --nofork --nopid
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Oct <span style="color:#0000cf;font-weight:bold">28</span> 15:05:44 centos8 systemd<span style="color:#ce5c00;font-weight:bold">[</span>1<span style="color:#ce5c00;font-weight:bold">]</span>: Starting firewalld - dynamic firewall daemon...
+</span></span><span style="display:flex;"><span>Oct <span style="color:#0000cf;font-weight:bold">28</span> 15:05:45 centos8 systemd<span style="color:#ce5c00;font-weight:bold">[</span>1<span style="color:#ce5c00;font-weight:bold">]</span>: Started firewalld - dynamic firewall daemon.
+</span></span></code></pre></div><h2 id="firewall-cmd">firewall-cmd</h2>
+<p>firewall-cmd is a cli for firewall service.
+To get more details on how to use firewall-cmd : <code>firewall-cmd --help</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># Examples:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># How to add a service to firewall</span>
+</span></span><span style="display:flex;"><span>yum install tftp-server
+</span></span><span style="display:flex;"><span>firewall-cmd --add-service<span style="color:#ce5c00;font-weight:bold">=</span>tftp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># How to add and open port to firewall</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">## The command below will open the port effective immediately, but will not persist across reboots:</span>
+</span></span><span style="display:flex;"><span>firewall-cmd --add-port<span style="color:#ce5c00;font-weight:bold">=</span>&lt;YOUR PORT&gt;/tcp
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">## The following command will create a persistent rule, but will not be put into effect immediately:</span>
+</span></span><span style="display:flex;"><span>firewall-cmd --permanent --add-port<span style="color:#ce5c00;font-weight:bold">=</span>&lt;YOUR PORT&gt;/tcp
+</span></span></code></pre></div><h3 id="resources">Resources</h3>
+<p>firewalld(1) man page<br>
+firewalld.zone(5) man page<br>
+<a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/securing_networks/using-and-configuring-firewalls_securing-networks">redhat-documentation</a></p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-bbcbc8c3c56150ba709e087a441545a5">2 - Linux FileSystem</h1>
+    
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-ad02a42c84650fc09c0a2e6efa53c1de">2.1 - Linux file system</h1>
+    
+	<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sriram@sriram-Inspiron-5567:~$ sudo fdisk -l /dev/sda
+</span></span><span style="display:flex;"><span>Disk /dev/sda: 111,8 GiB, <span style="color:#0000cf;font-weight:bold">120034123776</span> bytes, <span style="color:#0000cf;font-weight:bold">234441648</span> sectors
+</span></span><span style="display:flex;"><span>Units: sectors of <span style="color:#0000cf;font-weight:bold">1</span> * <span style="color:#000">512</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">512</span> bytes
+</span></span><span style="display:flex;"><span>Sector size <span style="color:#ce5c00;font-weight:bold">(</span>logical/physical<span style="color:#ce5c00;font-weight:bold">)</span>: <span style="color:#0000cf;font-weight:bold">512</span> bytes / <span style="color:#0000cf;font-weight:bold">512</span> bytes
+</span></span><span style="display:flex;"><span>I/O size <span style="color:#ce5c00;font-weight:bold">(</span>minimum/optimal<span style="color:#ce5c00;font-weight:bold">)</span>: <span style="color:#0000cf;font-weight:bold">512</span> bytes / <span style="color:#0000cf;font-weight:bold">512</span> bytes
+</span></span><span style="display:flex;"><span>Disklabel type: gpt
+</span></span><span style="display:flex;"><span>Disk identifier: 833807FE-A7E1-46DA-B629-ECC1B32A087E
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Device         Start       End   Sectors   Size Type
+</span></span><span style="display:flex;"><span>/dev/sda1       <span style="color:#0000cf;font-weight:bold">2048</span>   <span style="color:#0000cf;font-weight:bold">1050623</span>   <span style="color:#0000cf;font-weight:bold">1048576</span>   512M EFI System
+</span></span><span style="display:flex;"><span>/dev/sda2    <span style="color:#0000cf;font-weight:bold">1050624</span> <span style="color:#0000cf;font-weight:bold">217874431</span> <span style="color:#0000cf;font-weight:bold">216823808</span> 103,4G Linux filesystem
+</span></span><span style="display:flex;"><span>/dev/sda3  <span style="color:#0000cf;font-weight:bold">217874432</span> <span style="color:#0000cf;font-weight:bold">234440703</span>  <span style="color:#0000cf;font-weight:bold">16566272</span>   7,9G Linux swap
+</span></span></code></pre></div><h2 id="linux-file-permissions">Linux File Permissions</h2>
+<p><code>-rwsrwsrwt</code><br>
+<code>chmod u+s,g+s,o+t dir</code></p>
+<ul>
+<li>Sticky bit<br>
+Items in directory may only be deleted by owner.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>root@10 ~<span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#8f5902;font-style:italic"># ls -ld /tmp</span>
+</span></span><span style="display:flex;"><span>drwxrwxrwt. <span style="color:#0000cf;font-weight:bold">8</span> root root <span style="color:#0000cf;font-weight:bold">216</span> Oct <span style="color:#0000cf;font-weight:bold">27</span> 11:18 /tmp
+</span></span></code></pre></div><ul>
+<li>
+<p>SGID - Set Group Identity<br>
+Can be set on directories aswell as on files
+Directory : New objects in this directory inherit its group ownership.<br>
+Execuable File : Runs as owning group rather than invoker&rsquo;s group.</p>
+</li>
+<li>
+<p>SUID - Set User Identity<br>
+Executable: Program runs as owner, rather than caller.</p>
+</li>
+</ul>
+<p><img alt="SpecialPermissions" src="/images/Linux/SpecialPermissions.png"></p>
+<h3 id="references">References</h3>
+<p><a href="https://www.tldp.org/LDP/intro-linux/html/sect_03_01.html">Linux file system</a><br>
+man hier</p>
+
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-02adc058a1145bb284595e307a38bf25">3 - Networking</h1>
+    <div class="lead">Learn more about Networking in Linux</div>
+	
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Warning</h4>
+
+    net-tools utilities are obsoleted by iproute2<br>
+<a href="https://wiki.linuxfoundation.org/networking/iproute2">https://wiki.linuxfoundation.org/networking/iproute2</a>
+
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Legacy utility</th>
+<th>Replacement command</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ifconfig</td>
+<td>ip addr, ip link, ip -s</td>
+<td>Address and link configuration</td>
+</tr>
+<tr>
+<td>route</td>
+<td>ip route</td>
+<td>Routing tables</td>
+</tr>
+<tr>
+<td>arp</td>
+<td>ip neigh</td>
+<td>Neighbors</td>
+</tr>
+<tr>
+<td>iptunnel</td>
+<td>ip tunnel</td>
+<td>Tunnels</td>
+</tr>
+<tr>
+<td>nameif</td>
+<td>ifrename, ip link set name</td>
+<td>Rename network interfaces</td>
+</tr>
+<tr>
+<td>ipmaddr</td>
+<td>ip maddr</td>
+<td>Multicast</td>
+</tr>
+<tr>
+<td>netstat</td>
+<td>ip -s, ss, ip route</td>
+<td>Socket statistics</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ip-address-statistics-with-colors-and-human-readable-format">ip address statistics with colors and human readable format</h3>
+<p><code>ip -stats -color -human addr</code><br>
+<code>ip -s -c -h a</code></p>
+<h3 id="how-to-startstop-an-interface">How to start/stop an interface</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ifup eth0  <span style="color:#ce5c00;font-weight:bold">(</span>deprecated<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>ifdown eth0 <span style="color:#ce5c00;font-weight:bold">(</span>deprecated<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span></code></pre></div><p>To show the current neighbour table in kernel<br>
+<code>$ ip neigh</code></p>
+<p>To temporarily assign IP Address to a specific network interface (eth0)<br>
+<code>$ sudo ip addr add 192.168.56.1 dev eth0</code></p>
+<p>To remove an assigned IP address from an network interface (eth0)
+<code>$ sudo ip addr del 192.168.56.15/24 dev eth0</code></p>
+<h3 id="ethtool">ethtool</h3>
+<p>a command line utility for querying and modifying network interface controller parameters and device drivers.<br>
+<code>$ sudo ethtool enp0s3</code></p>
+<h3 id="ping-packet-internet-groper">ping (Packet INternet Groper)</h3>
+<p>Utility normally used for testing connectivity between two systems on a network (Local Area Network (LAN) or Wide Area Network (WAN)). It uses ICMP (Internet Control Message Protocol) to communicate to nodes on a network.<br>
+To test connectivity to another node, simply provide its IP or host name, for example.<br>
+<code>$ ping 192.168.0.1</code></p>
+<h3 id="traceroute--tracepath">traceroute | tracepath</h3>
+<p>Traceroute is a command line utility for tracing the full path from your local system to another network system. It prints number of hops (router IP’s) in that path you travel to reach the end server. It is an easy-to-use network troubleshooting utility after ping command.</p>
+<p>Tracepath is similar to traceroute but for non root users.</p>
+<p>In this example, we are tracing the route packets take from the local system to one of Google’s servers with IP address 216.58.204.46.<br>
+<code>$ traceroute 216.58.204.46</code></p>
+<p>If traceroute is not available on the system, then install the utility as a root : <code>yum install traceroute</code></p>
+<h3 id="mtr---a-network-diagnostic-tool">MTR - a network diagnostic tool</h3>
+<p>MTR is a modern command-line network diagnostic tool that combines the functionality of ping and traceroute into a single diagnostic tool. Its output is updated in real-time, by default until you exit the program by pressing q.</p>
+<p>The easiest way of running mtr is to provide it a host name or IP address as an argument, as follows.</p>
+<p><code>$ mtr google.com</code> (or) <code>$ mtr 216.58.223.78</code></p>
+<h3 id="route---show--manipulate-the-ip-routing-table">route - show / manipulate the IP routing table</h3>
+<p>route is a command line utility for displaying or manipulating the IP routing table of a Linux system. It is mainly used to configure static routes to specific hosts or networks via an interface.</p>
+<p>You can view Kernel IP routing table by typing.
+<code>$ route</code></p>
+<p>Add a default gateway to the routing table.
+<code>$ sudo route add default gw &lt;gateway-ip&gt;</code></p>
+<p>Add a network route to the routing table.
+<code>$ sudo route add -net &lt;network ip/cidr&gt; gw &lt;gateway ip&gt; &lt;interface&gt;</code></p>
+<p>Delete a specific route entry from the routing table.
+<code>$ sudo route del -net &lt;network ip/cidr&gt;</code></p>
+<h2 id="nmcli---command-line-tool-for-network-management">nmcli - command line tool for network management</h2>
+<p>nmcli is an easy-to-use, scriptable command-line tool to report network status, manage network connections, and control the NetworkManager.</p>
+<p>Install network-manager for nmcli:<br>
+<code>sudo apt install network-manager</code></p>
+<p>To check network connections on your system<br>
+<code>$ nmcli con show</code></p>
+<p>List out all network interfaces and status<br>
+<code>$ nmcli d</code> (or) <code>$ nmcli dev status</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>root@10 ~<span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#8f5902;font-style:italic"># nmcli d</span>
+</span></span><span style="display:flex;"><span>DEVICE  TYPE      STATE      CONNECTION
+</span></span><span style="display:flex;"><span>enp0s3  ethernet  connected  enp0s3
+</span></span><span style="display:flex;"><span>enp0s8  ethernet  connected  enp0s8
+</span></span><span style="display:flex;"><span>lo      loopback  unmanaged  --
+</span></span></code></pre></div><p>
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Warning</h4>
+
+    netstat is obsolete and replaced by <strong>ss</strong>
+
+</div>
+
+netstat is a command line tool that displays useful information such as network connections, routing tables, interface statistics, and much more, concerning the Linux networking subsystem. It is useful for network troubleshooting and performance analysis.</p>
+<p>Additionally, it is also a fundamental network service debugging tool used to check which programs are listening on what ports. For instance, the following command will show all TCP ports in listening mode and what programs are listening on them.
+$ sudo netstat -tnlp</p>
+<p>To view kernel routing table, use the -r flag (which is equivalent to running route command above).
+$ netstat -r</p>
+<h2 id="ss-socket-statistics---another-utility-to-investigate-sockets">ss (socket statistics) - another utility to investigate sockets</h2>
+<p>ss (socket statistics) is a powerful command line utility to investigate sockets. It dumps socket statistics and displays information similar to netstat. In addition, it shows more TCP and state information compared to other similar utilities.</p>
+<p>The following example show how to list all TCP ports (sockets) that are open on a server.<br>
+<code>$ ss -ta</code></p>
+<h2 id="nc-or-netcat---arbitrary-tcp-and-udp-connections-and-listens">nc (or netcat) - arbitrary TCP and UDP connections and listens</h2>
+<p>NC (NetCat) also referred to as the “Network Swiss Army knife”, is a powerful utility used for almost any task related to TCP, UDP, or UNIX-domain sockets.</p>
+<ul>
+<li>It can open TCP connections</li>
+<li>send UDP packets</li>
+<li>listen on arbitrary TCP and UDP ports</li>
+<li>do port scanning</li>
+<li>deal with both IPv4 and IPv6.</li>
+</ul>
+<p>Example to show how to scan a list of ports.<br>
+<code>$ nc -zv www.google.com 21 22 80 443 3000</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>nc -zv www.google.com <span style="color:#0000cf;font-weight:bold">21</span> <span style="color:#0000cf;font-weight:bold">22</span> <span style="color:#0000cf;font-weight:bold">80</span> <span style="color:#0000cf;font-weight:bold">443</span> <span style="color:#0000cf;font-weight:bold">3000</span>
+</span></span><span style="display:flex;"><span>nc: connect to www.google.com port <span style="color:#0000cf;font-weight:bold">21</span> <span style="color:#ce5c00;font-weight:bold">(</span>tcp<span style="color:#ce5c00;font-weight:bold">)</span> failed: Connection timed out
+</span></span><span style="display:flex;"><span>nc: connect to www.google.com port <span style="color:#0000cf;font-weight:bold">21</span> <span style="color:#ce5c00;font-weight:bold">(</span>tcp<span style="color:#ce5c00;font-weight:bold">)</span> failed: Connection timed out
+</span></span><span style="display:flex;"><span>nc: connect to www.google.com port <span style="color:#0000cf;font-weight:bold">22</span> <span style="color:#ce5c00;font-weight:bold">(</span>tcp<span style="color:#ce5c00;font-weight:bold">)</span> failed: Connection timed out
+</span></span><span style="display:flex;"><span>nc: connect to www.google.com port <span style="color:#0000cf;font-weight:bold">22</span> <span style="color:#ce5c00;font-weight:bold">(</span>tcp<span style="color:#ce5c00;font-weight:bold">)</span> failed: Connection timed out
+</span></span><span style="display:flex;"><span>Connection to www.google.com <span style="color:#0000cf;font-weight:bold">80</span> port <span style="color:#ce5c00;font-weight:bold">[</span>tcp/http<span style="color:#ce5c00;font-weight:bold">]</span> succeeded!
+</span></span><span style="display:flex;"><span>Connection to www.google.com <span style="color:#0000cf;font-weight:bold">443</span> port <span style="color:#ce5c00;font-weight:bold">[</span>tcp/https<span style="color:#ce5c00;font-weight:bold">]</span> succeeded!
+</span></span><span style="display:flex;"><span>nc: connect to www.google.com port <span style="color:#0000cf;font-weight:bold">3000</span> <span style="color:#ce5c00;font-weight:bold">(</span>tcp<span style="color:#ce5c00;font-weight:bold">)</span> failed: Connection timed out
+</span></span></code></pre></div><p>You can also specify a range of ports as shown.<br>
+<code>$ nc -zv www.google.com 20-90</code></p>
+<p>The following example shows how to use nc to open a TCP connection to port 5000 on server2.tecmint.lan, using port 3000 as the source port, with a timeout of 10 seconds.<br>
+<code>$ nc -p 3000 -w 10 server2.tecmint.lan 5000</code></p>
+<h2 id="nmap">nmap</h2>
+<p>Nmap (Network Mapper) is a powerful and extremely versatile tool for Linux system/network administrators. It is used gather information about a single host or explore networks an entire network. Nmap is also used to perform security scans, network audit and finding open ports on remote hosts and so much more.</p>
+<p>You can scan a host using its host name or IP address, for instance.
+<code>$ nmap google.com</code></p>
+<h3 id="find-all-devices-connected-to-the-same-network-using-nmap">Find all devices connected to the same Network using nmap</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>~$ nmap -sP 192.168.2.1/24
+</span></span><span style="display:flex;"><span>Starting Nmap 7.80 <span style="color:#ce5c00;font-weight:bold">(</span> https://nmap.org <span style="color:#ce5c00;font-weight:bold">)</span> at 2020-07-04 22:14 CEST
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#204a87;font-weight:bold">for</span> wn3000rpv3.home <span style="color:#ce5c00;font-weight:bold">(</span>192.168.2.1<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#ce5c00;font-weight:bold">(</span>0.098s latency<span style="color:#ce5c00;font-weight:bold">)</span>.
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#204a87;font-weight:bold">for</span> 192.168.2.6 <span style="color:#ce5c00;font-weight:bold">(</span>192.168.2.6<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#ce5c00;font-weight:bold">(</span>0.098s latency<span style="color:#ce5c00;font-weight:bold">)</span>.
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#204a87;font-weight:bold">for</span> 192.168.2.11 <span style="color:#ce5c00;font-weight:bold">(</span>192.168.2.11<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#ce5c00;font-weight:bold">(</span>0.011s latency<span style="color:#ce5c00;font-weight:bold">)</span>.
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#204a87;font-weight:bold">for</span> sriram-inspiron-5567.home <span style="color:#ce5c00;font-weight:bold">(</span>192.168.2.13<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#ce5c00;font-weight:bold">(</span>0.00024s latency<span style="color:#ce5c00;font-weight:bold">)</span>.
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#204a87;font-weight:bold">for</span> 192.168.2.40 <span style="color:#ce5c00;font-weight:bold">(</span>192.168.2.40<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#ce5c00;font-weight:bold">(</span>0.064s latency<span style="color:#ce5c00;font-weight:bold">)</span>.
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#204a87;font-weight:bold">for</span> router.home <span style="color:#ce5c00;font-weight:bold">(</span>192.168.2.254<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#ce5c00;font-weight:bold">(</span>0.088s latency<span style="color:#ce5c00;font-weight:bold">)</span>.
+</span></span><span style="display:flex;"><span>Nmap <span style="color:#204a87;font-weight:bold">done</span>: <span style="color:#0000cf;font-weight:bold">256</span> IP addresses <span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">6</span> hosts up<span style="color:#ce5c00;font-weight:bold">)</span> scanned in 11.17 seconds
+</span></span></code></pre></div><h2 id="dns-lookup-utilities">DNS Lookup Utilities</h2>
+<p>host command is a simple utility for carrying out DNS lookups, it translates host names to IP addresses and vice versa.<br>
+<code>$ host google.com</code></p>
+<p>dig (domain information groper) is also another simple DNS lookup utility, that is used to query DNS related information such as A Record, CNAME, MX Record etc, for example:<br>
+<code>$ dig google.com</code></p>
+<p>Nslookup is also a popular command line utility to query DNS servers both interactively and non-interactively. It is used to query DNS resource records (RR). You can find out “A” record (IP address) of a domain as shown.<br>
+<code>$ nslookup google.com</code></p>
+<h2 id="tcp-dump">tcp dump</h2>
+<p>Linux Network Packet Analyzers:
+Tcpdump is a very powerful and widely used command-line network sniffer. It is used to capture and analyze TCP/IP packets transmitted or received over a network on a specific interface.</p>
+<p>To capture packets from a given interface, specify it using the -i option.<br>
+<code>$ tcpdump -i eth1</code></p>
+<p>To capture a specific number of packets, use the -c option to enter the desired number.<br>
+<code>$ tcpdump -c 5 -i eth1</code></p>
+<p>To capture and save packets to a file for later analysis, use the -w flag and specify the output file.<br>
+<code>$ tcpdump -w captured.pacs -i eth1</code></p>
+<h3 id="references">References</h3>
+<p><a href="http://www.policyrouting.org/iproute2.doc.html#ss9.2.1">IPROUTE2 Utility Suite Howto</a></p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-54a7ccdf0ca2b548717d1da43429076d">4 - Package Management</h1>
+    <div class="lead">Learn about package management in Linux</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-8edc50c45d2becb41e8fac29be74f79d">4.1 - apk</h1>
+    <div class="lead">Alpine package manager</div>
+	<p>Alpine is the light weight linux distribution. Alpine uses apk as the package manager.</p>
+<h3 id="references">References</h3>
+<p><a href="https://alpinelinux.org/">alpinelinux.org</a></p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-63e5c0257b3f03ca600899d7bf6adbaa">4.2 - deb</h1>
+    <div class="lead">debian package management</div>
+	<p>The major reason to use apt tools though is for the dependency management. The apt tools understand that in order to install a given package, other packages may need to be installed too, and apt can download these and install them, whereas dpkg does not.</p>
+<h3 id="references">References</h3>
+<p><a href="https://linuxhint.com/debian_package_managers/"></a></p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-8f6d941b2fec72653c6aa609dfe86e2a">4.3 - dnf</h1>
+    <div class="lead">Dandified yum</div>
+	<p>DNF or Dandified yum is the next generation version of yum, a package manager for RPM-based Linux distributions like fedora,centos and redhat.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>dnf -h  
+</span></span><span style="display:flex;"><span>dnf --help
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>root@192 ~<span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#8f5902;font-style:italic"># dnf history</span>
+</span></span><span style="display:flex;"><span>ID     <span style="color:#000;font-weight:bold">|</span> Command line             <span style="color:#000;font-weight:bold">|</span> Date and <span style="color:#204a87">time</span>    <span style="color:#000;font-weight:bold">|</span> Action<span style="color:#ce5c00;font-weight:bold">(</span>s<span style="color:#ce5c00;font-weight:bold">)</span>      <span style="color:#000;font-weight:bold">|</span> Altered
+</span></span><span style="display:flex;"><span>-------------------------------------------------------------------------------
+</span></span><span style="display:flex;"><span>     <span style="color:#0000cf;font-weight:bold">5</span> <span style="color:#000;font-weight:bold">|</span> install transmission-gtk <span style="color:#000;font-weight:bold">|</span> 2020-07-17 13:26 <span style="color:#000;font-weight:bold">|</span> Install        <span style="color:#000;font-weight:bold">|</span>    <span style="color:#0000cf;font-weight:bold">3</span>   
+</span></span><span style="display:flex;"><span>     <span style="color:#0000cf;font-weight:bold">4</span> <span style="color:#000;font-weight:bold">|</span> install epel-release     <span style="color:#000;font-weight:bold">|</span> 2020-07-17 13:25 <span style="color:#000;font-weight:bold">|</span> Install        <span style="color:#000;font-weight:bold">|</span>    <span style="color:#0000cf;font-weight:bold">1</span>   
+</span></span><span style="display:flex;"><span>     <span style="color:#0000cf;font-weight:bold">3</span> <span style="color:#000;font-weight:bold">|</span>                          <span style="color:#000;font-weight:bold">|</span> 2020-07-17 11:33 <span style="color:#000;font-weight:bold">|</span> Install        <span style="color:#000;font-weight:bold">|</span>    <span style="color:#0000cf;font-weight:bold">8</span>   
+</span></span><span style="display:flex;"><span>     <span style="color:#0000cf;font-weight:bold">2</span> <span style="color:#000;font-weight:bold">|</span>                          <span style="color:#000;font-weight:bold">|</span> 2020-07-17 11:27 <span style="color:#000;font-weight:bold">|</span> Removed        <span style="color:#000;font-weight:bold">|</span>    <span style="color:#0000cf;font-weight:bold">1</span>   
+</span></span><span style="display:flex;"><span>     <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#000;font-weight:bold">|</span>                          <span style="color:#000;font-weight:bold">|</span> 2020-07-17 11:15 <span style="color:#000;font-weight:bold">|</span> Install        <span style="color:#000;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">1476</span> EE
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>root@192 ~<span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#8f5902;font-style:italic"># dnf repolist</span>
+</span></span><span style="display:flex;"><span>repo id                             repo name
+</span></span><span style="display:flex;"><span>AppStream                           CentOS-8 - AppStream
+</span></span><span style="display:flex;"><span>BaseOS                              CentOS-8 - Base
+</span></span><span style="display:flex;"><span>epel                                Extra Packages <span style="color:#204a87;font-weight:bold">for</span> Enterprise Linux <span style="color:#0000cf;font-weight:bold">8</span> - x86_64
+</span></span><span style="display:flex;"><span>epel-modular                        Extra Packages <span style="color:#204a87;font-weight:bold">for</span> Enterprise Linux Modular <span style="color:#0000cf;font-weight:bold">8</span> - x86_64
+</span></span><span style="display:flex;"><span>extras                              CentOS-8 - Extras
+</span></span><span style="display:flex;"><span>google-chrome                       google-chrome
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#search package details for the given string</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>root@192 ~<span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#8f5902;font-style:italic"># dnf search chrome</span>
+</span></span><span style="display:flex;"><span>Last metadata expiration check: 0:31:24 ago on Fri <span style="color:#0000cf;font-weight:bold">17</span> Jul <span style="color:#0000cf;font-weight:bold">2020</span> 01:25:55 PM CEST.
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">========================================</span> Name <span style="color:#000;font-weight:bold">&amp;</span> Summary Matched: <span style="color:#000">chrome</span> <span style="color:#ce5c00;font-weight:bold">========================================</span>
+</span></span><span style="display:flex;"><span>google-chrome-stable.x86_64 : Google Chrome
+</span></span><span style="display:flex;"><span>google-chrome-beta.x86_64 : Google Chrome <span style="color:#ce5c00;font-weight:bold">(</span>beta<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>google-chrome-unstable.x86_64 : Google Chrome <span style="color:#ce5c00;font-weight:bold">(</span>unstable<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>chromedriver.x86_64 : WebDriver <span style="color:#204a87;font-weight:bold">for</span> Google Chrome/Chromium
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">=============================================</span> Name Matched: <span style="color:#000">chrome</span> <span style="color:#ce5c00;font-weight:bold">=============================================</span>
+</span></span><span style="display:flex;"><span>chrome-gnome-shell.x86_64 : Support <span style="color:#204a87;font-weight:bold">for</span> managing GNOME Shell Extensions through web browsers
+</span></span><span style="display:flex;"><span>mathjax-winchrome-fonts.noarch : Fonts used by MathJax to display math in the <span style="color:#000">browser</span>
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">===========================================</span> Summary Matched: <span style="color:#000">chrome</span> <span style="color:#ce5c00;font-weight:bold">============================================</span>
+</span></span><span style="display:flex;"><span>webextension-token-signing.x86_64 : Chrome and Firefox extension <span style="color:#204a87;font-weight:bold">for</span> signing with your eID on the web
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># clear all cached packages from the system</span>
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>root@192 ~<span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#8f5902;font-style:italic"># dnf clean all</span>
+</span></span><span style="display:flex;"><span><span style="color:#0000cf;font-weight:bold">44</span> files removed
+</span></span></code></pre></div><h3 id="references">References</h3>
+<p><a href="https://fedoraproject.org/wiki/DNF">fedora-dnf-wiki</a></p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-74023e1c043fc41b923bc9e2a983141e">4.4 - rpm</h1>
+    <div class="lead">redhat package management</div>
+	
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-b621aebe47a0822d0f510b1458530591">4.5 - yum</h1>
+    <div class="lead">Yellowdog Updater, Modified (YUM)</div>
+	<h2 id="yum-is-broken-on-the-server">yum is broken on the server</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">### YUM not working on Centos and gave below error</span>
+</span></span><span style="display:flex;"><span>could not retrieve mirrorlist http://mirrorlist.centos.org/?release<span style="color:#ce5c00;font-weight:bold">=</span>7<span style="color:#000;font-weight:bold">&amp;</span><span style="color:#000">arch</span><span style="color:#ce5c00;font-weight:bold">=</span>x86_64<span style="color:#000;font-weight:bold">&amp;</span><span style="color:#000">repo</span><span style="color:#ce5c00;font-weight:bold">=</span>extras<span style="color:#000;font-weight:bold">&amp;</span><span style="color:#000">infra</span><span style="color:#ce5c00;font-weight:bold">=</span>stock error was
+</span></span><span style="display:flex;"><span>14: curl#6 - <span style="color:#4e9a06">&#34;Could not resolve host: mirrorlist.centos.org; Unknown error&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">### To Fix above issue : go to /etc/resolve.conf and add/update nameserver</span>
+</span></span><span style="display:flex;"><span>nameserver 8.8.8.8
+</span></span></code></pre></div><h3 id="fix--rebuild-the-yum-database">Fix : Rebuild the yum database</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>yum clean all
+</span></span><span style="display:flex;"><span>rm -f /var/lib/rpm/__db*
+</span></span><span style="display:flex;"><span>rpm --rebuilddb
+</span></span><span style="display:flex;"><span>yum update
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-cc4874b4092c2616a6c2961f09a962c3">5 - Storage</h1>
+    <div class="lead">How is storage managed in Linux ?</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-0f99246b915cbe62bd86021a258f940d">5.1 - Storage</h1>
+    <div class="lead">Managing storage in Linux</div>
+	<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># from baremetal</span>
+</span></span><span style="display:flex;"><span>sriram@sriram-Inspiron-5567:~$ sudo fdisk -l /dev/sda
+</span></span><span style="display:flex;"><span>Disk /dev/sda: 111,8 GiB, <span style="color:#0000cf;font-weight:bold">120034123776</span> bytes, <span style="color:#0000cf;font-weight:bold">234441648</span> sectors
+</span></span><span style="display:flex;"><span>Units: sectors of <span style="color:#0000cf;font-weight:bold">1</span> * <span style="color:#000">512</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">512</span> bytes
+</span></span><span style="display:flex;"><span>Sector size <span style="color:#ce5c00;font-weight:bold">(</span>logical/physical<span style="color:#ce5c00;font-weight:bold">)</span>: <span style="color:#0000cf;font-weight:bold">512</span> bytes / <span style="color:#0000cf;font-weight:bold">512</span> bytes
+</span></span><span style="display:flex;"><span>I/O size <span style="color:#ce5c00;font-weight:bold">(</span>minimum/optimal<span style="color:#ce5c00;font-weight:bold">)</span>: <span style="color:#0000cf;font-weight:bold">512</span> bytes / <span style="color:#0000cf;font-weight:bold">512</span> bytes
+</span></span><span style="display:flex;"><span>Disklabel type: gpt
+</span></span><span style="display:flex;"><span>Disk identifier: 833807FE-A7E1-46DA-B629-ECC1B32A087E
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Device         Start       End   Sectors   Size Type
+</span></span><span style="display:flex;"><span>/dev/sda1       <span style="color:#0000cf;font-weight:bold">2048</span>   <span style="color:#0000cf;font-weight:bold">1050623</span>   <span style="color:#0000cf;font-weight:bold">1048576</span>   512M EFI System
+</span></span><span style="display:flex;"><span>/dev/sda2    <span style="color:#0000cf;font-weight:bold">1050624</span> <span style="color:#0000cf;font-weight:bold">217874431</span> <span style="color:#0000cf;font-weight:bold">216823808</span> 103,4G Linux filesystem
+</span></span><span style="display:flex;"><span>/dev/sda3  <span style="color:#0000cf;font-weight:bold">217874432</span> <span style="color:#0000cf;font-weight:bold">234440703</span>  <span style="color:#0000cf;font-weight:bold">16566272</span>   7,9G Linux swap
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># From Virtual Machine</span>
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>root@CentosServer1910 ~<span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#8f5902;font-style:italic"># fdisk -l</span>
+</span></span><span style="display:flex;"><span>Disk /dev/sda: <span style="color:#0000cf;font-weight:bold">10</span> GiB, <span style="color:#0000cf;font-weight:bold">10737418240</span> bytes, <span style="color:#0000cf;font-weight:bold">20971520</span> sectors
+</span></span><span style="display:flex;"><span>Units: sectors of <span style="color:#0000cf;font-weight:bold">1</span> * <span style="color:#000">512</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">512</span> bytes
+</span></span><span style="display:flex;"><span>Sector size <span style="color:#ce5c00;font-weight:bold">(</span>logical/physical<span style="color:#ce5c00;font-weight:bold">)</span>: <span style="color:#0000cf;font-weight:bold">512</span> bytes / <span style="color:#0000cf;font-weight:bold">512</span> bytes
+</span></span><span style="display:flex;"><span>I/O size <span style="color:#ce5c00;font-weight:bold">(</span>minimum/optimal<span style="color:#ce5c00;font-weight:bold">)</span>: <span style="color:#0000cf;font-weight:bold">512</span> bytes / <span style="color:#0000cf;font-weight:bold">512</span> bytes
+</span></span><span style="display:flex;"><span>Disklabel type: dos
+</span></span><span style="display:flex;"><span>Disk identifier: 0xec47036c
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Device     Boot   Start      End  Sectors Size Id Type
+</span></span><span style="display:flex;"><span>/dev/sda1  *       <span style="color:#0000cf;font-weight:bold">2048</span>  <span style="color:#0000cf;font-weight:bold">2099199</span>  <span style="color:#0000cf;font-weight:bold">2097152</span>   1G <span style="color:#0000cf;font-weight:bold">83</span> Linux
+</span></span><span style="display:flex;"><span>/dev/sda2       <span style="color:#0000cf;font-weight:bold">2099200</span> <span style="color:#0000cf;font-weight:bold">20971519</span> <span style="color:#0000cf;font-weight:bold">18872320</span>   9G 8e Linux LVM
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Disk /dev/mapper/cl_centosserver1910-root: <span style="color:#0000cf;font-weight:bold">8</span> GiB, <span style="color:#0000cf;font-weight:bold">8585740288</span> bytes, <span style="color:#0000cf;font-weight:bold">16769024</span> sectors
+</span></span><span style="display:flex;"><span>Units: sectors of <span style="color:#0000cf;font-weight:bold">1</span> * <span style="color:#000">512</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">512</span> bytes
+</span></span><span style="display:flex;"><span>Sector size <span style="color:#ce5c00;font-weight:bold">(</span>logical/physical<span style="color:#ce5c00;font-weight:bold">)</span>: <span style="color:#0000cf;font-weight:bold">512</span> bytes / <span style="color:#0000cf;font-weight:bold">512</span> bytes
+</span></span><span style="display:flex;"><span>I/O size <span style="color:#ce5c00;font-weight:bold">(</span>minimum/optimal<span style="color:#ce5c00;font-weight:bold">)</span>: <span style="color:#0000cf;font-weight:bold">512</span> bytes / <span style="color:#0000cf;font-weight:bold">512</span> bytes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Disk /dev/mapper/cl_centosserver1910-swap: <span style="color:#0000cf;font-weight:bold">1</span> GiB, <span style="color:#0000cf;font-weight:bold">1073741824</span> bytes, <span style="color:#0000cf;font-weight:bold">2097152</span> sectors
+</span></span><span style="display:flex;"><span>Units: sectors of <span style="color:#0000cf;font-weight:bold">1</span> * <span style="color:#000">512</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">512</span> bytes
+</span></span><span style="display:flex;"><span>Sector size <span style="color:#ce5c00;font-weight:bold">(</span>logical/physical<span style="color:#ce5c00;font-weight:bold">)</span>: <span style="color:#0000cf;font-weight:bold">512</span> bytes / <span style="color:#0000cf;font-weight:bold">512</span> bytes
+</span></span><span style="display:flex;"><span>I/O size <span style="color:#ce5c00;font-weight:bold">(</span>minimum/optimal<span style="color:#ce5c00;font-weight:bold">)</span>: <span style="color:#0000cf;font-weight:bold">512</span> bytes / <span style="color:#0000cf;font-weight:bold">512</span> bytes
+</span></span></code></pre></div><h2 id="uuid---get-the-uuid-of-devices-on-linux">UUID - Get the uuid of devices on linux</h2>
+<p><code>UUID</code> is the <code>universally unique identifier</code> that is assigned to devices on a linux system for the purpose of identification.
+For example if your hard disk has 3 partitions then each partition is a device and has a uuid.</p>
+<p>To find the uuid of devices connected to a system use the command <code>ls -l /dev/disk/by-uuid/</code></p>
+<pre tabindex="0"><code>[sriram@CentosServer1910 ~]$ ls -l /dev/disk/by-uuid/
+total 0
+lrwxrwxrwx. 1 root root 10 Nov  3 12:55 64b6f04f-d510-4c39-9a37-cacfeeec774b -&gt; ../../sda1
+lrwxrwxrwx. 1 root root 10 Nov  3 12:55 860d422d-1b58-4545-a139-10ffc6677f63 -&gt; ../../dm-1
+lrwxrwxrwx. 1 root root 10 Nov  3 12:55 86f561ac-6bdf-4768-8cdd-4333d6e74b47 -&gt; ../../dm-0
+</code></pre><p>Another command to find UUI : <code>blkid</code></p>
+<pre tabindex="0"><code># from baremetal
+sriram@sriram-Inspiron-5567:~$ sudo blkid
+/dev/sda1: UUID=&#34;5FAA-9D41&#34; TYPE=&#34;vfat&#34; PARTLABEL=&#34;EFI System Partition&#34; PARTUUID=&#34;80a7a0c8-1f77-45b0-b720-93a044c6b597&#34;
+/dev/sda2: UUID=&#34;17e11c76-30e6-4e5d-84ee-9ad13021351b&#34; TYPE=&#34;ext4&#34; PARTUUID=&#34;2376aa03-2148-4b8c-92c5-c0a40a3124a3&#34;
+/dev/sda3: UUID=&#34;170ab405-c120-4c49-a8cd-24a0b2bf346d&#34; TYPE=&#34;swap&#34; PARTUUID=&#34;ed20cc7f-76de-4371-8016-e10c030c1ef8&#34;
+
+# from virtual server
+[sriram@CentosServer1910 ~]$ blkid
+/dev/mapper/cl_centosserver1910-root: UUID=&#34;86f561ac-6bdf-4768-8cdd-4333d6e74b47&#34; TYPE=&#34;xfs&#34;
+/dev/sda2: UUID=&#34;wi21xh-Sj3l-ocKe-Q6Qr-aRLv-n3Nm-hcYhL5&#34; TYPE=&#34;LVM2_member&#34; PARTUUID=&#34;ec47036c-02&#34;
+</code></pre><p>To get the uuid of a specific device, simply put the device name next to blkid : <code>blkid /dev/sda1</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>sriram@CentosServer1910 ~<span style="color:#ce5c00;font-weight:bold">]</span>$ sudo blkid /dev/sda*
+</span></span><span style="display:flex;"><span>/dev/sda: <span style="color:#000">PTUUID</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;ec47036c&#34;</span> <span style="color:#000">PTTYPE</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;dos&#34;</span>
+</span></span><span style="display:flex;"><span>/dev/sda1: <span style="color:#000">UUID</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;64b6f04f-d510-4c39-9a37-cacfeeec774b&#34;</span> <span style="color:#000">TYPE</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;ext4&#34;</span> <span style="color:#000">PARTUUID</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;ec47036c-01&#34;</span>
+</span></span><span style="display:flex;"><span>/dev/sda2: <span style="color:#000">UUID</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;wi21xh-Sj3l-ocKe-Q6Qr-aRLv-n3Nm-hcYhL5&#34;</span> <span style="color:#000">TYPE</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;LVM2_member&#34;</span> <span style="color:#000">PARTUUID</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;ec47036c-02&#34;</span>
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-fddd1ce9b718b621a30d7dda6c13fa5d">6 - users</h1>
+    
+	<h2 id="how-to-create-a-non-login-user">How to create a non-login user?</h2>
+<ul>
+<li>Create user with -M (caps) flag.</li>
+<li>Lock the account to prevent from login</li>
+</ul>
+<pre tabindex="0"><code>useradd -M subversion
+usermod -L subversion
+</code></pre><h2 id="how-to-create-a-system-user-">How to create a system user ?</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ adduser --system -s usr/sbin/nologin subversion
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># The -r flag will create a system user - one which does not have a password, a home dir and is unable to login.</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># -s flag is for shell , /bin/nologin prevents to have a shell for this user.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">## Testing</span>
+</span></span><span style="display:flex;"><span>$ sudo adduser --system --no-create-home --shell /usr/sbin/nologin subversion
+</span></span><span style="display:flex;"><span>Adding system user <span style="color:#4e9a06">`</span>subversion<span style="color:#4e9a06">&#39; (UID 109) ...
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">Adding new user `subversion&#39;</span> <span style="color:#ce5c00;font-weight:bold">(</span>UID 109<span style="color:#ce5c00;font-weight:bold">)</span> with group <span style="color:#4e9a06">`</span>nogroup<span style="color:#4e9a06">&#39; ...
+</span></span></span><span style="display:flex;"><span><span style="color:#4e9a06">Not creating home directory `/home/subversion&#39;</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ sudo grep subversion /etc/passwd /etc/shadow
+</span></span><span style="display:flex;"><span>/etc/passwd:subversion:x:109:65534::/home/subversion:/usr/sbin/nologin
+</span></span><span style="display:flex;"><span>/etc/shadow:subversion:*:18628:0:99999:7:::
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">## Check if account is usuable</span>
+</span></span><span style="display:flex;"><span>$ sudo -u subversion whoami
+</span></span><span style="display:flex;"><span>subversion
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ sudo -u subversion date
+</span></span><span style="display:flex;"><span>Fri <span style="color:#0000cf;font-weight:bold">01</span> Jan <span style="color:#0000cf;font-weight:bold">2021</span> 07:35:20 PM CET
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="User mailing list" aria-label="User mailing list">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Twitter" aria-label="Twitter">
+    <a target="_blank" rel="noopener" href="https://example.org/twitter" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Stack Overflow" aria-label="Stack Overflow">
+    <a target="_blank" rel="noopener" href="https://example.org/stack" aria-label="Stack Overflow">
+      <i class="fab fa-stack-overflow"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        <ul class="td-footer__links-list">
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="GitHub" aria-label="GitHub">
+    <a target="_blank" rel="noopener" href="https://sriram-yeluri.github.io" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Slack" aria-label="Slack">
+    <a target="_blank" rel="noopener" href="https://example.org/slack" aria-label="Slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="td-footer__links-item" data-bs-toggle="tooltip" title="Developer mailing list" aria-label="Developer mailing list">
+    <a target="_blank" rel="noopener" href="https://example.org/mail" aria-label="Developer mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+</ul>
+
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2018&ndash;2024
+    <span class="td-footer__authors">Sriram Yeluri |</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script defer src="/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

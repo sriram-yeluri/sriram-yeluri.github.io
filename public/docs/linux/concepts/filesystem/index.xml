@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux FileSystem on Knowledge Hub</title>
+    <link>http://localhost:1313/docs/linux/concepts/filesystem/</link>
+    <description>Recent content in Linux FileSystem on Knowledge Hub</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/docs/linux/concepts/filesystem/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux file system</title>
+      <link>http://localhost:1313/docs/linux/concepts/filesystem/filesystem/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/concepts/filesystem/filesystem/</guid>
+      <description>sriram@sriram-Inspiron-5567:~$ sudo fdisk -l /dev/sda Disk /dev/sda: 111,8 GiB, 120034123776 bytes, 234441648 sectors Units: sectors of 1 * 512 = 512 bytes Sector size (logical/physical): 512 bytes / 512 bytes I/O size (minimum/optimal): 512 bytes / 512 bytes Disklabel type: gpt Disk identifier: 833807FE-A7E1-46DA-B629-ECC1B32A087E Device Start End Sectors Size Type /dev/sda1 2048 1050623 1048576 512M EFI System /dev/sda2 1050624 217874431 216823808 103,4G Linux filesystem /dev/sda3 217874432 234440703 16566272 7,9G Linux swap Linux File Permissions -rwsrwsrwt</description>
+    </item>
+  </channel>
+</rss>

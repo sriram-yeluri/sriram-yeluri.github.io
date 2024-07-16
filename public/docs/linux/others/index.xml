@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Others on Knowledge Hub</title>
+    <link>http://localhost:1313/docs/linux/others/</link>
+    <description>Recent content in Others on Knowledge Hub</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/docs/linux/others/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BootableDrive</title>
+      <link>http://localhost:1313/docs/linux/others/createbootable-drive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/others/createbootable-drive/</guid>
+      <description>How to create a bootable drive dd bs=4M if=&amp;lt;path to your image.iso&amp;gt; of=&amp;lt;path to your USB&amp;gt; status=progress bs : This stands for “block size.&#xA;if : This stands for “input file”. input file will be the iso file.&#xA;of : This stands for “output file”.&#xA;status : To see the progress.</description>
+    </item>
+    <item>
+      <title>KDE</title>
+      <link>http://localhost:1313/docs/linux/others/kde_configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/others/kde_configuration/</guid>
+      <description>How to manage KDE applications launcher </description>
+    </item>
+    <item>
+      <title>RHEL</title>
+      <link>http://localhost:1313/docs/linux/others/rhel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/others/rhel/</guid>
+      <description>RedHat Enterprise Linux.&#xA;How to subscribe to Redhat using subscription-manager subscription-manager subscription-manager list subscription-manager register subscription-manager attach subscription-manager identity Add GUI from basic installation yum groupinstall gnome-desktop x11 fonts yum groupinstall &amp;#34;Server with GUI&amp;#34; systemctl set-default graphical.target systemctl start graphical.target References Add GUI</description>
+    </item>
+  </channel>
+</rss>

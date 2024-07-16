@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Knowledge Hub</title>
+    <link>http://localhost:1313/docs/docker/</link>
+    <description>Recent content in Docker on Knowledge Hub</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/docs/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Installing Docker</title>
+      <link>http://localhost:1313/docs/docker/installdocker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/docker/installdocker/</guid>
+      <description>How to install Docker # requires elevated access either root or sudo # install required dependencies (tested on Raspberry Pi 4) sudo apt-get -y install libffi-dev libssl-dev python3-dev python3 python3-pip sudo curl -sSL https://get.docker.com | sh # To run docker as non sudo/root user, add the user to docker group sudo usermod -aG docker &amp;lt;user&amp;gt; #logout and login after this command. # Testing docker run hello-world How to install Docker CE on Centos7 Docker CE on Centos7</description>
+    </item>
+    <item>
+      <title>Best Practices</title>
+      <link>http://localhost:1313/docs/docker/dockerbestpractices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/docker/dockerbestpractices/</guid>
+      <description> Use official Docker images as base images Use specific image version Use small sized official images Optimize caching image layers Use .dockerignore to exclude unwanted files and folders Make use of Multi-Stage builds Use the least priileged user to run the container Scan your images for vulnarabilities </description>
+    </item>
+    <item>
+      <title>Building Images</title>
+      <link>http://localhost:1313/docs/docker/builddockerimage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/docker/builddockerimage/</guid>
+      <description>Dockerfile Dockerfile is a simple text file to create a docker image. Default file name is &amp;ldquo;Dockerfile&amp;rdquo; Example dockerfile ENV FROM LABEL maintainer=&amp;#34;&amp;#34; version=&amp;#34;&amp;#34; WORKDIR RUN VOLUME EXPOSE ENTRYPOINT --&amp;gt; Executes custom scripts while starting a docker container --&amp;gt; Do not add layer to docker image CMD There can only be one CMD instruction in a Dockerfile. If you list more than one CMD, then only the last CMD will take effect.</description>
+    </item>
+    <item>
+      <title>Networking</title>
+      <link>http://localhost:1313/docs/docker/dockernetworking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/docker/dockernetworking/</guid>
+      <description># By default, docker will add all running containers to default bridge network # To inspect docker bridge network, use below command docker network inspect bridge Creating a custom docker network How to add container to a custom Network # To run a docker container and join to a custom bridge network, use --net flag docker container run --rm --itd --name &amp;lt;container_name&amp;gt; --net &amp;lt;network_name&amp;gt; How to know the IP address of a running container docker exec &amp;lt;container_name&amp;gt; ifconfig docker exec &amp;lt;container_name&amp;gt; ip -a References docker-networking</description>
+    </item>
+    <item>
+      <title>Volumes</title>
+      <link>http://localhost:1313/docs/docker/dockervolumes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/docker/dockervolumes/</guid>
+      <description>Nexus Sonatype Nexus Docker with persisent data chown -R 200 /home/sriram.yeluri/Data/NEXUS_DATA docker run -d \ -p 8081:8081 \ --name nexus \ -v /home/sriram.yeluri/Data/NEXUS_DATA:/nexus-data \ sonatype/nexus3 Jenkins Jenkins with persisent data docker run -p 8080:8080 -p 50000:50000 \ --name jenkins \ -v /home/sriram.yeluri/Data/JENKINS_HOME:/var/jenkins_home \ jenkins docker run -p 8080:8080 -p 50000:50000 \ --name jenkins \ -v /home/sriram.yeluri/Data/JENKINS_HOME:/var/jenkins_home \ jenkins/jenkins:lts Jenkins Operations Center - JOC docker run -p 8089:8080 -p 50001:50000 \ --name cjoc \ -v /home/sriram.</description>
+    </item>
+  </channel>
+</rss>

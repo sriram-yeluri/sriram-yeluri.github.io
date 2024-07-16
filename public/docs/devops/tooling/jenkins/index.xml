@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jenkins on Knowledge Hub</title>
+    <link>http://localhost:1313/docs/devops/tooling/jenkins/</link>
+    <description>Recent content in Jenkins on Knowledge Hub</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/docs/devops/tooling/jenkins/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jenkins</title>
+      <link>http://localhost:1313/docs/devops/tooling/jenkins/jenkins-code-snippets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/devops/tooling/jenkins/jenkins-code-snippets/</guid>
+      <description>Jenkins pipeline code&#xA;code-snippets How to get list of all installed plugins import jenkins.model.Jenkins Jenkins.instance.pluginManager.plugins.each{ plugin -&amp;gt; println (&amp;#34;${plugin.getDisplayName()} (${plugin.getShortName()}): ${plugin.getVersion()}&amp;#34;) } How to test NodeJS node(&amp;#39;linux&amp;#39;) { stage(&amp;#39;Linux :: NodeJS :: Default&amp;#39; ) { sh &amp;#39;node --version&amp;#39; } stage(&amp;#39;Linux :: NodeJS :: v8.9.0&amp;#39; ) { def nodejs = tool name: &amp;#39;Linux NodeJS v8.9.0&amp;#39;, type: &amp;#39;jenkins.plugins.nodejs.tools.NodeJSInstallation&amp;#39; sh &amp;#34;$ {nodejs}/bin/node --version&amp;#34; } stage(&amp;#39;Linux :: NodeJS :: v8.9.0:: withEnv&amp;#39; ) { withEnv([&amp;#34;PATH+NODE=${tool &amp;#39;Linux NodeJS v8.</description>
+    </item>
+    <item>
+      <title>Jenkins Configuration</title>
+      <link>http://localhost:1313/docs/devops/tooling/jenkins/configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/devops/tooling/jenkins/configuration/</guid>
+      <description>Q1) In the Global Security, I didn&amp;rsquo;t have a TCP port for JNLP agents enabled, which automatically disables the line &amp;ldquo;Launch agent via Java Web Start&amp;rdquo;&#xA;Solution:&#xA;Manage Jenkins =&amp;gt; Configure Global Security =&amp;gt; Enable security =&amp;gt; TCP port for JNLP agents Set it to either Fixed (for this option also set the port number) or Random.</description>
+    </item>
+    <item>
+      <title>Jenkins-Docker</title>
+      <link>http://localhost:1313/docs/devops/tooling/jenkins/jenkins-docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/devops/tooling/jenkins/jenkins-docker/</guid>
+      <description>My use case is to run jenkins pipelines on docker build slaves. To achieve this we have to install Docker plugin. Docker plugin will integrate Jenkins with Docker. This docker plugin depends on Docker API plugin, so intall both the plugins. Restart is required for jenkins after installing these plugins.&#xA;Manage Jenkins -&amp;gt; Manage Plugins -&amp;gt; Docker plugin , Docker slave plugin and Docker API plugin&#xA;Once docker plugins are installed, restart jenkins master.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Package Management on Knowledge Hub</title>
+    <link>http://localhost:1313/docs/linux/concepts/package-management/</link>
+    <description>Recent content in Package Management on Knowledge Hub</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/docs/linux/concepts/package-management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>apk</title>
+      <link>http://localhost:1313/docs/linux/concepts/package-management/apk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/concepts/package-management/apk/</guid>
+      <description>Alpine is the light weight linux distribution. Alpine uses apk as the package manager.&#xA;References alpinelinux.org</description>
+    </item>
+    <item>
+      <title>deb</title>
+      <link>http://localhost:1313/docs/linux/concepts/package-management/debian/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/concepts/package-management/debian/</guid>
+      <description>The major reason to use apt tools though is for the dependency management. The apt tools understand that in order to install a given package, other packages may need to be installed too, and apt can download these and install them, whereas dpkg does not.&#xA;References </description>
+    </item>
+    <item>
+      <title>dnf</title>
+      <link>http://localhost:1313/docs/linux/concepts/package-management/dnf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/concepts/package-management/dnf/</guid>
+      <description>DNF or Dandified yum is the next generation version of yum, a package manager for RPM-based Linux distributions like fedora,centos and redhat.&#xA;dnf -h dnf --help [root@192 ~]# dnf history ID | Command line | Date and time | Action(s) | Altered ------------------------------------------------------------------------------- 5 | install transmission-gtk | 2020-07-17 13:26 | Install | 3 4 | install epel-release | 2020-07-17 13:25 | Install | 1 3 | | 2020-07-17 11:33 | Install | 8 2 | | 2020-07-17 11:27 | Removed | 1 1 | | 2020-07-17 11:15 | Install | 1476 EE [root@192 ~]# dnf repolist repo id repo name AppStream CentOS-8 - AppStream BaseOS CentOS-8 - Base epel Extra Packages for Enterprise Linux 8 - x86_64 epel-modular Extra Packages for Enterprise Linux Modular 8 - x86_64 extras CentOS-8 - Extras google-chrome google-chrome #search package details for the given string [root@192 ~]# dnf search chrome Last metadata expiration check: 0:31:24 ago on Fri 17 Jul 2020 01:25:55 PM CEST.</description>
+    </item>
+    <item>
+      <title>rpm</title>
+      <link>http://localhost:1313/docs/linux/concepts/package-management/rpm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/concepts/package-management/rpm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>yum</title>
+      <link>http://localhost:1313/docs/linux/concepts/package-management/yum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/concepts/package-management/yum/</guid>
+      <description>yum is broken on the server ### YUM not working on Centos and gave below error could not retrieve mirrorlist http://mirrorlist.centos.org/?release=7&amp;amp;arch=x86_64&amp;amp;repo=extras&amp;amp;infra=stock error was 14: curl#6 - &amp;#34;Could not resolve host: mirrorlist.centos.org; Unknown error&amp;#34; ### To Fix above issue : go to /etc/resolve.conf and add/update nameserver nameserver 8.8.8.8 Fix : Rebuild the yum database yum clean all rm -f /var/lib/rpm/__db* rpm --rebuilddb yum update </description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Knowledge Hub</title>
+    <link>http://localhost:1313/docs/programming/python/</link>
+    <description>Recent content in Python on Knowledge Hub</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/docs/programming/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Started</title>
+      <link>http://localhost:1313/docs/programming/python/python3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/programming/python/python3/</guid>
+      <description>How to install Python3 in Debian # Install prerequisites $ sudo apt-get install build-essential $ sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev zlib1g-dev # Download and extract python source tar cd /tmp wget https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tar.xz tar -xvf Python-3.8.5.tar.xz cd Python-3.8.5 ./configure --prefix=/appl/Python_3_8_5 --enable-optimizations make make install Dictionary # load json file with open(&amp;#39;data_file.json&amp;#39;) as json_file: data = json.load(json_file) print(json.dumps(data,indent=4)) for groups in data[&amp;#39;values&amp;#39;]: print(groups.items()) Class class MyClass: def __init__(self,f_name,l_name): print(&amp;#34;MyClass is instantiated successfully&amp;#34;) print(f&amp;#39;{f_name}_{l_name}&amp;#39;) self.</description>
+    </item>
+  </channel>
+</rss>

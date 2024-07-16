@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LDAP on Knowledge Hub</title>
+    <link>http://localhost:1313/docs/ldap/</link>
+    <description>Recent content in LDAP on Knowledge Hub</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/docs/ldap/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenLDAP</title>
+      <link>http://localhost:1313/docs/ldap/openldap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/ldap/openldap/</guid>
+      <description>OpenLDAP is a free and opensource LightWeight Directory Access Protocol software.&#xA;Docker images for OpenLDAP Docker Image for OpenLDAP&#xA;How to compile and Build OpenLdap&#xA;Generate password for slapd.conf file /appl/openldap/sbin/slappasswd Update slapd.conf ./slaptest -f /appl/openldap/etc/openldap/slapd.conf -F /appl/openldap/etc/openldap/slapd.d How to know the version of OpenLdap /appl/openldap/libexec/slapd -VV /appl/openldap/bin/ldapsearch -VV How to start the OpenLDAP server manually # Go to the path /appl/openldap/libexec and run OpenLDAP daemon ./slapd -h &amp;#34;ldap://0.0.0.0:10389 ldaps://0.0.0.0:10636&amp;#34; How to take OpenLDAP backup manually # Use slapcat utility from OpenLDAP to create a backup file /appl/openldap/sbin/slapcat -b &amp;#34;cn=root,o=sccm&amp;#34; -l openldap-backupfile.</description>
+    </item>
+  </channel>
+</rss>

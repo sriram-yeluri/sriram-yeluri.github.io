@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scripting on Knowledge Hub</title>
+    <link>http://localhost:1313/docs/linux/scripting/</link>
+    <description>Recent content in Scripting on Knowledge Hub</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/docs/linux/scripting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWK</title>
+      <link>http://localhost:1313/docs/linux/scripting/awk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/scripting/awk/</guid>
+      <description>Scans a file line by line Splits each input line into fields Compares input line/fields to pattern Performs action(s) on matched lines Search Patterns:&#xA;Patterns are marked by forward slash at beginning and end of search key word&#xA;awk &amp;#39;/keyword/ {print}&amp;#39; cat /etc/passwd | awk -F: &amp;#39;/bin/ {print}&amp;#39; cat /etc/passwd | awk -F: &amp;#39;/bin\/false/ {print}&amp;#39; cat /etc/passwd | awk -F: &amp;#39;/usr\/sbin\/nologin/ {print $1}&amp;#39; Delimiter and Multiple Delimiters&#xA;cat /etc/passwd | awk -F: &amp;#39;/bin/ {print}&amp;#39; awk -F&amp;#39;[/=]&amp;#39; &amp;#39;{print $3 &amp;#34;\t&amp;#34; $5 &amp;#34;\t&amp;#34; $8}&amp;#39; filename SYNTAX: -F&amp;#34;&amp;lt;separator1&amp;gt;|&amp;lt;separator2&amp;gt;|.</description>
+    </item>
+    <item>
+      <title>Shell Scripting</title>
+      <link>http://localhost:1313/docs/linux/scripting/shellscripting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/scripting/shellscripting/</guid>
+      <description>Linux Shell Scripting&#xA;Special Parameter Description $0 returns name of the script $# returns total number of arguments count $@ returns list of arguments $* If a script receives two arguments, $* is equivalent to $1 $2 $? returns exit value of the last executed command $! returns process number of the last background command $$ returns PID of current shell !$ Last argument in a command `$*` and `$@` both will act the same unless they are enclosed in double quotes, &amp;quot;&amp;quot;.</description>
+    </item>
+    <item>
+      <title>Tasks</title>
+      <link>http://localhost:1313/docs/linux/scripting/tasks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/scripting/tasks/</guid>
+      <description>Find all files aged more than 7 days and delete find /path/* -mtime +7 exec rm -rf {} \; &amp;gt; /dev/null </description>
+    </item>
+  </channel>
+</rss>

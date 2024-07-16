@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Knowledge Hub</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Knowledge Hub</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Debian</title>
+      <link>http://localhost:1313/docs/linux/distributions/debian/settingupdebian/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/distributions/debian/settingupdebian/</guid>
+      <description>Install wifi drivers When i was installing Debian 10, automatic network detection failed to load wifi drivers. Hence i have to manually add non-free debian sources and install the fimware wifi drivers.&#xA;# Reference : https://wiki.debian.org/iwlwifi apt edit-sources # add below non-free sources of debian to the list # deb http://deb.debian.org/debian buster main contrib non-free # deb-src http://deb.debian.org/debian buster main contrib non-free apt update apt install wireless-tools apt install firmware-iwlwifi modprobe -r iwlwifi modprobe iwlwifi root@sriram-pc:~# lspci 00:00.</description>
+    </item>
+    <item>
+      <title>Installing Docker</title>
+      <link>http://localhost:1313/docs/docker/installdocker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/docker/installdocker/</guid>
+      <description>How to install Docker # requires elevated access either root or sudo # install required dependencies (tested on Raspberry Pi 4) sudo apt-get -y install libffi-dev libssl-dev python3-dev python3 python3-pip sudo curl -sSL https://get.docker.com | sh # To run docker as non sudo/root user, add the user to docker group sudo usermod -aG docker &amp;lt;user&amp;gt; #logout and login after this command. # Testing docker run hello-world How to install Docker CE on Centos7 Docker CE on Centos7</description>
+    </item>
+    <item>
+      <title>Debian</title>
+      <link>http://localhost:1313/docs/linux/distributions/debian/installapplications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/distributions/debian/installapplications/</guid>
+      <description>How to install draw.io # https://github.com/jgraph/drawio-desktop/releases/ cd /tmp wget https://github.com/jgraph/drawio-desktop/releases/download/v13.6.2/draw.io-amd64-13.6.2.deb sudo dpkg -i draw.io-amd64-13.6.2.deb Install insomnia # Add to sources echo &amp;#34;deb https://dl.bintray.com/getinsomnia/Insomnia /&amp;#34; \ | sudo tee -a /etc/apt/sources.list.d/insomnia.list # Add public key used to verify code signature wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \ | sudo apt-key add - # Refresh repository sources and install Insomnia sudo apt-get update sudo apt-get install insomnia References </description>
+    </item>
+    <item>
+      <title>CentOS-8</title>
+      <link>http://localhost:1313/docs/linux/distributions/centos/centos-8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/distributions/centos/centos-8/</guid>
+      <description>Extra Packages for Enterprise Linux (EPEL) Extra Packages for Enterprise Linux (EPEL) is a special interest group (SIG) from the Fedora Project that provides a set of additional packages for RHEL (and CentOS, and others) from the Fedora sources.&#xA;Note EPEL is not an official part of the RHEL subscription or an official offering from Red Hat. But it can come in handy for admins and developers who work with RHEL and need a few utilities packaged for RHEL from a source they can feel good about.</description>
+    </item>
+    <item>
+      <title>Ubuntu</title>
+      <link>http://localhost:1313/docs/linux/distributions/ubuntu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/distributions/ubuntu/</guid>
+      <description>Show Hiddenfiles Ctrl + H&#xA;Taking a screenshot Hold shift + prtScr , mouse turns to a cross. Select the area to screenshot.&#xA;Image will be saved to pictures folder by default.To copy to Clipboard, use: Ctrl + Shift + PrtScn&#xA;Configure Wifi Network Reference: netplan&#xA;Find the network interface : ip link show Add config.yaml file in /etc/netplans ubuntu@myberry:/etc/netplan$ cat config.yaml network: version: 2 renderer: networkd wifis: wlan0: dhcp4: no dhcp6: no addresses: [192.</description>
+    </item>
+    <item>
+      <title>CentOS-7</title>
+      <link>http://localhost:1313/docs/linux/distributions/centos/centos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/distributions/centos/centos/</guid>
+      <description>How to setup network after RHEL/CentOS minimal installation After installing RHEL/CentOS minimal, You may not able to connect network in that machine. This will happen because Ethernet interfaces are not enabled by default.&#xA;Method 1 – Using NetworkManager Service edit &amp;#39;/etc/sysconfig/network-scripts/ifcfg-enp0s8&amp;#39; change onboot parameter to yes, and restart the interface &amp;#39;ONBOOT=YES&amp;#39; # Restart the interface ifdown ifcfg-enp0s8 ifup ifcfg-enp0s8 Method 2 – Using nmcli Tool #nmcli d (List the available interfaces) #nmtui 1.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/docs/about/certifications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/about/certifications/</guid>
+      <description>Certifications i achieved during my continuous learning CKA Certificate Verify&#xA;AZ-900-Verify&#xA;Cloudbees Jenkins Verify&#xA;verify&#xA;verify&#xA;verify&#xA;verify</description>
+    </item>
+    <item>
+      <title>Ansible</title>
+      <link>http://localhost:1313/docs/provisioning/ansible/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/provisioning/ansible/</guid>
+      <description>Automation tool for configuration management Tool for automated deployments Agent less Yaml syntax playbooks Installation of Ansible yum update -y &amp;amp;&amp;amp; \ yum install ansible -y [root@192 ~]# yum install ansible Last metadata expiration check: 0:12:47 ago on Sat 01 Aug 2020 10:58:47 PM CEST. Dependencies resolved. ================================================================================================================================================ Package Architecture Version Repository Size ================================================================================================================================================ Installing: ansible noarch 2.9.11-1.el8 epel 17 M Installing dependencies: libsodium x86_64 1.0.18-2.el8 epel 162 k python3-babel noarch 2.</description>
+    </item>
+    <item>
+      <title>AnsibleTasks</title>
+      <link>http://localhost:1313/docs/provisioning/ansibletasks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/provisioning/ansibletasks/</guid>
+      <description>cleanup task using cron module # contab entry that runs every night # recursively finds and deletes files and folders older than 7 days. - name: Creates a cron file under /etc/cron.d cron: name: Cleanup files and folders older than 7 days weekday: &amp;#34;*&amp;#34; day: &amp;#34;*&amp;#34; minute: &amp;#34;0&amp;#34; hour: &amp;#34;0&amp;#34; user: &amp;lt;userID&amp;gt; job: &amp;#34;find /path/* -mtime +7 exec rm -rf {} \\; &amp;gt; /dev/null&amp;#34; </description>
+    </item>
+    <item>
+      <title>apk</title>
+      <link>http://localhost:1313/docs/linux/concepts/package-management/apk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/concepts/package-management/apk/</guid>
+      <description>Alpine is the light weight linux distribution. Alpine uses apk as the package manager.&#xA;References alpinelinux.org</description>
+    </item>
+    <item>
+      <title>Architecture</title>
+      <link>http://localhost:1313/docs/k8s/architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/k8s/architecture/</guid>
+      <description>kubernetes cluster components&#xA;Master Masters is responsible for Managing the cluster. Scheduling the deployments. Exposing the kubernetes API. Kubernetes master automatically handles scheduling the pods across the Nodes in the cluster. The Master&amp;rsquo;s automatic scheduling takes into account the available resources on each Node. Node A Node is a worker machine in Kubernetes and may be either a virtual or a physical machine, depending on the cluster. Each Node is managed by the Master.</description>
+    </item>
+    <item>
+      <title>AWK</title>
+      <link>http://localhost:1313/docs/linux/scripting/awk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/scripting/awk/</guid>
+      <description>Scans a file line by line Splits each input line into fields Compares input line/fields to pattern Performs action(s) on matched lines Search Patterns:&#xA;Patterns are marked by forward slash at beginning and end of search key word&#xA;awk &amp;#39;/keyword/ {print}&amp;#39; cat /etc/passwd | awk -F: &amp;#39;/bin/ {print}&amp;#39; cat /etc/passwd | awk -F: &amp;#39;/bin\/false/ {print}&amp;#39; cat /etc/passwd | awk -F: &amp;#39;/usr\/sbin\/nologin/ {print $1}&amp;#39; Delimiter and Multiple Delimiters&#xA;cat /etc/passwd | awk -F: &amp;#39;/bin/ {print}&amp;#39; awk -F&amp;#39;[/=]&amp;#39; &amp;#39;{print $3 &amp;#34;\t&amp;#34; $5 &amp;#34;\t&amp;#34; $8}&amp;#39; filename SYNTAX: -F&amp;#34;&amp;lt;separator1&amp;gt;|&amp;lt;separator2&amp;gt;|.</description>
+    </item>
+    <item>
+      <title>Best Practices</title>
+      <link>http://localhost:1313/docs/docker/dockerbestpractices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/docker/dockerbestpractices/</guid>
+      <description> Use official Docker images as base images Use specific image version Use small sized official images Optimize caching image layers Use .dockerignore to exclude unwanted files and folders Make use of Multi-Stage builds Use the least priileged user to run the container Scan your images for vulnarabilities </description>
+    </item>
+    <item>
+      <title>Building Images</title>
+      <link>http://localhost:1313/docs/docker/builddockerimage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/docker/builddockerimage/</guid>
+      <description>Dockerfile Dockerfile is a simple text file to create a docker image. Default file name is &amp;ldquo;Dockerfile&amp;rdquo; Example dockerfile ENV FROM LABEL maintainer=&amp;#34;&amp;#34; version=&amp;#34;&amp;#34; WORKDIR RUN VOLUME EXPOSE ENTRYPOINT --&amp;gt; Executes custom scripts while starting a docker container --&amp;gt; Do not add layer to docker image CMD There can only be one CMD instruction in a Dockerfile. If you list more than one CMD, then only the last CMD will take effect.</description>
+    </item>
+    <item>
+      <title>CFT</title>
+      <link>http://localhost:1313/docs/cloud/aws/cft/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/cloud/aws/cft/</guid>
+      <description>Cloud Formation Template&#xA;A template is a JSON or YAML formatted text file that describes your AWS infrastructure. A template is a declaration of the AWS resources that make up a stack. Intrinsic Functions Intrinsic functions are built in functions provided by AWS to manage the stack. Values assigned by the intrinsic functions are available only at run time. References Template Anatomy&#xA;CloudFormation support for Visual Studio Code&#xA;Intrinsic Functions</description>
+    </item>
+    <item>
+      <title>BootableDrive</title>
+      <link>http://localhost:1313/docs/linux/others/createbootable-drive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/others/createbootable-drive/</guid>
+      <description>How to create a bootable drive dd bs=4M if=&amp;lt;path to your image.iso&amp;gt; of=&amp;lt;path to your USB&amp;gt; status=progress bs : This stands for “block size.&#xA;if : This stands for “input file”. input file will be the iso file.&#xA;of : This stands for “output file”.&#xA;status : To see the progress.</description>
+    </item>
+    <item>
+      <title>Datacenter</title>
+      <link>http://localhost:1313/docs/devops/tooling/bitbucket/bitbucket/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/devops/tooling/bitbucket/bitbucket/</guid>
+      <description>REST API 5.16.0 5.11.1&#xA;References Bitbucket Enterprise</description>
+    </item>
+    <item>
+      <title>deb</title>
+      <link>http://localhost:1313/docs/linux/concepts/package-management/debian/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/concepts/package-management/debian/</guid>
+      <description>The major reason to use apt tools though is for the dependency management. The apt tools understand that in order to install a given package, other packages may need to be installed too, and apt can download these and install them, whereas dpkg does not.&#xA;References </description>
+    </item>
+    <item>
+      <title>Deployments</title>
+      <link>http://localhost:1313/docs/k8s/deployments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/k8s/deployments/</guid>
+      <description>Deployments in Kubernetes&#xA;The Deployment instructs Kubernetes how to create and update instances of your application.&#xA;The Kubernetes master schedules mentioned application instances onto individual Nodes in the cluster.&#xA;Once the application instances are created, a Kubernetes Deployment Controller continuously monitors those instances.&#xA;Deployment $ kubectl create deployment hello-node --image=gcr.io/hello-minikube-zero-install/hello-node deployment.apps/hello-node created $ kubectl get deployments NAME READY UP-TO-DATE AVAILABLE AGE hello-node 1/1 1 1 19s $ kubectl get pods NAME READY STATUS RESTARTS AGE hello-node-55b49fb9f8-bkmnb 1/1 Running 0 43s $ kubectl get events LAST SEEN TYPE REASON OBJECT MESSAGE 94s Normal Scheduled pod/hello-node-55b49fb9f8-bkmnb Successfully assigned default/hello-node-55b49fb9f8-bkmnb to minikube 92s Normal Pulling pod/hello-node-55b49fb9f8-bkmnb Pulling image &amp;#34;gcr.</description>
+    </item>
+    <item>
+      <title>dnf</title>
+      <link>http://localhost:1313/docs/linux/concepts/package-management/dnf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/concepts/package-management/dnf/</guid>
+      <description>DNF or Dandified yum is the next generation version of yum, a package manager for RPM-based Linux distributions like fedora,centos and redhat.&#xA;dnf -h dnf --help [root@192 ~]# dnf history ID | Command line | Date and time | Action(s) | Altered ------------------------------------------------------------------------------- 5 | install transmission-gtk | 2020-07-17 13:26 | Install | 3 4 | install epel-release | 2020-07-17 13:25 | Install | 1 3 | | 2020-07-17 11:33 | Install | 8 2 | | 2020-07-17 11:27 | Removed | 1 1 | | 2020-07-17 11:15 | Install | 1476 EE [root@192 ~]# dnf repolist repo id repo name AppStream CentOS-8 - AppStream BaseOS CentOS-8 - Base epel Extra Packages for Enterprise Linux 8 - x86_64 epel-modular Extra Packages for Enterprise Linux Modular 8 - x86_64 extras CentOS-8 - Extras google-chrome google-chrome #search package details for the given string [root@192 ~]# dnf search chrome Last metadata expiration check: 0:31:24 ago on Fri 17 Jul 2020 01:25:55 PM CEST.</description>
+    </item>
+    <item>
+      <title>Linux file system</title>
+      <link>http://localhost:1313/docs/linux/concepts/filesystem/filesystem/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/concepts/filesystem/filesystem/</guid>
+      <description>sriram@sriram-Inspiron-5567:~$ sudo fdisk -l /dev/sda Disk /dev/sda: 111,8 GiB, 120034123776 bytes, 234441648 sectors Units: sectors of 1 * 512 = 512 bytes Sector size (logical/physical): 512 bytes / 512 bytes I/O size (minimum/optimal): 512 bytes / 512 bytes Disklabel type: gpt Disk identifier: 833807FE-A7E1-46DA-B629-ECC1B32A087E Device Start End Sectors Size Type /dev/sda1 2048 1050623 1048576 512M EFI System /dev/sda2 1050624 217874431 216823808 103,4G Linux filesystem /dev/sda3 217874432 234440703 16566272 7,9G Linux swap Linux File Permissions -rwsrwsrwt</description>
+    </item>
+    <item>
+      <title>Firewall</title>
+      <link>http://localhost:1313/docs/linux/concepts/firewall/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/concepts/firewall/</guid>
+      <description>A firewall provides a means to protect machines from any unwanted traffic. It enables users/administrators to control incoming network traffic on host machines by defining a set of firewall rules. These rules are used to sort the incoming traffic and either block it or allow through.&#xA;firewalld firewalld is a firewall service daemon that provides a dynamic customizable host-based firewall. Being dynamic, it enables creating, changing, and deleting the rules without the necessity to restart the firewall daemon each time the rules are changed.</description>
+    </item>
+    <item>
+      <title>Getting Started</title>
+      <link>http://localhost:1313/docs/programming/python/python3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/programming/python/python3/</guid>
+      <description>How to install Python3 in Debian # Install prerequisites $ sudo apt-get install build-essential $ sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev zlib1g-dev # Download and extract python source tar cd /tmp wget https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tar.xz tar -xvf Python-3.8.5.tar.xz cd Python-3.8.5 ./configure --prefix=/appl/Python_3_8_5 --enable-optimizations make make install Dictionary # load json file with open(&amp;#39;data_file.json&amp;#39;) as json_file: data = json.load(json_file) print(json.dumps(data,indent=4)) for groups in data[&amp;#39;values&amp;#39;]: print(groups.items()) Class class MyClass: def __init__(self,f_name,l_name): print(&amp;#34;MyClass is instantiated successfully&amp;#34;) print(f&amp;#39;{f_name}_{l_name}&amp;#39;) self.</description>
+    </item>
+    <item>
+      <title>Installing Kubernetes</title>
+      <link>http://localhost:1313/docs/k8s/installingk8s/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/k8s/installingk8s/</guid>
+      <description>[This page is under construction &amp;hellip;]&#xA;I am going to cover installation of kubernetes in two ways as mentioned below:&#xA;Install kubernetes with kubeadm Install kubernetes the hard way Prerequisites to install kubernetes with kubeadm&#xA;VirtualBox Centos Image Virtual Machine with min 2 CPU Install kubelet, kubectl and kubeadm Installing-kubeadm-kubelet-and-kubectl&#xA;# This script is the modified version from k8s documentation RELEASE=&amp;#34;$(curl -sSL https://dl.k8s.io/release/stable.txt)&amp;#34; mkdir -p /usr/bin cd /usr/bin curl -L --remote-name-all https://storage.</description>
+    </item>
+    <item>
+      <title>Jenkins</title>
+      <link>http://localhost:1313/docs/devops/tooling/jenkins/jenkins-code-snippets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/devops/tooling/jenkins/jenkins-code-snippets/</guid>
+      <description>Jenkins pipeline code&#xA;code-snippets How to get list of all installed plugins import jenkins.model.Jenkins Jenkins.instance.pluginManager.plugins.each{ plugin -&amp;gt; println (&amp;#34;${plugin.getDisplayName()} (${plugin.getShortName()}): ${plugin.getVersion()}&amp;#34;) } How to test NodeJS node(&amp;#39;linux&amp;#39;) { stage(&amp;#39;Linux :: NodeJS :: Default&amp;#39; ) { sh &amp;#39;node --version&amp;#39; } stage(&amp;#39;Linux :: NodeJS :: v8.9.0&amp;#39; ) { def nodejs = tool name: &amp;#39;Linux NodeJS v8.9.0&amp;#39;, type: &amp;#39;jenkins.plugins.nodejs.tools.NodeJSInstallation&amp;#39; sh &amp;#34;$ {nodejs}/bin/node --version&amp;#34; } stage(&amp;#39;Linux :: NodeJS :: v8.9.0:: withEnv&amp;#39; ) { withEnv([&amp;#34;PATH+NODE=${tool &amp;#39;Linux NodeJS v8.</description>
+    </item>
+    <item>
+      <title>Jenkins Configuration</title>
+      <link>http://localhost:1313/docs/devops/tooling/jenkins/configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/devops/tooling/jenkins/configuration/</guid>
+      <description>Q1) In the Global Security, I didn&amp;rsquo;t have a TCP port for JNLP agents enabled, which automatically disables the line &amp;ldquo;Launch agent via Java Web Start&amp;rdquo;&#xA;Solution:&#xA;Manage Jenkins =&amp;gt; Configure Global Security =&amp;gt; Enable security =&amp;gt; TCP port for JNLP agents Set it to either Fixed (for this option also set the port number) or Random.</description>
+    </item>
+    <item>
+      <title>Jenkins-Docker</title>
+      <link>http://localhost:1313/docs/devops/tooling/jenkins/jenkins-docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/devops/tooling/jenkins/jenkins-docker/</guid>
+      <description>My use case is to run jenkins pipelines on docker build slaves. To achieve this we have to install Docker plugin. Docker plugin will integrate Jenkins with Docker. This docker plugin depends on Docker API plugin, so intall both the plugins. Restart is required for jenkins after installing these plugins.&#xA;Manage Jenkins -&amp;gt; Manage Plugins -&amp;gt; Docker plugin , Docker slave plugin and Docker API plugin&#xA;Once docker plugins are installed, restart jenkins master.</description>
+    </item>
+    <item>
+      <title>KDE</title>
+      <link>http://localhost:1313/docs/linux/others/kde_configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/others/kde_configuration/</guid>
+      <description>How to manage KDE applications launcher </description>
+    </item>
+    <item>
+      <title>Kind</title>
+      <link>http://localhost:1313/docs/k8s/kind/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/k8s/kind/</guid>
+      <description>kind : kubernetes in docker&#xA;# Set go path, kind path and KUBECONFIG path export PATH=$PATH:$HOME/go/bin:$HOME/k8s/bin kind get kubeconfig-path) # output: /home/sriram/.kube/kind-config-kind export KUBECONFIG=&amp;#34;$(kind get kubeconfig-path)&amp;#34; sriram@sriram-Inspiron-5567:~$ kind create cluster Creating cluster &amp;#34;kind&amp;#34; ... ✓ Ensuring node image (kindest/node:v1.15.0) 🖼 ✓ Preparing nodes 📦 ✓ Creating kubeadm config 📜 ✓ Starting control-plane 🕹️ ✓ Installing CNI 🔌 ✓ Installing StorageClass 💾 Cluster creation complete. You can now use the cluster with: export KUBECONFIG=&amp;#34;$(kind get kubeconfig-path --name=&amp;#34;kind&amp;#34;)&amp;#34; kubectl cluster-info kind create cluster kubectl cluster-info Kubernetes master is running at https://localhost:37933 KubeDNS is running at https://localhost:37933/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy # To further debug and diagnose cluster problems, use &amp;#39;kubectl cluster-info dump&amp;#39;.</description>
+    </item>
+    <item>
+      <title>kubectl</title>
+      <link>http://localhost:1313/docs/k8s/kubectl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/k8s/kubectl/</guid>
+      <description>kubectl is the command line interface which uses kubernetes API to interact with the cluster&#xA;kubectl version Once kubectl is configured we can see both the version of the client and as well as the server. The client version is the kubectl version; the server version is the Kubernetes version installed on the master. You can also see details about the build.&#xA;$ kubectl version Client Version: version.Info{Major:&amp;#34;1&amp;#34;, Minor:&amp;#34;15&amp;#34;, GitVersion:&amp;#34;v1.15.2&amp;#34;, GitCommit:&amp;#34;f6278300bebbb750328ac16ee6dd3aa7d3549568&amp;#34;, GitTreeState:&amp;#34;clean&amp;#34;, BuildDate:&amp;#34;2019-08-05T09:23:26Z&amp;#34;, GoVersion:&amp;#34;go1.</description>
+    </item>
+    <item>
+      <title>Minikube</title>
+      <link>http://localhost:1313/docs/k8s/minikube/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/k8s/minikube/</guid>
+      <description>minikube is a tool/utility which runs a single node kuberbetes cluster using a virtual box. This tool helps in learning k8s with local setup.&#xA;starting minikube for the first time sriram@sriram-Inspiron-5567:~/k8s$ minikube start 😄 minikube v1.2.0 on linux (amd64) 💿 Downloading Minikube ISO ... 129.33 MB / 129.33 MB [============================================] 100.00% 0s 🔥 Creating virtualbox VM (CPUs=2, Memory=2048MB, Disk=20000MB) ... 🐳 Configuring environment for Kubernetes v1.15.0 on Docker 18.09.6 💾 Downloading kubeadm v1.</description>
+    </item>
+    <item>
+      <title>Networking</title>
+      <link>http://localhost:1313/docs/docker/dockernetworking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/docker/dockernetworking/</guid>
+      <description># By default, docker will add all running containers to default bridge network # To inspect docker bridge network, use below command docker network inspect bridge Creating a custom docker network How to add container to a custom Network # To run a docker container and join to a custom bridge network, use --net flag docker container run --rm --itd --name &amp;lt;container_name&amp;gt; --net &amp;lt;network_name&amp;gt; How to know the IP address of a running container docker exec &amp;lt;container_name&amp;gt; ifconfig docker exec &amp;lt;container_name&amp;gt; ip -a References docker-networking</description>
+    </item>
+    <item>
+      <title>Networking</title>
+      <link>http://localhost:1313/docs/linux/concepts/networking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/concepts/networking/</guid>
+      <description>Warning net-tools utilities are obsoleted by iproute2&#xA;https://wiki.linuxfoundation.org/networking/iproute2 Legacy utility Replacement command Note ifconfig ip addr, ip link, ip -s Address and link configuration route ip route Routing tables arp ip neigh Neighbors iptunnel ip tunnel Tunnels nameif ifrename, ip link set name Rename network interfaces ipmaddr ip maddr Multicast netstat ip -s, ss, ip route Socket statistics ip address statistics with colors and human readable format ip -stats -color -human addr</description>
+    </item>
+    <item>
+      <title>NetworkWatcher</title>
+      <link>http://localhost:1313/docs/cloud/azure/networkwatcher/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/cloud/azure/networkwatcher/</guid>
+      <description>Monitoring Connection monitor Network Watcher Connection Monitor enables you to configure and track connection reachability, latency, and network topology changes. If there is an issue, it tells you why it occurred and how to fix it.&#xA;Network diagnostic tools IP flow verify Network Watcher IP flow verify checks if a packet is allowed or denied to or from a virtual machine based on 5-tuple information. The security group decision and the name of the rule that denied the packet is returned.</description>
+    </item>
+    <item>
+      <title>Nexus</title>
+      <link>http://localhost:1313/docs/devops/tooling/nexus/nexus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/devops/tooling/nexus/nexus/</guid>
+      <description>Nexus Repository Manager&#xA;TODO</description>
+    </item>
+    <item>
+      <title>Nexus-yum</title>
+      <link>http://localhost:1313/docs/devops/tooling/nexus/nexus-yum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/devops/tooling/nexus/nexus-yum/</guid>
+      <description>Managing Yum packages with Nexus Repository Manager&#xA;YUM repositories in Nexus Create a repo of type yum (example as shown below) Create a repo file in /etc/yum.repos.d/nexus.repo&#xA;[nexusrepo] name=Nexus Repository baseurl=http://localhost:8081/repository/yum-google-chrome/ enabled=1 gpgcheck=1 gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub priority=1 yum check-update &amp;mdash;&amp;gt; this command will check if there is any update for this package&#xA;google-chrome repo fetched from nexus Browse yum proxy repository in nexus&#xA;Update existing package using yum update as shown below Browse yum proxy to verify if new package is downloaded How to download the latest available artifact from nexus There is a metadata file that maintains a latest version of the artifact that you store in Nexus and by using something like the below URL you will be able to download the latest available artifact from nexus</description>
+    </item>
+    <item>
+      <title>OpenLDAP</title>
+      <link>http://localhost:1313/docs/ldap/openldap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/ldap/openldap/</guid>
+      <description>OpenLDAP is a free and opensource LightWeight Directory Access Protocol software.&#xA;Docker images for OpenLDAP Docker Image for OpenLDAP&#xA;How to compile and Build OpenLdap&#xA;Generate password for slapd.conf file /appl/openldap/sbin/slappasswd Update slapd.conf ./slaptest -f /appl/openldap/etc/openldap/slapd.conf -F /appl/openldap/etc/openldap/slapd.d How to know the version of OpenLdap /appl/openldap/libexec/slapd -VV /appl/openldap/bin/ldapsearch -VV How to start the OpenLDAP server manually # Go to the path /appl/openldap/libexec and run OpenLDAP daemon ./slapd -h &amp;#34;ldap://0.0.0.0:10389 ldaps://0.0.0.0:10636&amp;#34; How to take OpenLDAP backup manually # Use slapcat utility from OpenLDAP to create a backup file /appl/openldap/sbin/slapcat -b &amp;#34;cn=root,o=sccm&amp;#34; -l openldap-backupfile.</description>
+    </item>
+    <item>
+      <title>Pod</title>
+      <link>http://localhost:1313/docs/k8s/pod/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/k8s/pod/</guid>
+      <description>Kubernetes PODS&#xA;$ kubectl describe pods Name: kubernetes-bootcamp-5b48cfdcbd-5ddlwNamespace: defaultPriority: 0 Node: minikube/172.17.0.90 Start Time: Mon, 26 Aug 2019 11:54:05 +0000 Labels: pod-template-hash=5b48cfdcbd run=kubernetes-bootcamp Annotations: &amp;lt;none&amp;gt; Status: Running IP: 172.18.0.5 Controlled By: ReplicaSet/kubernetes-bootcamp-5b48cfdcbd Containers: kubernetes-bootcamp: Container ID: docker://016f25827984c14dc74e5cbaafe43b0fb77b20b8838b5818d1e9a90376b8ad5d Image: gcr.io/google-samples/kubernetes-bootcamp:v1 Image ID: docker-pullable://jocatalin/kubernetes-bootcamp@sha256:0d6b8ee63bb57c5f5b6156f446b3bc3b3c143d233037f3a2f00e279c8fcc64af Port: 8080/TCP Host Port: 0/TCP State: Running Started: Mon, 26 Aug 2019 11:54:06 +0000 Ready: True Restart Count: 0 Environment: &amp;lt;none&amp;gt; Mounts: /var/run/secrets/kubernetes.io/serviceaccount from default-token-5wbkl (ro) Conditions: Type Status Initialized True Ready True ContainersReady True PodScheduled True Volumes: default-token-5wbkl: Type: Secret (a volume populated by a Secret) SecretName: default-token-5wbkl Optional: false QoS Class: BestEffort Node-Selectors: &amp;lt;none&amp;gt; Tolerations: node.</description>
+    </item>
+    <item>
+      <title>Raspberry Pi OS</title>
+      <link>http://localhost:1313/docs/raspberrypi/raspberry-pi-os/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/raspberrypi/raspberry-pi-os/</guid>
+      <description>How to configure a static IP address Find the available interfaces using : ip a Add static ip configuration in dhcpcd.conf file Restart dhcpcd service #/etc/dhcpcd.conf interface wlan0 static ip_address=192.168.2.123/24 static routers=192.168.2.254 static domain_name_servers=8.8.8.8 ## reload the service configuration sudo systemctl daemon-reload ## restart dhcpcd service sudo systemctl restart dhcpcd.service </description>
+    </item>
+    <item>
+      <title>RHEL</title>
+      <link>http://localhost:1313/docs/linux/others/rhel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/others/rhel/</guid>
+      <description>RedHat Enterprise Linux.&#xA;How to subscribe to Redhat using subscription-manager subscription-manager subscription-manager list subscription-manager register subscription-manager attach subscription-manager identity Add GUI from basic installation yum groupinstall gnome-desktop x11 fonts yum groupinstall &amp;#34;Server with GUI&amp;#34; systemctl set-default graphical.target systemctl start graphical.target References Add GUI</description>
+    </item>
+    <item>
+      <title>rpm</title>
+      <link>http://localhost:1313/docs/linux/concepts/package-management/rpm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/concepts/package-management/rpm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Search Results</title>
+      <link>http://localhost:1313/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/search/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Secrets</title>
+      <link>http://localhost:1313/docs/k8s/secrets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/k8s/secrets/</guid>
+      <description>Managing kubernetes secrets&#xA;Secret Manifest with default secret type:&#xA;apiVersion: v1 kind: Secret metadata: name: mysecret type: Opaque data: username: User password: ********** $ kubectl apply -f ./secret.yaml $ kubectl get secrets NAME TYPE DATA AGE default-token-prh24 kubernetes.io/service-account-token 3 27m mysecret Opaque 2 14m type: Opaque means that from kubernetes&amp;rsquo;s point of view the contents of this Secret is unstructured, it can contain arbitrary key-value pairs.&#xA;SecretType = &amp;ldquo;Opaque&amp;rdquo; // Opaque (arbitrary data; default) SecretType = &amp;ldquo;kubernetes.</description>
+    </item>
+    <item>
+      <title>SELinux</title>
+      <link>http://localhost:1313/docs/security/selinux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/security/selinux/</guid>
+      <description>Security Enhanced Linux&#xA;SELinux is built into the kernel, and provides a non-discretional (ie. mandatory) access control framework for controlling how OS objects such as ports, users, and executables may interact.&#xA;kernel level mandatory access control mechanism. SELinux is a security mechanism built into the Linux kernel. Linux distributions like CentOS, RHEL, and Fedora are enabled with SELinux by default. SELinux Modes Enforcing: The default mode which will enable and enforce the SELinux security policy on the system, denying access and logging actions Permissive: In Permissive mode, SELinux is enabled but will not enforce the security policy, only warn and log actions.</description>
+    </item>
+    <item>
+      <title>Services</title>
+      <link>http://localhost:1313/docs/cloud/aws/services/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/cloud/aws/services/</guid>
+      <description>AWS Services&#xA;Storage EBS - Elastic Block Store&#xA;Amazon EBS delivers high-availability block-level storage volumes for Amazon Elastic Compute Cloud (EC2) instances It stores data on a file system which is retained after the EC2 instance is shut down EBS AWS::EC2::Volume EFS - Elastic File System&#xA;Managed NFS for use with AWS EC2 instances. Built to scale on demand to petabytes without disrupting applications. Storage size will grow and shrink automatically as you add and remove files.</description>
+    </item>
+    <item>
+      <title>Shell Scripting</title>
+      <link>http://localhost:1313/docs/linux/scripting/shellscripting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/scripting/shellscripting/</guid>
+      <description>Linux Shell Scripting&#xA;Special Parameter Description $0 returns name of the script $# returns total number of arguments count $@ returns list of arguments $* If a script receives two arguments, $* is equivalent to $1 $2 $? returns exit value of the last executed command $! returns process number of the last background command $$ returns PID of current shell !$ Last argument in a command `$*` and `$@` both will act the same unless they are enclosed in double quotes, &amp;quot;&amp;quot;.</description>
+    </item>
+    <item>
+      <title>SonarQube</title>
+      <link>http://localhost:1313/docs/devops/tooling/sonarqube/sonarqube/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/devops/tooling/sonarqube/sonarqube/</guid>
+      <description>Tool for Code Quality Analysis&#xA;Docker container for sonarqube docker pull sonarqube docker run -d --name sonarqube -p 9000:9000 &amp;lt;image_name&amp;gt; # once the container has started successfully, you can open below url to access sonaqube. # http://localhost:9000/ Python implementation of sonarqube-cli py-sonarqube-cli&#xA;API End points To expose all rules of a technology from sonarqube&#xA;api/rules/search?languages=xml&#xA;getInstalled Plugins: /api/plugins/installed&#xA;References SonarQube&#xA;web api</description>
+    </item>
+    <item>
+      <title>SSH</title>
+      <link>http://localhost:1313/docs/security/ssh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/security/ssh/</guid>
+      <description>How SSH communication is established The client sends a request to the server for a secure session. The server responds by sending its X.509 digital certificate to the client.&#xA;The client receives the server&amp;rsquo;s X.509 digital certificate.&#xA;The client authenticates the server, using a list of known certificate authorities.&#xA;The client generates a random symmetric key and encrypts it using server&amp;rsquo;s public key.&#xA;The server decrypts the message with private key and extracts the symmetric key sent by client.</description>
+    </item>
+    <item>
+      <title>SSL-Certificates</title>
+      <link>http://localhost:1313/docs/security/ssl_certificates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/security/ssl_certificates/</guid>
+      <description>How to obtain a SSL certificate Create a Java Keystore Create a CSR (certificate signing request) Send the CSR to Certificate Authority SSL certificate will be issued by CA Import the certificate to the keystore Import Intermediate certificate of CA to keystore Create a trust chain of certificates How to create a self signed certificate &amp;lt;! To Do&amp;gt;&#xA;CA Certificates keystore path /etc/ssl/certs/java/cacerts Default password : changeit Creating trust chain using Keystore Explorer Reference GUI tool to manage keystores and certificates</description>
+    </item>
+    <item>
+      <title>Storage</title>
+      <link>http://localhost:1313/docs/linux/concepts/storage/storage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/concepts/storage/storage/</guid>
+      <description># from baremetal sriram@sriram-Inspiron-5567:~$ sudo fdisk -l /dev/sda Disk /dev/sda: 111,8 GiB, 120034123776 bytes, 234441648 sectors Units: sectors of 1 * 512 = 512 bytes Sector size (logical/physical): 512 bytes / 512 bytes I/O size (minimum/optimal): 512 bytes / 512 bytes Disklabel type: gpt Disk identifier: 833807FE-A7E1-46DA-B629-ECC1B32A087E Device Start End Sectors Size Type /dev/sda1 2048 1050623 1048576 512M EFI System /dev/sda2 1050624 217874431 216823808 103,4G Linux filesystem /dev/sda3 217874432 234440703 16566272 7,9G Linux swap # From Virtual Machine [root@CentosServer1910 ~]# fdisk -l Disk /dev/sda: 10 GiB, 10737418240 bytes, 20971520 sectors Units: sectors of 1 * 512 = 512 bytes Sector size (logical/physical): 512 bytes / 512 bytes I/O size (minimum/optimal): 512 bytes / 512 bytes Disklabel type: dos Disk identifier: 0xec47036c Device Boot Start End Sectors Size Id Type /dev/sda1 * 2048 2099199 2097152 1G 83 Linux /dev/sda2 2099200 20971519 18872320 9G 8e Linux LVM Disk /dev/mapper/cl_centosserver1910-root: 8 GiB, 8585740288 bytes, 16769024 sectors Units: sectors of 1 * 512 = 512 bytes Sector size (logical/physical): 512 bytes / 512 bytes I/O size (minimum/optimal): 512 bytes / 512 bytes Disk /dev/mapper/cl_centosserver1910-swap: 1 GiB, 1073741824 bytes, 2097152 sectors Units: sectors of 1 * 512 = 512 bytes Sector size (logical/physical): 512 bytes / 512 bytes I/O size (minimum/optimal): 512 bytes / 512 bytes UUID - Get the uuid of devices on linux UUID is the universally unique identifier that is assigned to devices on a linux system for the purpose of identification.</description>
+    </item>
+    <item>
+      <title>Synology DS218Play</title>
+      <link>http://localhost:1313/docs/cloud/synologyds218play/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/cloud/synologyds218play/</guid>
+      <description>How to connect to synology NAS # for anonymous access smb://&amp;lt;NAS_IP_ADDRESS&amp;gt; smb://192.168.2.11 # access with authentication # if you want to be prompted for the password smb://user_name@ip_address_of_nas smb://user_name:*@server_name smb://sriram@192.168.2.11 # with user_name and password smb://user_name:password@ip_address_of_nas Search for synology in local network http://find.quickconnect.to/ </description>
+    </item>
+    <item>
+      <title>System Admin</title>
+      <link>http://localhost:1313/docs/linux/sysadmin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/sysadmin/</guid>
+      <description>List all Hardware : lshw&#xA;List all pci devices : lspci&#xA;# Required pciutuls package to be installed &amp;#39;yum install pciutils&amp;#39; [root@10 ~]# lspci 00:00.0 Host bridge: Intel Corporation Xeon E3-1200 v6/7th Gen Core Processor Host Bridge/DRAM Registers (rev 02) 00:02.0 VGA compatible controller: Intel Corporation HD Graphics 620 (rev 02) 00:04.0 Signal processing controller: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Thermal Subsystem (rev 02) 00:14.0 USB controller: Intel Corporation Sunrise Point-LP USB 3.</description>
+    </item>
+    <item>
+      <title>Tasks</title>
+      <link>http://localhost:1313/docs/linux/scripting/tasks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/scripting/tasks/</guid>
+      <description>Find all files aged more than 7 days and delete find /path/* -mtime +7 exec rm -rf {} \; &amp;gt; /dev/null </description>
+    </item>
+    <item>
+      <title>TLS</title>
+      <link>http://localhost:1313/docs/security/tls/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/security/tls/</guid>
+      <description>TLS - Transport Layer Security&#xA;TLS is a protocol for encrypting internet traffic and to verify the identity of server.&#xA;How to extract remote Certificates echo | openssl s_client -connect www.google.com:443 2&amp;gt;&amp;amp;1 | sed --quiet &amp;#39;/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p&amp;#39; &amp;gt; google.crt How to verify the TLS connection status ?&#xA;sriram@sriram-Inspiron-5567:~$ openssl s_client -connect google.com:443 -servername google.com -cipher ALL -brief CONNECTION ESTABLISHED Protocol version: TLSv1.3 Ciphersuite: TLS_AES_256_GCM_SHA384 Peer certificate: C = US, ST = California, L = Mountain View, O = Google LLC, CN = *.</description>
+    </item>
+    <item>
+      <title>Troubleshooting</title>
+      <link>http://localhost:1313/docs/k8s/troubleshooting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/k8s/troubleshooting/</guid>
+      <description>Troubleshooting&#xA;kubectl get - list resources&#xA;kubectl describe - show detailed information about a resource&#xA;kubectl logs - print the logs from a container in a pod&#xA;kubectl exec - execute a command on a container in a pod&#xA;$ export POD_NAME=$(kubectl get pods -o go-template --template &amp;#39;{{range .items}}{{.metadata.name}}{{&amp;#34;\n&amp;#34;}}{{end}}&amp;#39;) $ echo $POD_NAME kubernetes-bootcamp-5b48cfdcbd-5ddlw $ kubectl exec $POD_NAME env PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin HOSTNAME=kubernetes-bootcamp-5b48cfdcbd-5ddlw KUBERNETES_SERVICE_HOST=10.96.0.1 KUBERNETES_SERVICE_PORT=443 KUBERNETES_SERVICE_PORT_HTTPS=443 KUBERNETES_PORT=tcp://10.96.0.1:443 KUBERNETES_PORT_443_TCP=tcp://10.96.0.1:443 KUBERNETES_PORT_443_TCP_PROTO=tcp KUBERNETES_PORT_443_TCP_PORT=443 KUBERNETES_PORT_443_TCP_ADDR=10.96.0.1 NPM_CONFIG_LOGLEVEL=info NODE_VERSION=6.3.1 HOME=/root # Start a bash session in the Pod’s container: ## name of the container can be omitted if we only have a single container in the Pod kubectl exec -ti $POD_NAME bash </description>
+    </item>
+    <item>
+      <title>Ubuntu Server for Pi</title>
+      <link>http://localhost:1313/docs/raspberrypi/ubuntu-server-for-pi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/raspberrypi/ubuntu-server-for-pi/</guid>
+      <description>How to enable wifi and configure a static IP address Find the available interfaces using : ip a&#xA;[or] use networkctl to Query the status of network links&#xA;sriram@ubuntu:~$ networkctl IDX LINK TYPE OPERATIONAL SETUP 1 lo loopback carrier unmanaged 2 eth0 ether no-carrier configuring 3 wlan0 wlan routable configured 3 links listed. Use netplan to configure the interface # edit /etc/netplan/50-cloud-init.yaml # add entry for wlan0 # add entry for static ip address, gateway and nameservers.</description>
+    </item>
+    <item>
+      <title>users</title>
+      <link>http://localhost:1313/docs/linux/concepts/users/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/concepts/users/</guid>
+      <description>How to create a non-login user? Create user with -M (caps) flag. Lock the account to prevent from login useradd -M subversion usermod -L subversion How to create a system user ? $ adduser --system -s usr/sbin/nologin subversion # The -r flag will create a system user - one which does not have a password, a home dir and is unable to login. # -s flag is for shell , /bin/nologin prevents to have a shell for this user.</description>
+    </item>
+    <item>
+      <title>vim</title>
+      <link>http://localhost:1313/docs/linux/vim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/vim/</guid>
+      <description>To start with vim, go through the tutorial using command : vimtutor&#xA;Basic vim commands Task Command start editing the file content :i[enter] save the file and exit the editor :x[return] quit vim without saving the file :q![return] Save :w save and exit :wq exit :q copy a line :yy copy :y Paste p cut d cut a line dd Undo u go to the end of the file: :$ and press Enter Move to the beginning of a line type 0 Move to the end of a line type $ Go to beginning of file gg Go to end of file G (shift + g) How to search and replace %s/text/replacement/g How to search and replace with confirmation %s/text/replacement/gc Forward Search : /</description>
+    </item>
+    <item>
+      <title>Virtual Box</title>
+      <link>http://localhost:1313/docs/virtualization/virtualbox/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/virtualization/virtualbox/</guid>
+      <description>VBox Logs For Vbox if you encounter errors, check vbox logs&#xA;# log location /var/log/vboxadd-install.log # Command to display list of vms on the vbox vboxmanage list vms vboxmanage showvminfo Centos7 --details ipod-not-recognised-in-windows-guest Install Extension Pack. Install Guest Additions in the Windows 7 guest machine. select USB 2.0 as the controller in Settings Install virtualbox Extension pack how-to-install-virtualbox-extension-pack&#xA;wget http://download.virtualbox.org/virtualbox/5.2.4/Oracle_VM_VirtualBox_Extension_Pack-5.2.4-119785.vbox-extpack sudo vboxmanage extpack Oracle_VM_VirtualBox_Extension_Pack-5.2.4-119785.vbox-extpack Once installed, you can see at : File -&amp;gt; Preferences -&amp;gt; Extensions To verify if it has been successfully installed, list all installed extension packs: VBoxManage list extpacks Cloning VMs in VirtualBox how-do-i-fix-broken-networking-in-cloned-virtual-machines</description>
+    </item>
+    <item>
+      <title>Volumes</title>
+      <link>http://localhost:1313/docs/docker/dockervolumes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/docker/dockervolumes/</guid>
+      <description>Nexus Sonatype Nexus Docker with persisent data chown -R 200 /home/sriram.yeluri/Data/NEXUS_DATA docker run -d \ -p 8081:8081 \ --name nexus \ -v /home/sriram.yeluri/Data/NEXUS_DATA:/nexus-data \ sonatype/nexus3 Jenkins Jenkins with persisent data docker run -p 8080:8080 -p 50000:50000 \ --name jenkins \ -v /home/sriram.yeluri/Data/JENKINS_HOME:/var/jenkins_home \ jenkins docker run -p 8080:8080 -p 50000:50000 \ --name jenkins \ -v /home/sriram.yeluri/Data/JENKINS_HOME:/var/jenkins_home \ jenkins/jenkins:lts Jenkins Operations Center - JOC docker run -p 8089:8080 -p 50001:50000 \ --name cjoc \ -v /home/sriram.</description>
+    </item>
+    <item>
+      <title>yum</title>
+      <link>http://localhost:1313/docs/linux/concepts/package-management/yum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/concepts/package-management/yum/</guid>
+      <description>yum is broken on the server ### YUM not working on Centos and gave below error could not retrieve mirrorlist http://mirrorlist.centos.org/?release=7&amp;amp;arch=x86_64&amp;amp;repo=extras&amp;amp;infra=stock error was 14: curl#6 - &amp;#34;Could not resolve host: mirrorlist.centos.org; Unknown error&amp;#34; ### To Fix above issue : go to /etc/resolve.conf and add/update nameserver nameserver 8.8.8.8 Fix : Rebuild the yum database yum clean all rm -f /var/lib/rpm/__db* rpm --rebuilddb yum update </description>
+    </item>
+  </channel>
+</rss>

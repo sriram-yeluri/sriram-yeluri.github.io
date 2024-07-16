@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux Distributions on Knowledge Hub</title>
+    <link>http://localhost:1313/docs/linux/distributions/</link>
+    <description>Recent content in Linux Distributions on Knowledge Hub</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/docs/linux/distributions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu</title>
+      <link>http://localhost:1313/docs/linux/distributions/ubuntu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/linux/distributions/ubuntu/</guid>
+      <description>Show Hiddenfiles Ctrl + H&#xA;Taking a screenshot Hold shift + prtScr , mouse turns to a cross. Select the area to screenshot.&#xA;Image will be saved to pictures folder by default.To copy to Clipboard, use: Ctrl + Shift + PrtScn&#xA;Configure Wifi Network Reference: netplan&#xA;Find the network interface : ip link show Add config.yaml file in /etc/netplans ubuntu@myberry:/etc/netplan$ cat config.yaml network: version: 2 renderer: networkd wifis: wlan0: dhcp4: no dhcp6: no addresses: [192.</description>
+    </item>
+  </channel>
+</rss>
