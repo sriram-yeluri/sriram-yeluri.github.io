@@ -1,36 +1,13 @@
 # KnowledgeHub
 
+This is a knowledge Hub site created for self learning
 
-### Hugo Modules
+### How to initiate Hugo Modules
 hugo mod init github.com/sriram-yeluri.github.io
 go mod tidy
 hugo mod get github.com/google/docsy@v0.10.0
 hugo mod graph
 
-
-## Add docsy theme as a submodule
-
-```sh
-git submodule add https://github.com/google/docsy.git themes/docsy
-echo 'theme = "docsy"' >> config.toml
-git submodule update --init --recursive
-
-# to uninstall module
-git submodule deinit --all
-git rm --cached themes/docsy
-rm -rf .git/modules/path_to_submodule
-git commit -m "Removed submodule <name>"
-rm -rf path_to_submodule
-```
-## Google Search
-```
-http://www.google.com/ping?sitemap=https://sriram_yeluri.gitlab.io/sitemap.xml
-```
-
-## Site generator
-```
-https://www.xml-sitemaps.com/
-```
 
 ## HUGO shortcodes
 
