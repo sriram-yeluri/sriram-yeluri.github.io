@@ -1,7 +1,7 @@
 ---
 title: "Source Code Management"
 linkTitle: "Git"
-weight: 6
+weight: 7
 description: >
   Where is your source code ?
 ---

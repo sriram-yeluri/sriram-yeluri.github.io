@@ -1,7 +1,7 @@
 ---
 title: "Security"
 linkTitle: "Security"
-weight: 2
+weight: 3
 description: >
   How secured are your systems ?
 ---
