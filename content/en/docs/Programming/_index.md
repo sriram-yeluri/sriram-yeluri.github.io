@@ -1,7 +1,7 @@
 ---
 title: "Programming"
 linkTitle: "Programming"
-weight: 7
+weight: 6
 description: >
   Programming Languages
 ---

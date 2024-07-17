@@ -120,13 +120,6 @@
       <description>How to create a bootable drive dd bs=4M if=&amp;lt;path to your image.iso&amp;gt; of=&amp;lt;path to your USB&amp;gt; status=progress bs : This stands for “block size.&#xA;if : This stands for “input file”. input file will be the iso file.&#xA;of : This stands for “output file”.&#xA;status : To see the progress.</description>
     </item>
     <item>
-      <title>Datacenter</title>
-      <link>http://localhost:1313/docs/devops/tooling/bitbucket/bitbucket/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/devops/tooling/bitbucket/bitbucket/</guid>
-      <description>REST API 5.16.0 5.11.1&#xA;References Bitbucket Enterprise</description>
-    </item>
-    <item>
       <title>deb</title>
       <link>http://localhost:1313/docs/linux/concepts/package-management/debian/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -180,14 +173,7 @@
       <link>http://localhost:1313/docs/devops/tooling/jenkins/jenkins-code-snippets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/docs/devops/tooling/jenkins/jenkins-code-snippets/</guid>
-      <description>Jenkins pipeline code&#xA;code-snippets How to get list of all installed plugins import jenkins.model.Jenkins Jenkins.instance.pluginManager.plugins.each{ plugin -&amp;gt; println (&amp;#34;${plugin.getDisplayName()} (${plugin.getShortName()}): ${plugin.getVersion()}&amp;#34;) } How to test NodeJS node(&amp;#39;linux&amp;#39;) { stage(&amp;#39;Linux :: NodeJS :: Default&amp;#39; ) { sh &amp;#39;node --version&amp;#39; } stage(&amp;#39;Linux :: NodeJS :: v8.9.0&amp;#39; ) { def nodejs = tool name: &amp;#39;Linux NodeJS v8.9.0&amp;#39;, type: &amp;#39;jenkins.plugins.nodejs.tools.NodeJSInstallation&amp;#39; sh &amp;#34;$ {nodejs}/bin/node --version&amp;#34; } stage(&amp;#39;Linux :: NodeJS :: v8.9.0:: withEnv&amp;#39; ) { withEnv([&amp;#34;PATH+NODE=${tool &amp;#39;Linux NodeJS v8.</description>
-    </item>
-    <item>
-      <title>Jenkins Configuration</title>
-      <link>http://localhost:1313/docs/devops/tooling/jenkins/configuration/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/devops/tooling/jenkins/configuration/</guid>
-      <description>Q1) In the Global Security, I didn&amp;rsquo;t have a TCP port for JNLP agents enabled, which automatically disables the line &amp;ldquo;Launch agent via Java Web Start&amp;rdquo;&#xA;Solution:&#xA;Manage Jenkins =&amp;gt; Configure Global Security =&amp;gt; Enable security =&amp;gt; TCP port for JNLP agents Set it to either Fixed (for this option also set the port number) or Random.</description>
+      <description>How to get list of all installed plugins import jenkins.model.Jenkins Jenkins.instance.pluginManager.plugins.each{ plugin -&amp;gt; println (&amp;#34;${plugin.getDisplayName()} (${plugin.getShortName()}): ${plugin.getVersion()}&amp;#34;) } How to test NodeJS node(&amp;#39;linux&amp;#39;) { stage(&amp;#39;Linux :: NodeJS :: Default&amp;#39; ) { sh &amp;#39;node --version&amp;#39; } stage(&amp;#39;Linux :: NodeJS :: v8.9.0&amp;#39; ) { def nodejs = tool name: &amp;#39;Linux NodeJS v8.9.0&amp;#39;, type: &amp;#39;jenkins.plugins.nodejs.tools.NodeJSInstallation&amp;#39; sh &amp;#34;$ {nodejs}/bin/node --version&amp;#34; } stage(&amp;#39;Linux :: NodeJS :: v8.9.0:: withEnv&amp;#39; ) { withEnv([&amp;#34;PATH+NODE=${tool &amp;#39;Linux NodeJS v8.9.0&amp;#39;}/bin&amp;#34;]){ sh &amp;#39;node --version&amp;#39; } } } Parallel Pipelines def labels = [ &amp;#39;node1&amp;#39;, &amp;#39;node2&amp;#39; ] def builders = [:] for (x in labels) { def label = x // Create a map to pass in to the &amp;#39;parallel&amp;#39; step so we can fire all the builds at once builders[label] = { node(label) { // build steps that should happen on all nodes go here } } } parallel builders </description>
     </item>
     <item>
       <title>Jenkins-Docker</title>
@@ -244,13 +230,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/docs/cloud/azure/networkwatcher/</guid>
       <description>Monitoring Connection monitor Network Watcher Connection Monitor enables you to configure and track connection reachability, latency, and network topology changes. If there is an issue, it tells you why it occurred and how to fix it.&#xA;Network diagnostic tools IP flow verify Network Watcher IP flow verify checks if a packet is allowed or denied to or from a virtual machine based on 5-tuple information. The security group decision and the name of the rule that denied the packet is returned.</description>
-    </item>
-    <item>
-      <title>Nexus</title>
-      <link>http://localhost:1313/docs/devops/tooling/nexus/nexus/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/devops/tooling/nexus/nexus/</guid>
-      <description>Nexus Repository Manager&#xA;TODO</description>
     </item>
     <item>
       <title>Nexus-yum</title>
@@ -344,25 +323,11 @@
       <description>How SSH communication is established The client sends a request to the server for a secure session. The server responds by sending its X.509 digital certificate to the client.&#xA;The client receives the server&amp;rsquo;s X.509 digital certificate.&#xA;The client authenticates the server, using a list of known certificate authorities.&#xA;The client generates a random symmetric key and encrypts it using server&amp;rsquo;s public key.&#xA;The server decrypts the message with private key and extracts the symmetric key sent by client.</description>
     </item>
     <item>
-      <title>SSL-Certificates</title>
-      <link>http://localhost:1313/docs/security/ssl_certificates/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/security/ssl_certificates/</guid>
-      <description>How to obtain a SSL certificate Create a Java Keystore Create a CSR (certificate signing request) Send the CSR to Certificate Authority SSL certificate will be issued by CA Import the certificate to the keystore Import Intermediate certificate of CA to keystore Create a trust chain of certificates How to create a self signed certificate &amp;lt;! To Do&amp;gt;&#xA;CA Certificates keystore path /etc/ssl/certs/java/cacerts Default password : changeit Creating trust chain using Keystore Explorer Reference GUI tool to manage keystores and certificates</description>
-    </item>
-    <item>
       <title>Storage</title>
       <link>http://localhost:1313/docs/linux/concepts/storage/storage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/docs/linux/concepts/storage/storage/</guid>
       <description># from baremetal sriram@sriram-Inspiron-5567:~$ sudo fdisk -l /dev/sda Disk /dev/sda: 111,8 GiB, 120034123776 bytes, 234441648 sectors Units: sectors of 1 * 512 = 512 bytes Sector size (logical/physical): 512 bytes / 512 bytes I/O size (minimum/optimal): 512 bytes / 512 bytes Disklabel type: gpt Disk identifier: 833807FE-A7E1-46DA-B629-ECC1B32A087E Device Start End Sectors Size Type /dev/sda1 2048 1050623 1048576 512M EFI System /dev/sda2 1050624 217874431 216823808 103,4G Linux filesystem /dev/sda3 217874432 234440703 16566272 7,9G Linux swap # From Virtual Machine [root@CentosServer1910 ~]# fdisk -l Disk /dev/sda: 10 GiB, 10737418240 bytes, 20971520 sectors Units: sectors of 1 * 512 = 512 bytes Sector size (logical/physical): 512 bytes / 512 bytes I/O size (minimum/optimal): 512 bytes / 512 bytes Disklabel type: dos Disk identifier: 0xec47036c Device Boot Start End Sectors Size Id Type /dev/sda1 * 2048 2099199 2097152 1G 83 Linux /dev/sda2 2099200 20971519 18872320 9G 8e Linux LVM Disk /dev/mapper/cl_centosserver1910-root: 8 GiB, 8585740288 bytes, 16769024 sectors Units: sectors of 1 * 512 = 512 bytes Sector size (logical/physical): 512 bytes / 512 bytes I/O size (minimum/optimal): 512 bytes / 512 bytes Disk /dev/mapper/cl_centosserver1910-swap: 1 GiB, 1073741824 bytes, 2097152 sectors Units: sectors of 1 * 512 = 512 bytes Sector size (logical/physical): 512 bytes / 512 bytes I/O size (minimum/optimal): 512 bytes / 512 bytes UUID - Get the uuid of devices on linux UUID is the universally unique identifier that is assigned to devices on a linux system for the purpose of identification.</description>
-    </item>
-    <item>
-      <title>Synology DS218Play</title>
-      <link>http://localhost:1313/docs/cloud/synologyds218play/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/cloud/synologyds218play/</guid>
-      <description>How to connect to synology NAS # for anonymous access smb://&amp;lt;NAS_IP_ADDRESS&amp;gt; smb://192.168.2.11 # access with authentication # if you want to be prompted for the password smb://user_name@ip_address_of_nas smb://user_name:*@server_name smb://sriram@192.168.2.11 # with user_name and password smb://user_name:password@ip_address_of_nas Search for synology in local network http://find.quickconnect.to/ </description>
     </item>
     <item>
       <title>System Admin</title>

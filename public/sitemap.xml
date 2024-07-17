@@ -20,23 +20,17 @@
     <loc>http://localhost:1313/docs/linux/concepts/</loc>
     <lastmod>2024-07-16T23:52:54+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/docs/devops/</loc>
+    <lastmod>2024-07-17T10:22:09+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/docs/linux/distributions/debian/installapplications/</loc>
-    <lastmod>2024-07-16T23:52:54+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/docs/linux/</loc>
-    <lastmod>2024-07-16T23:52:54+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/docs/security/</loc>
     <lastmod>2024-07-16T23:52:54+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/linux/distributions/centos/centos-8/</loc>
     <lastmod>2024-07-16T23:52:54+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/docs/devops/</loc>
-    <lastmod>2024-07-16T23:52:54+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/docs/docker/</loc>
-    <lastmod>2024-07-16T23:52:54+02:00</lastmod>
+    <loc>http://localhost:1313/docs/security/</loc>
+    <lastmod>2024-07-17T10:22:09+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/linux/distributions/ubuntu/</loc>
     <lastmod>2024-07-16T23:52:54+02:00</lastmod>
@@ -44,17 +38,23 @@
     <loc>http://localhost:1313/docs/linux/distributions/centos/centos/</loc>
     <lastmod>2024-07-16T23:52:54+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/docs/docker/</loc>
+    <lastmod>2024-07-17T10:22:09+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/docs/k8s/</loc>
-    <lastmod>2024-07-16T23:52:54+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/docs/provisioning/</loc>
-    <lastmod>2024-07-16T23:52:54+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/docs/git/</loc>
-    <lastmod>2024-07-16T23:52:54+02:00</lastmod>
+    <lastmod>2024-07-17T10:22:09+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/programming/</loc>
-    <lastmod>2024-07-16T23:52:54+02:00</lastmod>
+    <lastmod>2024-07-17T10:22:09+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/provisioning/</loc>
+    <lastmod>2024-07-17T10:22:09+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/git/</loc>
+    <lastmod>2024-07-17T10:22:09+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/linux/</loc>
+    <lastmod>2024-07-17T10:22:09+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/cloud/</loc>
     <lastmod>2024-07-16T23:52:54+02:00</lastmod>
@@ -75,7 +75,7 @@
     <lastmod>2024-07-16T23:52:54+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/about/</loc>
-    <lastmod>2024-07-16T23:52:54+02:00</lastmod>
+    <lastmod>2024-07-17T09:34:33+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/provisioning/ansible/</loc>
     <lastmod>2024-07-17T08:20:36+02:00</lastmod>
@@ -101,9 +101,6 @@
     <loc>http://localhost:1313/docs/docker/dockerbestpractices/</loc>
     <lastmod>2024-07-16T23:52:54+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/docs/devops/tooling/bitbucket/</loc>
-    <lastmod>2024-07-16T23:52:54+02:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/docs/docker/builddockerimage/</loc>
     <lastmod>2024-07-16T23:52:54+02:00</lastmod>
   </url><url>
@@ -116,9 +113,6 @@
     <lastmod>2024-07-16T23:52:54+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/linux/others/createbootable-drive/</loc>
-    <lastmod>2024-07-16T23:52:54+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/docs/devops/tooling/bitbucket/bitbucket/</loc>
     <lastmod>2024-07-16T23:52:54+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/linux/concepts/package-management/debian/</loc>
@@ -149,10 +143,7 @@
     <lastmod>2024-07-16T23:52:54+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/devops/tooling/jenkins/jenkins-code-snippets/</loc>
-    <lastmod>2024-07-16T23:52:54+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/docs/devops/tooling/jenkins/configuration/</loc>
-    <lastmod>2024-07-16T23:52:54+02:00</lastmod>
+    <lastmod>2024-07-17T10:07:16+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/devops/tooling/jenkins/jenkins-docker/</loc>
     <lastmod>2024-07-16T23:52:54+02:00</lastmod>
@@ -185,9 +176,6 @@
     <lastmod>2024-07-16T23:52:54+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/devops/tooling/nexus/</loc>
-    <lastmod>2024-07-16T23:52:54+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/docs/devops/tooling/nexus/nexus/</loc>
     <lastmod>2024-07-16T23:52:54+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/devops/tooling/nexus/nexus-yum/</loc>
@@ -227,7 +215,7 @@
     <lastmod>2024-07-16T23:52:54+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/security/selinux/</loc>
-    <lastmod>2024-07-16T23:52:54+02:00</lastmod>
+    <lastmod>2024-07-17T10:07:16+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/cloud/aws/services/</loc>
     <lastmod>2024-07-16T23:52:54+02:00</lastmod>
@@ -244,16 +232,10 @@
     <loc>http://localhost:1313/docs/security/ssh/</loc>
     <lastmod>2024-07-16T23:52:54+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/docs/security/ssl_certificates/</loc>
-    <lastmod>2024-07-16T23:52:54+02:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/docs/linux/concepts/storage/</loc>
     <lastmod>2024-07-16T23:52:54+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/linux/concepts/storage/storage/</loc>
-    <lastmod>2024-07-16T23:52:54+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/docs/cloud/synologyds218play/</loc>
     <lastmod>2024-07-16T23:52:54+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/linux/sysadmin/</loc>

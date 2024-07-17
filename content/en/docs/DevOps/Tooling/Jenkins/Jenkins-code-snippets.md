@@ -5,16 +5,6 @@ description: "Code Snippets"
 
 ---
 
-
-
-Jenkins pipeline code
-
-
-
-
-
-## code-snippets
-
 ### How to get list of all installed plugins
 
 ```groovy
@@ -63,50 +53,3 @@ for (x in labels) {
 }
 parallel builders
 ```
-
-### Android sdk tools update
-
-```groovy
-node('android'){
-    stage('checkoutSCM'){
-        git credentialsId: 'CREDENTIAL_ID', url: 'repo-url'
-    }
-    stage('Validation'){
-        echo 'validated'
-    }
-    stage('BuildTool Install'){
-        dir('slave-android/provisioning/install'){
-            sh 'ls -ltr'
-            sh 'chmod +x install-android-sdk-buildtools.sh'
-            sh './install-android-sdk-buildtools.sh 26 0.1'
-        }
-    }
-    stage('cleanUp'){
-       deleteDir() 
-    }
-}
-```
-
-### Update android sdk from Jenkins pipeline
-
-```groovy
-def ANDROID_HOME='/Users/jenkinsci/Library/Android/sdk'  [New situation will be ANDROID_HOME='$HOME/SOLO/Android/sdk' ]
-node('android'){
-    stage('List AndriodSdk'){
-        sh "echo ${ANDROID_HOME}"
-        sh '''cd /Users/jenkinsci/Library/Android/sdk/tools/bin/ &&
-            ./sdkmanager --list --proxy=http --proxy_host=xxxxxxxx.com --proxy_port=8080'''
-    }
-    stage('Update AndriodSdk'){
-        sh "echo ${ANDROID_HOME}"
-        sh '''cd /Users/jenkinsci/Library/Android/sdk/tools/bin/ &&
-            ./sdkmanager --update --proxy=http --proxy_host=xxxxxxxxx.com --proxy_port=8080'''
-    }
-    stage('Check AndroidVersion'){
-        sh '''cd /Users/jenkinsci/Library/Android/sdk/tools/bin/ &&
-            ./sdkmanager --version'''
-    }
-}
-```
-
-

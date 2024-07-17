@@ -7,13 +7,16 @@ menu:
 layout: docs
 ---
 
-> I am a Solutions Architect/Solution Designer/Technology Lead, having more than 16 years of strong technical experience. 
+> I am working as an IT consultant with 18 years of professional experience. I played a key role in setting-up solutions for 
+container vulnerability scanning using Prisma cloud, 3rd party component
+vulnerability scanning using Nexus Lifecycle, and static code scanning with Fortify.
 
 
 ### Key Strengths
 
 * Infrastructure as Code(IaaC), Software as a Service (SaaS)
 * Solution design for cloud implementations and migrations.
+* Experience in setting of security tooling (Prismacloud, Nexus LifeCycle, Fortify) and the integrations.
 * Experience in DevSecOps and CICD best practices.
 * Experience in designing of automated solutions.
 * Strong Mindset of continuous improvement in the way of working
@@ -43,5 +46,5 @@ Git
 * [AWS Certified Solutions Architect Associate](https://verify.acloud.guru/B89AC0992E89)
 
 ### Want to reach me ?
-📫 [Linkedin](www.linkedin.com/in/sriram-yeluri)
+📫 [Linkedin](https://www.linkedin.com/in/sriram-yeluri/)
 

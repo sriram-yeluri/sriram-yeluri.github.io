@@ -31,7 +31,7 @@
 
   <meta itemprop="name" content="Security">
   <meta itemprop="description" content="How secured are your systems ?">
-  <meta itemprop="dateModified" content="2024-07-16T23:52:54+02:00">
+  <meta itemprop="dateModified" content="2024-07-17T10:22:09+02:00">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Security">
   <meta name="twitter:description" content="How secured are your systems ?">
@@ -123,15 +123,7 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>3: <a href="#pg-252b2c6953eb6c08494791495f5b4215">SSL-Certificates</a></li>
-
-
-    
-  
-    
-    
-	
-<li>4: <a href="#pg-89579d02ab0b976207c16b87ea7f289f">TLS</a></li>
+<li>3: <a href="#pg-89579d02ab0b976207c16b87ea7f289f">TLS</a></li>
 
 
     
@@ -179,11 +171,6 @@ This is the multi-page printable view of this section.
 </ul>
 <p>By default, SELinux starts up in <code>Enforcing</code> mode, running the <code>targeted</code> policy.<br>
 SELinux can manage / secure many different type of <code>objects</code> like file system objects, Network Ports, Running Exeutables.</p>
-<h2 id="selinux-troubleshooting">SELinux Troubleshooting</h2>
-<p><code>setroubleshoot-server</code> &amp; <code>policycoreutils-gui</code> can help you trouble shoot by making the errors easier to understand.</p>
-<p>Further information:</p>
-<p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/sect-security-enhanced_linux-working_with_selinux-which_log_file_is_used">redhat-selinux_users_and_administrators_guide</a></p>
-<p><a href="https://access.redhat.com/solutions/2529361">https://access.redhat.com/solutions/2529361</a></p>
 <p>Check status of SELinux : <code>sestatus</code></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>root@10 ~<span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#8f5902;font-style:italic"># sestatus</span>
 </span></span><span style="display:flex;"><span>SELinux status:                 enabled
@@ -221,6 +208,9 @@ SELinux can manage / secure many different type of <code>objects</code> like fil
 
 </div>
 
+<h3 id="references">References</h3>
+<p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/sect-security-enhanced_linux-working_with_selinux-which_log_file_is_used">redhat-selinux_users_and_administrators_guide</a></p>
+<p><a href="https://access.redhat.com/solutions/2529361">https://access.redhat.com/solutions/2529361</a></p>
 
 </div>
 
@@ -286,55 +276,7 @@ SELinux can manage / secure many different type of <code>objects</code> like fil
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-252b2c6953eb6c08494791495f5b4215">3 - SSL-Certificates</h1>
-    
-	<h2 id="how-to-obtain-a-ssl-certificate">How to obtain a SSL certificate</h2>
-<ul>
-<li>Create a Java Keystore</li>
-<li>Create a CSR (certificate signing request)</li>
-<li>Send the CSR to Certificate Authority</li>
-<li>SSL certificate will be issued by CA</li>
-<li>Import the certificate to the keystore</li>
-<li>Import Intermediate certificate of CA to keystore</li>
-<li>Create a trust chain of certificates</li>
-</ul>
-<h2 id="how-to-create-a-self-signed-certificate">How to create a self signed certificate</h2>
-<p>&lt;! To Do&gt;</p>
-<h2 id="ca-certificates-keystore-path">CA Certificates keystore path</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>/etc/ssl/certs/java/cacerts  
-</span></span><span style="display:flex;"><span>Default password : changeit
-</span></span></code></pre></div><h2 id="creating-trust-chain-using-keystore-explorer">Creating trust chain using Keystore Explorer</h2>
-<img src="/images/Security/Create_Cert_Chain/keystore_explorer.png" alt="" width="800"/>
-<img src="/images/Security/Create_Cert_Chain/open_keystore.png" alt="" width="800">
-<img src="/images/Security/Create_Cert_Chain/import_ca_reply_1.png" alt="" width="800">
-<img src="/images/Security/Create_Cert_Chain/import_ca_reply_2.png" alt="" width="800">
-<img src="/images/Security/Create_Cert_Chain/import_ca_reply_3.png" alt="" width="800">
-<img src="/images/Security/Create_Cert_Chain/append_cert_1.png" alt="" width="800">
-<img src="/images/Security/Create_Cert_Chain/append_cert_2.png" alt="" width="800">
-<img src="/images/Security/Create_Cert_Chain/append_cert_3.png" alt="" width="800">
-<img src="/images/Security/Create_Cert_Chain/append_cert_4.png" alt="" width="800">
-<img src="/images/Security/Create_Cert_Chain/view_chain_details_1.png" alt="" width="800">
-<img src="/images/Security/Create_Cert_Chain/view_chain_details_2.png" alt="" width="800">
-<img src="/images/Security/Create_Cert_Chain/view_chain_details_3.png" alt="" width="800">
-<h2 id="reference">Reference</h2>
-<p>GUI tool to manage keystores and certificates<br>
-<a href="https://keystore-explorer.org/">Download Keystore Explorer</a></p>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-89579d02ab0b976207c16b87ea7f289f">4 - TLS</h1>
+	<h1 id="pg-89579d02ab0b976207c16b87ea7f289f">3 - TLS</h1>
     <div class="lead">Transport Layer Security</div>
 	<p>TLS - Transport Layer Security<br>
 TLS is a protocol for encrypting internet traffic and to verify the identity of server.</p>

@@ -1,7 +1,7 @@
 ---
 title: Linux
 linkTitle: "Linux"
-weight: 2
+weight: 7
 description: >
   Operating System
 ---

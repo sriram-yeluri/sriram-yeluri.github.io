@@ -1,7 +1,7 @@
 ---
 title: Ansible
 linkTitle: "Ansible"
-weight: 5
+weight: 7
 description: >
   Automation
 ---

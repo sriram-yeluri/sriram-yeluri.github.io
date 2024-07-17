@@ -1,7 +1,7 @@
 ---
 title: DevOps
 linkTitle: "DevOps"
-weight: 3
+weight: 2
 description: >
   Development + Operations
 ---
