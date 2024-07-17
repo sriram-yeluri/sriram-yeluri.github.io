@@ -8,13 +8,6 @@
     <language>en</language>
     <atom:link href="http://localhost:1313/docs/devops/tooling/nexus/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Nexus</title>
-      <link>http://localhost:1313/docs/devops/tooling/nexus/nexus/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/devops/tooling/nexus/nexus/</guid>
-      <description>Nexus Repository Manager&#xA;TODO</description>
-    </item>
-    <item>
       <title>Nexus-yum</title>
       <link>http://localhost:1313/docs/devops/tooling/nexus/nexus-yum/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

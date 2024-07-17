@@ -31,7 +31,7 @@
   <meta itemprop="name" content="SELinux">
   <meta itemprop="description" content="Security Enhanced Linux">
   <meta itemprop="dateModified" content="2024-07-16T23:52:54+02:00">
-  <meta itemprop="wordCount" content="356">
+  <meta itemprop="wordCount" content="338">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="SELinux">
   <meta name="twitter:description" content="Security Enhanced Linux">
@@ -187,8 +187,6 @@
   <a href="/docs/security/selinux/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-docssecurityselinux"><span class="td-sidebar-nav-active-item">SELinux</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docssecurityssh-li">
   <a href="/docs/security/ssh/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docssecurityssh"><span class="">SSH</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docssecurityssl_certificates-li">
-  <a href="/docs/security/ssl_certificates/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docssecurityssl_certificates"><span class="">SSL-Certificates</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docssecuritytls-li">
   <a href="/docs/security/tls/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docssecuritytls"><span class="">TLS</span></a>
 </li>
@@ -199,20 +197,11 @@
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsdevopstooling-li">
   <a href="/docs/devops/tooling/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsdevopstooling"><span class="">CICD Tooling</span></a>
   <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsdevopstoolingbitbucket-li">
-  <a href="/docs/devops/tooling/bitbucket/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsdevopstoolingbitbucket"><span class="">Bitbucket</span></a>
-  <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsdevopstoolingbitbucketbitbucket-li">
-  <a href="/docs/devops/tooling/bitbucket/bitbucket/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsdevopstoolingbitbucketbitbucket"><span class="">Datacenter</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsdevopstoolingjenkins-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsdevopstoolingjenkins-li">
   <a href="/docs/devops/tooling/jenkins/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsdevopstoolingjenkins"><span class="">Jenkins</span></a>
   <ul class="ul-4 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsdevopstoolingjenkinsjenkins-code-snippets-li">
   <a href="/docs/devops/tooling/jenkins/jenkins-code-snippets/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsdevopstoolingjenkinsjenkins-code-snippets"><span class="">Jenkins</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsdevopstoolingjenkinsconfiguration-li">
-  <a href="/docs/devops/tooling/jenkins/configuration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsdevopstoolingjenkinsconfiguration"><span class="">Jenkins Configuration</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsdevopstoolingjenkinsjenkins-docker-li">
   <a href="/docs/devops/tooling/jenkins/jenkins-docker/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsdevopstoolingjenkinsjenkins-docker"><span class="">Jenkins-Docker</span></a>
 </li>
@@ -220,9 +209,7 @@
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsdevopstoolingnexus-li">
   <a href="/docs/devops/tooling/nexus/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsdevopstoolingnexus"><span class="">Nexus</span></a>
   <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsdevopstoolingnexusnexus-li">
-  <a href="/docs/devops/tooling/nexus/nexus/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsdevopstoolingnexusnexus"><span class="">Nexus</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsdevopstoolingnexusnexus-yum-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsdevopstoolingnexusnexus-yum-li">
   <a href="/docs/devops/tooling/nexus/nexus-yum/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsdevopstoolingnexusnexus-yum"><span class="">Nexus-yum</span></a>
 </li>
   </ul>
@@ -375,8 +362,11 @@
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#selinux-modes">SELinux Modes</a></li>
-    <li><a href="#selinux-troubleshooting">SELinux Troubleshooting</a></li>
+    <li><a href="#selinux-modes">SELinux Modes</a>
+      <ul>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </div>
@@ -420,11 +410,6 @@
 </ul>
 <p>By default, SELinux starts up in <code>Enforcing</code> mode, running the <code>targeted</code> policy.<br>
 SELinux can manage / secure many different type of <code>objects</code> like file system objects, Network Ports, Running Exeutables.</p>
-<h2 id="selinux-troubleshooting">SELinux Troubleshooting</h2>
-<p><code>setroubleshoot-server</code> &amp; <code>policycoreutils-gui</code> can help you trouble shoot by making the errors easier to understand.</p>
-<p>Further information:</p>
-<p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/sect-security-enhanced_linux-working_with_selinux-which_log_file_is_used">redhat-selinux_users_and_administrators_guide</a></p>
-<p><a href="https://access.redhat.com/solutions/2529361">https://access.redhat.com/solutions/2529361</a></p>
 <p>Check status of SELinux : <code>sestatus</code></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>root@10 ~<span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#8f5902;font-style:italic"># sestatus</span>
 </span></span><span style="display:flex;"><span>SELinux status:                 enabled
@@ -462,6 +447,9 @@ SELinux can manage / secure many different type of <code>objects</code> like fil
 
 </div>
 
+<h3 id="references">References</h3>
+<p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/sect-security-enhanced_linux-working_with_selinux-which_log_file_is_used">redhat-selinux_users_and_administrators_guide</a></p>
+<p><a href="https://access.redhat.com/solutions/2529361">https://access.redhat.com/solutions/2529361</a></p>
 
 	<style>
   .feedback--answer {

@@ -12,14 +12,7 @@
       <link>http://localhost:1313/docs/devops/tooling/jenkins/jenkins-code-snippets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/docs/devops/tooling/jenkins/jenkins-code-snippets/</guid>
-      <description>Jenkins pipeline code&#xA;code-snippets How to get list of all installed plugins import jenkins.model.Jenkins Jenkins.instance.pluginManager.plugins.each{ plugin -&amp;gt; println (&amp;#34;${plugin.getDisplayName()} (${plugin.getShortName()}): ${plugin.getVersion()}&amp;#34;) } How to test NodeJS node(&amp;#39;linux&amp;#39;) { stage(&amp;#39;Linux :: NodeJS :: Default&amp;#39; ) { sh &amp;#39;node --version&amp;#39; } stage(&amp;#39;Linux :: NodeJS :: v8.9.0&amp;#39; ) { def nodejs = tool name: &amp;#39;Linux NodeJS v8.9.0&amp;#39;, type: &amp;#39;jenkins.plugins.nodejs.tools.NodeJSInstallation&amp;#39; sh &amp;#34;$ {nodejs}/bin/node --version&amp;#34; } stage(&amp;#39;Linux :: NodeJS :: v8.9.0:: withEnv&amp;#39; ) { withEnv([&amp;#34;PATH+NODE=${tool &amp;#39;Linux NodeJS v8.</description>
-    </item>
-    <item>
-      <title>Jenkins Configuration</title>
-      <link>http://localhost:1313/docs/devops/tooling/jenkins/configuration/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/devops/tooling/jenkins/configuration/</guid>
-      <description>Q1) In the Global Security, I didn&amp;rsquo;t have a TCP port for JNLP agents enabled, which automatically disables the line &amp;ldquo;Launch agent via Java Web Start&amp;rdquo;&#xA;Solution:&#xA;Manage Jenkins =&amp;gt; Configure Global Security =&amp;gt; Enable security =&amp;gt; TCP port for JNLP agents Set it to either Fixed (for this option also set the port number) or Random.</description>
+      <description>How to get list of all installed plugins import jenkins.model.Jenkins Jenkins.instance.pluginManager.plugins.each{ plugin -&amp;gt; println (&amp;#34;${plugin.getDisplayName()} (${plugin.getShortName()}): ${plugin.getVersion()}&amp;#34;) } How to test NodeJS node(&amp;#39;linux&amp;#39;) { stage(&amp;#39;Linux :: NodeJS :: Default&amp;#39; ) { sh &amp;#39;node --version&amp;#39; } stage(&amp;#39;Linux :: NodeJS :: v8.9.0&amp;#39; ) { def nodejs = tool name: &amp;#39;Linux NodeJS v8.9.0&amp;#39;, type: &amp;#39;jenkins.plugins.nodejs.tools.NodeJSInstallation&amp;#39; sh &amp;#34;$ {nodejs}/bin/node --version&amp;#34; } stage(&amp;#39;Linux :: NodeJS :: v8.9.0:: withEnv&amp;#39; ) { withEnv([&amp;#34;PATH+NODE=${tool &amp;#39;Linux NodeJS v8.9.0&amp;#39;}/bin&amp;#34;]){ sh &amp;#39;node --version&amp;#39; } } } Parallel Pipelines def labels = [ &amp;#39;node1&amp;#39;, &amp;#39;node2&amp;#39; ] def builders = [:] for (x in labels) { def label = x // Create a map to pass in to the &amp;#39;parallel&amp;#39; step so we can fire all the builds at once builders[label] = { node(label) { // build steps that should happen on all nodes go here } } } parallel builders </description>
     </item>
     <item>
       <title>Jenkins-Docker</title>

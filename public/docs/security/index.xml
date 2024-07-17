@@ -22,13 +22,6 @@
       <description>How SSH communication is established The client sends a request to the server for a secure session. The server responds by sending its X.509 digital certificate to the client.&#xA;The client receives the server&amp;rsquo;s X.509 digital certificate.&#xA;The client authenticates the server, using a list of known certificate authorities.&#xA;The client generates a random symmetric key and encrypts it using server&amp;rsquo;s public key.&#xA;The server decrypts the message with private key and extracts the symmetric key sent by client.</description>
     </item>
     <item>
-      <title>SSL-Certificates</title>
-      <link>http://localhost:1313/docs/security/ssl_certificates/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/security/ssl_certificates/</guid>
-      <description>How to obtain a SSL certificate Create a Java Keystore Create a CSR (certificate signing request) Send the CSR to Certificate Authority SSL certificate will be issued by CA Import the certificate to the keystore Import Intermediate certificate of CA to keystore Create a trust chain of certificates How to create a self signed certificate &amp;lt;! To Do&amp;gt;&#xA;CA Certificates keystore path /etc/ssl/certs/java/cacerts Default password : changeit Creating trust chain using Keystore Explorer Reference GUI tool to manage keystores and certificates</description>
-    </item>
-    <item>
       <title>TLS</title>
       <link>http://localhost:1313/docs/security/tls/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

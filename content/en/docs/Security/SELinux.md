@@ -22,15 +22,6 @@ SELinux is built into the kernel, and provides a non-discretional (ie. mandatory
 By default, SELinux starts up in `Enforcing` mode, running the `targeted` policy.  
 SELinux can manage / secure many different type of `objects` like file system objects, Network Ports, Running Exeutables.
 
-## SELinux Troubleshooting
-
-`setroubleshoot-server` & `policycoreutils-gui` can help you trouble shoot by making the errors easier to understand.
-
-Further information:
-
-[redhat-selinux_users_and_administrators_guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/sect-security-enhanced_linux-working_with_selinux-which_log_file_is_used)
-
-https://access.redhat.com/solutions/2529361
 
 Check status of SELinux : `sestatus`
 
@@ -73,3 +64,8 @@ To change the mode from enforcing to permissive type: `setenforce 0`
 {{< alert >}}
 changes only apply to the current session. They turn back to default after a reboot. To make the changes permanent, edit the configuration file
 {{< /alert >}}
+
+### References
+[redhat-selinux_users_and_administrators_guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/sect-security-enhanced_linux-working_with_selinux-which_log_file_is_used)
+
+https://access.redhat.com/solutions/2529361
