@@ -13,64 +13,6 @@ title: "Ansible"
 ```sh
 yum update -y && \
 yum install ansible -y
-
-[root@192 ~]# yum install ansible
-Last metadata expiration check: 0:12:47 ago on Sat 01 Aug 2020 10:58:47 PM CEST.
-Dependencies resolved.
-================================================================================================================================================
- Package                                Architecture                 Version                              Repository                       Size
-================================================================================================================================================
-Installing:
- ansible                                noarch                       2.9.11-1.el8                         epel                             17 M
-Installing dependencies:
- libsodium                              x86_64                       1.0.18-2.el8                         epel                            162 k
- python3-babel                          noarch                       2.5.1-5.el8                          AppStream                       4.8 M
- python3-bcrypt                         x86_64                       3.1.6-2.el8.1                        epel                             44 k
- python3-jinja2                         noarch                       2.10.1-2.el8_0                       AppStream                       538 k
- python3-jmespath                       noarch                       0.9.0-11.el8                         AppStream                        45 k
- python3-pyasn1                         noarch                       0.3.7-6.el8                          AppStream                       126 k
- python3-pynacl                         x86_64                       1.3.0-5.el8                          epel                            100 k
- sshpass                                x86_64                       1.06-9.el8                           epel                             27 k
-Installing weak dependencies:
- python3-paramiko                       noarch                       2.4.3-1.el8                          epel                            289 k
-
-Transaction Summary
-================================================================================================================================================
-Install  10 Packages
-
-Total download size: 23 M
-Installed size: 123 M
-Is this ok [y/N]:
-```
-
-```sh
-[root@192 ~]# dnf install ansible
-Last metadata expiration check: 0:10:48 ago on Sat 01 Aug 2020 10:58:47 PM CEST.
-Dependencies resolved.
-================================================================================================================================================
- Package                                Architecture                 Version                              Repository                       Size
-================================================================================================================================================
-Installing:
- ansible                                noarch                       2.9.11-1.el8                         epel                             17 M
-Installing dependencies:
- libsodium                              x86_64                       1.0.18-2.el8                         epel                            162 k
- python3-babel                          noarch                       2.5.1-5.el8                          AppStream                       4.8 M
- python3-bcrypt                         x86_64                       3.1.6-2.el8.1                        epel                             44 k
- python3-jinja2                         noarch                       2.10.1-2.el8_0                       AppStream                       538 k
- python3-jmespath                       noarch                       0.9.0-11.el8                         AppStream                        45 k
- python3-pyasn1                         noarch                       0.3.7-6.el8                          AppStream                       126 k
- python3-pynacl                         x86_64                       1.3.0-5.el8                          epel                            100 k
- sshpass                                x86_64                       1.06-9.el8                           epel                             27 k
-Installing weak dependencies:
- python3-paramiko                       noarch                       2.4.3-1.el8                          epel                            289 k
-
-Transaction Summary
-================================================================================================================================================
-Install  10 Packages
-
-Total download size: 23 M
-Installed size: 123 M
-Is this ok [y/N]: 
 ```
 
 ## Setting up Inventory

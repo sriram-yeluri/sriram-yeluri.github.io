@@ -375,7 +375,11 @@
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#cleanup-task-using-cron-module">cleanup task using cron module</a></li>
+    <li>
+      <ul>
+        <li><a href="#cleanup-task-using-cron-module">cleanup task using cron module</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </div>
@@ -404,7 +408,7 @@
 	<header class="article-meta">
 		
   </header>
-	<h2 id="cleanup-task-using-cron-module">cleanup task using cron module</h2>
+	<h3 id="cleanup-task-using-cron-module">cleanup task using cron module</h3>
 <pre tabindex="0"><code class="language-Ansible" data-lang="Ansible"># contab entry that runs every night
 # recursively finds and deletes files and folders older than 7 days.
 - name: Creates a cron file under /etc/cron.d

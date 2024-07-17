@@ -201,5 +201,4 @@ module:
     - path: github.com/google/docsy
       disable: false
       replacements: ""
-    # - path: github.com/google/docsy/dependencies
-    #   disabled: false
+

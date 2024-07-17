@@ -34,13 +34,6 @@ Birthplace
 Color
 : Green
 
-
-To hide a page or section from the menu, set toc_hide: true in front matter.
-
-### Disabling the sidebar search box
-By default, the search box appears in both the top navigation bar and at the top of the sidebar left navigation pane. If you don’t want the sidebar search box, set sidebar_search_disable to true in config.toml
-`sidebar_search_disable = true`
-
 ### Docsy Documentation
 Docsy has its own user guide. use Hugo to generate and serve a local copy of the guide.
 
@@ -54,4 +47,7 @@ hugo server --themesDir ../..
 [docsy](https://www.docsy.dev/docs/getting-started/)
 [docsy-example](https://github.com/google/docsy-example)
 [hugo-modules](https://www.docsy.dev/docs/updating/convert-site-to-module/)
+[creating-a-github-pages-site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
+[hosting-on-github](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
+
 
