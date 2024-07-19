@@ -1,4 +1,0 @@
----
-title: Others
-linktitle: Others
----
