@@ -1,3 +1,6 @@
+---
+title: Certifications
+---
 
 ### Certifications i achieved during my continuous learning
 

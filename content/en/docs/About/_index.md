@@ -31,6 +31,10 @@ Linux System administration | Shell Scripting
 Golang | Python  
 Git  
 
+### Education
+* I studied Masters of Engineering in Applied Electronics. 
+* I studied Batchelor of Engineering in Electronics and Communication.
+
 ### Certifications
 
 * [Certified Kubernetes Administrator](https://www.youracclaim.com/badges/dea7a756-8e0f-49c9-9987-dbfecc54c173/public_url)
