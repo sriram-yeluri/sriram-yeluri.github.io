@@ -25,7 +25,7 @@ const RESUME = {
   experience: [
     {
       company: "ABN-AMRO Bank",
-      role: "DevOps Consultant — Software Logistics",
+      role: "Platform Engineer · DevOps Consultant — Software Logistics",
       dates: "Aug 2015 – Present",
       location: "Netherlands",
       bullets: [
@@ -50,7 +50,7 @@ const RESUME = {
     },
     {
       company: "Infosys Limited — Finacle Core Banking",
-      role: "Software Engineer",
+      role: "Technology Lead",
       dates: "Nov 2011 – Nov 2013",
       location: "India",
       bullets: [
@@ -59,7 +59,7 @@ const RESUME = {
     },
     {
       company: "Ericsson (via TCS)",
-      role: "Software Engineer — BB OSS / Network Solutions",
+      role: "IT Analyst — BB OSS / Network Solutions",
       dates: "Mar 2007 – Nov 2011",
       location: "India · UK, Coventry (May 2009 – Feb 2010)",
       bullets: [
