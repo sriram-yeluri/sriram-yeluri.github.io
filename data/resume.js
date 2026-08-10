@@ -104,6 +104,15 @@ const RESUME = {
     { degree: "Bachelor of Engineering", field: "Electronics and Communication" },
   ],
 
+  // ── CERTIFIED COURSES ──────────────────────
+  courses: [
+    { name: "Certified Kubernetes Administrator (CKA) with Practice Tests", provider: "Udemy",       verifyUrl: "https://www.udemy.com/certificate/UC-MOTNBRM7/" },
+    { name: "Terraform",                                                   provider: "Udemy",       verifyUrl: "https://www.udemy.com/certificate/UC-ca4ea0b4-4beb-431e-b8b1-736ee843a90f/" },
+    { name: "Docker Fundamentals",                                         provider: "A Cloud Guru", verifyUrl: "https://verify.acloud.guru/38A2F07E5FC7" },
+    { name: "Ansible",                                                     provider: "A Cloud Guru", verifyUrl: "https://verify.acloud.guru/CCDBC40D4681" },
+    { name: "AWS Certified Solutions Architect Associate",                 provider: "A Cloud Guru", verifyUrl: "https://verify.acloud.guru/B89AC0992E89" },
+  ],
+
   // ── CERTIFICATIONS ─────────────────────────
   certifications: [
     {

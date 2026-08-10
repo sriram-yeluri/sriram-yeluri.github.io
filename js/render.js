@@ -116,6 +116,24 @@ function renderCertifications(data) {
   });
 }
 
+function renderCourses(data) {
+  const list = document.querySelector('.course-list');
+
+  data.courses.forEach(({ name, provider, verifyUrl }) => {
+    const item = el('div', 'cert-item');
+    const left = el('span');
+    left.appendChild(el('span', 'cert-name', name));
+    left.appendChild(el('span', 'course-provider', ` — ${provider}`));
+    item.appendChild(left);
+    const link = el('a', 'cert-link', 'Verify ↗');
+    link.href = verifyUrl;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    item.appendChild(link);
+    list.appendChild(item);
+  });
+}
+
 // Render everything once the DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   renderHeader(RESUME);
@@ -124,4 +142,5 @@ document.addEventListener('DOMContentLoaded', () => {
   renderSkills(RESUME);
   renderEducation(RESUME);
   renderCertifications(RESUME);
+  renderCourses(RESUME);
 });
