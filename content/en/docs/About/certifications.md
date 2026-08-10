@@ -2,10 +2,10 @@
 ### Certifications i achieved during my continuous learning
 
 ![CKA](/images/cert/CKA_Cert.png)
-[CKA Certificate Verify](https://www.youracclaim.com/badges/dea7a756-8e0f-49c9-9987-dbfecc54c173/public_url)  
+[CKA Certificate Verify](https://www.credly.com/badges/dea7a756-8e0f-49c9-9987-dbfecc54c173/public_url)  
 
 ![AZ-900](/images/cert/microsoft-certified-azure-fundamentals.png)
-[AZ-900-Verify](https://www.youracclaim.com/badges/8b5beb12-4bec-4c32-b895-ff0c183ff2c6/public_url)  
+[AZ-900-Verify](https://www.credly.com/badges/8b5beb12-4bec-4c32-b895-ff0c183ff2c6/public_url)  
 
 ![jenkins_cert](/images/cert/jenkins_cert.png)
 [Cloudbees Jenkins Verify](https://certificates.cloudbees.com/yjc3ypcl)  

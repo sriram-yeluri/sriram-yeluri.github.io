@@ -33,8 +33,8 @@ Git
 
 ### Certifications
 
-* [Certified Kubernetes Administrator](https://www.youracclaim.com/badges/dea7a756-8e0f-49c9-9987-dbfecc54c173/public_url)
-* [Microsoft Azure Fundamentals AZ-900](https://www.youracclaim.com/badges/8b5beb12-4bec-4c32-b895-ff0c183ff2c6/public_url)
+* [Certified Kubernetes Administrator](https://www.credly.com/badges/dea7a756-8e0f-49c9-9987-dbfecc54c173/public_url)
+* [Microsoft Azure Fundamentals AZ-900](https://www.credly.com/badges/8b5beb12-4bec-4c32-b895-ff0c183ff2c6/public_url)
 * [Certified Cloudbees Jenkins](https://certificates.cloudbees.com/yjc3ypcl)
 
 ### Certified Courses 
