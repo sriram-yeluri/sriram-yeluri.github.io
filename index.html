@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sriram Yeluri — IT Consultant &amp; DevSecOps Engineer</title>
+  <meta name="description" content="IT Consultant with 18+ years of experience in DevSecOps, Cloud Architecture, and Infrastructure Automation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #0f172a;
+      --accent: #3b82f6;
+      --accent-light: #60a5fa;
+      --surface: #ffffff;
+      --surface-alt: #f8fafc;
+      --border: #e2e8f0;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+      --shadow-hover: 0 8px 40px rgba(59,130,246,0.18);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--surface-alt);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+      color: #fff;
+      padding: 80px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(59,130,246,0.25) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; max-width: 760px; margin: 0 auto; }
+
+    .avatar-wrap {
+      width: 140px; height: 140px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,0.3);
+      box-shadow: 0 0 0 8px rgba(59,130,246,0.2);
+      overflow: hidden;
+      background: #1e3a5f;
+    }
+    .avatar-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .avatar-initials {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 48px; font-weight: 700; color: var(--accent-light);
+      letter-spacing: -2px;
+    }
+
+    .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; letter-spacing: -0.5px; }
+    .hero-title {
+      margin-top: 8px;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 0.4px;
+    }
+    .hero-title span { color: var(--accent-light); font-weight: 500; }
+
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 28px;
+      padding: 12px 28px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 14px rgba(59,130,246,0.4);
+    }
+    .hero-cta:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59,130,246,0.5); }
+    .hero-cta svg { width: 18px; height: 18px; fill: currentColor; }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    main { padding: 48px 0 80px; display: flex; flex-direction: column; gap: 40px; }
+
+    /* ── SECTION CARD ── */
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 36px 40px;
+      box-shadow: var(--shadow);
+    }
+    .card h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card h2::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      border-radius: 2px;
+    }
+    .section-icon { font-size: 1.3rem; }
+
+    /* ── ABOUT ── */
+    .about-text { font-size: 1rem; color: var(--text-muted); line-height: 1.8; }
+    .about-text strong { color: var(--text); }
+
+    /* ── STRENGTHS ── */
+    .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+    }
+    .strength-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 14px 16px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--text);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .strength-item:hover { border-color: var(--accent); box-shadow: 0 2px 12px rgba(59,130,246,0.1); }
+    .strength-icon { font-size: 1.1rem; margin-top: 1px; flex-shrink: 0; }
+
+    /* ── SKILLS ── */
+    .skill-group { margin-bottom: 20px; }
+    .skill-group:last-child { margin-bottom: 0; }
+    .skill-group-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      border: 1.5px solid;
+      transition: background 0.2s, color 0.2s;
+    }
+    .tag-blue  { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+    .tag-green { background: #f0fdf4; color: #166534; border-color: #bbf7d0; }
+    .tag-purple{ background: #faf5ff; color: #6b21a8; border-color: #e9d5ff; }
+    .tag-orange{ background: #fff7ed; color: #9a3412; border-color: #fed7aa; }
+    .tag-slate { background: #f8fafc; color: #334155; border-color: #cbd5e1; }
+    .tag:hover { filter: brightness(0.95); }
+
+    /* ── CERTIFICATIONS ── */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+    }
+    .cert-card {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 10px;
+      padding: 20px 16px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .cert-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--accent); }
+    .cert-card img { width: 100%; max-width: 120px; height: 80px; object-fit: contain; }
+    .cert-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-align: center;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .cert-verify {
+      font-size: 0.72rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* ── COURSES ── */
+    .course-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .course-list li {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 16px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      transition: border-color 0.2s;
+    }
+    .course-list li:hover { border-color: var(--accent); }
+    .course-list a { color: var(--text); text-decoration: none; font-weight: 500; }
+    .course-list a:hover { color: var(--accent); }
+    .course-badge {
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 50px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .card { padding: 24px 20px; }
+      .cert-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+      .strength-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HERO ── -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="avatar-wrap">
+        <img src="images/sriram-yeluri.png" alt="Sriram Yeluri"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="avatar-initials" style="display:none;">SY</div>
+      </div>
+      <h1>Sriram Yeluri</h1>
+      <p class="hero-title">
+        IT Consultant &nbsp;·&nbsp;
+        <span>DevSecOps</span> &nbsp;·&nbsp;
+        <span>Cloud Architect</span>
+      </p>
+      <a href="https://www.linkedin.com/in/sriram-yeluri/" target="_blank" rel="noopener" class="hero-cta">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.327-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+        Connect on LinkedIn
+      </a>
+    </div>
+  </header>
+
+  <div class="container">
+    <main>
+
+      <!-- ── ABOUT ── -->
+      <section class="card">
+        <h2><span class="section-icon">👤</span> About Me</h2>
+        <p class="about-text">
+          I am an <strong>IT consultant with 18+ years of professional experience</strong>, specialising in
+          DevSecOps, cloud architecture, and infrastructure automation. I have played a key role in
+          setting up enterprise-grade solutions for <strong>container vulnerability scanning</strong> (Prisma Cloud),
+          <strong>3rd-party component scanning</strong> (Nexus Lifecycle), and
+          <strong>static code analysis</strong> (Fortify).
+        </p>
+      </section>
+
+      <!-- ── KEY STRENGTHS ── -->
+      <section class="card">
+        <h2><span class="section-icon">💡</span> Key Strengths</h2>
+        <div class="strength-grid">
+          <div class="strength-item"><span class="strength-icon">🏗️</span> Infrastructure as Code (IaaC) &amp; SaaS</div>
+          <div class="strength-item"><span class="strength-icon">☁️</span> Cloud Solution Design &amp; Migration</div>
+          <div class="strength-item"><span class="strength-icon">🔐</span> Security Tooling — Prisma Cloud, Nexus Lifecycle, Fortify</div>
+          <div class="strength-item"><span class="strength-icon">🔄</span> DevSecOps &amp; CI/CD Best Practices</div>
+          <div class="strength-item"><span class="strength-icon">🤖</span> Designing Automated Solutions</div>
+          <div class="strength-item"><span class="strength-icon">📈</span> Continuous Improvement Mindset</div>
+        </div>
+      </section>
+
+      <!-- ── TECHNICAL SKILLS ── -->
+      <section class="card">
+        <h2><span class="section-icon">⚙️</span> Technical Skills</h2>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Cloud</div>
+          <div class="skill-tags">
+            <span class="tag tag-blue">Azure</span>
+            <span class="tag tag-orange">AWS</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Containers &amp; Orchestration</div>
+          <div class="skill-tags">
+            <span class="tag tag-blue">Docker</span>
+            <span class="tag tag-blue">Kubernetes</span>
+            <span class="tag tag-blue">Helm</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">CI/CD &amp; DevOps</div>
+          <div class="skill-tags">
+            <span class="tag tag-orange">Jenkins</span>
+            <span class="tag tag-blue">Azure DevOps</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Infrastructure &amp; Provisioning</div>
+          <div class="skill-tags">
+            <span class="tag tag-purple">Ansible</span>
+            <span class="tag tag-purple">Terraform</span>
+            <span class="tag tag-purple">Bicep</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Linux &amp; Scripting</div>
+          <div class="skill-tags">
+            <span class="tag tag-green">Linux System Administration</span>
+            <span class="tag tag-green">Shell Scripting</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Programming</div>
+          <div class="skill-tags">
+            <span class="tag tag-slate">Golang</span>
+            <span class="tag tag-slate">Python</span>
+            <span class="tag tag-slate">Git</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── CERTIFICATIONS ── -->
+      <section class="card">
+        <h2><span class="section-icon">🏅</span> Certifications</h2>
+        <div class="cert-grid">
+
+          <a class="cert-card" href="https://www.credly.com/badges/dea7a756-8e0f-49c9-9987-dbfecc54c173/public_url" target="_blank" rel="noopener">
+            <img src="images/cert/CKA_Cert.png" alt="CKA" />
+            <div class="cert-name">Certified Kubernetes Administrator</div>
+            <span class="cert-verify">Verify ↗</span>
+          </a>
+
+          <a class="cert-card" href="https://www.credly.com/badges/8b5beb12-4bec-4c32-b895-ff0c183ff2c6/public_url" target="_blank" rel="noopener">
+            <img src="images/cert/microsoft-certified-azure-fundamentals.png" alt="AZ-900" />
+            <div class="cert-name">Azure Fundamentals AZ-900</div>
+            <span class="cert-verify">Verify ↗</span>
+          </a>
+
+          <a class="cert-card" href="https://certificates.cloudbees.com/yjc3ypcl" target="_blank" rel="noopener">
+            <img src="images/cert/jenkins_cert.png" alt="CloudBees Jenkins" />
+            <div class="cert-name">Certified CloudBees Jenkins</div>
+            <span class="cert-verify">Verify ↗</span>
+          </a>
+
+          <a class="cert-card" href="https://verify.acloud.guru/B89AC0992E89" target="_blank" rel="noopener">
+            <img src="images/cert/cloudguru_aws_CSAA.png" alt="AWS SAA" />
+            <div class="cert-name">AWS Solutions Architect Associate</div>
+            <span class="cert-verify">Verify ↗</span>
+          </a>
+
+          <a class="cert-card" href="https://verify.acloud.guru/CCDBC40D4681" target="_blank" rel="noopener">
+            <img src="images/cert/cloudguru_ansible.png" alt="Ansible" />
+            <div class="cert-name">Ansible</div>
+            <span class="cert-verify">Verify ↗</span>
+          </a>
+
+          <a class="cert-card" href="https://verify.acloud.guru/38A2F07E5FC7" target="_blank" rel="noopener">
+            <img src="images/cert/cloudguru_docker.png" alt="Docker" />
+            <div class="cert-name">Docker Fundamentals</div>
+            <span class="cert-verify">Verify ↗</span>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- ── COURSES ── -->
+      <section class="card">
+        <h2><span class="section-icon">🎓</span> Certified Courses</h2>
+        <ul class="course-list">
+          <li>
+            <span class="course-badge">Udemy</span>
+            <a href="https://www.udemy.com/certificate/UC-MOTNBRM7/" target="_blank" rel="noopener">
+              Certified Kubernetes Administrator (CKA) with Practice Tests
+            </a>
+          </li>
+          <li>
+            <span class="course-badge">Udemy</span>
+            <a href="https://www.udemy.com/certificate/UC-ca4ea0b4-4beb-431e-b8b1-736ee843a90f/" target="_blank" rel="noopener">
+              Terraform
+            </a>
+          </li>
+          <li>
+            <span class="course-badge">A Cloud Guru</span>
+            <a href="https://verify.acloud.guru/38A2F07E5FC7" target="_blank" rel="noopener">
+              Docker Fundamentals
+            </a>
+          </li>
+          <li>
+            <span class="course-badge">A Cloud Guru</span>
+            <a href="https://verify.acloud.guru/CCDBC40D4681" target="_blank" rel="noopener">
+              Ansible
+            </a>
+          </li>
+          <li>
+            <span class="course-badge">A Cloud Guru</span>
+            <a href="https://verify.acloud.guru/B89AC0992E89" target="_blank" rel="noopener">
+              AWS Certified Solutions Architect Associate
+            </a>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    <p>© 2018–2026 Sriram Yeluri &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/in/sriram-yeluri/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">LinkedIn</a>
+    </p>
+  </footer>
+
+</body>
+</html>

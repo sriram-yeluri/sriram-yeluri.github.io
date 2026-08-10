@@ -1,11 +1,3 @@
----
-title: Sriram Yeluri
-linkTitle: About
-menu:
-  main:
-    weight: 10
-layout: docs
----
 
 > I am working as an IT consultant with 18 years of professional experience. I played a key role in setting-up solutions for 
 container vulnerability scanning using Prisma cloud, 3rd party component
